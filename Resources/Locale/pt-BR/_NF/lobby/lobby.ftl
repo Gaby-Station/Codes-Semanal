@@ -1,8 +1,8 @@
-frontier-lobby-station-title = Station
-frontier-lobby-available-jobs = Available Jobs
-frontier-lobby-no-stations-available = There are no stations available at this time.
-frontier-lobby-no-crews-available = Currently there are no captains looking for crews.
-frontier-lobby-station-subtext = Wake up from cryosleep to become captain, find adventure, or employed as staff onboard a station such as janitor, mail carrier, or security staff.
+frontier-lobby-station-title = Estação
+frontier-lobby-available-jobs = Trabalhos Disponíveis
+frontier-lobby-no-stations-available = Não há nenhuma estação disponível neste momento.
+frontier-lobby-no-crews-available = Não há nenhum capitão contratando tripulação neste momento.
+frontier-lobby-station-subtext = Acorde do cryosono para se tornar um capitão e viver aventuras ou se tornar parte de uma tripulação contratada a bordo de uma nave.
 frontier-lobby-crew-title = Crew
 frontier-lobby-crew-subtext = Start your round aboard a ship amongst a crew that is looking for new crewmembers to give them a helping hand, whether you are a new or seasoned pilot!
 frontier-lobby-frontier-subtext = Main hub for many space pioneers.

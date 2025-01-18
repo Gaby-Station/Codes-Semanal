@@ -28,7 +28,7 @@ accent-caveman-numbers-8 = eight
 accent-caveman-numbers-9 = nine
 accent-caveman-numbers-10 = ten
 # For larger numbers
-accent-caveman-numbers-many = many
+accent-caveman-numbers-many = muitos
 accent-caveman-grunts-0 = ugh
 accent-caveman-grunts-1 = hmm
 accent-caveman-grunts-2 = oof
@@ -44,7 +44,7 @@ accent-caveman-grunts-11 = eh
 accent-caveman-grunts-12 = agh
 accent-caveman-grunts-13 = pff
 accent-caveman-grunts-14 = meh
-accent-caveman-replaced-0 = going
+accent-caveman-replaced-0 = indo
 accent-caveman-replacement-0 = go
 accent-caveman-replaced-1 = i
 accent-caveman-replacement-1 = me
