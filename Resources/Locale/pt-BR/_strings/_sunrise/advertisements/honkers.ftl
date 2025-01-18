@@ -1,0 +1,10 @@
+advertisement-honkers-1 = Você precisa de granadas para assustar, e não para explodir? Eu tenho a solução para você... PUF!
+advertisement-honkers-2 = Operacional nuclear? Sim, claro... Bem, quase. Mas experimente em pessoas!
+advertisement-honkers-3 = holoparasita? Mais parece um holofarce! Mas é divertido!
+advertisement-honkers-4 = Procurando anomalias? Tenho umas falsas, mas convincentes — até os cientistas vão ficar confusos!
+advertisement-honkers-5 = Por que granadas reais quando você tem essas? Muito barulho e zero de dano! Seguro e divertido!
+advertisement-honkers-6 = Fantasia falsa de operacional — para quem quer parecer perigoso, mas na verdade... um palhaço!
+advertisement-honkers-7 = Nada de holoparasitas reais, só ilusão de qualidade! E daí que é fake?
+advertisement-honkers-8 = As anomalias são tão falsas que você mesmo vai começar a acreditar nelas! Engano de altíssimo nível!
+advertisement-honkers-9 = Ei, palhaço! Essas coisas só vão explodir suas piadas, não seus amigos!
+advertisement-honkers-10 = Fantasia de operacional — para que te tema
