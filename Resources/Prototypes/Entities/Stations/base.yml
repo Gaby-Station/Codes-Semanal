@@ -104,7 +104,7 @@
   abstract: true
   components:
     - type: AlertLevel
-      alertLevelPrototype: stationAlerts
+      alertLevelPrototype: site2Alerts # Gaby SCP edit
 
 - type: entity
   id: BaseStationExpeditions

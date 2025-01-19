@@ -1,0 +1,30 @@
+- type: alertLevels
+  id: site2Alerts
+  defaultLevel: work
+  levels:
+    work:
+      announcement: gs-alert-level-work-announcement
+      sound: /Audio/_Sunrise/Announcements/announce_dig.ogg
+      color: Green
+    breakfast:
+      announcement: gs-alert-level-breakfast-announcement
+      sound: /Audio/_Sunrise/Announcements/announce_dig.ogg
+      color: Green
+    exercise:
+      announcement: gs-alert-level-exercise-announcement
+      sound: /Audio/_Sunrise/Announcements/announce_dig.ogg
+      color: Green
+    rest:
+      announcement: gs-alert-level-rest-announcement
+      sound: /Audio/_Sunrise/Announcements/announce_dig.ogg
+      color: Green
+    lightsout:
+      announcement: gs-alert-level-lightsout-announcement
+      sound: /Audio/_Sunrise/Announcements/announce_dig.ogg
+      color: Green
+    lockdown:
+      announcement: gs-alert-level-lockdown-announcement
+      sound: /Audio/Announcements/war.ogg
+      color: Red
+      emergencyLightColor: Red
+      forceEnableEmergencyLights: true
