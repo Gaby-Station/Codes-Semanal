@@ -1,60 +1,126 @@
 <Document>
-# Атмосфера
+  # Atmosféricos
 
-Настройка атмосферы необходима для вашего комфортортного долгосрочного пребывания на станции, но зачастую никак не описана, что приводит к тому, что настроить её довольно сложно. Ниже предпринята попытка охватить основы.
+  Configurações atmosféricas são essenciais para o conforto a longo prazo da sua tripulação, mas geralmente são mal documentadas, o que faz com que sejam um pouco difíceis de configurar. O seguinte tenta cobrir o básico.
 
-## Стандартная смесь
-Дыхание чистым O2 или чистым N2, как правило, вредно для здоровья экипажа, поэтому рекомендуется использовать смесь [color=#a4885c]78% N2 и 22% O2 при 101,24 кПа.[/color] Рекомендуется настроить ваш газовый смеситель на выход не менее 1000 кПа для более быстрого восстановления давления в помещениях.<Box>
-<GuideEntityEmbed Entity="OxygenCanister"/>
-<GuideEntityEmbed Entity="NitrogenCanister"/>
-<GuideEntityEmbed Entity="AirCanister"/>
-</Box>
-Вариации этой смеси могут быть необходимы для комфортного долгосрочного пребывания нетипичных членов экипажа, например, членов экипажа, которым для выживания требуется плазменная газовая смесь. Рекомендуется создать для нетипичных членов экипажа отдельное пространство, изолированное шлюзом либо отсеком для удаления газов. Помните, что оба метода негерметичны, и вам понадобятся скрубберы по обе стороны шлюза, чтобы удалять любые просочившиеся газы.
-<Box>
-<GuideEntityEmbed Entity="PlasmaCanister"/>
-<GuideEntityEmbed Entity="StorageCanister"/>
-</Box>
-## Вентиляция и скрубберы
-Вентиляторы и скрубберы — это ключевые устройства для поддержания атмосферы, соответственно наполняющие и очищающие отсеки газами. Изначально они настроены на заполнение помещений до стандартного давления (101,24 кПа) и на удаление из помещения всех газов, не являющихся O2/N2. Их можно переконфигурировать из стандартных настроек, что позволяет настроить их реакцию на различные типы газов или уровни давления. Это можно сделать, взаимодействуя с имеющимся рядом воздушными сигнализациями или установив и подключив его к новой.
+  ## Mistura Padrão
+  Respirar O2 puro ou N2 puro geralmente é ruim para a saúde da sua tripulação, e é recomendado que você busque uma mistura de [color=#a4885c]78% N2 e 22% O2 a 101.24kPa.[/color] É recomendado que a configuração do seu misturador de gás seja ajustada para uma saída de pelo menos 300kPA para uma repressurização mais rápida dos ambientes, sem representar muito risco de sobrepressurização, caso traidores sabotem a distribuição.
+  <Box>
+    <GuideEntityEmbed Entity="OxygenCanister"/>
+    <GuideEntityEmbed Entity="NitrogenCanister"/>
+    <GuideEntityEmbed Entity="AirCanister"/>
+  </Box>
+  Variações nessa mistura podem ser necessárias para o conforto a longo prazo de tripulações atípicas (por exemplo, Voxes, que são envenenados por Oxigênio e respiram Nitrogênio). Para tripulações atípicas (a serem implementadas), é recomendado tentar dar a eles seu próprio espaço pessoal, isolado por uma esclusa de ar ou seção de descarte. Tenha em mente que ambos os métodos têm vazamentos e você precisará de depuradores em ambos os lados da esclusa para limpar qualquer gás vazado.
+  <Box>
+    <GuideEntityEmbed Entity="NitrogenCanister"/>
+    <GuideEntityEmbed Entity="StorageCanister"/>
+  </Box>
+  ## Válvulas e Depuradores
+  Válvulas e depuradores são dispositivos centrais de atmosferia que preenchem e purificam os ambientes, respectivamente. Por padrão, eles são configurados para preencher os ambientes até a pressão padrão (101.24kPa) e para remover todos os gases não-O2/N2 de um ambiente. Eles podem ser reconfigurados a partir das configurações padrão ao conectá-los a um Alarme de Gás, permitindo configurar como eles respondem a vários tipos de gases ou níveis de pressão.
 
-<Box>
-<GuideEntityEmbed Entity="GasVentPump"/>
-<GuideEntityEmbed Entity="GasVentScrubber"/>
-</Box>
-При нормальной работе, если вентиляция обнаруживает, что окружающая среда представляет собой космос, она автоматически прекращает работу до момента возникновения минимального давления, чтобы избежать утечки в него всего газа. Снова её включить можно повысив давление в отсеке до минимального, выпустив канистру газа (возможно даже несколько, если помещение большое).
+  <Box>
+    <GuideEntityEmbed Entity="GasVentPump"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+  </Box>
+  Durante a operação padrão, se uma válvula normal detectar que o ambiente externo é o espaço, ela cessará automaticamente a operação até que uma pressão mínima seja alcançada, para evitar a destruição de gases úteis. Isso pode ser corrigido ao pressurizar o ambiente até essa pressão mínima, reabastecendo-o com um cilindro de gás (potencialmente múltiplos, se o ambiente for de tamanho significativo).
 
-Если вы столкнулись с ситуацией, когда скрубберы не могут очистить воздух в помещении достаточно быстро, воспользуйтесь портативными скрубберами, подтащив их к месту загрязнения и закрепив их гаечным ключом. Они работают гораздо быстрее, чем обычные скрубберы, и могут довольно быстро очистить воздух помещения. При больших загрязнениях может потребоваться использование нескольких таких устройств.
-<Box>
-<GuideEntityEmbed Entity="PortableScrubber"/>
-</Box>
-# Смешивание газов и камеры сгорания
-В случае, если вы выполнили все поставленные задачи, вы можете получить дополнительную энергию или деньги, создавая новые химические газы.
+  Caso você se depare com uma situação onde os depuradores não estão limpando o ambiente rápido o suficiente (e a funcionalidade "Sifão" ainda não conseguir acompanhar), utilize depuradores portáteis, arrastando-os até o local afetado e fixando-os no lugar. Eles funcionam muito mais rápido do que os depuradores típicos e podem limpar rapidamente um ambiente. Vazamentos grandes podem exigir o uso de múltiplos depuradores.
+  <Box>
+    <GuideEntityEmbed Entity="PortableScrubber"/>
+  </Box>
+  # Misturas de Gás e Câmaras de Combustão
+  Caso termine todas as tarefas em mãos, você pode ganhar um dinheiro extra criando novos gases químicos.
 
-## Тритий
-Тритий - это прозрачный зелёный газ, который легко воспламеняется, радиоактивен и сгорает при контакте с кислородом, что делает его очень полезным при работе с [color=#a4885c]ТЭГ-ом[/color].
-Его можно получить, сжигая 1% плазмы и 96% или более кислорода в камере сгорания. Вы можете извлечь этот газ с помощью скрубберов.
+  ## Tritium
+  O Tritium é um gás claro e verde, altamente inflamável, radioativo e que se combustiona ao entrar em contato com o oxigênio, tornando-se muito útil para operar o [color=#a4885c]TEG[/color].
+  Pode ser feito queimando 1% de Plasma e 96% ou mais de Oxigênio na Câmara de Combustão (A proporção ideal é 3% Plasma para 97% Oxigênio). Você pode extrair esse gás por meio de depuradores.
 
-<Box>
-<GuideEntityEmbed Entity="PlasmaCanister" />
-<GuideEntityEmbed Entity="OxygenCanister" />
-<GuideEntityEmbed Entity="GasVentScrubber"/>
-<GuideEntityEmbed Entity="TritiumCanister" />
-</Box>
+  <Box>
+    <GuideEntityEmbed Entity="PlasmaCanister"/>
+    <GuideEntityEmbed Entity="OxygenCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="TritiumCanister"/>
+  </Box>
 
-## Фрезон
-Фрезон - это голубовато-зелёный газ, очень сложный и очень опасный. Для получения фрезона необходимо смешать тритий, кислород и азот в помещении с температурой -203.15°C, чтобы запустить реакцию, а также предотвратить сгорание трития с кислородом.
+  ##Pluoxium
+  Pluoxium is a non-reactive Oxygen substitute that delivers eight times as much O2 to the bloodstream, with as little 3 kPa minimum pressure required for internals.
 
-<Box>
-<GuideEntityEmbed Entity="TritiumCanister" />
-<GuideEntityEmbed Entity="AirCanister" />
-<GuideEntityEmbed Entity="GasVentScrubber"/>
-<GuideEntityEmbed Entity="StorageCanister" Caption="Канистра Фрезона"/>
-</Box>
+  Pluoxium may be created by exposing O2, CO2 and Tritium together in an exothermic reaction between 50 K and 273 K. Furthermore, Pluoxium is also created by the Supermatter, when Oxygen and CO2 are present.
 
-Важно понимать, что утечка фрезона может погубить станцию, превратив её в зимний ад с зудящими свитерами и обморожениями. Фрезон очень холодный и может заморозить станцию до смерти, если хотя бы несколько молей выберутся наружу, так что убедитесь, что вы заперли свои канистры или просто переместили фрезон прямо в хранилище.
+  <Box>
+    <GuideEntityEmbed Entity="OxygenCanister"/>
+    <GuideEntityEmbed Entity="CarbonDioxideCanister"/>
+    <GuideEntityEmbed Entity="TritiumCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="PluoxiumCanister"/>
+  </Box>
 
-## Справочный лист
-- Стандартная атмосферная смесь - это [color=#a4885c]78% N2 и 22% O2 при давлении 101,24 кПа.[/color]
-- Газ подчиняется реальной математике. Вы можете использовать уравнение PV = nRT (P - давление кПа * V - объем л = моли * R * температура К), чтобы получить информацию, которую вам нужно знать о газе. R - константа, приблизительно равна 8,31446.
+  ##Pluoxium
+  Pluoxium is a non-reactive Oxygen substitute that delivers eight times as much O2 to the bloodstream, with as little 3 kPa minimum pressure required for internals.
+
+  Pluoxium may be created by exposing O2, CO2 and Tritium together in an exothermic reaction between 50 K and 273 K. Furthermore, Pluoxium is also created by the Supermatter, when Oxygen and CO2 are present.
+
+  <Box>
+    <GuideEntityEmbed Entity="OxygenCanister"/>
+    <GuideEntityEmbed Entity="CarbonDioxideCanister"/>
+    <GuideEntityEmbed Entity="TritiumCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="PluoxiumCanister"/>
+  </Box>
+
+  ## BZ
+  O gás BZ é um potente alucinógeno, além de um agente sedativo para slimes. Ele é tóxico para respirar e causa irritação respiratória e tosse. O BZ é usado com frequência como ingrediente em reações químicas mais complexas.
+
+  <Box>
+    <GuideEntityEmbed Entity="PlasmaCanister"/>
+    <GuideEntityEmbed Entity="NitrousOxideCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="BZCanister"/>
+  </Box>
+
+  ## Frezon
+  O Frezon é um gás verde-azulado muito complexo e perigoso. Para obtê-lo, você deve misturar Tritium, Oxigênio e Nitrogênio em uma sala a 70K para iniciar a reação, evitando que o Tritium se combusta com o oxigênio.
+
+  <Box>
+    <GuideEntityEmbed Entity="TritiumCanister"/>
+    <GuideEntityEmbed Entity="AirCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed "FrezonCanister" Caption="cilindro de frezon"/>
+  </Box>
+
+  É crucial entender que um vazamento de frezon pode devastar a estação, causando um inferno congelante cheio de suéteres irritantes e queimaduras frias. O Frezon é muito frio e pode congelar a estação até a morte se até mesmo alguns moles se escaparem, então certifique-se de trancar seus cilindros ou simplesmente movê-los diretamente para uma sala de armazenamento.
+
+  ## Healium
+  O Healium é um gás vermelho, formado em ambientes frios, que age como um forte agente sedativo, enquanto cura queimaduras, hematomas e danos por toxinas. O uso excessivo levará à inebriação.
+
+  <Box>
+    <GuideEntityEmbed Entity="BZCanister"/>
+    <GuideEntityEmbed Entity="FrezonCanister" Caption="cilindro de frezon"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="HealiumCanister" Caption="cilindro de healium"/>
+  </Box>
+
+  ## Nitrium
+  O Nitrium é um estimulante gasoso que, quando inalado, pode aumentar a velocidade e a resistência. Em concentrações mais baixas, o Nitrium aumentará sua velocidade máxima de corrida enquanto estiver saudável e sem impedimentos. Além disso, em concentrações um pouco mais altas, respirar Nitrium evitará sonolência. Em altas concentrações, respirar Nitrium começará a desligar os pulmões de uma pessoa, causando asfixia.
+
+  <Box>
+    <GuideEntityEmbed Entity="BZCanister"/>
+    <GuideEntityEmbed Entity="TritiumCanister"/>
+    <GuideEntityEmbed Entity="NitrogenCanister"/>
+    <GuideEntityEmbed Entity="GasVentScrubber"/>
+    <GuideEntityEmbed Entity="NitriumCanister" Caption="cilindro de nitrium"/>
+  </Box>
+
+  O Nitrium se decompõe em nitrogênio e vapor d'água ao entrar em contato com o oxigênio à temperatura ambiente. Essa reação pode gerar uma boa quantidade de calor, tornando a estação desconfortavelmente quente em caso de vazamento.
+
+  ## Folha de Referência
+  - A mistura atmosférica padrão é [color=#a4885c]78% N2 e 22% O2 a 101.24kPa.[/color]
+  - O gás obedece à matemática real. Você pode usar a equação:
+  <Box>
+    [color=cyan]PV = nRT[/color]
+  </Box>
+  <Box>
+    ([color=#a4885c]Pressão kPa * Volume L = Moles * R * Temperatura K[/color])
+  </Box> para derivar informações que você possa precisar sobre um gás. R é aproximadamente 8.31446.
 
 </Document>

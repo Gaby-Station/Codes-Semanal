@@ -1,14 +1,51 @@
-<Document>
-# Космическая Станция 14
+﻿<Document>
+# Estação e Turnos
 
-Добро пожаловать в пре-альфа версию Космической Станции 14! Мы надеемся что игра вам понравится, и эта запись послужит вам руководством к тому, как научиться играть. Читать придётся довольно много, но КС14 сама по себе очень большая и глубокая игра, и мы надеемся что эти руководства помогут вам насладиться ею в полном объёме.
+Cada rodada de SS14 é um [bold]turno autocontido[/bold] que ocorre em uma das diversas estações.
 
-## Что это такое
-Космическая Станция 14 — бесплатный (навсегда) ремейк с открытым исходным кодом небезызвестной Космической Станции 13, призванный обеспечить улучшенный опыт как для новичков, так и для старых игроков. Космическая Станция 14 разрабатывается как полностью модифицируемый продукт, который вы можете изменять по своему вкусу с помощью пользовательских серверов, добавляя целые кучи нового контента.
+As rodadas normalmente duram de [color=cyan]45 a 90 minutos[/color], mas os jogadores estão livres para sair e entrar a qualquer momento durante a rodada.
 
-Если вы здесь для того чтобы просто поиграть — класс! Раздел [color=#a4885c]С чего начать[/color] этой записи вам поможет. Если вы хотите сделать что-то для игры — вы можете найти кнопки, ведущие на наши Discord и Github в лобби.
+## Terminal de Shuttle
+Se você entrar no meio de um turno, provavelmente aparecerá no [color=lime]terminal de shuttle[/color].
+Aqui você pode pegar bebidas, conversar com outros jogadores e esperar o shuttle para levá-lo até a estação.
 
-## С чего начать
-Рекомендуется начать с руководства [color=#a4885c]Управление[/color], а затем прочитать [color=#a4885c]Создание персонажа[/color], [color=#a4885c]Ролевой отыгрыш[/color] и [color=#a4885c]Должности[/color]. Не для всех должностей или концептов будут руководства, и если вы опытный игрок — очень просим помочь нам написать или перевести их!
+As telas nas paredes mostrarão o ETA do shuttle.
+Quando ele chegar, basta entrar para ser transportado até a estação.
+
+Certifique-se de ficar dentro do terminal e não ficar na zona de pouso do shuttle. [color=#EB2D3A][bold]Você pode ser esmagado pelos shuttles que estão pousando[/bold][/color].
+
+## Navegação
+Cada estação tem uma grande variedade de locais a serem visitados.
+Esses locais variam desde departamentos específicos onde o trabalho acontece até áreas comuns onde você pode relaxar e conversar com outras pessoas.
+
+<Box>
+  <GuideEntityEmbed Entity="StationMap"/>
+  <GuideEntityEmbed Entity="SignDirectionalDorms" Caption="Placas de Direção"/>
+  <GuideEntityEmbed Entity="SignBridge" Caption="Placas de Localização"/>
+</Box>
+
+Os [color=cyan]mapas da estação[/color] fornecem uma visão geral de toda a estação, com marcadores coloridos indicando os locais de diferentes coisas.
+Placas [color=cyan]regulares[/color] nas paredes podem direcioná-lo para diferentes departamentos.
+
+## Deixando a Estação
+Ao final do turno [color=gray](exceto em caso de [color=red][bold]desastre nuclear[/bold][/color])[/color], você deixará a estação através do [color=lime]shuttle de evacuação[/color].
+Quando for chamado, um anúncio será feito na estação alertando a tripulação e sinalizando sua [color=cyan]chegada em 10 minutos.[/color]
+Quando ele chegar, você precisará ir até ele, embarcar e sobreviver à viagem até o [bold]Comando Central[/bold].
+
+A rodada não termina oficialmente até que você chegue ao [bold]Comando Central[/bold].
+
+<Box>
+  <GuideEntityEmbed Entity="CryogenicSleepUnit"/>
+</Box>
+
+Se precisar sair de uma rodada mais cedo, você pode fazer isso através de uma [color=lime]unidade de sono criogênico[/color].
+Basta entrar e sair do jogo que seus pertences serão armazenados e garantirão que não sejam roubados ou usados indevidamente.
+
+## Mais Informações
+Aprendendo os controles? [textlink="Clique aqui para ler sobre os diferentes controles" link="Controls"]
+
+Não sabe como realizar um trabalho? [textlink="Clique aqui para pular para uma lista de departamentos" link="Jobs"]
+
+Morrendo muito? [textlink="Clique aqui para ver um guia de sobrevivência" link="Survival"]
 
 </Document>

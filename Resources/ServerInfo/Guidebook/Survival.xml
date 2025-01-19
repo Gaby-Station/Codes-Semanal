@@ -1,29 +1,39 @@
 <Document>
-# Выживание
-Как правило, следует избегать ситуаций, которые могут причинить вам вред, потому что медицина может вылечить вас только с помощью ограниченного количества химикатов и медицинских предметов, и особенно когда на вашем пороге стоят ядерные оперативники.
-## Определение вашего положения
-Ваш КПК содержит название станции и список членов экипажа, работающих в данный момент на вашей станции, напоминание вашего имени в случае необходимости, а также назначенное задание на смену, что позволит вам быстро оценить ситуацию.
-## Неотложная помощь
-В случае серьезной чрезвычайной ситуации вы можете сделать несколько вещей, которые помогут вам выжить в долгосрочной перспективе:
-- Если вы находитесь в критическом состоянии, воспользуйтесь экстренным медипеном из вашего аварийного запаса - он поможет вам не потерять способность что-либо делать. Экстренные медипены также можно использовать для оживления людей, находящихся в критическом состоянии на полу, и для продления времени жизни при борьбе с ядами и т.д.
+# Sobrevivência
+Geralmente, é sensato evitar situações que possam causar danos a você, pois a medicina pode curá-lo apenas até certo ponto, com itens e químicos limitados, e especialmente quando há operativos nucleares à sua porta.
+
+## Identificando sua situação
+Seu PDA contém tanto o nome da embarcação quanto uma lista da tripulação atualmente ativa na sua nave, um lembrete do seu nome, caso necessário, e o trabalho designado para o seu turno, permitindo que você avalie rapidamente a situação.
+
+## Tratamento de Emergência
+Em caso de uma emergência séria, há algumas coisas que você pode fazer para garantir sua sobrevivência a longo prazo, incluindo:
+- Se entrar em condição crítica, use o medipen de emergência da sua caixa de emergência, ele vai garantir que você não fique incapaz de fazer nada. Medipens de emergência também podem ser usados para reviver pessoas que estejam em condição crítica no chão, e para prolongar o tempo que você tem para lidar com venenos/etc.
+
 <Box>
-<GuideEntityEmbed Entity="EmergencyMedipen"/>
+  <GuideEntityEmbed Entity="EmergencyMedipen"/>
+  <GuideEntityEmbed Entity="SpaceMedipen"/>
 </Box>
-- В вашем аварийном запасе находятся дыхательная маска и кислородный баллон, которые помогут вам дольше продержаться в случае утечки воздуха. Если вы слаймолюд, имейте в виду, что азот заменяет вам кислород и что в вашем аварийном запасе будет красный баллон с азотом вместо стандартного сине-желтого баллона с кислородом.
+
+- Sua caixa de emergência contém uma máscara de respiração e um tanque de oxigênio, que podem ajudá-lo a sobreviver por mais tempo em uma situação no espaço. Se você for um dos slimepeople, fique atento, pois o nitrogênio substitui o oxigênio para você, e sua caixa de emergência começará com um tanque vermelho de nitrogênio no lugar do tanque padrão azul/amarelo de oxigênio.
+
 <Box>
-<GuideEntityEmbed Entity="ClothingMaskBreath"/>
-<GuideEntityEmbed Entity="EmergencyOxygenTankFilled"/>
+  <GuideEntityEmbed Entity="ClothingMaskBreath"/>
+  <GuideEntityEmbed Entity="EmergencyOxygenTankFilled"/>
 </Box>
-- Если у вас кровотечение или просто хотите подготовиться, можно разрезать ткань ножом или другим острым предметом и использовать полученную ткань для создания бинта в меню ремесла, чтобы остановить кровотечение, однако ткань сама по себе может быть использована с меньшей эффективностью в чрезвычайных ситуациях.
+
+- Se estiver sangrando ativamente, ou simplesmente quiser se preparar, é possível cortar itens de tecido com uma faca ou outro objeto afiado e usar o tecido resultante para criar gaze no menu de criação para estancar o sangramento, no entanto, o tecido sozinho pode ser usado em menor grau em emergências.
+
 <Box>
-<GuideEntityEmbed Entity="Gauze"/>
-<GuideEntityEmbed Entity="MaterialCloth"/>
+  <GuideEntityEmbed Entity="Gauze"/>
+  <GuideEntityEmbed Entity="MaterialCloth"/>
 </Box>
-- Вместо настоящего анализатора здоровья просто осмотрите себя  - это хороший способ выяснить, какие раны у вас есть.
-- Если вы ослепли, морковь - это еще один способ лечения (поскольку она содержит Окулин, химический препарат, используемый для лечения слепоты), если она доступна.
-- Правильное питание (приготовленная еда, а не из автомата), как правило, гораздо лучше сказывается на общем состоянии здоровья и помогает быстрее заживлять небольшие раны.
-- Простой постельный режим лечит большинство заболеваний, а также позволяет ранам закрыться самостоятельно. Лучше всего для этого подходят медицинские кровати, обеспечивающие стерильную поверхность и поддержку всех поврежденных частей тела, но подойдет любая кровать. Даже сидячее положение помогает, хотя бы немного.
-- Сон на кровати еще больше ускоряет процесс выздоровления.
-- Блюда, содержащие бобовые, красное мясо или просто насыщенные белком, очень помогут вашему организму после сильной кровопотери. Но все же рекомендуется обратиться к врачу и пройти курс лечения.
+
+## Outras Dicas Variadas
+- Em vez de um analisador de saúde real, simplesmente examinar-se e usar o exame detalhado é uma boa maneira de descobrir quais ferimentos você tem.
+- Se estiver ficando cego, cenouras são outra forma de tratar o problema (pois elas contêm Oculine, o medicamento químico usado para tratar cegueira), caso estejam disponíveis.
+- Refeições bem preparadas (comida cozida que não seja de uma máquina de venda automática) geralmente são muito melhores para a sua saúde geral e podem ajudar a curar feridas menores mais rapidamente.
+- Simples repouso na cama pode permitir que algumas feridas se fechem sozinhas. Camas médicas são as melhores para isso, proporcionando uma superfície estéril e suporte para todas as partes do corpo danificadas, mas qualquer cama funciona.
+- Dormir de fato em uma cama acelera ainda mais a taxa de cura.
+- Refeições que contenham proteínas, como carne, ajudarão tremendamente na condição do seu corpo após perda severa de sangue. Ainda é aconselhável visitar um médico e ser tratado, no entanto.
 
 </Document>

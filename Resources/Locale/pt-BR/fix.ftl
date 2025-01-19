@@ -14,3 +14,5 @@ humanoid-profile-editor-flavor-text-limit = Limite de caracteres:
 
 ui-lobby-welcome = Bem Vindo!
 hud-chatbox-channel-Chat = Chat
+
+chat-manager-send-ooc-admin-wrap-message = OOC: [bold]{ $patronTitle }{ $playerName }:[/bold] { $message }

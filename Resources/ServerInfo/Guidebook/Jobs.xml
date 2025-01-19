@@ -1,41 +1,45 @@
 <Document>
-# Должности
+  # Cargos
 
-SS14 имеет большое количество должностей, которые разделены по 7 основным отделам:
+  SS14 tem um grande número de cargos, divididos em sete departamentos principais:
 
-## Сервисный отдел
-В этот отдел входят глава персонала (ГП), пассажиры, уборщик, клоун, мим, музыкант, шеф-повар, бармен, и другие должности, которые занимаются обслуживанием станции.
+  ## Serviço
+  [color=#9fed58]Serviço[/color] é um departamento diversificado que inclui o chefe de pessoal e outros cargos que existem para servir a estação.
 
-Они те кто развлекают, кормят и поят остальных членов экипажа, и убирают за ними. Исключением являются пассажиры, у которых нет определённой задачи, кроме как теряться в техтуннелях.
+  Ele funciona principalmente com pessoas que entretem, limpam e servem o restante da tripulação, com exceção dos passageiros que não têm um cargo específico além de se perderem na manutenção.
 
-## Отдел снабжения
-В отдел снабжения входят грузчики, утилизаторы, и их глава — квартирмейстер (КМ). Этот отдел занимается распределением грузов и ресурсов по станции, и торговлей на галактическом рынке.
+  ## Carga
+  [color=#b18644]Carga[/color] é composto pelos técnicos de carga, especialistas em resgate e o almoxarife. Como departamento, é responsável pela distribuição de recursos e comércio, sendo capaz de comprar e vender coisas no mercado galáctico.
 
-Это означает, что они занимаются поиском материалов и вещей на станции и обломках в космосе для продажи, а также закупкой всего, что запрашивают другие отделы.
+  Na maior parte, isso significa que eles vasculham a estação e destroços variados para encontrar materiais para vender e redistribuir, e comprar materiais solicitados por outros departamentos.
 
-## Служба безопасности
-В службу безопасности входят кадеты, офицеры, детектив, смотритель, и глава службы безопасности (ГСБ). В обязанности отдела входит борьба с нарушителями спокойствия и негуманоидными угрозами, такими как гигантские крысы и карпы.
+  ## Segurança
+  [color=#cb0000]Segurança[/color] é composto pelos cadetes de segurança, advogados, detetive, oficiais de segurança, carcereiro e o chefe de segurança. Como departamento, é responsável por lidar com bagunceiros e ameaças não-humanoides, como ratos gigantes e carpas.
 
-В результате этого, а также необходимости соблюдать тонкую грань, служба безопасности иногда оказывается под давлением разъяренного экипажа (не убивайте клоуна), и для сотрудников отдела важно стараться вести себя как можно лучше.
+  Como resultado disso, e pela necessidade de andar na linha tênue, a segurança às vezes se vê sobrecarregada por tripulantes irritados (não mate o palhaço), e é importante que seus membros tentem se comportar da melhor maneira possível.
 
-## Медицинский отдел
-В медицинский отдел входят интерны, врачи, химики, психолог, и главный врач (ГВ). Этот отдел отвечает за заботу о здоровье экипажа, лечение и/или клонирование раненых и мертвых, лечение вирусных болезней, и предотвращение того, чтобы все умерли ужасной, кровавой смертью где-нибудь в шкафу.
+  ## Médico
+  [color=#5b97bc]Médico[/color] é composto pelos estagiários médicos, químicos, médicos e o chefe de médicos. Como departamento, é responsável por cuidar da tripulação, tratar e/ou clonar os feridos e mortos, tratar doenças e evitar que todos morram de uma morte horrível e sangrenta em algum armário.
 
-Медицинский отдел является одним из наиболее хорошо оснащённых, с возможностью определения местонахождения раненых членов экипажа с помощью монитора экипажа, почти бесконечным запасом медикаментов если химики не подведут, и способностью быстро диагностировать и вакцинировать контагиозные заболевания.
+  O departamento médico é um dos mais bem equipados, com a capacidade de localizar tripulantes feridos usando o monitor de tripulação, um suprimento quase infinito de químicos, caso a química esteja em boa forma, e a habilidade de diagnosticar e vacinar rapidamente contra doenças contagiosas.
 
-## Научный отдел
-Научный отдел состоит из научных ассистентов, учёных и научного руководителя. Как отдел, он отвечает за исследование технологий и артефактов, модернизацию машин и печать новых и полезных устройств.
+  ## Ciência
+  [color=#c96dbf]Ciência[/color] é composto por assistentes de pesquisa, cientistas e o diretor de pesquisa. Como departamento, é responsável por pesquisar tecnologias e artefatos, atualizar máquinas e imprimir novos e úteis dispositivos.
 
-Учёные должны искать новые артефакты и аномалии для изучения, а также отвечать на запросы других отделов о модернизации их оборудования.
+  Os cientistas devem procurar novos artefatos para estudar, bem como solicitar aos departamentos que ajudem a atualizar suas máquinas.
 
-## Инженерный отдел
-В инженерный отдел входят технические ассистенты, инженеры, атмосферные техники, и старший инженер (СИ). Этот отдел отвечает за отвечает за обеспечение станции электроэнергией, целостность её корпуса и работоспособность системы подачи воздуха.
+  ## Engenharia
+  [color=#f39f27]Engenharia[/color] é composto por assistentes técnicos, engenheiros da estação, técnicos atmosféricos e o engenheiro chefe. Como departamento, é responsável por manter a estação energizada, sua estrutura intacta e seu fornecimento de ar funcionando.
 
-Инженерный отдел оснащен снаряжением для работы в космосе, и поэтому он всегда должен стараться ремонтировать непригодные для жизни отсеки станции.
+  Engenharia está bem equipada para entrar no espaço de forma segura, e como tal, deve sempre tentar reparar partes inabitáveis da estação.
 
-## Командование
-Командование состоит из капитана, главы персонала, главы службы безопастности, старшего инженера, главного врача, научного руководителя, и квартирмейстера. Командование отвечает за эффективную работу станции вцелом, и её отделов в частности.
+  ## Comando
+  [color=#1b67a5]Comando[/color] é composto por todos os chefes de departamento. É responsável por manter a estação e seus departamentos funcionando de maneira eficiente.
 
-Командный состав должен быть относительно компетентен в вопросах своего подопечного отдела, стараться делегировать функции и направлять работу.
+  Os membros do Comando devem ser sempre relativamente competentes em seus respectivos departamentos e tentar delegar responsabilidades e direcionar o trabalho.
 
+  # Mudando seu Cargo
+  O [color=#9fed58]Chefe de Pessoal[/color] é a pessoa responsável por mudar os acessos aos IDs e distribuir as chaves de criptografia. Vá até o escritório dele e avise qual cargo você gostaria de assumir.
+
+  Normalmente, ele vai querer que você consiga um papel [color=#a4885c]carimbado[/color] por um chefe de departamento. Não se preocupe, basta encontrá-los e entregar o papel.
 </Document>

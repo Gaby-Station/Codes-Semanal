@@ -1,55 +1,55 @@
 <Document>
-# Командование
-Главы каждого отдела объединяются, чтобы сформировать отдел [color=#1b67a5]Командования[/color], силу, с которой приходится считаться, и управлять станцией. Обычно они имеют доступ к специальному оборудованию и собственным кабинетам. Часто их хотят видеть мёртвыми.
+# Comando
+Os chefes de cada departamento se reúnem para formar o departamento de [color=#1b67a5]Comando[/color], uma força a ser respeitada e os responsáveis pela estação. Eles geralmente têm acesso a equipamentos especiais e suas próprias salas. São frequentemente alvo de caçadas para serem mortos.
 
-## Персонал
-[color=#1b67a5]Командование[/color] состоит из глав каждого отдела: [color=#9fed58]Главы персонала[/color], [color=#cb0000]Начальника службы безопасности[/color], [color=#5b97bc]Главного медицинского офицера[/color], [color=#f39f27]Главного инженера[/color], [color=#c96dbf]Директора исследований[/color], [color=#b18644]Квартирмейстера[/color] и, превыше всего, [color=#1b67a5]Капитана[/color].
+## Pessoal
+O [color=#1b67a5]Comando[/color] é composto pelos chefes de cada departamento, sendo o [color=#9fed58]Chefe de Funcionários[/color], o [color=#cb0000]Chefe de Segurança[/color], o [color=#5b97bc]Chefe de Medicina[/color], o [color=#f39f27]Chefe de Engenharia[/color], o [color=#c96dbf]Diretor de Pesquisa[/color], o [color=#b18644]Almoxarife[/color] e, acima de tudo, o [color=#1b67a5]Capitão[/color].
   <Box>
-    <GuideEntityEmbed Entity="ToyFigurineCaptain" Caption="Капитан"/>
+    <GuideEntityEmbed Entity="ToyFigurineCaptain" Caption="Capitão"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="ToyFigurineHeadOfPersonnel" Caption="Глава персонала"/>
-    <GuideEntityEmbed Entity="ToyFigurineHeadOfSecurity" Caption="Начальник службы безопасности"/>
-    <GuideEntityEmbed Entity="ToyFigurineChiefMedicalOfficer" Caption="Главный медицинский офицер"/>
+    <GuideEntityEmbed Entity="ToyFigurineHeadOfPersonnel" Caption="Chefe de Funcionários"/>
+    <GuideEntityEmbed Entity="ToyFigurineHeadOfSecurity" Caption="Chefe de Segurança"/>
+    <GuideEntityEmbed Entity="ToyFigurineChiefMedicalOfficer" Caption="Chefe de Medicina"/>
   </Box>
   <Box>
-    <GuideEntityEmbed Entity="ToyFigurineChiefEngineer" Caption="Главный инженер"/>
-    <GuideEntityEmbed Entity="ToyFigurineResearchDirector" Caption="Директор исследований"/>
-    <GuideEntityEmbed Entity="ToyFigurineQuartermaster" Caption="Квартирмейстер"/>
+    <GuideEntityEmbed Entity="ToyFigurineChiefEngineer" Caption="Chefe de Engenharia"/>
+    <GuideEntityEmbed Entity="ToyFigurineResearchDirector" Caption="Diretor de Pesquisa"/>
+    <GuideEntityEmbed Entity="ToyFigurineQuartermaster" Caption="Almoxarife"/>
   </Box>
 
-## Взятие на себя обязанностей
-Поздравляем с повышением! Помимо всей дополнительной бумажной работы, ваши новые [color=#a4885c]обязанности[/color] включают управление отделом, внесение изменений и определение приоритетов, обеспечение безопасности персонала и оборудования, а также возможность расслабиться, пока ваши подчиненные выполняют всю работу.
+## Assumindo o Controle
+Parabéns pela sua promoção! Além de toda a papelada extra, suas novas [color=#a4885c]responsabilidades[/color] incluem administrar seu departamento, fazer mudanças e definir prioridades, manter o pessoal e os equipamentos seguros, além de relaxar enquanto seus subordinados fazem todo o trabalho.
 
-Не забывайте, что у вас всё ещё есть работа! Ваши крутые инструменты не дают вам выходного, вам всё равно нужно заполнять пробелы в персонале, помогать сотрудникам и обучать новичков.
+Não se esqueça, você ainda tem um trabalho! Seus equipamentos sofisticados não lhe garantem um dia de folga, você ainda precisa suprir lacunas de pessoal, ajudar os trabalhadores com dificuldades e ensinar os novatos.
 
-Вы можете просто сидеть сложа руки, пока люди начнут ненавидеть вас, но разумнее будет активно работать вместе с ними.
-Не забывайте перемещать своих сотрудников, чтобы они занимались тем, что им нравится или что они делают лучше всего.
+Você pode até se sair bem só ficando parado e deixando as pessoas te odiarem, mas é mais sábio se envolver e trabalhar ao lado delas.
+Lembre-se de mover seus trabalhadores para fazer o que eles gostam ou o que fazem de melhor.
 
-## Ваш шкафчик
+## Seu Armário
 
-Чтобы справиться с новыми, душераздирающими задачами, каждому главе предоставляются специальные предметы для управления подчинёнными. Большинство ваших новых блестящих инструментов можно найти в вашем [color=#a4885c]шкафчике[/color].
+Para lidar com suas novas tarefas esmagadoras, cada chefe recebe itens especiais para liderar seus subordinados. A maioria das suas novas ferramentas brilhantes pode ser encontrada no seu [color=#a4885c]armário[/color].
   <Box>
     <GuideEntityEmbed Entity="LockerCaptain"/>
   </Box>
 
-Ваш [color=#a4885c]пульт управления[/color] очень прост, но его часто недооценивают. Маленькая, но мощная сила, ваш пульт может открывать и закрывать [color=#a4885c]воздушные шлюзы[/color], поворачивать [color=#a4885c]болты[/color] для их блокировки или переключать [color=#a4885c]доступ в аварийных ситуациях[/color]. И всё это на расстоянии.
+Seu [color=#a4885c]controle remoto[/color] é muito simples, mas profundamente subestimado. Uma pequena, mas poderosa ferramenta, seu controle remoto pode abrir e fechar [color=#a4885c]portas herméticas[/color], girar os [color=#a4885c]parafusos[/color] para trancá-las ou alternar o [color=#a4885c]acesso de emergência[/color]. E pode fazer isso à distância.
   <Box>
     <GuideEntityEmbed Entity="DoorRemoteCommand"/>
   </Box>
-Пульт управления влияет на передвижение людей. Главы могут закрывать доступ в опасные зоны или впускать людей, чтобы они быстро что-то забрали.
+O controle remoto influencia o movimento das pessoas. Os chefes podem trancar o pessoal em áreas perigosas ou deixar pessoas entrarem rapidamente para pegar algo.
 
-У вас также есть доступ к вашему собственному каналу [color=#1b67a5]Командования[/color], как и у каждого отдела. Однако, ваш канал особенно важен, так как люди, которые могут вас слышать, имеют в своих руках [color=#a4885c]целые отделы[/color].
-Используйте его для общения с другими главами и представляйте интересы своих сотрудников.
+Você também tem acesso ao seu próprio canal de [color=#1b67a5]Comando[/color], como todos os outros departamentos. No entanto, o seu é especialmente valioso, pois as pessoas que podem ouvir você têm [color=#a4885c]departamentos inteiros[/color] ao seu alcance.
+Use isso para se comunicar com outros chefes e ser um representante do que seus trabalhadores querem ou precisam.
 
-[color=#1b67a5]Капитан[/color] и [color=#9fed58]Глава персонала[/color] имеют доступ к ценному [color=#a4885c]ключу шифрования главного канала[/color], который позволяет им настроиться на каждый радиоканал на станции. Это чрезвычайно важно, так как вы сможете самостоятельно координировать работу отделов.
-[color=#a4885c]Не упустите это жизненно важное преимущество![/color]
+O [color=#1b67a5]Capitão[/color] e o [color=#9fed58]Chefe de Funcionários[/color] têm acesso à lucrativa [color=#a4885c]chave mestre de criptografia[/color], permitindo que eles sintonizem todos os canais de rádio da estação. Isso é extremamente valioso, pois você pode coordenar entre os departamentos pessoalmente.
+[color=#a4885c]Não desperdice essa vantagem vital![/color]
   <Box>
     <GuideEntityEmbed Entity="ClothingHeadsetCommand"/>
     <GuideEntityEmbed Entity="EncryptionKeyStationMaster"/>
   </Box>
 
-Чтобы сделать болото бумажной работы (которое наверняка вас переполнит) ещё более трудным, вам великодушно предоставили [color=#a4885c]штамп[/color] в вашем шкафчике. Используйте его для подписания документов. После того, как вы поставите штамп, изменить их будет уже нельзя. Внимательно проверяйте перед подписью.
+Para tornar o pântano de papelada (que definitivamente vai te sobrecarregar) ainda mais difícil de lidar, você generosamente recebeu um [color=#a4885c]carimbo[/color] no seu armário. Use isso para assinar documentos. Depois de carimbado, o documento não pode ser editado. Olhe bem antes de carimbar.
   <Box>
     <GuideEntityEmbed Entity="RubberStampCaptain"/>
   </Box>

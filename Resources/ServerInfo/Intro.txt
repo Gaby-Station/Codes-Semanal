@@ -1,8 +1,7 @@
-Добро пожаловать на Космическую Станцию 14! Вы только что заступили на смену на борт космической станции Nanotrasen и вместе с другими членами экипажа должны выполнять свои обязанности наилучшим образом и развлекаться (надеюсь, не за счет других).
+Bem-vindo à Estação Espacial 14! Você acabou de começar seu turno a bordo de uma estação espacial da Nanotrasen e, junto com seus colegas de tripulação, deve cooperar, desempenhar seu papel da melhor maneira possível e se divertir (sem prejudicar os outros, esperamos).
 
-Пожалуйста, убедитесь, что вы поняли правила сервера (F1), и если у вас возникнут вопросы, обратитесь к этому руководству, к своим коллегам по смене лично, по радио или через Discord. Вы также можете обратиться за помощью к администраторам (ahelp), нажав клавишу Escape > Админ помощь и отправив сообщение любому онлайн-администратору. В особенности делайте так, если вы стали свидетелем того, как кто-то нарушает правила.
+Certifique-se de entender as regras do servidor (F1) e, se tiver alguma dúvida, consulte este guia, seus colegas de turno pessoalmente ou via rádio ou pelo Discord. Você também pode pedir ajuda aos administradores (ahelp) pressionando a tecla Esc > ajuda de admin e digitando uma mensagem para qualquer administrador online. Especialmente faça isso se testemunhar alguém quebrando as regras.
 
-Повторим, вы все - экипаж станции, который работает вместе (даже клоун), и вы не должны причинять вред друг другу, если только у вас нет чрезвычайно веской причины (самозащита), но даже в этом случае вызывайте охрану по радио, оглушайте и задерживайте, не совершайте убийства как не антагонист (см. антагонист далее).
+Para reforçar, todos vocês são uma equipe que trabalha junta (inclusive o palhaço) e não devem se prejudicar, a menos que tenham um motivo extremamente válido (autodefesa) e, mesmo assim, chame a segurança pelo rádio, atordoe e detenha; não cometa assassinato como um não-antagonista (veja mais sobre antagonistas abaixo).
 
-
-Вместо интентов у вас есть боевой режим. Проверьте элементы управления ниже, чтобы узнать привязку клавиш. Вы не можете никого атаковать, если он выключен, так что больше не придется бить себя собственной монтировкой.
+Em vez de intenções, temos modo de combate. Verifique os controles abaixo para sua tecla de atalho. Você não pode atacar ninguém com ele desligado, então não mais se acerte com seu próprio pé de cabra.
