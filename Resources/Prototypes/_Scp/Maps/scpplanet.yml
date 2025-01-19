@@ -1,6 +1,6 @@
 ﻿- type: gameMap
   id: ScpPlanet
-  mapName: 'ScpPlanet'
+  mapName: 'SCP Fundação Planetaria'
   mapPath: /Maps/_Fire/scpmap.yml
   maxRandomOffset: 0
   randomRotation: false
