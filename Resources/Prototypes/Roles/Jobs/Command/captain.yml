@@ -40,9 +40,10 @@
   equipment:
     shoes: ClothingShoesBootsLaceup
     eyes: ClothingEyesGlassesSunglasses
-    gloves: ClothingHandsGlovesCaptain
+    gloves: ClothingHandsGlovesCombat
     id: CaptainPDA
     ears: ClothingHeadsetAltCommand
+    pocket1: WeaponPistolG22NonLethal # Gaby edit
   storage:
     back:
     - Flash

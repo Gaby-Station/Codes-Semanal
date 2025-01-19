@@ -103,13 +103,13 @@
   - LoadoutSpeciesPocketDoubleOxygen
 
 # Command
-- type: loadoutGroup
-  id: CaptainHead
-  name: loadout-group-captain-head
-  minLimit: 0
-  loadouts:
-  - CaptainHead
-  - CaptainCap
+#- type: loadoutGroup
+#  id: CaptainHead
+#  name: loadout-group-captain-head
+#  minLimit: 0
+#  loadouts:
+#  - CaptainHead
+#  - CaptainCap
 
 - type: loadoutGroup
   id: CaptainJumpsuit
@@ -120,14 +120,14 @@
   - CaptainFormalSuit
   - CaptainFormalSkirt
 
-- type: loadoutGroup
-  id: CaptainNeck
-  name: loadout-group-captain-neck
-  minLimit: 0
-  loadouts:
-  - CaptainCloak
-  - CaptainCloakFormal
-  - CaptainMantle
+#- type: loadoutGroup
+#  id: CaptainNeck
+#  name: loadout-group-captain-neck
+#  minLimit: 0
+#  loadouts:
+#  - CaptainCloak
+#  - CaptainCloakFormal
+#  - CaptainMantle
 
 - type: loadoutGroup
   id: CaptainBackpack
@@ -144,12 +144,12 @@
   - CaptainOuterClothing
   - CaptainWintercoat
 
-- type: loadoutGroup
-  id: HoPHead
-  name: loadout-group-hop-head
-  minLimit: 0
-  loadouts:
-  - HoPHead
+#- type: loadoutGroup
+#  id: HoPHead
+#  name: loadout-group-hop-head
+#  minLimit: 0
+#  loadouts:
+#  - HoPHead
 
 - type: loadoutGroup
   id: HoPJumpsuit
@@ -158,13 +158,13 @@
   - HoPJumpsuit
   - HoPJumpskirt
 
-- type: loadoutGroup
-  id: HoPNeck
-  name: loadout-group-hop-neck
-  minLimit: 0
-  loadouts:
-  - HoPCloak
-  - HoPMantle
+#- type: loadoutGroup
+#  id: HoPNeck
+#  name: loadout-group-hop-neck
+#  minLimit: 0
+#  loadouts:
+#  - HoPCloak
+#  - HoPMantle
 
 - type: loadoutGroup
   id: HoPBackpack
@@ -173,7 +173,7 @@
   - CommonBackpack
   - CommonSatchel
   - CommonDuffel
-  - HoPBackpackIan
+  #- HoPBackpackIan
 
 - type: loadoutGroup
   id: HoPOuterClothing
@@ -592,13 +592,13 @@
   - Bagpipe
 
 # Cargo
-- type: loadoutGroup
-  id: QuartermasterHead
-  name: loadout-group-quartermaster-head
-  minLimit: 0
-  loadouts:
-  - QuartermasterHead
-  - QuartermasterBeret
+#- type: loadoutGroup
+#  id: QuartermasterHead
+#  name: loadout-group-quartermaster-head
+#  minLimit: 0
+#  loadouts:
+#  - QuartermasterHead
+#  - QuartermasterBeret
 
 - type: loadoutGroup
   id: QuartermasterJumpsuit
@@ -610,13 +610,13 @@
   - QuartermasterTurtleneckSkirt
   - QuartermasterFormalSuit
 
-- type: loadoutGroup
-  id: QuartermasterNeck
-  name: loadout-group-quartermaster-neck
-  minLimit: 0
-  loadouts:
-  - QuartermasterCloak
-  - QuartermasterMantle
+#- type: loadoutGroup
+#  id: QuartermasterNeck
+#  name: loadout-group-quartermaster-neck
+#  minLimit: 0
+#  loadouts:
+#  - QuartermasterCloak
+#  - QuartermasterMantle
 
 - type: loadoutGroup
   id: QuartermasterOuterClothing
@@ -700,13 +700,13 @@
   - ChiefEngineerTurtleneck
   - ChiefEngineerTurtleneckSkirt
 
-- type: loadoutGroup
-  id: ChiefEngineerNeck
-  name: loadout-group-chief-engineer-neck
-  minLimit: 0
-  loadouts:
-  - ChiefEngineerCloak
-  - ChiefEngineerMantle
+#- type: loadoutGroup
+#  id: ChiefEngineerNeck
+#  name: loadout-group-chief-engineer-neck
+#  minLimit: 0
+#  loadouts:
+#  - ChiefEngineerCloak
+#  - ChiefEngineerMantle
 
 - type: loadoutGroup
   id: ChiefEngineerOuterClothing
@@ -810,13 +810,13 @@
   - EmergencyWithoutGasExtended # Sunrise-Edit
 
 # Science
-- type: loadoutGroup
-  id: ResearchDirectorNeck
-  name: loadout-group-research-director-neck
-  minLimit: 0
-  loadouts:
-  - ResearchDirectorMantle
-  - ResearchDirectorCloak
+#- type: loadoutGroup
+#  id: ResearchDirectorNeck
+#  name: loadout-group-research-director-neck
+#  minLimit: 0
+#  loadouts:
+#  - ResearchDirectorMantle
+#  - ResearchDirectorCloak
 
 - type: loadoutGroup
   id: ResearchDirectorJumpsuit
@@ -914,13 +914,13 @@
   - HeadofSecurityFormalSuit
   - HeadofSecurityFormalSkirt
 
-- type: loadoutGroup
-  id: HeadofSecurityNeck
-  name: loadout-group-head-of-security-neck
-  minLimit: 0
-  loadouts:
-  - HeadofSecurityCloak
-  - HeadofSecurityMantle
+#- type: loadoutGroup
+#  id: HeadofSecurityNeck
+#  name: loadout-group-head-of-security-neck
+#  minLimit: 0
+#  loadouts:
+#  - HeadofSecurityCloak
+#  - HeadofSecurityMantle
 
 - type: loadoutGroup
   id: HeadofSecurityOuterClothing
@@ -1062,13 +1062,13 @@
   - SecStar
 
 # Medical
-- type: loadoutGroup
-  id: ChiefMedicalOfficerHead
-  name: loadout-group-chief-medical-officer-head
-  minLimit: 0
-  loadouts:
-  - ChiefMedicalOfficerBeret
-  - CMOMedicalHeadMirror
+#- type: loadoutGroup
+#  id: ChiefMedicalOfficerHead
+#  name: loadout-group-chief-medical-officer-head
+#  minLimit: 0
+#  loadouts:
+#  - ChiefMedicalOfficerBeret
+#  - CMOMedicalHeadMirror
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerJumpsuit
@@ -1087,13 +1087,13 @@
   - ChiefMedicalOfficerLabCoat
   - ChiefMedicalOfficerWintercoat
 
-- type: loadoutGroup
-  id: ChiefMedicalOfficerNeck
-  name: loadout-group-chief-medical-officer-neck
-  minLimit: 0
-  loadouts:
-  - ChiefMedicalOfficerCloak
-  - ChiefMedicalOfficerMantle
+#- type: loadoutGroup
+#  id: ChiefMedicalOfficerNeck
+#  name: loadout-group-chief-medical-officer-neck
+#  minLimit: 0
+#  loadouts:
+#  - ChiefMedicalOfficerCloak
+#  - ChiefMedicalOfficerMantle
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerShoes

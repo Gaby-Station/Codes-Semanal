@@ -65,9 +65,10 @@
   equipment:
     shoes: ClothingShoesColorBrown
     id: HoPPDA
-    gloves: ClothingHandsGlovesHop
+    gloves: ClothingHandsGlovesCombat
     ears: ClothingHeadsetAltCommand
     belt: BoxFolderClipboard
+    pocket1: WeaponPistolG22NonLethal # Gaby edit
   storage:
     back:
     - Flash
