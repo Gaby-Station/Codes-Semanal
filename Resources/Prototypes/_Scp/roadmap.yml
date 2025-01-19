@@ -96,7 +96,7 @@
         scpsl:
           id: scpsl
           name: Modo SCP SL
-          desc: Um modo de jogo inspirado no SCP: Secret Laboratory. O pessoal começa durante uma violação massiva de contenção em um complexo gerado proceduralmente. A missão é sobreviver e escapar, enquanto equipes MTF ou Insurgência do Caos chegam para ajudar ou atrapalhar.
+          desc: Um modo de jogo inspirado em SCP Secret Laboratory. O pessoal começa durante uma violação massiva de contenção em um complexo gerado proceduralmente. A missão é sobreviver e escapar, enquanto equipes MTF ou Insurgência do Caos chegam para ajudar ou atrapalhar.
           state: Planned
     2026:
       name: 2026
