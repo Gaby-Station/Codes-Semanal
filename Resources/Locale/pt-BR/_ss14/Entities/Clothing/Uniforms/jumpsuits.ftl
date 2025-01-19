@@ -7,8 +7,8 @@ ent-ClothingUniformJumpsuitBartender = uniforme do barman
 ent-ClothingUniformJumpsuitBartenderPurple = uniforme roxo do bartender
     .desc = Uma roupa roxa especial para servir bebidas.
 
-ent-ClothingUniformJumpsuitCaptain = macacão de capitão
-    .desc = É um macacão azul com algumas marcas douradas denotando o posto de "Capitão".
+ent-ClothingUniformJumpsuitCaptain = macacão de diretor do sítio
+    .desc = É um macacão azul com algumas marcas douradas denotando o posto de "diretor do sítio".
 
 ent-ClothingUniformJumpsuitCargo = macacão cargo tech
     .desc = Um macacão resistente, concedido aos membros do departamento de Carga.
@@ -22,11 +22,11 @@ ent-ClothingUniformJumpsuitChiefEngineer = macacão do engenheiro-chefe
 ent-ClothingUniformJumpsuitChaplain = macacão de capelão
     .desc = É um macacão preto, muito usado por pessoas religiosas.
 
-ent-ClothingUniformJumpsuitCentcomOfficial = macacão oficial da Central de Comando
-    .desc = É um macacão usado pelos dirigentes da Central de Comando.
+ent-ClothingUniformJumpsuitCentcomOfficial = macacão oficial da Conselho O4
+    .desc = É um macacão usado pelos dirigentes da Conselho O4.
 
-ent-ClothingUniformJumpsuitCentcomOfficer = macacão de oficial da Central de Comando
-    .desc = É um macacão usado pelos Oficiais da Central de Comando.
+ent-ClothingUniformJumpsuitCentcomOfficer = macacão de oficial da Conselho O4
+    .desc = É um macacão usado pelos Oficiais da Conselho O4.
 
 ent-ClothingUniformJumpsuitChef = uniforme de chef
     .desc = Não consigo cozinhar sem isso.
@@ -193,10 +193,10 @@ ent-ClothingUniformJumpsuitPyjamaSyndicateRed = pijama vermelho do Sindicato
 ent-ClothingUniformJumpsuitNanotrasen = macacão nanotrasen
     .desc = Um imponente macacão azul para representar o NanoTrasen.
 
-ent-ClothingUniformJumpsuitCapFormal = terno formal do capitão
+ent-ClothingUniformJumpsuitCapFormal = terno formal do diretor do sítio
     .desc = Um terno para ocasiões especiais.
 
-ent-ClothingUniformJumpsuitCentcomFormal = traje formal da  Central de Comando
+ent-ClothingUniformJumpsuitCentcomFormal = traje formal da  Conselho O4
     .desc = Um terno para ocasiões especiais.
 
 ent-ClothingUniformJumpsuitHosFormal = terno formal de hos

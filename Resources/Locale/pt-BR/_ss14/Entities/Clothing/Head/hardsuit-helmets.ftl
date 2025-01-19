@@ -1,8 +1,8 @@
 ent-ClothingHeadHelmetHardsuitAtmos = capacete da atmosférica
     .desc = Um capacete espacial, planejado para funcionar em ambientes de baixa pressão e de altas temperaturas.
 
-ent-ClothingHeadHelmetHardsuitCap = capacete do capitão
-    .desc = Um capacete espacial, feito para o capitão da estação.
+ent-ClothingHeadHelmetHardsuitCap = capacete do diretor do sítio
+    .desc = Um capacete espacial, feito para o diretor do sítio da estação.
 
 ent-ClothingHeadHelmetHardsuitDeathsquad = capacete do esquadrão da morte
     .desc = Um capacete espacial robusto, feito para operações especiais.

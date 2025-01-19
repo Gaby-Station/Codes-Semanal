@@ -1,8 +1,8 @@
 ent-ClothingUniformJumpskirtBartender = uniforme do bartender
     .desc = Um uniforme bonito e arrumado. É uma pena o bar.
 
-ent-ClothingUniformJumpskirtCaptain = saia de capitão
-    .desc = É uma saia azul com algumas marcas douradas que indicam o posto de "Capitão".
+ent-ClothingUniformJumpskirtCaptain = saia de diretor do sítio
+    .desc = É uma saia azul com algumas marcas douradas que indicam o posto de "diretor do sítio".
 
 ent-ClothingUniformJumpskirtCargo = saia de cargo
     .desc = Uma saia resistente, concedida aos membros do departamento de Carga.
@@ -127,10 +127,10 @@ ent-ClothingUniformJumpskirtColorMaroon = saia marrom
 ent-ClothingUniformJumpskirtPerformer = saia do artista
     .desc = Olá, sou Scott, presidente da Donk Pizza. Você já ouviu falar de [FAMOSO PERFORMER VIRTUAL]?
 
-ent-ClothingUniformJumpskirtCapFormalDress = vestido formal do capitão
+ent-ClothingUniformJumpskirtCapFormalDress = vestido formal do diretor do sítio
     .desc = Um vestido para ocasiões especiais.
 
-ent-ClothingUniformJumpskirtCentcomFormalDress = vestido formal de  Central de Comando
+ent-ClothingUniformJumpskirtCentcomFormalDress = vestido formal de  Conselho O4
     .desc = Um vestido para ocasiões especiais
 
 ent-ClothingUniformJumpskirtHosFormal = vestido formal de hos

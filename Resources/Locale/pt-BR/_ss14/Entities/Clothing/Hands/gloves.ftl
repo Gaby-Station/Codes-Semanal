@@ -10,7 +10,7 @@ ent-ClothingHandsGlovesBoxingGreen = luvas de boxe verdes
 ent-ClothingHandsGlovesBoxingYellow = luvas de boxe amarelas
     .desc = Regras do clube da luta: - Jamais fale sobre o clube da luta...
 
-ent-ClothingHandsGlovesCaptain = luvas do capitão
+ent-ClothingHandsGlovesCaptain = luvas do diretor do sítio
     .desc = Um elegante par de luvas azuis molduradas em ouro.
 
 ent-ClothingHandsGlovesIhscombat = luvas táticas

@@ -214,7 +214,7 @@ chatsan-word-76 = fds
 chatsan-replacement-76 = final de semana
 
 chatsan-word-77 = cap
-chatsan-replacement-77 = Capitão
+chatsan-replacement-77 = diretor do sítio
 
 chatsan-word-78 = sla
 chatsan-replacement-78 = sei lá

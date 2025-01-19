@@ -10,13 +10,13 @@ ent-BedsheetBlue = lençol azul
 ent-BedsheetBrown = lençol marrom
      .desc = Um lençol de linho surpreendentemente macio.
 
-ent-BedsheetCaptain = lençol do capitão
+ent-BedsheetCaptain = lençol do diretor do sítio
      .desc = Tem o símbolo Nanotrasen e foi tecido com um novo tipo revolucionário de fio com garantia de 0,01% de permeabilidade para a maioria das substâncias não químicas, popular entre a maioria dos capitães modernos.
 
 ent-BedsheetCE = lençol do CE
      .desc = Está decorado com um emblema de chave inglesa. É altamente reflexivo e resistente a manchas, então você não precisa se preocupar em estragá-lo com óleo.
 
-ent-BedsheetCentcom = lençol da Central de Comando
+ent-BedsheetCentcom = lençol da Conselho O4
      .desc = Tecido com nanofio avançado para aquecer além de ser muito decorado, essencial para todos os oficiais.
 
 ent-BedsheetClown = lençol de palhaço

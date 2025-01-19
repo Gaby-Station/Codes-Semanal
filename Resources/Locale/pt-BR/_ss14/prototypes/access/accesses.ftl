@@ -1,6 +1,6 @@
 id-card-access-level-command = Comando
-id-card-access-level-captain = Capitão
-id-card-access-level-head-of-personnel = Chefe dos Funcionarios
+id-card-access-level-captain = Diretor do Sítio
+id-card-access-level-head-of-personnel = Gerente do Sítio
 id-card-access-level-cryogenics = Criogenia
 
 id-card-access-level-head-of-security = Segurança Chefe
@@ -42,4 +42,4 @@ id-card-access-level-external = Externo
 id-card-access-level-nuclear-operative = Agente Nuclear
 id-card-access-level-syndicate-agent = Agente do Sindicato
 
-id-card-access-level-central-command = Central de Comando
+id-card-access-level-central-command = Conselho O4

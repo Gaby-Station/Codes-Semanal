@@ -7,7 +7,7 @@ ent-ClothingOuterWinterAtmos = casaco da atmosférica
 ent-ClothingOuterWinterBar = casaco de bartender
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterCap = casaco do capitão
+ent-ClothingOuterWinterCap = casaco do diretor do sítio
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
 ent-ClothingOuterWinterCargo = casaco da logística
@@ -16,7 +16,7 @@ ent-ClothingOuterWinterCargo = casaco da logística
 ent-ClothingOuterWinterCE = casaco do engenheiro chefe
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
-ent-ClothingOuterWinterCentcom = casaco da Central de Comando
+ent-ClothingOuterWinterCentcom = casaco da Conselho O4
     .desc = Uma roupa de frio pesada, feita com pelos sintéticos.
 
 ent-ClothingOuterWinterChem = casaco da química

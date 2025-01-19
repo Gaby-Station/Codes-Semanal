@@ -13,8 +13,8 @@ ent-ClothingBackpackEngineering = mochila da engenharia
 ent-ClothingBackpackMedical = mochila da medicina
     .desc = Uma mochila esterilizada, perfeita para armazenar medicamentos e outras coisas de médicos.
 
-ent-ClothingBackpackCaptain = mochila do capitão
-    .desc = Uma mochila feita exclusivamente para o Capitão da estação... Mimado!
+ent-ClothingBackpackCaptain = mochila do diretor do sítio
+    .desc = Uma mochila feita exclusivamente para o diretor do sítio da estação... Mimado!
 
 ent-ClothingBackpackMime = mochila do mímico
     .desc = Uma mochila furtiva feita para pessoas que "não abrem a boca". Perfeita para guardar.. uhh.. B-Baguette?
