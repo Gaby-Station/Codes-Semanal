@@ -511,8 +511,8 @@
     state: blink3
   - sprite: /Textures/_Scp/blink.rsi
     state: blink4
-  name: "Индикатор моргания"
-  description: "Показывает статус моргания"
+  name: "Indicador de piscadas"
+  description: "Mostra o status das piscadas"
   minSeverity: 0
   maxSeverity: 4
 #Sunrise-SCP edit.
