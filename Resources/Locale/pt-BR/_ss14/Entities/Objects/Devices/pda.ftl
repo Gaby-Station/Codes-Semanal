@@ -52,7 +52,7 @@ ent-LawyerPDA = PDA de advogado
 ent-JanitorPDA = PDA de zelador
     .desc = Cheira a alvejante.
 
-ent-CaptainPDA = PDA de capitão
+ent-CaptainPDA = PDA de diretor do sítio
     .desc = Surpreendentemente não é diferente do seu PDA.
 
 ent-HoPPDA = PDA de chefe de funcionários
@@ -88,7 +88,7 @@ ent-WardenPDA = PDA de carceiro
 ent-SecurityPDA = PDA de segurança
     .desc = Vermelho para esconder as manchas de sangue dos passageiros.
 
-ent-CentcomPDA = PDA da Central de Comando
+ent-CentcomPDA = PDA da Conselho O4
     .desc = Coloriu o cinza entorpecente da burocracia.
 
 ent-MusicianPDA = PDA de músico

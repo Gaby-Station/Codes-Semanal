@@ -7,8 +7,8 @@ ent-ClothingBackpackDuffelEngineering = mala da engenharia
 ent-ClothingBackpackDuffelMedical = mala da medicina
     .desc = Uma mala grande esterilizada. Perfeita para armazenar medicamentos e outras coisas de médicos.
 
-ent-ClothingBackpackDuffelCaptain = mala do capitão
-    .desc = Uma mala pertencente ao Capitão da Estação, bem grande para satisfazer o Cap.
+ent-ClothingBackpackDuffelCaptain = mala do diretor do sítio
+    .desc = Uma mala pertencente ao diretor do sítio da Estação, bem grande para satisfazer o Cap.
 
 ent-ClothingBackpackDuffelClown = mala de palhaço
     .desc = Uma grande mala que consegue carregar mais buzinas do que qualquer outra

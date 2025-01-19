@@ -1,7 +1,7 @@
 stamp-component-stamped-name-default = Uma pessoa muito importante
 stamp-component-stamped-name-detective = Detetive
 stamp-component-stamped-name-mime = Mímico
-stamp-component-stamped-name-captain = Capitão
+stamp-component-stamped-name-captain = diretor do sítio
 stamp-component-stamped-name-centcom = CentCom
 stamp-component-stamped-name-chaplain = Padre
 stamp-component-stamped-name-lawyer = Advogado

@@ -28,7 +28,7 @@ ent-ClothingOuterArmorRiot = armadura anti-motim
 ent-ClothingOuterArmorScaf = traje scaf
     .desc = A green and brown tactical suit for combat situations.
 
-ent-ClothingOuterArmorCaptainCarapace = carapaça do capitão
+ent-ClothingOuterArmorCaptainCarapace = carapaça do diretor do sítio
     .desc = An armored chestpiece that provides protection whilst still offering maximum mobility and flexibility. Issued only to the station's finest.
 
 ent-ClothingOuterArmorChangeling = armadura quitinosa

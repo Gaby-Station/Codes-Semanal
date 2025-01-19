@@ -1,17 +1,17 @@
 ﻿- type: alertLevels
   id: stationPrisonAlerts
-  defaultLevel: lightsout
+  defaultLevel: work
   levels:
+    work:
+      announcement: alert-level-work-announcement
+      sound: /Audio/_Sunrise/Announcements/announce_dig.ogg
+      color: Green
     rollcall:
       announcement: alert-level-rollcall-announcement
       sound: /Audio/_Sunrise/Announcements/announce_dig.ogg
       color: Green
     breakfast:
       announcement: alert-level-breakfast-announcement
-      sound: /Audio/_Sunrise/Announcements/announce_dig.ogg
-      color: Green
-    work:
-      announcement: alert-level-work-announcement
       sound: /Audio/_Sunrise/Announcements/announce_dig.ogg
       color: Green
     exercise:
@@ -32,6 +32,22 @@
       color: Green
     lockdown:
       announcement: alert-level-lockdown-announcement
-      sound: /Audio/Announcements/war.ogg
+      sound: /Audio/Announcements/episilon.ogg #/Audio/Announcements/Alerts/gamma.ogg
       color: Red
       emergencyLightColor: Red
+      forceEnableEmergencyLights: true
+    # Gaby - start
+    black:
+      announcement: scp-alert-level-black-announcement
+      sound: /Audio/Announcements/war.ogg
+      color: LightGrey
+      emergencyLightColor: LightGrey
+      forceEnableEmergencyLights: true
+    delta:
+      announcement: scp-alert-level-delta-announcement
+      selectable: false
+      sound: /Audio/Announcements/Alerts/gamma.ogg
+      disableSelection: true
+      color: White
+      forceEnableEmergencyLights: true
+      shuttleTime: 1200

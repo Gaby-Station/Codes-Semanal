@@ -7,8 +7,8 @@ ent-DrinkMREFlask = frasco MRE
 ent-DrinkDetFlask = frasco do inspetor
      .desc = Frasco de metal com pulseira de couro e distintivo dourado pertencente ao inspetor.
 
-ent-DrinkFlask = frasco do capitão
-     .desc = Um frasco de metal pertencente ao capitão
+ent-DrinkFlask = frasco do diretor do sítio
+     .desc = Um frasco de metal pertencente ao diretor do sítio
 
 ent-DrinkFlaskOld = frasco antigo
      .desc = { "" }

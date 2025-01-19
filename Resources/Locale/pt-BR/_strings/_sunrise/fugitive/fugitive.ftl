@@ -1,4 +1,4 @@
-station-event-fugitive-hunt-announcement = Por favor, verifique o fax do capitão para obter uma mensagem secreta.
+station-event-fugitive-hunt-announcement = Por favor, verifique o fax do diretor do sítio para obter uma mensagem secreta.
 fugitive-spawn = { CAPITALIZE(THE($name)) } sai debaixo do piso!
 fugitive-announcement-GALPOL = GALPOL
 fugi-report-ent-name = RELATÓRIO DE FUGITIVO: { $name }

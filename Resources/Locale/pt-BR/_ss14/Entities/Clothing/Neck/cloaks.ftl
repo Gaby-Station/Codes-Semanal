@@ -1,4 +1,4 @@
-ent-ClothingNeckCloakCap = capa do capitão
+ent-ClothingNeckCloakCap = capa do diretor do sítio
     .desc = Uma elegante capa azul com uma belíssima Moldura dourada.
 
 ent-ClothingNeckCloakHos = capa do segurança chefe
@@ -25,7 +25,7 @@ ent-ClothingNeckCloakHerald = capa do arauto
 ent-ClothingNeckCloakNanotrasen = capa da nanotrasen
     .desc = Uma capa azul que representa os membros da Nanotrasen.
 
-ent-ClothingNeckCloakCapFormal = capa formal do capitão
+ent-ClothingNeckCloakCapFormal = capa formal do diretor do sítio
     .desc = Para as ocasiões mais formais, como por exemplo a visita de um esquadrão nuclear.
 
 ent-ClothingNeckCloakAdmin = capa do administrador

@@ -1,6 +1,6 @@
 ﻿- type: gameMap
   id: ScpPlanet
-  mapName: 'ScpPlanet'
+  mapName: 'SCP Fundação Planetaria'
   mapPath: /Maps/_Fire/scpmap.yml
   maxRandomOffset: 0
   randomRotation: false
@@ -62,9 +62,9 @@
           Magistrat: [ 1, 1 ]
           Brigmedic: [ 1, 1 ]
           # Sunrise-Senior
-          SeniorPhysician: [ 1, 1 ]
-          SeniorResearcher: [ 1, 1 ]
-          SeniorOfficer: [ 1, 1 ]
+          #SeniorPhysician: [ 1, 1 ]
+          #SeniorResearcher: [ 1, 1 ]
+          #SeniorOfficer: [ 1, 1 ]
           # Sunrise-Science
           Roboticist: [ 2, 2 ]
           # silicon

@@ -1,4 +1,4 @@
-ent-ClothingNeckMantleCap = manto do capitão
+ent-ClothingNeckMantleCap = manto do diretor do sítio
     .desc = Um manto chique e confortável.
 
 ent-ClothingNeckMantleCE = manto do engenheiro chefe

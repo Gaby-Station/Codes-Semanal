@@ -16,13 +16,13 @@ ent-ClothingHeadHatBeretWarden = boina de carcereiro
 ent-ClothingHeadHatBowlerHat = chapéu coco
     .desc = Bola não inclusa.
 
-ent-ClothingHeadHatCaptain = chapéu do capitão
+ent-ClothingHeadHatCaptain = chapéu do diretor do sítio
     .desc = Como é bom ser o rei..
 
 ent-ClothingHeadHatCardborg = chapéu de caixobô
     .desc = Um chapéu feito por uma criança de 5 anos.
 
-ent-ClothingHeadHatCentcom = chapéu da Central de Comando
+ent-ClothingHeadHatCentcom = chapéu da Conselho O4
     .desc = Como é bom ser imperador...
 
 ent-ClothingHeadHatChef = chapéu de chef

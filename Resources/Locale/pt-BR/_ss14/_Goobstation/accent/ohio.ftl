@@ -33,7 +33,7 @@ accent-ohio-words-replace-3 = datena
 accent-ohio-words-4 = lula
 accent-ohio-words-replace-4 = faz o L
 
-accent-ohio-words-5 = central de comando
+accent-ohio-words-5 = Conselho O4
 accent-ohio-words-replace-5 = governo
 
 accent-ohio-words-6 = centcom
@@ -99,7 +99,7 @@ accent-ohio-words-replace-25 = fez o L
 accent-ohio-words-26 = morreram
 accent-ohio-words-replace-26 = fizeram o L
 
-accent-ohio-words-27 = capitão
+accent-ohio-words-27 = diretor do sítio
 accent-ohio-words-replace-27 = presidente
 
 accent-ohio-words-28 = capitao
@@ -151,7 +151,7 @@ accent-ohio-words-43 = okay
 accent-ohio-words-replace-43 = taokay
 
 accent-ohio-words-44 = mito
-accent-ohio-words-replace-44 = capitão
+accent-ohio-words-replace-44 = diretor do sítio
 
 accent-ohio-words-45 = heretic
 accent-ohio-words-replace-45 = macumbeiro
