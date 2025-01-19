@@ -1,14 +1,13 @@
 ﻿- type: entity
-  parent: ClothingMaskGas
-  id: SCPClothingMaskGasMTF
-  name: tactical coifed gas mask
-  description: A top-grade tactical clear gasmask above an added balaclava, it has a bit of melee-padding in it, along with some heavy bulletproof glass on it. Can be connected to an air supply.
+  parent: [ ClothingMaskGas, BaseRestrictedContraband ]
+  id: ClothingMaskGasChaosIns
+  name: chaos gas mask
+  description: Very reliable military gas mask.
   components:
   - type: Sprite
-    sprite: _SCP/Clothing/Mask/mtfmask.rsi
-    scale: 0.6, 0.6
+    sprite: _Scp/Clothing/Masks/gaschaosins.rsi
   - type: Clothing
-    sprite: _SCP/Clothing/Mask/mtfmask.rsi
+    sprite: _Scp/Clothing/Masks/gaschaosins.rsi
   - type: Armor
     modifiers:
       coefficients:

@@ -84,7 +84,7 @@
 - type: loadout
   id: CaptainOuterClothing
   equipment:
-    outerClothing: ClothingOuterArmorBasic
+    outerClothing: ClothingOuterArmorCaptainCarapace
 
 - type: loadout
   id: CaptainWintercoat
