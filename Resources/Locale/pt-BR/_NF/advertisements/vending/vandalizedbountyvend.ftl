@@ -1,7 +1,7 @@
-advertisement-vandalizedbountyvend-1 = Get some iron!
-advertisement-vandalizedbountyvend-2 = Iron! Breakdowns! GUNS BONANZA!
-advertisement-vandalizedbountyvend-3 = You packin', choom?
-advertisement-vandalizedbountyvend-4 = Start zeroin' 'ganic gonks left an' right with this iron!
-advertisement-vandalizedbountyvend-5 = Badges don't have to know the detes.
-advertisement-vandalizedbountyvend-6 = Prep your scratch, choom! Only preem guns here!
-advertisement-vandalizedbountyvend-7 = I only barf nova iron!
+advertisement-vandalizedbountyvend-1 = Pegue um pouco de aço!
+advertisement-vandalizedbountyvend-2 = Aço! Discriminação! ARMAS FEDORENTAS!
+advertisement-vandalizedbountyvend-3 = Tá fazendo as malas, parça?
+advertisement-vandalizedbountyvend-4 = Comece a zaralhar por aí da esquerda pra direita com esse pedaço de aço!
+advertisement-vandalizedbountyvend-5 = Emblemas não precisam saber as datas.
+advertisement-vandalizedbountyvend-6 = Prepare seu esquema, parça! Apenas armar premium aqui!
+advertisement-vandalizedbountyvend-7 = Apenas confie no aço!
