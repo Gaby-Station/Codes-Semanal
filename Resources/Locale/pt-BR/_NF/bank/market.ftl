@@ -1,4 +1,4 @@
-market-modifier-buy-high = This machine charges [color=red]{ $mod }x[/color] market rate.
-market-modifier-buy-low = This machine charges [color=green]{ $mod }x[/color] market rate.
-market-modifier-sell-high = This machine pays out at [color=green]{ $mod }x[/color] market rate.
-market-modifier-sell-low = This machine pays out at [color=red]{ $mod }x[/color] market rate.
+market-modifier-buy-high = Esta máquina carrega [color=red]{ $mod }x[/color] taxa de mercado.
+market-modifier-buy-low = Esta máquina carrega [color=green]{ $mod }x[/color] taxa de mercado.
+market-modifier-sell-high = Esta máquina paga em [color=green]{ $mod }x[/color] taxa de mercado.
+market-modifier-sell-low = Está máquina paga em [color=red]{ $mod }x[/color] taxa de mercado.
