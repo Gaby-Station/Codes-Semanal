@@ -1,1 +1,1 @@
-bluespace-syndicate-crate-event-announcement = Nós recebemos relatórios de caixas contendo itens do Sindicato chegando no setor através de bluespace. Por favor notifique a DXNF imediatamente se achae alguma das caixas.
+bluespace-syndicate-crate-event-announcement = Nós recebemos relatórios de caixas contendo itens do Sindicato chegando no setor através de bluespace. Por favor notifique a DXNF imediatamente se achar alguma das caixas.
