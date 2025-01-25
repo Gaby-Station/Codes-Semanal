@@ -1,9 +1,9 @@
-job-supervisors-sr = the Station Representative
-job-supervisors-sheriff = the Sheriff
-job-supervisors-bailiff = the Bailiff
-job-supervisors-sergeant = the Sergeant
-job-supervisors-cadet = all higher ranking NFSD personnel
+job-supervisors-sr = o Representante da Estação
+job-supervisors-sheriff = o Xerife
+job-supervisors-bailiff = o Oficial de Justiça
+job-supervisors-sergeant = o Sargento
+job-supervisors-cadet = todos membros superiores da DXNF
 job-supervisors-prisoner = all NFSD personnel
-job-supervisors-nfsd = Deputies, the Bailiff, and the Sheriff
-job-supervisors-pirate = the First Mate and Captain
-job-supervisors-nobody = nobody
+job-supervisors-nfsd = Delegados, o Oficial de Justiça, e o Xerife
+job-supervisors-pirate = o Primeiro Imediato e o Capitão
+job-supervisors-nobody = ninguém
