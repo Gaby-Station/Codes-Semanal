@@ -1,2 +1,2 @@
-anomaly-scanner-point-earned = Points earned: [color=gray]{ $point }[/color]
-anomaly-scanner-point-earned-unknown = Points earned: [color=red]ERROR[/color]
+anomaly-scanner-point-earned = Pontos ganhos: [color=gray]{ $point }[/color]
+anomaly-scanner-point-earned-unknown = Pontod ganhos: [color=red]ERRO[/color]
