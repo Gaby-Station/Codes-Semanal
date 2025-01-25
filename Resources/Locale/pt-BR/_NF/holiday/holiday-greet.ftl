@@ -1,6 +1,6 @@
 ## Holiday Names
 
-holiday-name-frontier-birthday = Birthday of Frontier Station
+holiday-name-frontier-birthday = Aniversário da Estação Frontiera
 holiday-custom-frontier-birthday =
-    It's Frontier Station's birthday!
-    Thanks for helping make Frontier what it is.
+    É o aniversário da Estação Fronteira!
+    Obrigado por fazer o Frontier ser o que é.
