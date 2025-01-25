@@ -1,9 +1,9 @@
-advertisement-mimehumanoid-1 = *pretends to whistle*
-advertisement-mimehumanoid-2 = *points at you and drags finger across neck*
-advertisement-mimehumanoid-3 = *performs a sensual jigga of manslaughter*
-advertisement-mimehumanoid-4 = *slowly shifts from heel to toe*
-advertisement-mimehumanoid-5 = *pretends to be trapped by invisible walls*
-advertisement-mimehumanoid-6 = *stands completely still*
+advertisement-mimehumanoid-1 = *finge assobiar*
+advertisement-mimehumanoid-2 = *aponta para você e arrasta o dedo atravéz do pescoço*
+advertisement-mimehumanoid-3 = *faz uma dancinha do homicídio*
+advertisement-mimehumanoid-4 = *lentamente muda do calcanhar para o dedo*
+advertisement-mimehumanoid-5 = *finge estar preso por paredes invisíveis*
+advertisement-mimehumanoid-6 = *fica completamente parado*
 advertisement-mimehumanoid-7 = *moves around in uneven jerking fashion*
 advertisement-mimehumanoid-8 = *sneezes multiple times without sound*
 advertisement-mimehumanoid-9 = *pretends to draw with pencil on canvas fixed to an easel*
