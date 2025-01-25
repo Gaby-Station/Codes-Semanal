@@ -1,7 +1,7 @@
 ghost-role-information-emotional-support-name = Pet de Suporte Emocional
 ghost-role-information-emotional-support-description = Você é um per de suporte emocional! Você é leal ao seu dono, tenha certeza de deixá-lo bem!
 ghost-role-information-emotional-support-rules =
-    Você é um [color=lightpink][bold]Oet de Suporte Emocio[/bold][/color]. Dê apoio para seu dono, e sirva seus interesses.
+    Você é um [color=lightpink][bold]Pet de Suporte Emocio[/bold][/color]. Dê apoio para seu dono, e sirva seus interesses.
     Você não se lembra de nada da sua vida da suas vida passada, e você não se lembra de nada que aprendeu como fantasma.
     Você está permitido de lembrar aprendizado sobre o jogo em geral, tipo como cozinhar, como usar objetos, etc.
     Você absolutamente [color=red]NÃO[/color] está permitido de lembrar, falar, o nome, aparência, etc. do seu personagem passado.
