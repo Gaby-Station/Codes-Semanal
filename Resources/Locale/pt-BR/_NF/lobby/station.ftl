@@ -1,2 +1,2 @@
-station-frontier-outpost = Frontier Outpost
-station-nsfd = NFSD Outpost
+station-frontier-outpost = Posto Avançado da Fronteira
+station-nsfd = Posto Avançado da DSNF
