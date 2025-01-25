@@ -16,7 +16,7 @@ ledger-tab-Nfsd = DXNF
 ledger-tab-Medical = Centro Médico
 # Fallback, if this displays, something's wrong.
 ledger-tab-Unknown = Unknown
-ledger-entry-type-TickingIncome = Suicídio da NT
+ledger-entry-type-TickingIncome = Subsídio da NT
 ledger-entry-type-VendorTax = Impostos do Fornecedor
 ledger-entry-type-CargoTax = Impostos de Carga
 ledger-entry-type-MailDelivered = Pagamentos do Correio
