@@ -1,1 +1,1 @@
-bluespace-syndicate-crate-event-announcement = We have received reports of crates containing syndicate items arriving through bluespace. Please notify the NFSD immediately if finding such a crate.
+bluespace-syndicate-crate-event-announcement = Nós recebemos relatórios de caixas contendo itens do Sindicato chegando no setor através de bluespace. Por favor notifique a DXNF imediatamente se achae alguma das caixas.
