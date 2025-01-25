@@ -1,7 +1,7 @@
 # Role timers
-JobSecurityCadetOld = Security Cadet
-JobSecurityOfficerOld = Security Officer
-JobHeadOfSecurityOld = Head of Security
-JobWardenOld = Warden
-JobDetectiveOld = Detective
-JobHeadOfPersonnelOld = Head of Personnel
+JobSecurityCadetOld = Segurança Cadete
+JobSecurityOfficerOld = Oficial de Segurança
+JobHeadOfSecurityOld = Chefe da Segurança
+JobWardenOld = Carcereiro
+JobDetectiveOld = Detetive
+JobHeadOfPersonnelOld = Chefe dos Funcionários
