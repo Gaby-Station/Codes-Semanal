@@ -1,3 +1,3 @@
-psicodine-effect-nf-calm = You feel calm and at ease.
-psicodine-effect-nf-no-stress = You feel your stress lifting away.
-psicodine-effect-nf-everything-is-fine = Everything will be fine.
+psicodine-effect-nf-calm = Você se sente calmo e à vontade.
+psicodine-effect-nf-no-stress = Você sente seu estresse indo embora.
+psicodine-effect-nf-everything-is-fine = Tudo vai ficar bem.
