@@ -1,7 +1,7 @@
-shuttle-console-designation = Designation:
-shuttle-console-designation-unknown = Unknown
-shuttle-console-maximum-iff-distance = Maximum IFF Distance
-shuttle-console-iff-search = Search IFF
-shuttle-console-inertia-dampener-off = Cruise
-shuttle-console-inertia-dampener-dampen = Drive
-shuttle-console-inertia-dampener-anchor = Park
+shuttle-console-designation = Destino:
+shuttle-console-designation-unknown = Desconhecido
+shuttle-console-maximum-iff-distance = Distância Máxima do Radar
+shuttle-console-iff-search = Procurar IFF
+shuttle-console-inertia-dampener-off = Cruzar
+shuttle-console-inertia-dampener-dampen = Pilotar
+shuttle-console-inertia-dampener-anchor = Estacionar
