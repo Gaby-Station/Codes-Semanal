@@ -1,5 +1,5 @@
 ## Components
 
-suit-sensor-location-unknown = Unidentified Location
-suit-sensor-location-space = In Space
-suit-sensor-location-expedition = On Expedition
+suit-sensor-location-unknown = Localização Não Identificada
+suit-sensor-location-space = No Espaço
+suit-sensor-location-expedition = Em Expedição
