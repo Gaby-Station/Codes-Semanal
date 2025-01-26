@@ -1,18 +1,18 @@
 # Contraband Exchange Console
-contraband-pallet-console-menu-title = Contraband Exchange
+contraband-pallet-console-menu-title = Troca de Contrabando
 contraband-console-menu-points-amount = { $amount } FUC
-contraband-pallet-menu-no-goods-text = No contraband detected
-contraband-pallet-menu-appraisal-label = Estimated Value:{ " " }
-contraband-pallet-menu-count-label = Number of items:{ " " }
-contraband-pallet-appraise-button = Appraise
-contraband-pallet-sell-button = Sell
-contraband-pallet-disclaimer = Please place all contraband items directly onto the scanner. Items inside other containers are unable to be scanned properly.
+contraband-pallet-menu-no-goods-text = Contrabando não detectado!
+contraband-pallet-menu-appraisal-label = Valor Estimado:{ " " }
+contraband-pallet-menu-count-label = Número de itens:{ " " }
+contraband-pallet-appraise-button = Avaliar
+contraband-pallet-sell-button = Vender
+contraband-pallet-disclaimer = Por favor coloque todos os itens de contrabando diretamente no scanner. Itens dentro de containers não são scanneados adequadamente.
 # Plunder Exchange Console (pirate contraband)
-pirate-contraband-pallet-console-menu-title = Plunder Exchange
+pirate-contraband-pallet-console-menu-title = Troca de Pilhagem
 pirate-contraband-console-menu-points-amount = { $amount } DB
-pirate-contraband-pallet-menu-no-goods-text = No plunder here!
-pirate-contraband-pallet-menu-appraisal-label = Estimated Value:{ " " }
-pirate-contraband-pallet-menu-count-label = Number of items:{ " " }
-pirate-contraband-pallet-appraise-button = Appraise
-pirate-contraband-pallet-sell-button = Sell
-pirate-contraband-pallet-disclaimer = Place yer plunder on the the scanner. Be sure it isn't in a chest, ye goon.
+pirate-contraband-pallet-menu-no-goods-text = Nenhuma pilhagem aqui!
+pirate-contraband-pallet-menu-appraisal-label = Valor Estimado:{ " " }
+pirate-contraband-pallet-menu-count-label = Número de itens:{ " " }
+pirate-contraband-pallet-appraise-button = Avaliar
+pirate-contraband-pallet-sell-button = Vender
+pirate-contraband-pallet-disclaimer = Coloque todas as tuas pilhagems no scanner. Tenha certeza que não está em uma caixa, seu bocó.

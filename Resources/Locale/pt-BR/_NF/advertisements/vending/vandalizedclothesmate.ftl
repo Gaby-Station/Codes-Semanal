@@ -1,7 +1,7 @@
-advertisement-vandalizedclothes-1 = I don't dig ya looks, choom! Get preem threads here!
-advertisement-vandalizedclothes-2 = Don'tcha wanna look totally preem?
-advertisement-vandalizedclothes-3 = D'you wanna look preem or what?! Shlep over here!
-advertisement-vandalizedclothes-4 = Ya new look will flatline ya input!
-advertisement-vandalizedclothes-5 = Now with added composite armor plates!
-advertisement-vandalizedclothes-6 = Preem threads! Nova getups! Check 'em out, choom!
-advertisement-vandalizedclothes-7 = Nova outfit you have goin' there! For a GONK!
+advertisement-vandalizedclothes-1 = Não gosto do seu estilo, parça! Pegue panos premium aqui!
+advertisement-vandalizedclothes-2 = Você não quer parecer estiloso?
+advertisement-vandalizedclothes-3 = Você quer parecer premium ou o que? Vem bizoiar aqui!
+advertisement-vandalizedclothes-4 = Não terá redução, só expansão!
+advertisement-vandalizedclothes-5 = Agora com armaduras de placas!
+advertisement-vandalizedclothes-6 = Panos premium!Novos outfits! Venhar olhar, fi!
+advertisement-vandalizedclothes-7 = Belo look que você tem! Para um BOBÃO!

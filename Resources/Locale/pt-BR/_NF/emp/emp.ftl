@@ -1,6 +1,6 @@
 emp-examinable-verb-text = EMP
-emp-examinable-verb-message = Examine the EMP values.
-emp-examine = It causes an EMP with:
-emp-range-value = - [color=yellow]{ $value } m[/color] of range.
-emp-energy-value = - [color=yellow]{ POWERJOULES($value) }[/color] of energy absorption from any battery in range.
-emp-time-value = - [color=yellow]{ $value } s[/color] of device deactivation.
+emp-examinable-verb-message = Examine os valores EMP.
+emp-examine = Causa um EMP com:
+emp-range-value = - [color=yellow]{ $value } m[/color] de alcance.
+emp-energy-value = - [color=yellow]{ POWERJOULES($value) }[/color] de energia absorvida de qualquer bateria no alcance.
+emp-time-value = - [color=yellow]{ $value } s[/color] de desativação de um dispositivo.

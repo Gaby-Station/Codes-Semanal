@@ -1,2 +1,2 @@
-advertisement-astrovend-1 = Spessman's Choice!
-advertisement-astrovend-2 = Don't leave home without a suit!
+advertisement-astrovend-1 = Escolha do Homenzinho Espadial!
+advertisement-astrovend-2 = Não saia de casa sem uma proteção!

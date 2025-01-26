@@ -1,6 +1,6 @@
-forensic-reward-dead-drop-unused = Unused syndicate dead drop found!
-forensic-reward-dead-drop-used-gone = Evidence of syndicate dead drop use found!
-forensic-reward-dead-drop-used-present = Used syndicate dead drop found!
-forensic-reward-pod = Syndicate drop pod found!
-forensic-reward-amount-speso-only = Crediting { $spesos } for the investigative work!
-forensic-reward-amount = Crediting { $spesos } and { $fuc } for the investigative work!
+forensic-reward-dead-drop-unused = Gota morta no utilizada do sindicato encontrada!
+forensic-reward-dead-drop-used-gone = Evidência de uso de gota morta do sindicato encontrada!
+forensic-reward-dead-drop-used-present = Gota morta usada do sindicato encontrada!
+forensic-reward-pod = Cápsula de gota do sindicato encontrada!
+forensic-reward-amount-speso-only = Creditando { $spesos } pelo trabalho investigativo feito!
+forensic-reward-amount = Creditando { $spesos } e { $fuc } pelo trabalho investigativo feito!

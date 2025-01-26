@@ -1,3 +1,3 @@
-artifact-effect-hint-reclaimer = Matter repurposing
-artifact-effect-hint-petting = Reciprocal affection
-artifact-effect-hint-mop = Fluid absorbancy
+artifact-effect-hint-reclaimer = Reaproveitamento da matéria
+artifact-effect-hint-petting = Afeto recíproco
+artifact-effect-hint-mop = Absorção de fluídos

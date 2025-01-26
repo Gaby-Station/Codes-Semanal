@@ -1,1 +1,1 @@
-lathe-product-value-modifier = Printed items sell at [color=red]{ NATURALFIXED($modifier, 2) }x[/color] market rate.
+lathe-product-value-modifier = Itens fabricados vendidos em [color=red]{ NATURALFIXED($modifier, 2) }x[/color] taxa de mercado.

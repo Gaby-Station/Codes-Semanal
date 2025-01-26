@@ -1,1 +1,1 @@
-metabolism-group-cryogenic = Cryogenic
+metabolism-group-cryogenic = Criogênico

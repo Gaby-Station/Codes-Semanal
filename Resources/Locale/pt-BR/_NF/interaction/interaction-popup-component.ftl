@@ -1,11 +1,11 @@
 ## Petting animals
 
 petting-failure-mistake = Ymg' reach yog l' pet { THE($target) }, mgng ahlloig vulgtmnahor ot h'.
-petting-success-artifact = You pet { THE($target) } on { POSS-ADJ($target) } bizarre surfaces.
-petting-failure-artifact = You reach out to pet { THE($target) }, but a voice in your head tells you not to.
+petting-success-artifact = Você faz carinho em { THE($target) } na { POSS-ADJ($target) } superfície bizarra.
+petting-failure-artifact = Você alcança para acariciar { THE($target) }, mas uma voz dentro da dua cabeça te diz pada não continuar.
 
 ## Patting players
 
-pat-success-generic = You pet { THE($target) } on { POSS-ADJ($target) } soft fluffy head.
-pat-success-generic-others = { CAPITALIZE(THE($user)) } pets { THE($target) } on { POSS-ADJ($target) } soft fluffy head.
-pat-success-generic-target = { CAPITALIZE(THE($user)) } pets your soft fluffy head.
+pat-success-generic = Você acaricia{ THE($target) } na { POSS-ADJ($target) } cabeça macia e peluda.
+pat-success-generic-others = { CAPITALIZE(THE($user)) } acaricia{ THE($target) } na { POSS-ADJ($target) } cabeça macia e peluda.
+pat-success-generic-target = { CAPITALIZE(THE($user)) } acaricia sua cabeça macia e peluda.

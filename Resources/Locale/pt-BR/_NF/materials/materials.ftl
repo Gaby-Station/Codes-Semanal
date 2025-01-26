@@ -1,4 +1,4 @@
 # Metals
-materials-scrap = scrap
+materials-scrap = sucata
 # Ores
-materials-raw-scrap = unsorted scrap
+materials-raw-scrap = sucata não classificada

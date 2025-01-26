@@ -1,59 +1,59 @@
-ghost-role-information-emotional-support-name = Emotional Support Pet
-ghost-role-information-emotional-support-description = You're an emotional support pet! Loyal to your owner, make sure to cheer them up!
+ghost-role-information-emotional-support-name = Pet de Suporte Emocional
+ghost-role-information-emotional-support-description = Você é um per de suporte emocional! Você é leal ao seu dono, tenha certeza de deixá-lo bem!
 ghost-role-information-emotional-support-rules =
-    You are an [color=lightpink][bold]Emotional Support Pet[/bold][/color]. Support your owner, and serve your own interests.
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+    Você é um [color=lightpink][bold]Pet de Suporte Emocio[/bold][/color]. Dê apoio para seu dono, e sirva seus interesses.
+    Você não se lembra de nada da sua vida da suas vida passada, e você não se lembra de nada que aprendeu como fantasma.
+    Você está permitido de lembrar aprendizado sobre o jogo em geral, tipo como cozinhar, como usar objetos, etc.
+    Você absolutamente [color=red]NÃO[/color] está permitido de lembrar, falar, o nome, aparência, etc. do seu personagem passado.
 ghost-role-information-clippy-name = Clippy
-ghost-role-information-clippy-description = The Station Representative's loyal worker, smells like cardboard and papers.
+ghost-role-information-clippy-description = Ajudante leal do Representante da Estação, cheira à papel e papelão.
 ghost-role-information-clugg-name = Clugg
-ghost-role-information-clugg-description = Ugg! Clugg love eat meat. Find new home off space rock, make big hunt.
+ghost-role-information-clugg-description = Ugg! Clugg ama comer carne. Acha casa nova em pedra, faz grande caça.
 ghost-role-information-clarpy-name = Clarpy
-ghost-role-information-clarpy-description = Avast ye mail! wanted by Nanotrasen for crimes against mice.
-ghost-role-information-clarpy-rules = You are a [color=red][bold]Team Antagonist[/bold][/color] with all other pirates.
+ghost-role-information-clarpy-description = Coma os correios! Procurado pela NanoTrasen por crimes contra ratos.
+ghost-role-information-clarpy-rules = Você é do [color=red][bold]Time Antagonista[/bold][/color] junto de todos os outros piratas.
 ghost-role-information-cult-cat-name = Blood Cult Cat
-ghost-role-information-cult-cat-description = Founded the Blood Cult out of boredom.
+ghost-role-information-cult-cat-description = Fundou o Culto de Sangue por conta do tédio.
 ghost-role-information-cult-cat-rules =
-    You are a [color=red][bold]Free Agent[/bold][/color] and free to choose your course of actions.
-    Please note that [color=yellow]all server rules still apply.[/color] Additionally:
-    - [color=red]DO NOT[/color] damage player shuttles or their contents.
-    - [color=red]DO NOT[/color] gib players. Once they're dead, leave them be.
+    Você é um [color=red][bold]Agente Livre[/bold][/color] e livre para escolher seu rumo de ações.
+    Por favor, mantenha em mente que [color=yellow]todas as regras do servidor ainda se aplicam.[/color] Adicionalmente:
+    - [color=red]NÃO[/color] danifique naves de jogadores ou seus conteúdos.
+    - [color=red]NÃO[/color] gibbe jogadores. Quando eles já estiverem mortos, deixe eles em paz.
 ghost-role-information-cappy-name = Cappy
-ghost-role-information-cappy-description = Stop resisting! Certified in lethal-force and defensive tactics.
+ghost-role-information-cappy-description = Não resista! Certificado em força letal e táticas defensivas.
 ghost-role-information-crispy-name = Crispy
-ghost-role-information-crispy-description = Mistakes were made.
+ghost-role-information-crispy-description = Erros foram cometidos.
 ghost-role-information-mistake-name = ?????
 ghost-role-information-mistake-description = Ymg' ph'nglui ah li.
-ghost-role-information-ert-mailcarrier-name = ERT Mail Carrier
-ghost-role-information-ert-mailcarrier-description = Assist with delivery efforts to resolve the station's issues.
-ghost-role-information-baby-dragon-name = Baby Space Dragon
-ghost-role-information-baby-dragon-description = Hatch from your egg and go on incredible adventures with your mom and their crew!
+ghost-role-information-ert-mailcarrier-name = ERT Carteiro
+ghost-role-information-ert-mailcarrier-description = Ajude com a entrega de cartas para resolver os problemas da estação.
+ghost-role-information-baby-dragon-name = Dragão Espacial Bebê
+ghost-role-information-baby-dragon-description = Nasça do seu ovo e vá em incríveis aventuras com sua mãe e a tripulação dela!
 ghost-role-information-baby-dragon-rules =
-    You are a [color=#6495ed][bold]Familiar[/bold][/color]. Serve the interests of your new mom, whatever those may be.
-    You don't remember any of your previous life, and you don't remember anything you learned as a ghost.
-    You are allowed to remember knowledge about the game in general, such as how to cook, how to use objects, etc.
-    You are absolutely [color=red]NOT[/color] allowed to remember, say, the name, appearance, etc. of your previous character.
+    Você é um [color=#6495ed][bold]Familiar[/bold][/color]. Sirva os interesses da sua nova mãe, ou qualquer coisa que seja seu responsável.S
+    Você não se lembra de nada da sua vida da suas vida passada, e você não se lembra de nada que aprendeu como fantasma.
+    Você está permitido de lembrar aprendizado sobre o jogo em geral, tipo como cozinhar, como usar objetos, etc.
+    Você absolutamente [color=red]NÃO[/color] está permitido de lembrar, falar, o nome, aparência, etc. do seu personagem passado.
 ghost-role-information-taxibot-name = Taxibot
-ghost-role-information-taxibot-description = Drive passengers to where they need to go.
+ghost-role-information-taxibot-description = Dirija passageiros para onde eles precisam ir.
 ghost-role-information-hovertaxibot-name = Hovertaxibot
-ghost-role-information-hovertaxibot-description = Fly passengers to where they need to go, remember to check they can breathe!
+ghost-role-information-hovertaxibot-description = Voe passageiros para onde eles precisam ir, lembre-se de checar se eles podem respirar!
 # Adopted from space-wizards #26265 (Thank you, PolterTzi)
 ghost-role-information-yipyip-name = Yip Yip
-ghost-role-information-yipyip-description = Notorious lounge lizard and bartender at Bahama Mama's. This drink-slinging kobold lives to serve his patrons.
-ghost-role-information-aberrant-flesh-horror-dungeon-name = Aberrant flesh horror
-ghost-role-information-aberrant-flesh-horror-dungeon-description = Defend the expedition dungeon with other flesh monstrosities!
-ghost-role-information-explorer-captain-dungeon-name = Explorer Captain
-ghost-role-information-explorer-captain-dungeon-description = You got to this facility first! Defend the expedition dungeon and your loot with other explorers!
-ghost-role-information-punk-boss-dungeon-name = Punk gang leader
-ghost-role-information-punk-boss-dungeon-description = Defend the expedition dungeon and your loot with other punks from NT squares!
+ghost-role-information-yipyip-description = O famoso lagarto e bartender da Bahama Mama's. Esse kobold doido vive para servir aos seus patrões.
+ghost-role-information-aberrant-flesh-horror-dungeon-name = Horror de Carne Aberrante
+ghost-role-information-aberrant-flesh-horror-dungeon-description = Defenda a masmorra da expedição com outras monstruosidades de carne!
+ghost-role-information-explorer-captain-dungeon-name = Capitão Explorador
+ghost-role-information-explorer-captain-dungeon-description = Você chegou nessa masmorra primeiro! Defenda a masmorra da expedição e seus suprimentos com outros exploradores!
+ghost-role-information-punk-boss-dungeon-name = Líder da Gangue Punk
+ghost-role-information-punk-boss-dungeon-description = Defenda a masmorra da expedição e seus suprimentos junto de outros punks dos territórios da NT!
 ghost-role-information-dungeon-boss-rules =
-    You are a [color=red][bold]Team Antagonist[/bold][/color] with all dungeon mobs.
-    Fight players within the dungeon, defend your dungeon.
-    Please note that [color=yellow]all server rules still apply.[/color] Additionally:
-    - [color=red]DO NOT[/color] damage player shuttles or their contents.
-    - [color=red]DO NOT[/color] hide from players to run down the expedition timer.
-    - [color=red]DO NOT[/color] gib players. Once they're dead, leave them be.
-    - [color=red]DO NOT[/color] destroy or hide valuable loot in the dungeon.
-    - [color=red]DO NOT[/color] leave the planet.
-nf-ghost-role-information-derelict-cyborg-description = You are a cyborg that's been stranded on a wreck for years, exposed to countless ion storms.
+    Você é do [color=red][bold]Time Antagonista[/bold][/color] junto de outros seres da masmorra.
+    Lute contra jogadores dentro da masmorra, defensa sua masmorra.
+    Por favor, mantenha em mente que [color=yellow]todas as regras do servidor ainda se aplicam.[/color] Adicionalmente:
+    - [color=red]NÃO[/color] danifique naves de jogadores ou seus conteúdos.
+    - [color=red]NÃO[/color] se esconda de jogadores para diminuir o tempo de expedição.
+    - [color=red]NÃO[/color] gibbe jogadores. Quando eles já estiverem mortos, deixe eles em paz.
+    - [color=red]NÃO[/color] destrua ou esconda itens valiosos na masmorra.
+    - [color=red]NÃO[/color] saia do planeta.
+nf-ghost-role-information-derelict-cyborg-description = Você é um cyborg que ficou abandonado em um destroço por anos, exposto para incontáveis tempestades de ion.

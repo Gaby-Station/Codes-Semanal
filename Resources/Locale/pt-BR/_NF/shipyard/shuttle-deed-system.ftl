@@ -1,1 +1,1 @@
-shuttle-deed-examine-text = It contains the ship deed for [color=yellow]{ $shipname }[/color].
+shuttle-deed-examine-text = Contém a escritura da nave de [color=yellow]{ $shipname }[/color].
