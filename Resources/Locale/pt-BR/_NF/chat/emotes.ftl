@@ -1,8 +1,8 @@
 # Names
-chat-emote-name-goblin-muttering = Mutter
-chat-emote-name-goblin-throat-singing = Sing
+chat-emote-name-goblin-muttering = Murmurar
+chat-emote-name-goblin-throat-singing = Cantar
 # Message
-chat-emote-msg-goblin-muttering = mutters.
-chat-emote-msg-goblin-throat-singing = sings.
-chat-emote-name-belch = Belch
-chat-emote-msg-belch = belches.
+chat-emote-msg-goblin-muttering = murmura.
+chat-emote-msg-goblin-throat-singing = canta.
+chat-emote-name-belch = Arrotar
+chat-emote-msg-belch = arrota.

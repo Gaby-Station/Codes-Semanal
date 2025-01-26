@@ -1,1 +1,1 @@
-anchored-storage-already-present = There's already a bag anchored here!
+anchored-storage-already-present = Já tem um saco ancorado aqui!

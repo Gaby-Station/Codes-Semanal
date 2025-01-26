@@ -1,9 +1,9 @@
 ## UI
 
-rcd-component-missing-id-deed = No ship registered to this ID
-rcd-component-can-only-build-authorized-ship = Can only build on authorized ships!
-rcd-component-no-id-swiped = Swipe id card on RCD to authorize.
-rcd-component-use-blocked = The RCD whirrs, but nothing happens.
-rcd-component-id-card-accepted = You swipe the id card and the RCD makes a accepting noise.
-rcd-component-id-card-removed = The RCD powers down, unauthorizing it.
-rcd-component-wrong-ammo-type = Wrong type of RCD ammo.
+rcd-component-missing-id-deed = Nenhuma nave registrada para este ID
+rcd-component-can-only-build-authorized-ship = Só é possível construir em naves autorizadas!
+rcd-component-no-id-swiped = Passe o cartão ID no RCD para autorizar.
+rcd-component-use-blocked = O RCD vibra, mas nada acontece.
+rcd-component-id-card-accepted = Você passa o cartão ID e o RCD faz um som de aceitação
+rcd-component-id-card-removed = O RCD desliga, desautorizando.
+rcd-component-wrong-ammo-type = Tipo errado de munição RCD.

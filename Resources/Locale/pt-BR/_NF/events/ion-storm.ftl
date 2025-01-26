@@ -1,1 +1,1 @@
-station-event-ion-storm-nf-start-announcement = Ion storm detected in the sector. Please check all AI-controlled equipment for errors.
+station-event-ion-storm-nf-start-announcement = Uma tempestade ion foi detectada no setor. Por favor cheque todos os equipamentos controlados por IA por erros.

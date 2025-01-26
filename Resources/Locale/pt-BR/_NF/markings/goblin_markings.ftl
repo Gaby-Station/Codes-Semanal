@@ -1,23 +1,23 @@
 # goblin ears
-marking-GoblinEarsBasic = Basic Ears
-marking-GoblinEarsBasic-goblin_ears_default = Basic Ears
-marking-GoblinEarsBasicAlt = Basic Ears (Alt)
-marking-GoblinEarsBasicAlt-goblin_ears_default_alt = Basic Ears (Alt)
-marking-GoblinEarsLong01 = Long Ears (Tips Down)
-marking-GoblinEarsLong01-goblin_ears_long_01 = Long Ears (Tips Down)
-marking-GoblinEarsLong02 = Long Ears (Tips Up)
-marking-GoblinEarsLong02-goblin_ears_long_02 = Long Ears (Tips Up)
+marking-GoblinEarsBasic = Orelhas Básicas
+marking-GoblinEarsBasic-goblin_ears_default = Orelhas Básicas
+marking-GoblinEarsBasicAlt = Orelhas Básicas (Alt)
+marking-GoblinEarsBasicAlt-goblin_ears_default_alt = Orelhas Básicas (Alt)
+marking-GoblinEarsLong01 = Orelhas Longas (Pontas para baixo)
+marking-GoblinEarsLong01-goblin_ears_long_01 = Orelhas Longas (Pontas para baixo)
+marking-GoblinEarsLong02 = Orelhas Longas (Pontas para cima)
+marking-GoblinEarsLong02-goblin_ears_long_02 = Orelhas Longas (Pontas para cima)
 # goblin noses
-marking-GoblinNoseBasic = Basic Nose
-marking-GoblinNoseBasic-goblin_nose_default = Basic Nose
-marking-GoblinNoseLong = Long Nose
-marking-GoblinNoseLong-goblin_nose_long = Long Nose
-marking-GoblinNoseCrooked = Crooked Nose
-marking-GoblinNoseCrooked-goblin_nose_crooked = Crooked Nose
+marking-GoblinNoseBasic = Nariz Básico
+marking-GoblinNoseBasic-goblin_nose_default = Nariz Básico
+marking-GoblinNoseLong = Nariz Longo
+marking-GoblinNoseLong-goblin_nose_long = Nariz Longo
+marking-GoblinNoseCrooked = Nariz Torto
+marking-GoblinNoseCrooked-goblin_nose_crooked = Nariz Torto
 # goblin tusks
-marking-GoblinTusksBasic = No Tusks
-marking-GoblinTusksBasic-goblin_tusks_none = No Tusks
-marking-GoblinTusksSmall = Small Tusks
-marking-GoblinTusksSmall-goblin_tusks_small = Small Tusks
-marking-GoblinTusksBig = Long Tusks
-marking-GoblinTusksBig-goblin_tusks_big = Long Tusks
+marking-GoblinTusksBasic = Sem Presas
+marking-GoblinTusksBasic-goblin_tusks_none = Sem Presas
+marking-GoblinTusksSmall = Presas Pequenas
+marking-GoblinTusksSmall-goblin_tusks_small = Presas Pequenas
+marking-GoblinTusksBig = Presas Longas
+marking-GoblinTusksBig-goblin_tusks_big = Presas Longas

@@ -1,24 +1,24 @@
 ## Little Treats
 
-barsign-prototype-name-little-treats = Little Treats Tea Room
-barsign-prototype-description-little-treats = A delightfully relaxing tearoom for all the fancy lads in the cosmos.
+barsign-prototype-name-little-treats = Little Treates Tea Room
+barsign-prototype-description-little-treats = Uma deliciosa e relaxante sala de chá para todos os cavalheiros e madames elegantes no espaço.
 
 ## Maltroach
 
 barsign-prototype-name-maltroach = Maltroach
-barsign-prototype-description-maltroach = Mothroaches politely greet you into the bar, or are they greeting each other?
+barsign-prototype-description-maltroach = Baraposas graciosamente lhe comprimentam para dentrondo bar, ou elas estão comprimentando elas mesmas?
 
 ## Neon Flamingos
 
 barsign-prototype-name-neon-flamingos = Neon Flamingos
-barsign-prototype-description-neon-flamingos = You doubt you'll be able to stand on one leg after you're done here.
+barsign-prototype-description-neon-flamingos = Você dúvida que poderia ficar de pé em uma perna só depois de sair daqui.
 
 ## The Rune
 
 barsign-prototype-name-the-rune = The Rune
-barsign-prototype-description-the-rune = Reality-shifting drinks.
+barsign-prototype-description-the-rune = Bebidas que desafiam o poder da realidade.
 
 ## Whiskey Echoes
 
 barsign-prototype-name-whiskey-echoes = Whiskey Echoes
-barsign-prototype-description-whiskey-echoes = Wew lad! Sit down and have a drink! No matter your affiliation, the slogan here is 'Death to sobriety!'
+barsign-prototype-description-whiskey-echoes = Aí parceiro! Senta aí e vamo tomar uma! Não importa sua afiliação, o slogan daqui é "Morte aos sóbrios!"

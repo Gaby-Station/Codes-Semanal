@@ -1,1 +1,1 @@
-station-event-vent-clog-nf-start-announcement = Attention. Shuttle scrubber networks are experiencing a backpressure surge. Some ejection of contents may occur.
+station-event-vent-clog-nf-start-announcement = Atenção. Sistema de tubulação de algumasnl naves estão experienciando surto de contrapressão. Ejeção de conteúdos podem acontecer.

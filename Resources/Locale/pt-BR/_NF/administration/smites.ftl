@@ -1,9 +1,9 @@
-admin-smite-caveman-self = Head hurt, me no feel good.
+admin-smite-caveman-self = Cabeça dói, eu não sente bem.
 
 ## Smite names
 
-admin-smite-caveman-name = Caveman
+admin-smite-caveman-name = Homem das Cavernas
 
 ## Smite descriptions
 
-admin-smite-caveman-description = Gives the target a permanent foam caveman club and a caveman accent.
+admin-smite-caveman-description = Adiciona ao alvo permanentemente um bastão de isopor de homens das caverna e um sotaque de homem das cavernas.

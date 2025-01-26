@@ -1,2 +1,2 @@
-verb-categories-power-bodycam = Power
-verb-categories-pen = Pen
+verb-categories-power-bodycam = Energia
+verb-categories-pen = Caneta

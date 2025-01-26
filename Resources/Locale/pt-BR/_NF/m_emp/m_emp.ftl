@@ -1,27 +1,27 @@
-m_emp-system-announcement-source = M_EMP Generator System
-m_emp-system-announcement-active = Engaging on { $grid }. EMP: { $timeLeft } seconds.
-m_emp-system-announcement-cooling-down = EMP effect is no longer active. Estimated Recharging: { $timeLeft } seconds.
-m_emp-system-announcement-recharging = Recharging.
-m_emp-system-announcement-request = { $grid } requesting approval to activate M_EMP.
-m_emp-system-report-already-active = The M_EMP Generator is already active.
-m_emp-system-report-cooling-down = The M_EMP Generator is cooling down.
-m_emp-system-report-activate-success = The M_EMP Generator engaging!
-m_emp-system-generator-examined-inactive = The M_EMP Generator is inactive.
-m_emp-system-generator-examined-starting = The M_EMP Generator is starting up.
+m_emp-system-announcement-source = Sistema de Geradoe M_EMP
+m_emp-system-announcement-active = Engajar-se em { $grid }. EMP: { $timeLeft } segundos.
+m_emp-system-announcement-cooling-down = Efeito EMP não está mais ativo. Recarga Estimada: { $timeLeft } segundos.
+m_emp-system-announcement-recharging = Recarregando.
+m_emp-system-announcement-request = { $grid } solicitando aprovação para ativar M_EMP.
+m_emp-system-report-already-active = O Gerador M_EMPThe já está ativo.
+m_emp-system-report-cooling-down = O Gerador M_EMP está resfriando.
+m_emp-system-report-activate-success = O Gerador M_EMP está engajando!
+m_emp-system-generator-examined-inactive = O Geradoe M_EMP está inativo.
+m_emp-system-generator-examined-starting = O Gerador M_EMP está ligando.
 m_emp-system-generator-examined-active =
-    The M_EMP active. EMP will last { $timeLeft ->
-        [1] one second.
-       *[other] { $timeLeft } seconds.
+    O M_EMP está ativo. O EMP vai durar { $timeLeft ->
+        [1] um segundo.
+       *[other] { $timeLeft } segundos.
     }
-m_emp-system-generator-examined-cooling-down = Cooling down.
-m_emp-system-generator-examined-recharging = Recharging. Ready in: { $timeLeft } seconds.
-m_emp-system-generator-delay-upgrade = Cooling down / Recharging speed
+m_emp-system-generator-examined-cooling-down = Resfriando.
+m_emp-system-generator-examined-recharging = Recarregando. Printo em: { $timeLeft } segundos.
+m_emp-system-generator-delay-upgrade = Resfriando / Velocidade de Recarga
 # M_EMP Console
 m_emp-console-menu-title = M_EMP
-m_emp-menu-note1 = Send a request to discharge.
-m_emp-menu-note2 = ATTENTION:
-#m_emp-menu-note3 = Firing this weapon will produce an electro-magnetic pulse capable of disabling all ships within a large radius. By discharging this weapon, you agree to be held accountable.
-m_emp-menu-note3 = By discharging this weapon,
-m_emp-menu-note4 = you agree to be held accountable.
-m_emp-request-button = Request Approval
-m_emp-activate-button = Activate M_EMP
+m_emp-menu-note1 = Enviar solicitação para descarregar.
+m_emp-menu-note2 = ATENÇÃO:
+#m_emp-menu-note3 = Atirar esta arma vai produzir um pulso eletro-magnético capaz de desabilitar todas as naves dentro de uma grande área. Ao descarregar essa arma, você se responsabiliza pelas consequências.
+m_emp-menu-note3 = Ao descarregar essa arma,
+m_emp-menu-note4 = você se responsabiliza pelas consequências.
+m_emp-request-button = Solicitar Aprovação
+m_emp-activate-button = Ativar M_EMP

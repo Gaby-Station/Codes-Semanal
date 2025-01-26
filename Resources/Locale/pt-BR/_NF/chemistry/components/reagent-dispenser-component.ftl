@@ -1,7 +1,7 @@
 # Frontier
 reagent-dispenser-component-impure-auto-label = { $reagent } ({ $purity }%)
-reagent-dispenser-component-set-auto-label-on-verb = Turn on auto-labeler
-reagent-dispenser-component-set-auto-label-off-verb = Turn off auto-labeler
-reagent-dispenser-component-examine-auto-label-on = The auto-labeler is turned [color=darkgreen]on[/color].
-reagent-dispenser-component-examine-auto-label-off = The auto-labeler is turned [color=red]off[/color].
-reagent-dispenser-component-examine-extra-slots = Number of jug slots
+reagent-dispenser-component-set-auto-label-on-verb = Ativar auto-rotulador.
+reagent-dispenser-component-set-auto-label-off-verb = Desativar auto-rotulador.
+reagent-dispenser-component-examine-auto-label-on = O auto-rotulador está [color=darkgreen]ligado[/color].
+reagent-dispenser-component-examine-auto-label-off = O auto-rotulador está [color=red]desligado[/color].
+reagent-dispenser-component-examine-extra-slots = Número de espaços de galões

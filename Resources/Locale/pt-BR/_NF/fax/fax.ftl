@@ -1,2 +1,2 @@
-fax-delete-paper-intellectual-property = NT intellectual property detected, destroying original document.
-fax-delete-paper-generic = Safety overrides engaged, shredding original document.
+fax-delete-paper-intellectual-property = Propriedade intelectual da NT detectada, destruindo o documento original.
+fax-delete-paper-generic = Substituições de segurança ativadas, destruindo o documento original.

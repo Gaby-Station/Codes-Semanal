@@ -1,2 +1,2 @@
-role-blacklist-loadout-invalid = That item is not permitted for your role.
-sex-loadout-invalid = That item is not permitted for your sex.
+role-blacklist-loadout-invalid = Este item não é permitido para o seu trabalho.
+sex-loadout-invalid = Este item não é permitido para o seu sexo.

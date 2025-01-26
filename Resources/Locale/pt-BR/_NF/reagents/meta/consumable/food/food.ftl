@@ -1,4 +1,4 @@
-reagent-name-flavorol = flavorol
-reagent-desc-flavorol = All the vitamins, minerals, and carbohydrates the body needs in pure form.
-reagent-name-raisins = raisins
-reagent-desc-raisins = Are they the best or worst part of the cookie? They're a bunch of desiccated grapes is what they are.
+reagent-name-flavorol = saborol
+reagent-desc-flavorol = Todas as vitaminas, minerais e carboidratos que o corpo precisa em forma pura.
+reagent-name-raisins = passas
+reagent-desc-raisins = Eles são a melhor ou a pior parte do biscoito? Eles são um cacho de uvas desidratadas, é o que são.

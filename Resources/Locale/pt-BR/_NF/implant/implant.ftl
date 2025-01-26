@@ -1,5 +1,5 @@
-implanter-label-bike-horn = bike horn
-implanter-label-light = light
-implanter-label-medical-tracking = medical tracker
-implanter-label-sad-trombone = sad trombone
-implanter-label-storage = storage
+implanter-label-bike-horn = buzina de bicicleta
+implanter-label-light = luz
+implanter-label-medical-tracking = localizador médico
+implanter-label-sad-trombone = trombone triste
+implanter-label-storage = armazenamento

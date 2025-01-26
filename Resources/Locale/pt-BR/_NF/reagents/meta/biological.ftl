@@ -1,2 +1,2 @@
-reagent-name-goblin-blood = goblin blood
-reagent-desc-goblin-blood = Liquid as thick as clotting syrup that clings to the edges of a jam jar. The smell is a pungent cocktail of metal and decay. Why would it make you think about jam?
+reagent-name-goblin-blood = sangue de globin
+reagent-desc-goblin-blood = Líquido tão espesso quanto xarope coagulado que gruda nas bordas de um pote de geleia. O cheiro é um coquetel pungente de metal em decomposição. Por que isso faria você pensar em geleia?

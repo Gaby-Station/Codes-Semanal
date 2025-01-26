@@ -1,6 +1,6 @@
-ventriloquist-rock-grasp-hand = You firmly grasp the pet rock.
-ventriloquist-rock-release-hand = You release your grip on the pet rock.
-ventriloquist-rock-grasped-hand = You have been grasped.
-ventriloquist-rock-released-hand = You been released.
-ventriloquist-rock-role-name = A pet rock
-ventriloquist-rock-role-description = You are a pet mineral.
+ventriloquist-rock-grasp-hand = Você segura firmemente a pedra de estimação.
+ventriloquist-rock-release-hand = Você solta a pedra de estimação.
+ventriloquist-rock-grasped-hand = Você foi pego.
+ventriloquist-rock-released-hand = Você foi solto.
+ventriloquist-rock-role-name = Uma pedra de estimação.
+ventriloquist-rock-role-description = Você é um per mineral.
