@@ -1,51 +1,48 @@
 <Document>
-  #Frontier Station Rules, v5
+  #Regras de Gabystation Fronteira
 
-  ##Recent Changes
-  - Rules reformatted for the guidebook.
+  [color=red]É esperado que você leia todas as regras de forma completa e atenciosa.[/color]
 
-  [color=red]These rules are expected to be read in their entirety.[/color]
+  ##Decisões de Admins
+  - Admins tem a palavra final.
+  - As regras serão aplicadas por espírito e não por leitura literal; à mercê da interpretação do Admin.
+  - Admins podem escolher ignorar regras caso eles achem ser o melhor para o momento.
+  - Admins tem responsabilidade por suas ações. Abuso terá consequências.
 
-  ##Admin Decisions
-  - All admin decisions are final.
-  - Rules are enforced to the spirit of the rules and subject to admin interpretation.
-  - Admins may disregard any/all rules if they deem it in the best interest of the current round, the server, and/or the community.
-  - Admins are accountable for their actions. Abuse of admin privileges will be dealt with by staff.
+  ##Informação Geral
+  - Desconectar no meio de e/ou evadir/ignorar ahelps resultará em um ban temporário de 30 dias.
+  - Admins não são obrigados a cuidarem de perdas ou mortes de players do jogo.
+  -- Isso inclui (mas não é limitado a): dinheiro, respawns, ghost roles e afins.
+  -- Qualquer ação tomada depende do julgamento do Admin, sendo variável por contexto.
 
-  ##General Information
-  - Disconnecting from or ignoring/evading admin-helps will result in an appeal-only ban.
-  - Staff is not obligated to cover player losses, deaths or delays.
-  -- This includes, but is not limited to: ship deeds, money, respawns and revivals.
-  -- Any action taken is at the staff's discretion, and depends on the circumstances.
+  # Lista de Regras
 
-  # Rule List
+  Todas as regras abaixo se aplicam em todos os momentos, incluindo entre rounds.
 
-  All of the below rules apply at all times, including between rounds.
+  ## Regras de Zero Tolerância
+  Você pode ser banido sem aviso prévio por quebrar essas regras.
+  - [textlink="Clique aqui para ler as regras de zero tolerância." link="FrontierRuleZeroTolerance"]
 
-  ## Zero Tolerance Rules
-  You are liable to be banned without previous warning for breaking these rules.
-  - [textlink="Click here to read the zero tolerance rules." link="FrontierRuleZeroTolerance"]
+  ## Regras Básicas
+  Essas são as regras gerais da Fronteira. Clique nelas para mais informações.
+  - [textlink="1. Não seja babaca." link="FrontierRule1"]
+  - [textlink="2. Não aja baseado em informações OOC." link="FrontierRule2"]
+  - [textlink="3. Não ataque outro jogador sem um escalonamento razoável." link="FrontierRule3"]
+  - [textlink="4. Use cada chat para seu propósito, e utilize o português." link="FrontierRule4"]
 
-  ## Core Rules
-  These are the general rules of Frontier. Click them for more information.
-  - [textlink="1. Don't be a dick." link="FrontierRule1"]
-  - [textlink="2. Don't act on out of character info." link="FrontierRule2"]
-  - [textlink="3. Don't attack another player without reasonable escalation." link="FrontierRule3"]
-  - [textlink="4. Use chat for chat, and communicate in English." link="FrontierRule4"]
+  ## Regras de Roleplay
+  Essas são as regras de Roleplay da Fronteira. Clique nelas para mais informações.
+  - [textlink="5. Seu personagem deve ser realista, e deve ser uma entidade diferente de você." link="FrontierRule5"]
+  - [textlink="6. Não lute perto do Posto Avançado da Fronteira." link="FrontierRule6"]
+  - [textlink="7. Antagonistas e Não-Antagonistas são inimigos." link="FrontierRule7"]
+  - [textlink="8. Combate PvP é permitido, porém ainda sujeito às regras." link="FrontierRule8"]
+  - [textlink="9. Piratas devem seguir seu código." link="FrontierRule9"]
+  - [textlink="10. Crimes da Space Law podem ser cometidos desde que não seja Crimes Capitais." link="FrontierRule10"]
+  - [textlink="11. Silícios devem seguir suas regras." link="FrontierRule11"]
 
-  ## Roleplay Rules
-  These are the roleplay rules of Frontier. Click them for more information.
-  - [textlink="5. Your character should be plausible, and is separate from you." link="FrontierRule5"]
-  - [textlink="6. Don't fight near Frontier Outpost." link="FrontierRule6"]
-  - [textlink="7. Antagonists and non-antags are enemies." link="FrontierRule7"]
-  - [textlink="8. PvP combat is allowed, but subject to escalation." link="FrontierRule8"]
-  - [textlink="9. Pirates must follow their code." link="FrontierRule9"]
-  - [textlink="10. Non-capital Space Law offenses may be committed with good reason." link="FrontierRule10"]
-  - [textlink="11. Silicons must follow their laws." link="FrontierRule11"]
-
-  ## NFSD and Command
-  These rules also apply to any individual who is deputized or is acting in the place of a NFSD/Command role.
-  - [textlink="12. Security and Station staff must act with integrity." link="FrontierRule12"]
-  - [textlink="13. Command staff must act with integrity." link="FrontierRule13"]
+  ## DXNF e Comando
+  Essas regras também se aplicam para qualquer um que esteja agindo, de forma interina / temporária, no lugar de um Segurança / Comando.
+  - [textlink="12. Seguranças e Comandos devem agir de forma íntegra." link="FrontierRule12"]
+  - [textlink="13. Funcionários do Comando devem agir de forma ainda mais íntegra." link="FrontierRule13"]
 
 </Document>
