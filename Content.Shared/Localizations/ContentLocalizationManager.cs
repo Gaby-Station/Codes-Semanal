@@ -27,8 +27,6 @@ namespace Content.Shared.Localizations
         {
             var culture = new CultureInfo(Culture);
 
-            var fallbackCulture = new CultureInfo("en-US");
-
             _loc.LoadCulture(culture);
             _loc.AddFunction(culture, "PRESSURE", FormatPressure);
             _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
@@ -39,7 +37,6 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "NATURALFIXED", FormatNaturalFixed);
             _loc.AddFunction(culture, "NATURALPERCENT", FormatNaturalPercent);
             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
-            _loc.AddFunction(culture, "GASQUANTITY", FormatGasQuantity); // Frontier
 
 
             /*
@@ -48,9 +45,20 @@ namespace Content.Shared.Localizations
              * This ensures the english translations continue to work as expected when fallbacks are needed.
              */
             var cultureEn = new CultureInfo("en-US");
+            _loc.LoadCulture(cultureEn);
+            _loc.SetFallbackCluture(cultureEn); //estava escrito cluture, meu .net ta com problema, nao consigo ver se esse era mesma a void ou tinham digitado errado
 
-            _loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural);
+            _loc.AddFunction(cultureEn, "MAKEPLURAL", FormatMakePlural); //isso deve arrumar o fallback
             _loc.AddFunction(cultureEn, "MANY", FormatMany);
+            _loc.AddFunction(cultureEn, "POWERWATTS", FormatPowerWatts);
+            _loc.AddFunction(cultureEn, "POWERJOULES", FormatPowerJoules);
+            _loc.AddFunction(cultureEn, "UNITS", FormatUnits);
+            _loc.AddFunction(cultureEn, "TOSTRING", args => FormatToString(cultureEn, args));
+            _loc.AddFunction(cultureEn, "LOC", FormatLoc);
+            _loc.AddFunction(cultureEn, "NATURALFIXED", FormatNaturalFixed);
+            _loc.AddFunction(cultureEn, "NATURALPERCENT", FormatNaturalPercent);
+            _loc.AddFunction(cultureEn, "PLAYTIME", FormatPlaytime);
+            _loc.AddFunction(cultureEn, "PRESSURE", FormatPressure);
         }
 
         private ILocValue FormatMany(LocArgs args)
