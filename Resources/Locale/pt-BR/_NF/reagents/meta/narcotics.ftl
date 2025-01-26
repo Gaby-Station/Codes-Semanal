@@ -1,6 +1,6 @@
-reagent-name-rock-dust = rock dust
-reagent-desc-rock-dust = A blend of finely pulverized rock minerals suspended in water, presents a murky, earth-toned liquid.
-reagent-name-shroom-mix = shroom mix
-reagent-desc-shroom-mix = A blend of cut, chewed and ground partially dried shrooms, suspended in mopwata.
-# Missing upstream definition
-reagent-name-hyperzine = hyperzine
+reagent-name-rock-dust = pó de rocha
+reagent-desc-rock-dust = Uma mistura de minerais rochosos finamente pulverizados suspensos em água apresentando um líquido turvo e de tom terroso.
+reagent-name-shroom-mix = mistura de cogumelos
+reagent-desc-shroom-mix = Uma mistura de cogumelos parcialmente secos cortados, mastigados e moídos, suspensos em mopwata.
+# Missing Upstream Definition
+reagent-name-hyperzine = hiperzina
