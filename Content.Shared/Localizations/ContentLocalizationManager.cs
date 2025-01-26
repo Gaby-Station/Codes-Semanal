@@ -27,8 +27,6 @@ namespace Content.Shared.Localizations
         {
             var culture = new CultureInfo(Culture);
 
-            var fallbackCulture = new CultureInfo("en-US");
-
             _loc.LoadCulture(culture);
             _loc.AddFunction(culture, "PRESSURE", FormatPressure);
             _loc.AddFunction(culture, "POWERWATTS", FormatPowerWatts);
@@ -41,6 +39,9 @@ namespace Content.Shared.Localizations
             _loc.AddFunction(culture, "PLAYTIME", FormatPlaytime);
             _loc.AddFunction(culture, "GASQUANTITY", FormatGasQuantity); // Frontier
 
+            var cultureEn = new CultureInfo("en-US");
+            _loc.LoadCulture(cultureEn);
+            _loc.SetFallbackCluture(cultureEn); //estava escrito cluture, meu .net ta com problema, nao consigo ver se esse era mesma a void ou tinham digitado errado
 
             /*
              * The following language functions are specific to the english localization. When working on your own
