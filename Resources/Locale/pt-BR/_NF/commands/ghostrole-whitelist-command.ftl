@@ -10,8 +10,7 @@ cmd-ghostrolewhitelistget-desc = Pega todos os ghostroles de trabalho que um jog
 cmd-ghostrolewhitelistget-help = Uso: ghostrolewhitelistget <username>
 cmd-ghostrolewhitelistget-whitelisted-none = Jogador { $player } não está na whitelist para nenhum ghostrole.
 cmd-ghostrolewhitelistget-whitelisted-for =
-    "Jogador { $player } está na whitelist para:
-    { $ghostRoles }"
+    "Jogador { $player } está na whitelist para: { $ghostRoles }"
 cmd-ghostrolewhitelistremove-desc = Remove a habilidade de um jogador jogar com um ghostrole de whitelist.
 cmd-ghostrolewhitelistremove-help = Uso: ghostrolewhitelistremove <username> <ghostrole>
 cmd-ghostrolewhitelistremove-was-not-whitelisted = { $player } não estava na whitelist para jogar como { $ghostRoleId } ({ $ghostRoleName }).
