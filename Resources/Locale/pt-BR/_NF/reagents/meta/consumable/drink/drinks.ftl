@@ -1,7 +1,7 @@
 reagent-name-pumpkin-spice-latte = café com leite de abóbora com especiarias
 reagent-desc-pumpkin-spice-latte = É outono em algum lugar. Cheira à canela e camomila.
 reagent-name-gin-and-sonic = gin e sonic
-reagent-desc-gin-and-sonic = Porque o ouriço foi oafa Saturno? Para coletar os anéis!
+reagent-desc-gin-and-sonic = Porque o ouriço foi para Saturno? Para coletar os anéis!
 reagent-name-golden-cat = gato dourado
 reagent-desc-golden-cat = Lendas falam de um gato dourado que vendeu um hambúrguer por uma fortuna. Tem cheiro metálico.
 reagent-name-pineapple-blast = explosão de abacaxi
