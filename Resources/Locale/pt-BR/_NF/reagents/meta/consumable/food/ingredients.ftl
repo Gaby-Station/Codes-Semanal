@@ -1,4 +1,4 @@
-reagent-name-coffeegrounds = coffee grounds
-reagent-desc-coffeegrounds = Aromatic and richly textured, these grounds exude a robust scent that promises a flavorful brew.
-reagent-name-oil-vegetable = vegetable oil
-reagent-desc-oil-vegetable = It's made from vegetables, that means it's healthy, right?
+reagent-name-coffeegrounds = borra de café
+reagent-desc-coffeegrounds = Aromáticos e ricamente texturizados, esses grãos exalam um aroma forte que promete uma bebida saborosa.
+reagent-name-oil-vegetable = óleo vegetal
+reagent-desc-oil-vegetable = É feito de vegetais, o que significa que é saudável, né?
