@@ -1,10 +1,10 @@
 panic-bunker-account-denied-reason-nf =
-    This server is in panic bunker mode, often enabled as a precaution against raids.
-    New connections by accounts not meeting certain requirements are temporarily not accepted. Try again later.
-    Reason: "{ $reason }"
+    Este servisor está no modo bunker de pânico, geralmente ativado para evitar invasões.
+    Novas conexões por contar não contendo certo requisitos são temporariamente não aceitas. Tente novamente mais tarde.
+    Motivo: "{ $reason }"
 panic-bunker-account-reason-nf-overall-hours =
-    Your overall playtime on the server must be greater than { $hours } hours.
-    You need { $timeLeft } more hours to meet this requirement.
+    Seu tempo geral no servidor deve ser maior que { $hours } horas.
+    Você precisa de mais { $timeLeft } horas para ter este requisito.
 panic-bunker-account-reason-nf-overall-minutes =
-    Your overall playtime on the server must be greater than { $hours } hours.
-    You need { $timeLeft } more minutes to meet this requirement.
+    Seu tempo geral no servidor deve ser maior que { $hours } horas.
+    Você precisa de mais { $timeLeft } minutos para ter este requisito.
