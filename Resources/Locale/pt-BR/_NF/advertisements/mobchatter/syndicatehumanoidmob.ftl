@@ -1,4 +1,4 @@
-advertisement-syndicatehumanoid-1 = Cara, odeio focar aqui!
+advertisement-syndicatehumanoid-1 = Cara, odeio ficar aqui!
 advertisement-syndicatehumanoid-2 = Ontem eu vi um funcionário da NT. Criistura miserável.
 advertisement-syndicatehumanoid-3 = Deve ter sido o vento.
 advertisement-syndicatehumanoid-4 = O que foi aquilo?
