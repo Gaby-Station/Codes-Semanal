@@ -184,8 +184,8 @@ public sealed class SunriseCCVars
      * Lobby
      */
 
-    public static readonly CVarDef<string> LobbyBackgroundType =
-        CVarDef.Create("lobby.background", "Random", CVar.CLIENTONLY | CVar.ARCHIVE);
+    public static readonly CVarDef<string> LobbyBackgroundType = // Fire edit - анимации красивые у нас
+        CVarDef.Create("lobby.background", "Animation", CVar.CLIENTONLY | CVar.ARCHIVE);
 
     public static readonly CVarDef<string> LobbyArt =
         CVarDef.Create("lobby.art", "Random", CVar.CLIENTONLY | CVar.ARCHIVE);
@@ -405,4 +405,11 @@ public sealed class SunriseCCVars
 
     public static readonly CVarDef<bool> DamageOverlayStructures =
         CVarDef.Create("damage_overlay.structures", true, CVar.CLIENTONLY | CVar.ARCHIVE);
+
+    /*
+     * Radio chat icons
+     */
+
+    public static readonly CVarDef<bool> ChatIconsEnable =
+        CVarDef.Create("chat_icon.enable", true, CVar.CLIENTONLY | CVar.ARCHIVE);
 }

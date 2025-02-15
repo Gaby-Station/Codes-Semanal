@@ -3,9 +3,9 @@
   name: job-name-technical-assistant
   description: job-description-technical-assistant
   playTimeTracker: JobTechnicalAssistant
-  requirements:
-    - !type:OverallPlaytimeRequirement
-      time: 3600 #1 hr # Sunrise-RoleTime
+#  requirements: Fire edit
+#    - !type:OverallPlaytimeRequirement
+#      time: 3600 #1 hr # Sunrise-RoleTime
   startingGear: TechnicalAssistantGear
   icon: "JobIconTechnicalAssistant"
   supervisors: job-supervisors-engineering
@@ -19,7 +19,7 @@
 - type: startingGear
   id: TechnicalAssistantGear
   equipment:
-    shoes: ClothingShoesBootsWork
+#    shoes: ClothingShoesBootsWork # Sunrise-Edit
     id: TechnicalAssistantPDA
     belt: ClothingBeltUtilityEngineering
     ears: ClothingHeadsetEngineering

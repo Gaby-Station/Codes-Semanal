@@ -6,7 +6,6 @@ using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Mobs.Systems;
 using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
@@ -16,17 +15,16 @@ namespace Content.Shared._Scp.Blinking;
 public abstract class SharedBlinkingSystem : EntitySystem
 {
     [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly EyeClosingSystem _closingSystem = default!;
+    [Dependency] private readonly SharedEyeClosingSystem _closingSystem = default!;
     [Dependency] private readonly ExamineSystemShared _examine = default!;
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     private readonly TimeSpan _blinkingInterval = TimeSpan.FromSeconds(8);
-    private readonly TimeSpan _blinkingDuration = TimeSpan.FromSeconds(2);
+    private readonly TimeSpan _blinkingDuration = TimeSpan.FromSeconds(2.4);
 
     private static readonly TimeSpan BlinkingIntervalVariance = TimeSpan.FromSeconds(4);
 
@@ -42,13 +40,11 @@ public abstract class SharedBlinkingSystem : EntitySystem
         if (!Resolve(uid, ref component, false))
             return false;
 
-        if (_net.IsClient && useTimeCompensation)
-        {
-            if (_gameTiming.CurTime < component.BlinkEndTime)
-                return _gameTiming.CurTime < component.BlinkEndTime + TimeSpan.FromTicks(10);
-            else
-                return _gameTiming.CurTime + TimeSpan.FromTicks(10) < component.BlinkEndTime;
-        }
+        // Специально для сцп173. Он должен начинать остановку незадолго до того, как у людей откроются глаза
+        // Это поможет избежать эффекта "скольжения", когда игрок не может двигаться, но тело все еще летит вперед на инерции
+        // Благодаря этому волшебному числу в 0.7 секунды при открытии глаз 173 должен будет уже остановиться. Возможно стоит немного увеличить
+        if (useTimeCompensation)
+            return _gameTiming.CurTime + TimeSpan.FromSeconds(0.7) < component.BlinkEndTime;
 
         return _gameTiming.CurTime < component.BlinkEndTime;
     }
@@ -73,6 +69,7 @@ public abstract class SharedBlinkingSystem : EntitySystem
                 continue;
             }
 
+            // TODO: Перенести на ивенты
             if (_closingSystem.AreEyesClosed(uid))
             {
                 ResetBlink(uid, blinkableComponent);
@@ -81,6 +78,7 @@ public abstract class SharedBlinkingSystem : EntitySystem
 
             var currentTime = _gameTiming.CurTime;
 
+            // TODO: Пофиксить, что первый раз все моргают одновременно
             if (currentTime >= blinkableComponent.NextBlink)
             {
                 Blink(uid, blinkableComponent);
@@ -95,8 +93,8 @@ public abstract class SharedBlinkingSystem : EntitySystem
         component.BlinkEndTime = _gameTiming.CurTime + _blinkingDuration;
         Dirty(uid, component);
 
-        if (_gameTiming.IsFirstTimePredicted && _player.LocalEntity == uid)
-            _audio.PlayEntity(_blinkSound, uid, uid);
+        if (_gameTiming.IsFirstTimePredicted)
+            _audio.PlayGlobal(_blinkSound, uid);
 
         var variance = _random.NextDouble() * BlinkingIntervalVariance.TotalSeconds * 2 - BlinkingIntervalVariance.TotalSeconds;
 
@@ -161,6 +159,7 @@ public abstract class SharedBlinkingSystem : EntitySystem
         return !IsBlind(uid, blinkableComponent);
     }
 
+    // TODO: Объединить с Blink()
     public void ForceBlind(EntityUid uid, BlinkableComponent component, TimeSpan duration)
     {
         if (_mobState.IsIncapacitated(uid))
@@ -168,6 +167,9 @@ public abstract class SharedBlinkingSystem : EntitySystem
 
         component.BlinkEndTime = _gameTiming.CurTime + duration;
         Dirty(uid, component);
+
+        if (_gameTiming.IsFirstTimePredicted)
+            _audio.PlayGlobal(_blinkSound, uid);
 
         // Set next blink slightly after forced blindness ends
         SetNextBlink(uid, component, duration + TimeSpan.FromSeconds(1));

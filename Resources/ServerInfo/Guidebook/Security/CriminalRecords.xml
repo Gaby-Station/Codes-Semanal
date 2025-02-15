@@ -17,6 +17,7 @@
 
   In the record section you can:
     - See security-related information about a crewmember like their name, fingerprints and DNA.
+    - See security-related information about a crewmember like their name, fingerprints and DNA.
 
     - Change the security status between [color=gray]None[/color], [color=yellow]Wanted[/color] and [color=red]Detained[/color]. When setting it to Wanted you will be asked to write a reason.
 

@@ -54,7 +54,7 @@ namespace Content.Server.Voting.Managers
         private readonly HashSet<ICommonSession> _playerCanCallVoteDirty = new();
         private readonly StandardVoteType[] _standardVoteTypeValues = Enum.GetValues<StandardVoteType>();
 
-        private readonly string _voteAudio = "/Audio/_Sunrise/voting.ogg";
+        // private readonly string _voteAudio = "/Audio/_Sunrise/voting.ogg"; Fire edit
         private EntityUid? _voteAudioStream;
 
         public void Initialize()
@@ -71,7 +71,7 @@ namespace Content.Server.Voting.Managers
                 DirtyCanCallVoteAll();
             });
 
-            foreach (var kvp in _voteTypesToEnableCVars)
+            foreach (var kvp in VoteTypesToEnableCVars)
             {
                 _cfg.OnValueChanged(kvp.Value, _ =>
                 {
@@ -219,9 +219,11 @@ namespace Content.Server.Voting.Managers
                 _entityManager.System<SharedAudioSystem>().Stop(_voteAudioStream);
             }
 
+            /* Fire edit
             _voteAudioStream = _entityManager.System<SharedAudioSystem>()
                 .PlayGlobal(_voteAudio, Filter.Broadcast(), true,
-                AudioParams.Default.WithLoop(true))!.Value.Entity;
+                AudioParams.Default.WithLoop(true).WithVolume(-10f))!.Value.Entity;
+            */
 
             if (_entityManager.System<GameTicker>().RunLevel == GameRunLevel.PreRoundLobby)
             {
@@ -368,7 +370,7 @@ namespace Content.Server.Voting.Managers
             if (!_cfg.GetCVar(CCVars.VoteEnabled))
                 return false;
             // Specific standard vote types can be disabled with cvars.
-            if (voteType != null && _voteTypesToEnableCVars.TryGetValue(voteType.Value, out var cvar) && !_cfg.GetCVar(cvar))
+            if (voteType != null && VoteTypesToEnableCVars.TryGetValue(voteType.Value, out var cvar) && !_cfg.GetCVar(cvar))
                 return false;
 
             // Cannot start vote if vote is already active (as non-admin).

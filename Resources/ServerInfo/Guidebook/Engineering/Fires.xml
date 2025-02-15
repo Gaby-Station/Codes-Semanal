@@ -1,7 +1,11 @@
 <Document>
   # Incêndios & Espaço
+  Fires are arguably the most dangerous atmospheric upset that can occur on the station.
 
   Incêndios e vazamentos no espaço são uma inevitabilidade devido ao gás plasma altamente inflamável e ao vácuo infinito do espaço presentes na estação e ao redor dela, por isso é importante saber como gerenciá-los.
+    <GuideEntityEmbed Entity="Firelock" Caption=""/>
+    <GuideEntityEmbed Entity="FirelockGlass" Caption=""/>
+  </Box>
 
   ## Vazamento no Espaço
   O espaço é, sem dúvida, a parte mais fácil de se lidar. Esteja ciente de que vazamentos ativos irão lentamente drenar o ar das reservas de ar da estação. Se você achar impossível corrigir danos estruturais devido a outro risco, certifique-se de limitar o fluxo de ar para essa área. (Atualmente, isso é apenas parcialmente válido devido aos Minadores de Gás, que repõem infinitamente a maioria dos gases úteis)

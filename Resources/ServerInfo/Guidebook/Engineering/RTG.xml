@@ -10,11 +10,17 @@
   Basically, if you connect an RTG to your power grid, it'll give you [color=#a4885c]free power[/color].
   However, they're only accessible through salvage finding one on an expedition. Should they bring some in, make sure to thank them!
 
+  RTGs always generate [color=orange][protodata="GeneratorRTG" comp="PowerSupplier" member="MaxSupply" format="N0"/] W[/color] of power, and must be connected to an [color=orange]HV power[/color] [textlink="network" link="VoltageNetworks"] to function.
+
+  However, they're only accessible through salvage finding one on an expedition. Should they bring some in, make sure to thank them!
+
+  ## RTG Damage
   <Box>
     <GuideEntityEmbed Entity="GeneratorRTGDamaged" Caption="Damaged RTG" />
   </Box>
   Sometimes, RTGs appear damaged.
   Damaged RTGs behave just like regular ones, but they're [color=yellow]radioactive[/color].
   That means they're more dangerous, but on the bright side, you can put radiation collectors next to them to turn that radiation into more power.
+  This is usually more worthwhile, considering the power is still free, so long as you can find a safe spot to put the RTG(s) in.
   This is usually more worthwhile, considering the power is still free, so long as you can find a safe spot to put the RTG(s) in.
 </Document>

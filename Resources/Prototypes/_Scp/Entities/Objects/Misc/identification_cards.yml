@@ -1,7 +1,6 @@
 - type: entity
   parent: IDCardStandard
   id: ClassDIDCard
-  name: class D ID card
   components:
   - type: Sprite
     sprite: _Scp/Objects/Misc/id_cards.rsi
@@ -14,23 +13,32 @@
 - type: entity
   parent: ClassDIDCard
   id: ClassDCookIDCard
-  name: class D ID card
   components:
   - type: Sprite
     layers:
     - state: orange
     - state: id-cook
   - type: PresetIdCard
-    job: ClassD
+    job: ClassDCook
 
 - type: entity
   parent: ClassDIDCard
   id: ClassDBotanistIDCard
-  name: class D ID card
   components:
   - type: Sprite
     layers:
     - state: orange
     - state: id-botanist
   - type: PresetIdCard
-    job: ClassD
+    job: ClassDBotanist
+
+- type: entity
+  parent: ClassDIDCard
+  id: ClassDJanitorIDCard
+  components:
+  - type: Sprite
+    layers:
+    - state: orange
+    - state: id-janitor
+  - type: PresetIdCard
+    job: ClassDJanitor

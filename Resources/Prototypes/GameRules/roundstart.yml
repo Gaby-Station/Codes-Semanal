@@ -155,7 +155,7 @@
       fallbackRoles: [ NukeopsCommander, NukeopsMedic ]
       spawnerPrototype: SpawnPointNukeopsOperative
       max: 4
-      playerRatio: 30
+      playerRatio: 15
       startingGear: SyndicateOperativeGearFull
       roleLoadout:
       - RoleSurvivalNukie
@@ -182,7 +182,7 @@
   - type: AntagRandomObjectives
     sets:
     - groups: TraitorObjectiveGroups
-    maxDifficulty: 10 # Sunrise-Edit
+    maxDifficulty: 5
   - type: AntagSelection
     agentName: traitor-round-end-agent-name
 
@@ -199,7 +199,7 @@
     definitions:
     - prefRoles: [ Traitor ]
       max: 8 # Sunrise-Edit
-      playerRatio: 15
+      playerRatio: 10
       pickCommandStaff: true # Sunrise-Edit
       maxCommandStaff: 1 # Sunrise-Edit
       blacklist:
@@ -309,6 +309,10 @@
     children:
       - !type:NestedSelector
         tableId: BasicCalmEventsTable
+      # Fire edit start
+      - !type:NestedSelector
+        tableId: ScpEventsTable
+      # Fire edit end
       - !type:NestedSelector
         tableId: BasicAntagEventsTable
       - !type:NestedSelector
@@ -381,17 +385,16 @@
 - type: entity
   id: BasicRoundstartVariation
   parent: BaseGameRule
-  components: [] # Fire - возможно вернуть?
-# ДОЛОЙ ГРЯЗНЫЕ СТАНЦИИ!!
-#  - type: RoundstartStationVariationRule
-#    rules:
-#    - id: BasicPoweredLightVariationPass
-#    - id: BasicTrashVariationPass
-#    - id: SolidWallRustingVariationPass
-#    - id: ReinforcedWallRustingVariationPass
-#    - id: BasicPuddleMessVariationPass
-#      prob: 0.99
-#      orGroup: puddleMess
-#    - id: BloodbathPuddleMessVariationPass
-#      prob: 0.01
-#      orGroup: puddleMess
+  components: # Fire edit - мы вернули назад мусор
+  - type: RoundstartStationVariationRule
+    rules:
+    - id: BasicPoweredLightVariationPass
+    - id: BasicTrashVariationPass
+    - id: SolidWallRustingVariationPass
+    - id: ReinforcedWallRustingVariationPass
+    - id: BasicPuddleMessVariationPass
+      prob: 0.99
+      orGroup: puddleMess
+    - id: BloodbathPuddleMessVariationPass
+      prob: 0.01
+      orGroup: puddleMess

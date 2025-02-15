@@ -2,6 +2,7 @@
   id: MobDisease
   name: sensible disease
   description: plague inc 2.0
+  categories: [ HideSpawnMenu ] # Fire
   components:
   - type: MindContainer
   - type: InputMover
@@ -51,6 +52,8 @@
     description: ghostrole-disease-description
     raffle:
       settings: default
+    mindRoles:
+    - MindRoleGhostRoleSoloAntagonist
 
   - type: GhostTakeoverAvailable
   - type: PointLight

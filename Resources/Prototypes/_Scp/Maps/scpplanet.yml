@@ -1,7 +1,7 @@
 ﻿- type: gameMap
   id: ScpPlanet
-  mapName: 'SCP Fundação Planetaria'
-  mapPath: /Maps/_Fire/scpmap.yml
+  mapName: 'ScpPlanet'
+  mapPath: /Maps/_Scp/scpmap.yml
   maxRandomOffset: 0
   randomRotation: false
   minPlayers: 0
@@ -78,7 +78,6 @@
           PeaceBorg: [ 2, 2 ]
           MedicalBorg: [ 4, 4 ]
           SecurityBorg: [ 4, 4 ]
-          SecurityCombatBorg: [ 2, 2 ]
           # Sunrise-Civillian
           Barber: [ 1, 1 ]
           # SCP

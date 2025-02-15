@@ -10,12 +10,14 @@
 
 - type: entity
   id: BaseScpResearchMaterial
-  parent: BaseScpMaterial
+  parent:
+  - BaseScpMaterial
+  - ScpArtifactMiddle
   abstract: true
   components:
-  - type: Artifact
-    pointsPerNode:
-      Scp: 800
+  - type: GuideHelp
+    guides:
+    - ScpResearchAdvanced
 
 # SCP-999
 
@@ -99,3 +101,14 @@
         base:
           True: { state: scp096-photo }
           False: { state: scp096-photo-undeveloped }
+
+
+- type: entity # Для спавнов
+  id: Scp096PhotoDeveloped
+  parent: BaseScpMaterial
+  name: strange photo
+  components:
+  - type: Sprite
+    layers:
+    - state: scp096-photo
+  - type: Scp096Photo

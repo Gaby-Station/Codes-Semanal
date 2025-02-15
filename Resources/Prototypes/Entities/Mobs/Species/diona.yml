@@ -9,9 +9,13 @@
   - type: HumanoidAppearance
     species: Diona
   - type: Hunger
-    baseDecayRate: 0.0083
+    baseDecayRate: 0.3
   - type: Thirst
-    baseDecayRate: 0.0083
+    baseDecayRate: 0.3
+    dehydrationDamage:
+      types:
+        Bloodloss: 2
+        Asphyxiation: 2
   - type: Icon
     sprite: Mobs/Species/Diona/parts.rsi
     state: full
@@ -120,6 +124,7 @@
       - "footprint-left-bare-diona"
     rightBareFootState:
       - "footprint-right-bare-diona"
+  - type: Carriable
   # Sunrise-End
 
 - type: entity
