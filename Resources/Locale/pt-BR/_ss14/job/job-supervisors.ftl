@@ -1,4 +1,4 @@
-job-supervisors-centcom = aos funcionários da Central de Comando
+job-supervisors-centcom = aos funcionários da SolGov
 job-supervisors-captain = ao supervisor
 job-supervisors-hop = ao chefe dos funcionários
 job-supervisors-hop-qm = ao capitão do porto e o chefe dos funcionários

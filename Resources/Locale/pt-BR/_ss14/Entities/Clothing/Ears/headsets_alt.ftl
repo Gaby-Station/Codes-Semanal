@@ -1,7 +1,7 @@
 ent-ClothingHeadsetAlt = headset
     .desc = Um rádio pessoal modular. Tem uma entrada para chaves criptográficas.
 
-ent-ClothingHeadsetAltCentCom = headset da Central de Comando
+ent-ClothingHeadsetAltCentCom = headset da SolGov
     .desc = Um rádio pessoal modular. Tem uma entrada para chaves criptográficas.
 
 ent-ClothingHeadsetAltCommand = headset de comando
@@ -19,7 +19,7 @@ ent-ClothingHeadsetAltSyndicate = headset do Sindicato
 ent-ClothingHeadsetAltCargo = headset do capitão do porto
     .desc = Um rádio pessoal modular. Tem uma entrada para chaves criptográficas.
 
-ent-ClothingHeadsetAltCentComFake = headset da Central de Comando
+ent-ClothingHeadsetAltCentComFake = headset da SolGov
     .desc = Um rádio pessoal modular. Tem uma entrada para chaves criptográficas.
     .suffix = Falso
 

@@ -88,13 +88,13 @@ ent-RDIDCard = ID do diretor de pesquisa
 ent-HoSIDCard = chefe do ID de segurança
      .desc = Um cartão necessário para acessar diversas áreas a bordo da plataforma.
 
-ent-CentcomIDCard = ID da Central de Comando
+ent-CentcomIDCard = ID da SolGov
      .desc = Um cartão necessário para acessar diversas áreas a bordo da plataforma.
 
 ent-ERTLeaderIDCard = ID do da ERT
      .desc = Um cartão necessário para acessar diversas áreas a bordo da plataforma.
 
-ent-CentcomIDCardSyndie = ID da Central de Comando
+ent-CentcomIDCardSyndie = ID da SolGov
      .desc = Um cartão necessário para acessar diversas áreas a bordo da plataforma.
 
 ent-MusicianIDCard = ID do músico

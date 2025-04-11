@@ -6,5 +6,5 @@ department-Medical = Departamento Médico
 department-Security = Departamento de Segurança
 department-Science = Departamento do de Pesquisa e Desenvolvimento
 department-Specific = Específicos da plataforma
-department-CentralCommand =  Central de Comando
+department-CentralCommand =  SolGov
 department-Silicon = Silício

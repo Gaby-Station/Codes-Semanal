@@ -33,7 +33,7 @@ accent-ohio-words-replace-3 = datena
 accent-ohio-words-4 = lula
 accent-ohio-words-replace-4 = faz o L
 
-accent-ohio-words-5 = central de comando
+accent-ohio-words-5 = SolGov
 accent-ohio-words-replace-5 = governo
 
 accent-ohio-words-6 = centcom
