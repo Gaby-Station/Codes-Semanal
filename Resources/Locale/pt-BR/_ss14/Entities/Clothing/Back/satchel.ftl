@@ -47,4 +47,4 @@ ent-ClothingBackpackSatchelGenetics = bolsa da genética
     .desc = Uma bolsa esterilizada, customizada em cores que representam os geneticistas.
 
 ent-ClothingBackpackSatchelCargo = bolsa de carga
-    .desc = Uma bolsa forte para roubar os suprimentos da estação.
+    .desc = Uma bolsa forte para roubar os suprimentos da plataforma.

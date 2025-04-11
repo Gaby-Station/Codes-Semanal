@@ -8,13 +8,13 @@ ent-ClothingBackpackSecurity = mochila da segurança
     .desc = Uma mochila robusta, tem cheiro de corrupção.
 
 ent-ClothingBackpackEngineering = mochila da engenharia
-    .desc = Uma mochila resistente, perfeita para os ocorridos diários da estação.
+    .desc = Uma mochila resistente, perfeita para os ocorridos diários da plataforma.
 
 ent-ClothingBackpackMedical = mochila da medicina
     .desc = Uma mochila esterilizada, perfeita para armazenar medicamentos e outras coisas de médicos.
 
 ent-ClothingBackpackCaptain = mochila do supervisorsor
-    .desc = Uma mochila feita exclusivamente para o supervisorsor da estação... Mimado!
+    .desc = Uma mochila feita exclusivamente para o supervisorsor da plataforma... Mimado!
 
 ent-ClothingBackpackMime = mochila do mímico
     .desc = Uma mochila furtiva feita para pessoas que "não abrem a boca". Perfeita para guardar.. uhh.. B-Baguette?
@@ -65,7 +65,7 @@ ent-ClothingBackpackGenetics = mochila da genética
     .desc = Uma mochila quase idestrutível, caso um hulk caia na porrada contigo.
 
 ent-ClothingBackpackCargo = mochila de carga
-    .desc = Uma mochila forte para roubar os suprimentos da estação.
+    .desc = Uma mochila forte para roubar os suprimentos da plataforma.
 
 ent-ClothingBackpackMerc = mochila de mercenário
     .desc = Uma mochila que já passou por altos e baixos, ótima para combate.

@@ -7,4 +7,4 @@ cmd-arrivals-returns-hint = Ativa ou desativa permitir que jogadores voltem cheg
 cmd-arrivals-invalid = Argumento inválido.
 
 cmd-arrivals-force-hint = Força jogadores a chegarem.
-cmd-arrivals-forced = Forçou {$uid} a chegar à estação.
+cmd-arrivals-forced = Forçou {$uid} a chegar à plataforma.

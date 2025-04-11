@@ -1,22 +1,22 @@
-ent-BaseSubstation = subestação
+ent-BaseSubstation = subplataforma
     .desc = Reduz a voltagem da eletricidade colocada nele.
 
-ent-BaseSubstationWall = subestação de parede
-    .desc = Uma subestação projetada para transportes e espaços compactos.
+ent-BaseSubstationWall = subplataforma de parede
+    .desc = Uma subplataforma projetada para transportes e espaços compactos.
 
-ent-SubstationBasic = subestação
+ent-SubstationBasic = subplataforma
     .desc = Reduz a voltagem da eletricidade colocada nele.
     .suffix = Básico, 2,5 MW
 
-ent-SubstationBasicEmpty = subestação
+ent-SubstationBasicEmpty = subplataforma
     .desc = Reduz a voltagem da eletricidade colocada nele.
     .suffix = Vazio
 
-ent-SubstationWallBasic = subestação de parede
-    .desc = Uma subestação projetada para transportes e espaços compactos.
+ent-SubstationWallBasic = subplataforma de parede
+    .desc = Uma subplataforma projetada para transportes e espaços compactos.
     .suffix = Básico, 2MW
 
-ent-BaseSubstationWallFrame = conjunto de subestação de parede
-    .desc = Um conjunto de subestação para construção.
+ent-BaseSubstationWallFrame = conjunto de subplataforma de parede
+    .desc = Um conjunto de subplataforma para construção.
     .suffix = Básico, 2MW
 

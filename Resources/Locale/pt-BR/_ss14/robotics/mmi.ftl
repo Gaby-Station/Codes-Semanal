@@ -4,7 +4,7 @@ positronic-brain-still-searching = Descrambling de neurônios sintéticos em and
 positronic-brain-searching = Começando o descrambling de neurônios sintéticos...
 
 positronic-brain-role-name = Positronic Brain
-positronic-brain-role-description = Sirva a tripulação da estação.
+positronic-brain-role-description = Sirva a tripulação da plataforma.
 
 positronic-brain-wipe-device-verb-text = Limpar o Cérebro
 positronic-brain-wiped-device = A atividade neural foi encerrada.

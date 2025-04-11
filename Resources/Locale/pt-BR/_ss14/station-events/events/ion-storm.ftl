@@ -1,9 +1,9 @@
-station-event-ion-storm-start-announcement = Tempestade de íons detectada próxima à estação. Por favor, verifique todos os equipamentos controlados por IA para possíveis erros.
+station-event-ion-storm-start-announcement = Tempestade de íons detectada próxima à plataforma. Por favor, verifique todos os equipamentos controlados por IA para possíveis erros.
 
 ion-storm-law-scrambled-number = [font="Monospace"][scramble rate=250 length={$length} chars="@@###$$&%!01"/][/font]
 
 ion-storm-you = VOCÊ
-ion-storm-the-station = A ESTAÇÃO
+ion-storm-the-station = A plataforma
 ion-storm-the-crew = A TRIPULAÇÃO
 ion-storm-the-job = O/A {$job}
 ion-storm-clowns = PALHAÇOS
@@ -17,8 +17,8 @@ ion-storm-x-and-y = {$x} E {$y}
 # joined is short for {$number} {$adjective}
 # subjects can generally be threats or jobs or objects
 # thing is specified above it
-ion-storm-law-on-station = HÁ {$joined} {$subjects} NA ESTAÇÃO
-ion-storm-law-no-shuttle = A NAVE NÃO PODE SER CHAMADA POR CAUSA DE {$joined} {$subjects} NA ESTAÇÃO
+ion-storm-law-on-station = HÁ {$joined} {$subjects} NA plataforma
+ion-storm-law-no-shuttle = A NAVE NÃO PODE SER CHAMADA POR CAUSA DE {$joined} {$subjects} NA plataforma
 ion-storm-law-crew-are = OS/AS {$who} AGORA SÃO {$joined} {$subjects}
 
 ion-storm-law-subjects-harmful = {$adjective} {$subjects} SÃO NOCIVOS PARA A TRIPULAÇÃO

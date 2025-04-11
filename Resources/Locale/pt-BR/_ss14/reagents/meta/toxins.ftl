@@ -50,7 +50,7 @@ reagent-name-vent-crud = vent crud
 reagent-desc-vent-crud = Substância negra encontrado em sistemas de ventilação mal conservados. Pode causar tosse de ventilação.
 
 reagent-name-romerol = romerol
-reagent-desc-romerol = Uma mistura de outro mundo capaz de trazer os mortos-vivos à vida. Se não forem tratados, os efeitos são irreversíveis e trarão certa desgraça sobre a estação. Manuseie com cuidado.
+reagent-desc-romerol = Uma mistura de outro mundo capaz de trazer os mortos-vivos à vida. Se não forem tratados, os efeitos são irreversíveis e trarão certa desgraça sobre a plataforma. Manuseie com cuidado.
 
 reagent-name-uncooked-animal-proteins = uncooked animal proteins
 reagent-desc-uncooked-animal-proteins = Os estômagos de formas de vida mais moles não digerem isso.

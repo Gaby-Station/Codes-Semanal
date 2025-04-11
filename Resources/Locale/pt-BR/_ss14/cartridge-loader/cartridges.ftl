@@ -2,7 +2,7 @@
 
 default-program-name = Programa
 notekeeper-program-name = Bloco de notas
-news-read-program-name = Boletim da estação
+news-read-program-name = Boletim da plataforma
 
 crew-manifest-program-name = Manifesto da tripulação
 crew-manifest-cartridge-loading = Carregando ...

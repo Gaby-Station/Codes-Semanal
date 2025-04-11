@@ -1,4 +1,4 @@
-general-station-record-console-window-title = Computador de Registros da Estação
+general-station-record-console-window-title = Computador de Registros da plataforma
 general-station-record-console-select-record-info = Selecione o registro na esquerda.
 general-station-record-console-empty-state = Nenhum registro encontrado!
 general-station-record-console-no-record-found = Nenhum registro encontrado para a pessoa selecionada.

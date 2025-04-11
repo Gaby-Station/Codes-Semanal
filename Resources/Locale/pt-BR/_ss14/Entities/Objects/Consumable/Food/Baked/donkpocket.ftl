@@ -17,10 +17,10 @@ ent-FoodDonkpocketSpicyWarm = spicy-pocket quente
     .desc = O lanche clássico, agora talvez picante demais.
 
 ent-FoodDonkpocketTeriyaki = teriyaki-pocket
-    .desc = Uma versão leste asiática do clássico lanche da estação.
+    .desc = Uma versão leste asiática do clássico lanche da plataforma.
 
 ent-FoodDonkpocketTeriyakiWarm = teriyaki-pocket quente
-    .desc = Uma versão leste asiática do clássico lanche da estação, agora quente e fumegante.
+    .desc = Uma versão leste asiática do clássico lanche da plataforma, agora quente e fumegante.
 
 ent-FoodDonkpocketPizza = pizza-pocket
     .desc = Delicioso, com muito queijo e surpreendentemente farto.

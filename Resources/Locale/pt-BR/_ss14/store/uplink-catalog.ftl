@@ -110,7 +110,7 @@ uplink-holster-name = Coldre de Ombro
 uplink-holster-desc = Um coldre de ombro profundo capaz de segurar muitos tipos de balística.
 
 uplink-emag-name = Emag
-uplink-emag-desc = O cartão de visita do Sindicato, este sequenciador é capaz de quebrar as portas e adulterar uma variedade de dispositivos de estação. Recarga automaticamente.
+uplink-emag-desc = O cartão de visita do Sindicato, este sequenciador é capaz de quebrar as portas e adulterar uma variedade de dispositivos de plataforma. Recarga automaticamente.
 
 uplink-agent-id-card-name = Cartão de ID do Agente
 uplink-agent-id-card-desc = Um cartão de ID modificado que pode copiar acessos de outros cartões e alterar o nome e o título da tarefa à vontade.
@@ -226,7 +226,7 @@ uplink-l6-saw-bundle-name = Pacote L6 SAW
 uplink-l6-saw-bundle-desc = Mais dakka: A icônica metraladora leve L6 SAW, empacotada com 2 caixas de fita.
 
 uplink-zombie-bundle-name = Kit Zumbi do Sindicato
-uplink-zombie-bundle-desc = Um kit all-in-one para soltar os mortos-vivos em cima de uma estação.
+uplink-zombie-bundle-desc = Um kit all-in-one para soltar os mortos-vivos em cima de uma plataforma.
 
 uplink-surplus-bundle-name = Caixa Excedente
 uplink-surplus-bundle-desc = Contém itens completamente aleatórios do Sindicato valendo 50 telecriscristais somados. Pode ser lixo inútil ou realmente bom.
@@ -239,7 +239,7 @@ uplink-toolbox-name = Caixa de Ferramentas
 uplink-toolbox-desc = Um complemento completo de ferramentas para o traidor mecanicamente inclinado. Inclui um par de luvas de combate isoladas, máscara de gás sindicar e um cinto de utilidades.
 
 uplink-syndicate-jaws-of-life-name = Jaws Of Life
-uplink-syndicate-jaws-of-life-desc = Uma ferramenta combinada de forçar e corte. É útil para entrar na estação ou em seus departamentos.
+uplink-syndicate-jaws-of-life-desc = Uma ferramenta combinada de forçar e corte. É útil para entrar na plataforma ou em seus departamentos.
 
 uplink-duffel-surgery-name = Bolsa Duffel Cirúrgica
 uplink-duffel-surgery-desc = Uma grande bolsa de duffel contendo um conjunto completo de ferramentas cirúrgicas.
@@ -286,7 +286,7 @@ uplink-cluster-banana-peel-desc = Divide-se em 6 cascas de banana explosivas ap�
 
 # Armor
 uplink-chameleon-name = Kit Camaleão
-uplink-chameleon-desc = Uma mochila cheia de itens que contêm tecnologia camaleão, permitindo que você se disfarce de praticamente qualquer coisa na estação, e muito mais!
+uplink-chameleon-desc = Uma mochila cheia de itens que contêm tecnologia camaleão, permitindo que você se disfarce de praticamente qualquer coisa na plataforma, e muito mais!
 
 uplink-clothing-no-slips-shoes-name = Sapatos sem-escorregões
 uplink-clothing-no-slips-shoes-desc = Sapatos de camaleão que o protegem de escorregões.

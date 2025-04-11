@@ -47,6 +47,6 @@ ent-PoweredSmallLight = lâmpada pequena
     .suffix = Nada
 
 ent-EmergencyLight = lâmpada de emergência
-    .desc = Uma pequena lâmpada com uma bateria interna que liga assim que falta energia. A cor dela muda dependendo da código de alerta da estação.
+    .desc = Uma pequena lâmpada com uma bateria interna que liga assim que falta energia. A cor dela muda dependendo da código de alerta da plataforma.
     .suffix = Nada
 

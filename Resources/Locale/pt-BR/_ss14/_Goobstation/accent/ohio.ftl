@@ -48,7 +48,7 @@ accent-ohio-words-replace-8 = bala
 accent-ohio-words-9 = tiros
 accent-ohio-words-replace-9 = balas
 
-accent-ohio-words-10 = estação
+accent-ohio-words-10 = plataformarma
 accent-ohio-words-replace-10 = bostil
 
 accent-ohio-words-11 = estacao

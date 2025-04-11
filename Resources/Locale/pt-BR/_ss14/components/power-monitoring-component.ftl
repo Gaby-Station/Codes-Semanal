@@ -2,7 +2,7 @@ power-monitoring-window-title = Console de monitoramento de energia
 
 power-monitoring-window-label-sources = Fontes
 power-monitoring-window-label-smes = SMES
-power-monitoring-window-label-substation = SubEstação
+power-monitoring-window-label-substation = Subplataforma
 power-monitoring-window-label-apc = APC
 power-monitoring-window-label-misc = Misc
 

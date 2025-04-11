@@ -52,7 +52,7 @@ cmd-blacklistremove-removed = {$username} foi removido da blacklist
 cmd-blacklistremove-not-found = Não foi possivel achar '{$username}'
 cmd-blacklistremove-arg-player = [player]
 
-baby-jail-account-denied = Este servidor é um servidor novato, destinado a novos jogadores e àqueles que desejam ajudá-los. Novas conexões por contas muito antigas ou que não estejam na whitelist não são aceitas. Confira alguns outros servidores e veja tudo o que a Estação Espacial 14 tem a oferecer. Divirta-se!
-baby-jail-account-denied-reason = Este servidor é um servidor novato, destinado a novos jogadores e àqueles que desejam ajudá-los. Novas conexões por contas muito antigas ou que não estejam na whitelist não são aceitas. Confira alguns outros servidores e veja tudo o que a Estação Espacial 14 tem a oferecer. Divirta-se! Motivo: "{$reason}"
+baby-jail-account-denied = Este servidor é um servidor novato, destinado a novos jogadores e àqueles que desejam ajudá-los. Novas conexões por contas muito antigas ou que não estejam na whitelist não são aceitas. Confira alguns outros servidores e veja tudo o que a plataformarma Espacial 14 tem a oferecer. Divirta-se!
+baby-jail-account-denied-reason = Este servidor é um servidor novato, destinado a novos jogadores e àqueles que desejam ajudá-los. Novas conexões por contas muito antigas ou que não estejam na whitelist não são aceitas. Confira alguns outros servidores e veja tudo o que a plataformarma Espacial 14 tem a oferecer. Divirta-se! Motivo: "{$reason}"
 baby-jail-account-reason-account = Sua conta de Space Station 14 é muito antiga. Ela deve ser mais nova que {$minutes} minutos
 baby-jail-account-reason-overall = Seu tempo total de jogo no servidor deve ser menor que {$minutes} $minutes

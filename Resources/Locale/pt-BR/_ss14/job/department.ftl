@@ -5,6 +5,6 @@ department-Engineering = Departamento de Engenharia
 department-Medical = Departamento Médico
 department-Security = Departamento de Segurança
 department-Science = Departamento do de Pesquisa e Desenvolvimento
-department-Specific = Específicos da Estação
+department-Specific = Específicos da plataforma
 department-CentralCommand =  Central de Comando
 department-Silicon = Silício

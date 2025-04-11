@@ -17,10 +17,10 @@ ent-FoodPizzaMushroomSlice = fatia de pizza de cogumelos
     .desc = Capaz de ser sua última fatia de pizza na vida.
 
 ent-FoodPizzaVegetable = pizza vegetariana
-    .desc = Os vegetarianos da estação vão te agradecer por fazer esta pizza.
+    .desc = Os vegetarianos da plataforma vão te agradecer por fazer esta pizza.
 
 ent-FoodPizzaVegetableSlice = fatia de pizza vegetariana
-    .desc = Apenas uma fatia desta pizza já é capaz de satisfazer até o pessoal mais exigente da estação.
+    .desc = Apenas uma fatia desta pizza já é capaz de satisfazer até o pessoal mais exigente da plataforma.
 
 ent-FoodPizzaDonkpocket = pizza de donk-pocket
     .desc = Quem achou que isso seria uma boa ideia?

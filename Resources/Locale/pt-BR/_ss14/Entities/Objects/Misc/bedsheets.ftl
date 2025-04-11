@@ -47,7 +47,7 @@ ent-BedsheetIan = lençol do Ian
      .desc = Ian é tudo.
 
 ent-BedsheetMedical = lençol médico
-     .desc = É uma manta esterilizada comumente usada no Medbay. A esterilização é anulada se um virologista estiver presente a bordo da estação.
+     .desc = É uma manta esterilizada comumente usada no Medbay. A esterilização é anulada se um virologista estiver presente a bordo da plataforma.
 
 ent-BedsheetMime = lençol do mime
      .desc = Uma manta listrada muito calmante. Todo o barulho parece desaparecer quando você está debaixo das cobertas.

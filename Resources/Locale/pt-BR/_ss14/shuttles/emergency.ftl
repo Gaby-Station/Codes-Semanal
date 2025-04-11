@@ -5,17 +5,17 @@ emergency-shuttle-command-round-yes = Rodada foi atrasada.
 emergency-shuttle-command-round-no = Não é possível atrasar o fim da rodada.
 
 ## Dock emergency shuttle
-emergency-shuttle-command-dock-desc = Chama a nave de emergência e doca ela à estação... se possível.
+emergency-shuttle-command-dock-desc = Chama a nave de emergência e doca ela à plataforma... se possível.
 
 ## Launch emergency shuttle
 emergency-shuttle-command-launch-desc = Lança a nave de emergência antes, se possível.
 
 # Emergency shuttle
-emergency-shuttle-left = A nave de emergência saiu da estação. Estima-se {$transitTime} segundos até que a nave chegue à Central de Comando.
+emergency-shuttle-left = A nave de emergência saiu da plataforma. Estima-se {$transitTime} segundos até que a nave chegue à Central de Comando.
 emergency-shuttle-launch-time = A nave de emergência vai partir em {$consoleAccumulator} segundos.
-emergency-shuttle-docked = A nave de emergência docou na estação no lado {$direction}. Ela vai sair em {$time} segundos.
-emergency-shuttle-good-luck = A nave de emergência não conseguiu achar uma estação. Boa sorte.
-emergency-shuttle-nearby = A nave de emergência não conseguiu achar um local de docagem válido. Ela parou no lado {$direction} da estação.
+emergency-shuttle-docked = A nave de emergência docou na plataforma no lado {$direction}. Ela vai sair em {$time} segundos.
+emergency-shuttle-good-luck = A nave de emergência não conseguiu achar uma plataforma. Boa sorte.
+emergency-shuttle-nearby = A nave de emergência não conseguiu achar um local de docagem válido. Ela parou no lado {$direction} da plataforma.
 
 # Emergency shuttle console popup / announcement
 emergency-shuttle-console-no-early-launches = Lançamento precoce está desativado

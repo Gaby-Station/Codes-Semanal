@@ -1,5 +1,5 @@
 ent-CaptainSabre = sabre do supervisorsor
-     .desc = Uma arma cerimonial pertencente ao supervisorsor da estação.
+     .desc = Uma arma cerimonial pertencente ao supervisorsor da plataforma.
 
 ent-Katana = katana
      .desc = Artesanato antigo feito com plasteel não tão antigo.

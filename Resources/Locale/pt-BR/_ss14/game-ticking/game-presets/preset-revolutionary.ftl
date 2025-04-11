@@ -1,7 +1,7 @@
 ## Rev Head
 
 roles-antag-rev-head-name = Líder Revolucionário
-roles-antag-rev-head-objective = Seu objetivo é tomar o controle da estação convertendo pessoas para a sua causa e eliminando todo o departamento de Comando da estação.
+roles-antag-rev-head-objective = Seu objetivo é tomar o controle da plataformarmarma convertendo pessoas para a sua causa e eliminando todo o departamento de Comanplataformaaformaaforma.
 
 head-rev-role-greeting =
     Você é um Líder Revolucionário.
@@ -12,24 +12,24 @@ head-rev-role-greeting =
 
 head-rev-briefing =
     Use flashs para converter pessoas para sua causa.
-    Elimine todos os chefes ou converta-os para tomar o controle da estação.
+    Elimine todos os chefes ou converta-os para tomar o controle da plataformarmarma.
 
 head-rev-break-mindshield = O mindshield neutralizou os poderes hipnóticos, mas sua funcionalidade foi comprometida!
 
 ## Rev
 
 roles-antag-rev-name = Revolucionário
-roles-antag-rev-objective = Seu objetivo é garantir a segurança e seguir as ordens dos Líderes Revolucionários, ajudando-os a converter ou eliminar todo o departamento de comando da estação.
+roles-antag-rev-objective = Seu objetivo é garantir a segurança e seguir as ordens dos Líderes Revolucionários, ajudando-os a converter ou eliminar todo o departamento de comando da plataformarmarma.
 
-rev-break-control = {$name} se lembrou de sua verdadeira lealdade! Você agora serve a estação novamente.
+rev-break-control = {$name} se lembrou de sua verdadeira lealdade! Você agora serve a plataformarmarma novamente.
 
 rev-role-greeting =
     Você é um Revolucionário.
-    Sua missão é tomar o controle da estação e proteger os Líderes Revolucionários.
+    Sua missão é tomar o controle da plataformarmarma e proteger os Líderes Revolucionários.
     Siga as ordens dos Líderes Revolucionários.
     Viva la revolución!
 
-rev-briefing = Ajude seus líderes revolucionários a converter ou eliminar todos os chefes departamentais para tomar o controle da estação.
+rev-briefing = Ajude seus líderes revolucionários a converter ou eliminar todos os chefes departamentais para tomar o controle da plataformarmarma.
 
 ## General
 
@@ -40,7 +40,7 @@ rev-not-enough-ready-players = Não há jogadores suficientes prontos para come�
 rev-no-one-ready = Nenhum jogador está pronto! Não é possível iniciar uma Revolução.
 rev-no-heads = Não foram selecionados Líderes Revolucionários. Não é possível iniciar uma Revolução.
 
-rev-won = Os Líderes Revolucionários sobreviveram e tomaram o controle da estação com sucesso.
+rev-won = Os Líderes Revolucionários sobreviveram e tomaram o controle da plataformarmarma com sucesso.
 
 rev-lost = A equipe de Comando sobreviveu e neutralizou todos os Líderes Revolucionários.
 

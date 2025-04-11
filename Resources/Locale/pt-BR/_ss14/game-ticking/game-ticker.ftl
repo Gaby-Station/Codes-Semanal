@@ -31,11 +31,11 @@ player-first-join-message = Jogador {$name} entrou pela primeira vez.
 # Exibido no chat para administradores quando um jogador sai
 player-leave-message = Jogador {$name} saiu.
 
-latejoin-arrival-announcement = {$character} ({$job}) { CONJUGATE-HAVE($entity) } chegou à estação!
+latejoin-arrival-announcement = {$character} ({$job}) { CONJUGATE-HAVE($entity) } chegou à plataforma!
 latejoin-arrival-announcement-special = {$job} {$character} a bordo!
-latejoin-arrival-sender = Estação
-latejoin-arrivals-direction = Uma nave que o transferirá para sua estação chegará em breve.
-latejoin-arrivals-direction-time = Uma nave que o transferirá para sua estação chegará em {$time}.
+latejoin-arrival-sender = plataforma
+latejoin-arrivals-direction = Uma nave que o transferirá para sua plataforma chegará em breve.
+latejoin-arrivals-direction-time = Uma nave que o transferirá para sua plataforma chegará em {$time}.
 latejoin-arrivals-dumped-from-shuttle = Uma força misteriosa impede você de sair com a nave de chegadas.
 latejoin-arrivals-teleport-to-spawn = Uma força misteriosa teletransporta você para fora da nave de chegadas. Tenha um turno seguro!
 

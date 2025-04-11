@@ -2,7 +2,7 @@
 random-sentience-event-data-1 = varreduras de nossos sensores de longo alcance
 random-sentience-event-data-2 = nossos sofisticados modelos probabilísticos
 random-sentience-event-data-3 = nossa onipotência
-random-sentience-event-data-4 = o tráfego de comunicações em sua estação
+random-sentience-event-data-4 = o tráfego de comunicações em sua plataforma
 random-sentience-event-data-5 = emissões de energia que detectamos
 random-sentience-event-data-6 = [REDIGIDO]
 
@@ -22,7 +22,7 @@ station-event-random-sentience-announcement = Com base em { $data }, acreditamos
     [2] { $kind1 } e { $kind2 }
     [3] { $kind1 }, { $kind2 }, e { $kind3 }
     *[other] { $kind1 }, { $kind2 }, { $kind3 }, etc.
-} seres da estação desenvolveram inteligência de nível { $strength }, e a habilidade de se comunicar.
+} seres da plataforma desenvolveram inteligência de nível { $strength }, e a habilidade de se comunicar.
 
 ## Ghost role description
 station-event-random-sentience-role-description = Você é um { $name } senciente, trazido à vida através de magia espacial.

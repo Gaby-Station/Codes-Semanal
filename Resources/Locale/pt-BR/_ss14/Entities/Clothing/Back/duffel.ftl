@@ -2,13 +2,13 @@ ent-ClothingBackpackDuffel = mala de viagem
     .desc = Uma mala espaçosa, perfeita para armazenar umas coisas a mais.
 
 ent-ClothingBackpackDuffelEngineering = mala da engenharia
-    .desc = Uma mala grande e resistente! Perfeita para os ocorridos diários da estação.
+    .desc = Uma mala grande e resistente! Perfeita para os ocorridos diários da plataforma.
 
 ent-ClothingBackpackDuffelMedical = mala da medicina
     .desc = Uma mala grande esterilizada. Perfeita para armazenar medicamentos e outras coisas de médicos.
 
 ent-ClothingBackpackDuffelCaptain = mala do supervisorsor
-    .desc = Uma mala pertencente ao supervisorsor da Estação, bem grande para satisfazer o Cap.
+    .desc = Uma mala pertencente ao supervisorsor da plataforma, bem grande para satisfazer o Cap.
 
 ent-ClothingBackpackDuffelClown = mala de palhaço
     .desc = Uma grande mala que consegue carregar mais buzinas do que qualquer outra
@@ -62,7 +62,7 @@ ent-ClothingBackpackDuffelGenetics = mala da genética
     .desc = Uma mala espaçosa onde cabem várias mutações genéticas.
 
 ent-ClothingBackpackDuffelCargo = mala de carga
-    .desc = Uma mala enorme para roubar os suprimentos da estação.
+    .desc = Uma mala enorme para roubar os suprimentos da plataforma.
 
 ent-ClothingBackpackDuffelCBURN = mala da CBURN
     .desc = Uma mala que contém uma variedade de equipamentos de "contenção" biológica.

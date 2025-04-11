@@ -2,7 +2,7 @@ ent-ClothingOuterHardsuitAtmos = hardsuit da atmosférica
     .desc = Um traje espacial que protege o usuário de ambientes perigosos ou despressurizados. Possue blindagem térmica.
 
 ent-ClothingOuterHardsuitCap = hardsuit do supervisorsor
-    .desc = Um traje espacial blindado, feito para o supervisorsor da estação.
+    .desc = Um traje espacial blindado, feito para o supervisorsor da plataforma.
 
 ent-ClothingOuterHardsuitDeathsquad = hardsuit do esquadrão da morte
     .desc = Uma hardsuit ultra avançada, escolha favorita de exterminadores da NT.

@@ -1,4 +1,4 @@
-cargo-gifts-event-announcement = Parabéns! { $sender } decidiu enviar { $description } para a estação { $dest }. Procure-o em sua próxima remessa de carga.
+cargo-gifts-event-announcement = Parabéns! { $sender } decidiu enviar { $description } para a plataforma { $dest }. Procure-o em sua próxima remessa de carga.
 cargo-gift-default-description = Um pacote de presentes
 cargo-gift-default-sender = NanoTrasen
 cargo-gift-default-dest = Departamento de Carga.

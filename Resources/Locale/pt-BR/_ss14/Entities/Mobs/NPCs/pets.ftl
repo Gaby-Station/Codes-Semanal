@@ -53,7 +53,7 @@ ent-MobMcGriff = Mcgriff
      .desc = Este cachorro percebe que algo cheira por aqui, e esse algo é CRIME!
 
 ent-MobPaperwork = Paperwork
-     .desc = Começou um novo trabalho classificando livros na biblioteca depois que foi transferido da Estação Espacial 13. Ele parece ser tão lento quanto antes.
+     .desc = Começou um novo trabalho classificando livros na biblioteca depois que foi transferido da plataforma Espacial 13. Ele parece ser tão lento quanto antes.
 
 ent-MobWalter = Walter
      .desc = Ele gosta de chems e guloseimas. Walter.

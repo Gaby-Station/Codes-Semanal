@@ -17,7 +17,7 @@ thief-backpack-category-chameleon-name = Kit do Camaleão
 thief-backpack-category-chameleon-description =
     Inclui um conjunto completo de roupas que contém
     tecnologia camaleônica, permitindo disfarçar
-    como praticamente qualquer coisa na estação.
+    como praticamente qualquer coisa na plataforma.
 
 thief-backpack-category-tools-name = Kit Pegador de Urso
 thief-backpack-category-tools-description =
@@ -51,7 +51,7 @@ thief-backpack-category-sleeper-description =
 thief-backpack-category-communicator-name = Kit do Comunicador
 thief-backpack-category-communicator-description =
     Um kit para entusiastas da comunicação. Inclui uma chave mestra
-    para todos os canais da estação, uma caneta cybersun, um portátil
+    para todos os canais da plataforma, uma caneta cybersun, um portátil
     monitor de tripulação, máscara de voz de camaleão e muito dinheiro para negócios.
 
 thief-backpack-category-smuggler-name = Kit do Contrabandista

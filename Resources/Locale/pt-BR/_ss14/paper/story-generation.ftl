@@ -180,7 +180,7 @@ story-gen-book-location5 = em um jardim escondido
 story-gen-book-location6 = na cozinha de um restaurante local
 story-gen-book-location7 = sob o balcão do bar esportivo local
 story-gen-book-location8 = em uma biblioteca antiga
-story-gen-book-location9 = enquanto nas profundezas dos corredores de manutenção da estação espacial
+story-gen-book-location9 = enquanto nas profundezas dos corredores de manutenção da plataforma espacial
 story-gen-book-location10 = na ponte de uma nave estelar
 story-gen-book-location11 = enquanto estava em um banheiro público sujo
 story-gen-book-location12 = enquanto estava preso dentro de uma caixa
@@ -204,7 +204,7 @@ story-gen-book-location29 = a bordo de uma nave da Federação dos Magos
 story-gen-book-location30 = em pé no topo de uma montanha de cadáveres
 story-gen-book-location31 = enquanto projetado psiquicamente em seu subconsciente
 story-gen-book-location32 = enquanto preso em uma dimensão sombria
-story-gen-book-location33 = enquanto tentava escapar de uma estação espacial destruída
+story-gen-book-location33 = enquanto tentava escapar de uma plataforma espacial destruída
 story-gen-book-location34 = enquanto estava espremido entre uma bola de Tesla e uma singularidade gravitacional
 
 story-gen-book-element1 = A trama
