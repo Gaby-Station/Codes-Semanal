@@ -1,36 +1,36 @@
-alert-level-announcement = Atenção! O nível de alerta da plataforma foi mudado para: {$name}! {$announcement}
+alert-level-announcement = Atenção! O nível de alerta da plataforma agora é {$name}! {$announcement}
 
-alert-level-unknown = Unknown.
-alert-level-unknown-instructions = Unknown.
+alert-level-unknown = Desconhecido.
+alert-level-unknown-instructions = Desconhecido.
 
 alert-level-green = Verde
-alert-level-green-announcement = Está tudo bem! Já podem voltar a atividades normais.
-alert-level-green-instructions = Volte a seu trabalho.
+alert-level-green-announcement = Agora é seguro retomar suas atividades diárias.
+alert-level-green-instructions = Prossiga normalmente.
 
 alert-level-blue = Azul
-alert-level-blue-announcement = Foram relatadas ameaças na plataforma. Caso seja parado por um segurança, coopere! Se ver algo suspeito avise imediatamente a segurança.
-alert-level-blue-instructions = Se ver algo suspeito avise imediatamente a segurança.
+alert-level-blue-announcement = Há uma ameaça confirmada na plataforma. A segurança deve realizar verificações aleatórias. Cidadãos devem estar atentos e relatar atividades suspeitas à segurança.
+alert-level-blue-instructions = Membros da tripulação devem estar atentos e relatar atividades suspeitas à segurança.
 
 alert-level-red = Vermelho
-alert-level-red-announcement = Ameaça perigosa na plataforma. Os seguranças devem se equipar e utilizar força letal caso necessário, e os demais tripulantes procurarem um local seguro e sigam ordens das autoridades.
-alert-level-red-instructions = os demais tripulantes procurarem um local seguro e sigam ordens das autoridades.
+alert-level-red-announcement = Há uma ameaça imediata na plataforma. A segurança deve estar preparada para usar força letal, se necessário. Cidadãos devem procurar um local seguro para se abrigar e seguir as instruções das autoridades presentes.
+alert-level-red-instructions = Cidadãos devem procurar um local seguro para se abrigar e seguir as instruções das autoridades presentes.
 
 alert-level-violet = Violeta
-alert-level-violet-announcement = Foram relatadas ameaças virais na plataforma. Acionando a equipe médica para isolar os tripulantes com quaisquer sintomas. Os tripulantes são aconselhados a cumprir distanciamento e tomarem medidas de segurança para evitar uma maior propagação, usem máscaras e luvas.
-alert-level-violet-instructions = Os tripulantes são aconselhados a cumprir distanciamento e tomarem medidas de segurança para evitar uma maior propagação, usem máscaras e luvas.
+alert-level-violet-announcement = Há uma ameaça viral na plataforma. A equipe médica deve isolar cidadãos com quaisquer sintomas. Cidadãos devem manter distância uns dos outros e adotar medidas de segurança para evitar a propagação.
+alert-level-violet-instructions = Membros da tripulação devem manter distância uns dos outros e adotar medidas de segurança para evitar a propagação.
 
 alert-level-yellow = Amarelo
-alert-level-yellow-announcement = Há dano estrutural na plataforma. Acionando a equipe de engenheiros para consertar e isolar a área de danos. Os tripulantes devem evitar áreas de perigo estrutural, caso possível continuem com suas atividades.
-alert-level-yellow-instructions = Os tripulantes devem evitar áreas de perigo estrutural, caso possível continuem com suas atividades.
+alert-level-yellow-announcement = Há uma ameaça estrutural ou atmosférica na plataforma. A equipe de engenharia deve responder imediatamente e aplicar medidas de segurança. Cidadãos devem evitar a área ameaçada e permanecer em seus locais de trabalho, se necessário.
+alert-level-yellow-instructions = Membros da tripulação devem evitar a área ameaçada e permanecer em seus locais de trabalho, se necessário.
 
 alert-level-gamma = Gamma
-alert-level-gamma-announcement = A  SolGov ordenou o nível de segurança Gamma na plataforma. Os seguranças devem estar armados a todo tempo, e todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
-alert-level-gamma-instructions = todos os tripulantes devem procurar um chefe de departamento para serem transportados para um local seguro.
+alert-level-gamma-announcement = P.A.I.L ordenou o nível de segurança Gamma na plataforma. A segurança deve portar armas o tempo todo, e todos os civis devem procurar imediatamente o chefe mais próximo para transporte até um local seguro.
+alert-level-gamma-instructions = Todos os civis devem procurar imediatamente o chefe mais próximo para transporte até um local seguro.
 
 alert-level-delta = Delta
-alert-level-delta-announcement = Ameaça de destruição em massa. Os tripulantes são aconselhados a ouvir os chefes de departamento para obter ordens e mais informações sobre o ocorrido.
-alert-level-delta-instructions = Crewmembers are advised to listen to heads of staff for more information.
+alert-level-delta-announcement = O planeta está sob perigo iminente de destruição. Todos os cidadãos devem fazer tudo ao seu alcance para evitar esse desfecho. Boa sorte.
+alert-level-delta-instructions = Cidadãos devem ouvir seus chefes.
 
 alert-level-epsilon = Epsilon
-alert-level-epsilon-announcement = A  SolGov ordenou o nível de segurança Epsilon na plataforma. Considerem todos os contratos expirados.
-alert-level-epsilon-instructions = Considerem todos os contratos expirados.
+alert-level-epsilon-announcement = *PZZT* Naves da CentCom detectara- *PZZT* corram.
+alert-level-epsilon-instructions = A nave de "limpeza" chegou para finalizar contratos vencidos.
