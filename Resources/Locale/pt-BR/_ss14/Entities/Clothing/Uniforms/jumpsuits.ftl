@@ -7,8 +7,8 @@ ent-ClothingUniformJumpsuitBartender = uniforme do barman
 ent-ClothingUniformJumpsuitBartenderPurple = uniforme roxo do bartender
     .desc = Uma roupa roxa especial para servir bebidas.
 
-ent-ClothingUniformJumpsuitCaptain = macacão de capitão
-    .desc = É um macacão azul com algumas marcas douradas denotando o posto de "Capitão".
+ent-ClothingUniformJumpsuitCaptain = macacão de supervisor
+    .desc = É um macacão azul com algumas marcas douradas denotando o posto de "supervisor".
 
 ent-ClothingUniformJumpsuitCargo = macacão cargo tech
     .desc = Um macacão resistente, concedido aos membros do departamento de Carga.
@@ -55,17 +55,17 @@ ent-ClothingUniformJumpsuitEngineeringHazard = macacão de perigo
 ent-ClothingUniformJumpsuitHoP = macacão do chefe de funcionários
     .desc = Bastante brando e inofensivo. Perfeito para desaparecer da face do universo.
 
-ent-ClothingUniformJumpsuitHoS = macacão do segurança chefe
+ent-ClothingUniformJumpsuitHoS = macacão do marechal
     .desc = É vermelho brilhante e bastante nítido, assim como as vítimas de segurança tendem a ser.
 
-ent-ClothingUniformJumpsuitHoSAlt = gola alta do segurança chefe
-    .desc = É uma gola alta usada por quem é forte e disciplinado o suficiente para alcançar o cargo de Segurança Chefe. Seu tecido resistente oferece menor proteção contra danos mecânicos.
+ent-ClothingUniformJumpsuitHoSAlt = gola alta do marechal
+    .desc = É uma gola alta usada por quem é forte e disciplinado o suficiente para alcançar o cargo de marechal. Seu tecido resistente oferece menor proteção contra danos mecânicos.
 
-ent-ClothingUniformJumpsuitHoSBlue = macacão azul do segurança chefe
-    .desc = Um macacão azul do Segurança Chefe.
+ent-ClothingUniformJumpsuitHoSBlue = macacão azul do marechal
+    .desc = Um macacão azul do marechal.
 
-ent-ClothingUniformJumpsuitHoSGrey = macacão cinza do segurança chefe
-    .desc = Macacão cinza do Segurança Chefe, que o faz parecer um passageiro.
+ent-ClothingUniformJumpsuitHoSGrey = macacão cinza do marechal
+    .desc = Macacão cinza do marechal, que o faz parecer um passageiro.
 
 ent-ClothingUniformJumpsuitHoSParadeMale = uniforme de desfile do chefe da segurança
     .desc = Um chefe masculino de roupas de luxo da segurança, para ocasiões especiais.
@@ -193,7 +193,7 @@ ent-ClothingUniformJumpsuitPyjamaSyndicateRed = pijama vermelho do Sindicato
 ent-ClothingUniformJumpsuitNanotrasen = macacão nanotrasen
     .desc = Um imponente macacão azul para representar o NanoTrasen.
 
-ent-ClothingUniformJumpsuitCapFormal = terno formal do capitão
+ent-ClothingUniformJumpsuitCapFormal = terno formal do supervisor
     .desc = Um terno para ocasiões especiais.
 
 ent-ClothingUniformJumpsuitCentcomFormal = traje formal da  Central de Comando

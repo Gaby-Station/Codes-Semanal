@@ -13,8 +13,8 @@ ent-Pen = caneta
 ent-CyberPen = caneta Cybersun
      .desc = Uma caneta de alta tecnologia vinda diretamente do departamento jurídico da Cybersun, capaz de refratar luz forte em ângulos impossíveis através de sua ponta de diamante para escrever.
 
-ent-PenCap = caneta-tinteiro do Capitão
-     .desc = Uma luxuosa caneta-tinteiro para o capitão da estação.
+ent-PenCap = caneta-tinteiro do supervisor
+     .desc = Uma luxuosa caneta-tinteiro para o supervisor da estação.
 
 ent-PenHop = caneta-tinteiro de HOP
      .desc = Uma luxuosa caneta-tinteiro para o salto da estação.
@@ -48,7 +48,7 @@ ent-BoxFolderBlack = pasta
 ent-RubberStampMime = carimbo do mímico
      .desc = Um carimbo para carimbar documentos importantes.
 
-ent-RubberStampCaptain = carimbo do Capitão
+ent-RubberStampCaptain = carimbo do supervisor
      .desc = Um carimbo para carimbar documentos importantes.
 
 ent-RubberStampCentcom = carimbo da Central de Comando

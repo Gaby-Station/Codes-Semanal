@@ -17,11 +17,11 @@ ent-JetpackBlackFilled = jetpack
      .desc = É um jetpack.
      .suffix = Preenchido
 
-ent-JetpackCaptain = jetpack do capitão
+ent-JetpackCaptain = jetpack do supervisor
      .desc = É um jetpack.
      .suffix = Vazio
 
-ent-JetpackCaptainFilled = jetpack do capitão
+ent-JetpackCaptainFilled = jetpack do supervisor
      .desc = É um jetpack.
      .suffix = Preenchido
 

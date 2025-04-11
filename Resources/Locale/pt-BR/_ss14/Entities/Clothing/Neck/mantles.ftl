@@ -1,4 +1,4 @@
-ent-ClothingNeckMantleCap = manto do capitão
+ent-ClothingNeckMantleCap = manto do supervisor
     .desc = Um manto chique e confortável.
 
 ent-ClothingNeckMantleCE = manto do engenheiro chefe
@@ -10,7 +10,7 @@ ent-ClothingNeckMantleCMO = manto do médico chefe
 ent-ClothingNeckMantleHOP = manto do chefe dos funcionários
     .desc = Um bom hop sabe que a papelada é só uma parte do trabalho, ter uma boa aparência e cuidar do Ian é a outra.
 
-ent-ClothingNeckMantleHOS = manto do segurança chefe
+ent-ClothingNeckMantleHOS = manto do marechal
     .desc = Tiroteios e Nukies são só mais um dia de trabalho na vida dos HoS..
 
 ent-ClothingNeckMantleRD = manto do diretor de pesquisa

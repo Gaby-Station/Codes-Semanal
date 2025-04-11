@@ -4,8 +4,8 @@ ent-ClothingHeadset = fone de ouvido
 ent-ClothingHeadsetCargo = fone de ouvido da logística
     .desc = Um fone de ouvido usado pelos funcionários da Logística.
 
-ent-ClothingHeadsetQM = fone de ouvido do intendente logístico
-    .desc = Um fone de ouvido usado pelo intendente logístico.
+ent-ClothingHeadsetQM = fone de ouvido do capitão do porto
+    .desc = Um fone de ouvido usado pelo capitão do porto.
 
 ent-ClothingHeadsetCentCom = fone de ouvido da Central de Comando
     .desc = Um fone de ouvido usado pelo escalão mais alto da Nanotrasen.

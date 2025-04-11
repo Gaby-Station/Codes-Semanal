@@ -214,7 +214,7 @@ chatsan-word-76 = fds
 chatsan-replacement-76 = final de semana
 
 chatsan-word-77 = cap
-chatsan-replacement-77 = Capitão
+chatsan-replacement-77 = supervisor
 
 chatsan-word-78 = sla
 chatsan-replacement-78 = sei lá
@@ -315,7 +315,7 @@ chatsan-word-113 = dnv
 chatsan-replacement-113 = de novo
 
 chatsan-word-114 = qm
-chatsan-replacement-114 = intendente logístico
+chatsan-replacement-114 = capitão do porto
 
 chatsan-word-115 = ce
 chatsan-replacement-115 = Engenheiro Chefe

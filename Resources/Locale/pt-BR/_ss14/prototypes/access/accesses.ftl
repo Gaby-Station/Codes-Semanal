@@ -1,9 +1,9 @@
 id-card-access-level-command = Comando
-id-card-access-level-captain = Capitão
+id-card-access-level-captain = supervisor
 id-card-access-level-head-of-personnel = Chefe dos Funcionarios
 id-card-access-level-cryogenics = Criogenia
 
-id-card-access-level-head-of-security = Segurança Chefe
+id-card-access-level-head-of-security = marechal
 id-card-access-level-security = Segurança
 id-card-access-level-armory = Arsenal
 id-card-access-level-brig = Prisão
@@ -21,7 +21,7 @@ id-card-access-level-medical = Médico
 id-card-access-level-chemistry = Química
 id-card-access-level-paramedic = Paramédico
 
-id-card-access-level-quartermaster = intendente logístico
+id-card-access-level-quartermaster = capitão do porto
 id-card-access-level-cargo = Cargas
 id-card-access-level-salvage = Recuperação
 

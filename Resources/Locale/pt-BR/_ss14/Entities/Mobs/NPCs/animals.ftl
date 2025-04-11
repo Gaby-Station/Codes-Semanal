@@ -105,4 +105,4 @@ ent-MobFox = raposa
      .desc = É uma raposa, em todos os sentidos.
 
 ent-MobFoxRenault = Renault
-     .desc = A raposa de confiança do capitão.
+     .desc = A raposa de confiança do supervisor.

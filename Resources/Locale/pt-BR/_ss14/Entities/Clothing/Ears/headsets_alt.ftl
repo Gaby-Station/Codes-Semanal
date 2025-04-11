@@ -10,13 +10,13 @@ ent-ClothingHeadsetAltCommand = headset de comando
 ent-ClothingHeadsetAltMedical = headset do médico chefe
     .desc = Um rádio pessoal modular. Tem uma entrada para chaves criptográficas.
 
-ent-ClothingHeadsetAltSecurity = headset do segurança chefe
+ent-ClothingHeadsetAltSecurity = headset do marechal
     .desc = Um rádio pessoal modular. Tem uma entrada para chaves criptográficas.
 
 ent-ClothingHeadsetAltSyndicate = headset do Sindicato
     .desc = Um rádio modular do Sindicato. Protege os ouvidos de granadas de atordoamento.
 
-ent-ClothingHeadsetAltCargo = headset do intendente logístico
+ent-ClothingHeadsetAltCargo = headset do capitão do porto
     .desc = Um rádio pessoal modular. Tem uma entrada para chaves criptográficas.
 
 ent-ClothingHeadsetAltCentComFake = headset da Central de Comando

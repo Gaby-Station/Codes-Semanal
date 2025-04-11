@@ -1,8 +1,8 @@
 ent-ClothingUniformJumpskirtBartender = uniforme do bartender
     .desc = Um uniforme bonito e arrumado. É uma pena o bar.
 
-ent-ClothingUniformJumpskirtCaptain = saia de capitão
-    .desc = É uma saia azul com algumas marcas douradas que indicam o posto de "Capitão".
+ent-ClothingUniformJumpskirtCaptain = saia de supervisorsor
+    .desc = É uma saia azul com algumas marcas douradas que indicam o posto de "supervisorsor".
 
 ent-ClothingUniformJumpskirtCargo = saia de cargo
     .desc = Uma saia resistente, concedida aos membros do departamento de Carga.
@@ -34,14 +34,14 @@ ent-ClothingUniformJumpskirtEngineering = saia de engenharia
 ent-ClothingUniformJumpskirtHoP = saia do chefe de funcionários
     .desc = Bastante brando e inofensivo. Perfeito para desaparecer da face do universo.
 
-ent-ClothingUniformJumpskirtHoS = saia do segurança chefe
+ent-ClothingUniformJumpskirtHoS = saia do marechal
     .desc = É vermelho brilhante e bastante nítido, assim como as vítimas de segurança tendem a ser.
 
-ent-ClothingUniformJumpskirtHoSAlt = gola alta do segurança chefe
-    .desc = É uma gola alta usada por quem é forte e disciplinado o suficiente para alcançar o cargo de Segurança Chefe. Seu tecido resistente oferece menor proteção contra danos mecânicos.
+ent-ClothingUniformJumpskirtHoSAlt = gola alta do marechal
+    .desc = É uma gola alta usada por quem é forte e disciplinado o suficiente para alcançar o cargo de marechalecido resistente oferece menor proteção contra danos mecânicos.
 
 ent-ClothingUniformJumpskirtHoSParadeMale = uniforme de desfile do chefe da segurança
-    .desc = Um segurança chefe de roupas de luxo, para ocasiões especiais.
+    .desc = Um marechalpas de luxo, para ocasiões especiais.
 
 ent-ClothingUniformJumpskirtHydroponics = saia hidropônica
     .desc = Tem um forte cheiro de terra. Esperançosamente, está apenas sujo, em vez de sujo.
@@ -127,7 +127,7 @@ ent-ClothingUniformJumpskirtColorMaroon = saia marrom
 ent-ClothingUniformJumpskirtPerformer = saia do artista
     .desc = Olá, sou Scott, presidente da Donk Pizza. Você já ouviu falar de [FAMOSO PERFORMER VIRTUAL]?
 
-ent-ClothingUniformJumpskirtCapFormalDress = vestido formal do capitão
+ent-ClothingUniformJumpskirtCapFormalDress = vestido formal do supervisorsor
     .desc = Um vestido para ocasiões especiais.
 
 ent-ClothingUniformJumpskirtCentcomFormalDress = vestido formal de  Central de Comando

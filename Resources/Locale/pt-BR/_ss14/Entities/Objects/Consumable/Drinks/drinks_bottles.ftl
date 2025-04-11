@@ -34,7 +34,7 @@ ent-DrinkPatronBottleFull = garrafa de Patron
 ent-DrinkPoisonWinebottleFull = garrafa de veludo do bruxo
      .desc = Que embalagem deliciosa para um vinho certamente de alta qualidade! A safra deve ser incrível!
 
-ent-DrinkRumBottleFull = rum cubano temperado do Capitão Pete
+ent-DrinkRumBottleFull = rum cubano temperado do supervisorsor Pete
      .desc = Isso não é apenas rum, ah, não. É praticamente GRIFF em garrafa.
 
 ent-DrinkSpaceMountainWindBottleFull = garrafa de vento da montanha espacial

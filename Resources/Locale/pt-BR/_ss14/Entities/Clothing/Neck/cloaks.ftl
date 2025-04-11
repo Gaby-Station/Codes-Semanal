@@ -1,7 +1,7 @@
-ent-ClothingNeckCloakCap = capa do capitão
+ent-ClothingNeckCloakCap = capa do supervisor
     .desc = Uma elegante capa azul com uma belíssima Moldura dourada.
 
-ent-ClothingNeckCloakHos = capa do segurança chefe
+ent-ClothingNeckCloakHos = capa do marechal
     .desc = Uma amedrontadora capa preta e vermelha, perfeito para aqueles que gostam de intimidar os outros.
 
 ent-ClothingNeckCloakCe = capa do engenheiro chefe
@@ -13,7 +13,7 @@ ent-ClothingCloakCmo = capa do médico chefe
 ent-ClothingNeckCloakRd = capa do diretor de pesquisa
     .desc = Uma capa branca com detalhes em violeta, a coisa mais nerd possível.
 
-ent-ClothingNeckCloakQm = capa do intendente logístico
+ent-ClothingNeckCloakQm = capa do capitão do porto
     .desc = Uma capa marrom resistente, apesar de não ser tão bonita, é bem útil para exibir suas habilidades em gerenciar um departamento.
 
 ent-ClothingNeckCloakHop = capa do chefe dos funcionários
@@ -25,7 +25,7 @@ ent-ClothingNeckCloakHerald = capa do arauto
 ent-ClothingNeckCloakNanotrasen = capa da nanotrasen
     .desc = Uma capa azul que representa os membros da Nanotrasen.
 
-ent-ClothingNeckCloakCapFormal = capa formal do capitão
+ent-ClothingNeckCloakCapFormal = capa formal do supervisor
     .desc = Para as ocasiões mais formais, como por exemplo a visita de um esquadrão nuclear.
 
 ent-ClothingNeckCloakAdmin = capa do administrador

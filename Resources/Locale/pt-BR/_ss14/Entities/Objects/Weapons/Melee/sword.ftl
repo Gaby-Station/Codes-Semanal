@@ -1,5 +1,5 @@
-ent-CaptainSabre = sabre do capitão
-     .desc = Uma arma cerimonial pertencente ao capitão da estação.
+ent-CaptainSabre = sabre do supervisorsor
+     .desc = Uma arma cerimonial pertencente ao supervisorsor da estação.
 
 ent-Katana = katana
      .desc = Artesanato antigo feito com plasteel não tão antigo.

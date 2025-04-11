@@ -31,7 +31,7 @@ ent-MimePDA = PDA de mime
 ent-ChaplainPDA = PDA de padre
     .desc = PDA escolhido por Deus.
 
-ent-QuartermasterPDA = PDA do intendente logístico
+ent-QuartermasterPDA = PDA do capitão do porto
     .desc = PDA para o cara que encomenda as armas.
 
 ent-CargoPDA = PDA de carga
@@ -52,7 +52,7 @@ ent-LawyerPDA = PDA de advogado
 ent-JanitorPDA = PDA de zelador
     .desc = Cheira a alvejante.
 
-ent-CaptainPDA = PDA de capitão
+ent-CaptainPDA = PDA de supervisor
     .desc = Surpreendentemente não é diferente do seu PDA.
 
 ent-HoPPDA = PDA de chefe de funcionários
@@ -79,7 +79,7 @@ ent-RnDPDA = PDA de diretor de pesquisa
 ent-SciencePDA = PDA de ciência
     .desc = Está coberto por uma substância pegajosa desconhecida.
 
-ent-HoSPDA = PDA do segurança chefe
+ent-HoSPDA = PDA do marechal
     .desc = Quem carrega este PDA é a lei.
 
 ent-WardenPDA = PDA de carceiro

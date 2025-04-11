@@ -99,7 +99,7 @@ accent-ohio-words-replace-25 = fez o L
 accent-ohio-words-26 = morreram
 accent-ohio-words-replace-26 = fizeram o L
 
-accent-ohio-words-27 = capitão
+accent-ohio-words-27 = supervisorsor
 accent-ohio-words-replace-27 = presidente
 
 accent-ohio-words-28 = capitao
@@ -151,7 +151,7 @@ accent-ohio-words-43 = okay
 accent-ohio-words-replace-43 = taokay
 
 accent-ohio-words-44 = mito
-accent-ohio-words-replace-44 = capitão
+accent-ohio-words-replace-44 = supervisorsor
 
 accent-ohio-words-45 = heretic
 accent-ohio-words-replace-45 = macumbeiro
@@ -207,7 +207,7 @@ accent-ohio-words-replace-61 = constituição
 accent-ohio-words-62 = cargo
 accent-ohio-words-replace-62 = casas bahia
 
-accent-ohio-words-63 = intendente de carga
+accent-ohio-words-63 = capitão do porto
 accent-ohio-words-replace-63 = velho da havan
 
 accent-ohio-words-64 = intendente logistico

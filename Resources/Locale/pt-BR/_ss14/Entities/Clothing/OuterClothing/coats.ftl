@@ -7,7 +7,7 @@ ent-ClothingOuterCoatDetective = sobretudo do detetive
 ent-ClothingOuterCoatGentle = casaco elegante
     .desc = Um casaco elegante, para uma dama ou um cavaleiro.
 
-ent-ClothingOuterCoatHoSTrench = sobretudo do segurança chefe
+ent-ClothingOuterCoatHoSTrench = sobretudo do marechal
     .desc = Esse sobretudo foi feito especialmente para causar uma sensação de superioridade no usuário.
 
 ent-ClothingOuterCoatInspector = casaco de inspetor

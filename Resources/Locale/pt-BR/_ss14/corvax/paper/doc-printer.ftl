@@ -230,10 +230,10 @@ doc-text-printer-ApplicationAppointmentInterim =
     Redator do documento:
     Posição do redator:
 
-    Eu, (NOME), no cargo de (nome completo do cargo), solicito a aprovação da minha nomeação para o cargo de Interino Chefe (nome completo do departamento)/Capitão.
-    Ao assumir o cargo, comprometo-me a seguir os Procedimentos Operacionais Padrão e, até a chegada do Chefe (nome completo do departamento)/Capitão da  Central de Comando, garantir a ordem e a gestão do departamento, assegurando a preservação dos itens especialmente valiosos e equipamentos confiados a mim.
+    Eu, (NOME), no cargo de (nome completo do cargo), solicito a aprovação da minha nomeação para o cargo de Interino Chefe (nome completo do departamento)/supervisorsor.
+    Ao assumir o cargo, comprometo-me a seguir os Procedimentos Operacionais Padrão e, até a chegada do Chefe (nome completo do departamento)/supervisorsor da  Central de Comando, garantir a ordem e a gestão do departamento, assegurando a preservação dos itens especialmente valiosos e equipamentos confiados a mim.
 
-    Na chegada do Chefe do departamento/Capitão da  Central de Comando, comprometo-me a devolver o acesso elevado, os itens especialmente valiosos e o equipamento.
+    Na chegada do Chefe do departamento/supervisorsor da  Central de Comando, comprometo-me a devolver o acesso elevado, os itens especialmente valiosos e o equipamento.
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 doc-text-printer-ApplicationEmployment =

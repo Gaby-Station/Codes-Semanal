@@ -10,7 +10,7 @@ ent-ClothingMaskGasSyndicate = máscara de gás do Sindicato
 ent-ClothingMaskGasAtmos = máscara de gás da atmosférica
     .desc = Uma máscara de gás mais tecnológica, é aprova de chamas!
 
-ent-ClothingMaskGasCaptain = máscara de gás do capitão
+ent-ClothingMaskGasCaptain = máscara de gás do supervisorsor
     .desc = Uma máscara mais refinada e tecnológica, ou deveria ser...
 
 ent-ClothingMaskGasCentcom = máscara de gás da Central de Comando

@@ -21,7 +21,7 @@ accent-italian-words-replace-4 = molto male
 accent-italian-words-5 = tchau
 accent-italian-words-replace-5 = arrivederci
 
-accent-italian-words-6 = capitão
+accent-italian-words-6 = supervesirsor
 accent-italian-words-replace-6 = capitano
 
 accent-italian-words-7 = queijo

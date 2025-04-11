@@ -16,7 +16,7 @@ ent-ClothingBackpackSatchelScience = bolsa de pesquisas
 ent-ClothingBackpackSatchelSecurity = bolsa da segurança
     .desc = Uma bolsa robusta, tem cheiro de corrupção.
 
-ent-ClothingBackpackSatchelCaptain = bolsa do capitão
+ent-ClothingBackpackSatchelCaptain = bolsa do supervisor
     .desc = Uma bolsa feita exclusivamente para oficiais Nanotrasen.
 
 ent-ClothingBackpackSatchelHydroponics = bolsa da botânica

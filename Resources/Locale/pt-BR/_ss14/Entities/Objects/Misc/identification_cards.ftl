@@ -16,7 +16,7 @@ ent-SecurityCadetIDCard = ID de cadete de segurança
 ent-ServiceWorkerIDCard = ID do faz-tudo
      .desc = Um cartão necessário para acessar diversas áreas a bordo da estação.
 
-ent-CaptainIDCard = ID do Capitão
+ent-CaptainIDCard = ID do supervisor
      .desc = Um cartão necessário para acessar diversas áreas a bordo da estação.
 
 ent-SecurityIDCard = ID de segurança
@@ -40,7 +40,7 @@ ent-CargoIDCard = ID de carga
 ent-SalvageIDCard = ID de salvamento
      .desc = Um cartão necessário para acessar diversas áreas a bordo da estação.
 
-ent-QuartermasterIDCard = ID do intendente logístico
+ent-QuartermasterIDCard = ID do capitão do porto
      .desc = Um cartão necessário para acessar diversas áreas a bordo da estação.
 
 ent-ResearchIDCard = ID de pesquisa

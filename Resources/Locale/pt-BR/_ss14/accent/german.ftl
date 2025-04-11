@@ -67,7 +67,7 @@ accent-german-words-replace-21 = achtung
 accent-german-words-22 = musica
 accent-german-words-replace-22 = musik
 
-accent-german-words-23 = capitão
+accent-german-words-23 = supervesirsor
 accent-german-words-replace-23 = kapitän
 
 accent-german-words-24 = kebab
