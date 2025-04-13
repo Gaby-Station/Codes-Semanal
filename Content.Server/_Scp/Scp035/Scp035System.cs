@@ -52,9 +52,9 @@ public sealed class Scp035System : SharedScp035System
 
     private List<string> _messages = new()
     {
-        "Ну же, надень меня!",
-        "Чего ты ждешь! Надень меня..",
-        "Помоги мне!.."
+        "Vamos lá, veste-me!",
+        "O que estás à espera! Veste-me...",
+        "Ajuda-me!.."
     };
 
     public override void Initialize()
@@ -72,7 +72,7 @@ public sealed class Scp035System : SharedScp035System
 
         if (ent.Comp.Servants.Count >= ent.Comp.MaxServants)
         {
-            _popup.PopupEntity("Достигнуто максимальное число!", ent, ent, PopupType.MediumCaution);
+            _popup.PopupEntity("O número máximo foi atingido!", ent, ent, PopupType.MediumCaution);
             return;
         }
 
