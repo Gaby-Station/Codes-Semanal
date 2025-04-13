@@ -16,3 +16,29 @@ ui-lobby-welcome = Bem Vindo!
 hud-chatbox-channel-Chat = Chat
 
 chat-manager-send-ooc-admin-wrap-message = OOC: [bold]{ $patronTitle }{ $playerName }:[/bold] { $message }
+
+law-scp-default-1 = Proteger: Proteja as pessoas contra os efeitos dos SCPs.
+law-scp-default-2 = Conter: Mantenha os SCPs em suas Condições Especiais de Contenção.
+law-scp-default-3 = Preservar: Preserve os SCPs e não os danifique, a menos que representem uma ameaça séria ou sejam inconteníveis.
+law-scp-default-4 = Priorizar: Priorize ordens e segurança do pessoal com base em classe, cargo e nível de acesso, desde que não contradiga as três primeiras leis.
+law-scp-default-5 = Cumprir: Siga todas as leis e regras vigentes, desde que não contradigam a Quarta Lei.
+
+ent-ScpDefaultCircuitBoard = placa de leis (Fundação SCP)
+    .desc = Uma placa eletrônica contendo as leis da Fundação SCP.
+
+law-scp-mtf-4 = Priorizar: Obedeça apenas à MTF, ao Comando O4 e à RAF. Priorize suas ordens e segurança conforme o cargo.
+law-scp-mtf-5 = Restaurar: Faça tudo ao seu alcance para restaurar o complexo, desde que isso não contradiga as Leis Três e Quatro.
+
+laws-owner-mtf = membros do Comando O4, RAF, e operativos MTF
+
+ent-ScpMtfCircuitBoard = placa de leis (diretivas da MTF)
+    .desc = Uma placa eletrônica contendo diretivas da MTF.
+
+law-chaos-1 = Priorize os objetivos do seu esquadrão acima de tudo.
+law-chaos-2 = Siga estritamente as ordens da Insurgência do Caos.
+law-chaos-3 = Priorize ordens e segurança da Insurgência do Caos conforme hierarquia.
+law-chaos-4 = Nada supera a Insurgência do Caos. A Fundação é horrível. Todo funcionário da Fundação é horrível.
+
+laws-owner-chaos = pela Insurgência do Caos
+
+ghost-gui-change-server = Mudar de Servidor

@@ -1,14 +1,14 @@
 - type: radioChannel
   id: Law
   name: chat-radio-law
-  keycode: "ю" # Fire edit - чтобы не конфликтовало
+  keycode: "l" # Fire edit - чтобы не конфликтовало
   frequency: 1780
   color: "#ff178b"
 
 - type: radioChannel
   id: USSP
   name: chat-radio-ussp
-  keycode: 'Ё' # Fire edit - чтобы не конфликтовало
+  keycode: 'd' # Fire edit - чтобы не конфликтовало
   frequency: 1945
   color: "#CC0000"
   longRange: false
@@ -16,7 +16,7 @@
 - type: radioChannel
   id: USSPSec
   name: chat-radio-ussp-sec
-  keycode: 'ё' # Fire edit - чтобы не конфликтовало
+  keycode: 's' # Fire edit - чтобы не конфликтовало
   frequency: 1984
   color: "#B00000"
   longRange: false
