@@ -42,3 +42,19 @@ law-chaos-4 = Nada supera a Insurgência do Caos. A Fundação é horrível. Tod
 laws-owner-chaos = pela Insurgência do Caos
 
 ghost-gui-change-server = Mudar de Servidor
+
+chat-radio-no-id = Sem ID
+chat-radio-regional-administration = Administração Regional
+chat-radio-administration = Administração
+chat-radio-ethics-committee = Comitê de Ética
+chat-radio-internal-security = Segurança Interna
+chat-radio-internal-tribunal-service = Tribunal
+chat-radio-heavy-containment-security-service = Segurança de Contenção Pesada
+chat-radio-external-administrative-zone-security-service = Zona Administrativa Externa
+chat-radio-scientific-service = Serviço Científico
+chat-radio-medical-service = Serviço Médico
+chat-radio-engineering-technical-service = Engenharia Técnica
+chat-radio-logistics-service = Logística
+chat-radio-food-and-sanitation-service = Alimentação e Saneamento
+
+chat-radio-chaos = Insurgência do Caos
