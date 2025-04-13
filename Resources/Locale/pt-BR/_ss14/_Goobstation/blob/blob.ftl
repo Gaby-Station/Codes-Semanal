@@ -27,9 +27,9 @@ objective-issuer-blob = Blob
 ghost-role-information-blobbernaut-name = Blobbernaut
 ghost-role-information-blobbernaut-description = Você é um Blobbernaut. Sua missão é defender o núcleo do blob.
 ghost-role-information-blob-name = Blob
-ghost-role-information-blob-description = Você é um Blob. Consuma a estação.
+ghost-role-information-blob-description = Você é um Blob. Consuma a sítio
 roles-antag-blob-name = Blob
-roles-antag-blob-objective = Domine a estação.
+roles-antag-blob-objective = Domine a sítio
 guide-entry-blob = Blob
 
 # Popups
@@ -76,12 +76,12 @@ blob-chem-electromagneticweb-info = Rede Eletromagnética
                                     Causa 20 de dano por queimadura e tem 20% de chance de causar um pulso EMP ao atacar.
                                     Tiles de blob causam um pulso EMP ao serem destruídos.
                                     Você sofre 25% mais dano bruto e de calor.
-blob-alert-out-off-station = O blob foi removido porque foi encontrado fora da estação!
+blob-alert-out-off-station = O blob foi removido porque foi encontrado fora da sítio
 
 # Announcment
-blob-alert-recall-shuttle = A nave de emergencia não pode ser enviado enquanto houver um risco biológico nível 5 na estação.
-blob-alert-detect = Confirmado surto de risco biológico nível 5 na estação. Todo os tripulantes devem conter o surto. A nave de emergencia não podem ser enviados devido aos riscos de contaminação.
-blob-alert-critical = Nível crítico de risco biológico, códigos de autenticação nuclear foram enviados para a estação. A  Conselho O4 ordena que qualquer tripulante restante ative o mecanismo de autodestruição.
+blob-alert-recall-shuttle = A nave de emergencia não pode ser enviado enquanto houver um risco biológico nível 5 na sítio
+blob-alert-detect = Confirmado surto de risco biológico nível 5 na sítiodo os tripulantes devem conter o surto. A nave de emergencia não podem ser enviados devido aos riscos de contaminação.
+blob-alert-critical = Nível crítico de risco biológico, códigos de autenticação nuclear foram enviados para a sítio Conselho O4 ordena que qualquer tripulante restante ative o mecanismo de autodestruição.
 blob-alert-critical-NoNukeCode = Nível crítico de risco biológico. A  Conselho O4 ordena que qualquer tripulante restante procure abrigo e aguarde o resgate.
 
 # Actions
@@ -127,8 +127,8 @@ blob-downgrade-action-desc = Transforma o tile selecionado de volta em um blob n
 blob-carrier-role-name = Portador de Blob
 blob-carrier-role-desc = Uma criatura infectada por um blob.
 blob-carrier-role-rules = Você é um antagonista. Você tem 4 minutos antes de se transformar em um blob.
-                        Use esse tempo para encontrar um lugar seguro na estação. Lembre-se de que você estará muito fraco logo após a transformação.
-blob-carrier-role-greeting = Você é um portador de Blob. Encontre um local isolado na estação e transforme-se em um Blob. Converta a estação em uma massa e seus habitantes em seus servos. Somos todos Blobs.
+                        Use esse tempo para encontrar um lugar seguro na sítiombre-se de que você estará muito fraco logo após a transformação.
+blob-carrier-role-greeting = Você é um portador de Blob. Encontre um local isolado na sítioransforme-se em um Blob. Converta a sísísítiomassa e seus habitantes em seus servos. Somos todos Blobs.
 
 # Verbs
 blob-pod-verb-zombify = Blobificar
@@ -167,7 +167,7 @@ blob-user-was-a-blob-with-objectives-named = [color=White]{$name}[/color] ([colo
 blob-was-a-blob-with-objectives-named = [color=White]{$name}[/color] era um blob com os seguintes objetivos:
 
 # Objectivies
-objective-condition-blob-capture-title = Domine a estação
-objective-condition-blob-capture-description = Seu único objetivo é dominar toda a estação. Você precisa ter pelo menos {$count} tiles de blob.
+objective-condition-blob-capture-title = Domine a sítio
+objective-condition-blob-capture-description = Seu único objetivo é dominar toda a sítiocê precisa ter pelo menos {$count} tiles de blob.
 objective-condition-success = { $condition } | [color={ $markupColor }]Sucesso![/color]
 objective-condition-fail = { $condition } | [color={ $markupColor }]Falha![/color] ({ $progress }%)

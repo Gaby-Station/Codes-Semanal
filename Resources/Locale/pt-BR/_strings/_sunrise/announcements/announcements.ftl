@@ -1,1 +1,1 @@
-announcement-gamma-armory = O Conselho O5 decidiu enviar a cápsula com a sala de armas do código Gamma para eliminar a ameaça na estação. A cápsula está acoplada em { $location } Aguentem firme! Glória à Fundação!
+announcement-gamma-armory = O Conselho O5 decidiu enviar a cápsula com a sala de armas do código Gamma para eliminar a ameaça na sítio. A cápsula está acoplada em { $location } Aguentem firme! Glória à Fundação!

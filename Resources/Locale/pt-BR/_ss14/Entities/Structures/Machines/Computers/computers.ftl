@@ -1,5 +1,5 @@
 ent-ComputerAlert = computador de alertas
-    .desc = Usado para acessar o sistema automatizado de alertas da estação.
+    .desc = Usado para acessar o sistema automatizado de alertas da sítio
 
 ent-ComputerEmergencyShuttle = console da nave de emergência
     .desc = Utilizado para fazer a nave de evacuação partir mais cedo.
@@ -24,7 +24,7 @@ ent-ComputerIFFSyndicate = console IAI
     .suffix = Syndicate
 
 ent-ComputerPowerMonitoring = computador de monitoramento de energia
-    .desc = Usado para monitorar a condição da rede de distribuição de energia da estação.
+    .desc = Usado para monitorar a condição da rede de distribuição de energia da sítio
 
 ent-ComputerMedicalRecords = computador de registros médicos
     .desc = Utilizado para consultar o registros médicos.
@@ -32,8 +32,8 @@ ent-ComputerMedicalRecords = computador de registros médicos
 ent-ComputerCriminalRecords = computador de registros criminais
     .desc = Utilizado para consultar o registros criminais.
 
-ent-ComputerStationRecords = computador de registros da estação
-    .desc = Utilizado para consultar o registros da estação.
+ent-ComputerStationRecords = computador de registros da sítio
+    .desc = Utilizado para consultar o registros da sítio
 
 ent-ComputerCrewMonitoring = computador de monitoramento de tripulação
     .desc = Um computador usado para monitorar o sinal dos sensores vitais dos uniformes da tripulação.

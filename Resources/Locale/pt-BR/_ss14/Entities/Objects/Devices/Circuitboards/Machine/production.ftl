@@ -52,11 +52,11 @@ ent-HydroponicsTrayMachineCircuitboard = placa de bandeja hidropônica
 ent-SMESMachineCircuitboard = placa de SMES
     .desc = Uma placa de circuito impresso para uma unidade SMES.
 
-ent-SubstationMachineCircuitboard = placa de subestação
-    .desc = Uma placa de circuito impresso para uma subestação elétrica.
+ent-SubstationMachineCircuitboard = placa de subsítio
+    .desc = Uma placa de circuito impresso para uma subsítio elétrica.
 
-ent-DawInstrumentMachineCircuitboard = placa de estação de trabalho de áudio digital
-    .desc = Uma placa de circuito impresso para uma estação de trabalho de áudio digital.
+ent-DawInstrumentMachineCircuitboard = placa de sítio de trabalho de áudio digital
+    .desc = Uma placa de circuito impresso para uma sítio de trabalho de áudio digital.
 
 ent-GeneratorPlasmaMachineCircuitboard = placa de gerador (plasma)
 

@@ -1,5 +1,5 @@
 nukeops-title = agentes Nucleares
-nukeops-description = agentes nucleares estão atacando a estação. Tente impedir que façam o big kaboom na estação protegendo o disco nuclear!
+nukeops-description = agentes nucleares estão atacando a sítio. Tente impedir que façam o big kaboom na sítio protegendo o disco nuclear!
 
 nukeops-welcome =
     Você é um agente nuclear. Seu objetivo é destruir {$station}, transformando-a em um monte de escombros. Seus chefes, o Sindicato, forneceram as ferramentas necessárias para a missão.
@@ -12,10 +12,10 @@ nukeops-neutral = [color=yellow]Resultado neutro![/color]
 nukeops-crewminor = [color=green]Vitória menor da tripulação![/color]
 nukeops-crewmajor = [color=green]Vitória maior da tripulação![/color]
 
-nukeops-cond-nukeexplodedoncorrectstation = Os agentes nucleares conseguiram explodir a estação.
+nukeops-cond-nukeexplodedoncorrectstation = Os agentes nucleares conseguiram explodir a sítio.
 nukeops-cond-nukeexplodedonnukieoutpost = O posto avançado dos agentes nucleares foi destruído por uma explosão nuclear.
-nukeops-cond-nukeexplodedonincorrectlocation = A bomba nuclear foi detonada fora da estação.
-nukeops-cond-nukeactiveinstation = A bomba nuclear foi deixada armada na estação.
+nukeops-cond-nukeexplodedonincorrectlocation = A bomba nuclear foi detonada fora da sítio.
+nukeops-cond-nukeactiveinstation = A bomba nuclear foi deixada armada na sítio.
 nukeops-cond-nukeactiveatcentcom = A bomba nuclear foi entregue à  Conselho O4!
 nukeops-cond-nukediskoncentcom = A tripulação escapou com o disco de autenticação nuclear.
 nukeops-cond-nukedisknotoncentcom = A tripulação deixou o disco de autenticação nuclear para trás.

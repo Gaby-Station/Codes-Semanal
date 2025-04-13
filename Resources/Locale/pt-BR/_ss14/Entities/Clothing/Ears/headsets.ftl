@@ -14,7 +14,7 @@ ent-ClothingHeadsetCommand = fone de ouvido do comando
     .desc = Um fone de ouvido conectado ao canal dos Comandantes.
 
 ent-ClothingHeadsetEngineering = fone de ouvido da engenharia
-    .desc = Um fone de ouvido conectado ao canal dos Engenheiros. Perfeito para discussões de biscoito ou bolacha enquanto a estação pega fogo.
+    .desc = Um fone de ouvido conectado ao canal dos Engenheiros. Perfeito para discussões de biscoito ou bolacha enquanto a sítioega fogo.
 
 ent-ClothingHeadsetCE = fone de ouvido do engenheiro chefe
     .desc = Um fone de ouvido exclusivo do Engenheiro Chefe, perfeito para ele ignorar os chamados de emergência.
@@ -38,10 +38,10 @@ ent-ClothingHeadsetRD = fone de ouvido do diretor de pesquisa
     .desc = O Lamarr adorava mastigar isso...
 
 ent-ClothingHeadsetSecurity = fone de ouvido da segurança
-    .desc = Utilizado pelos responsáveis em manter a ordem na estação (ou não).
+    .desc = Utilizado pelos responsáveis em manter a ordem na sítioou não).
 
 ent-ClothingHeadsetService = fone de ouvido de serviço
-    .desc = Um fone de ouvido utilizado pelo pessoal do Departamento de Serviços, aqueles que mantém a estação limpa e organizada.
+    .desc = Um fone de ouvido utilizado pelo pessoal do Departamento de Serviços, aqueles que mantém a sítioimpa e organizada.
 
 ent-ClothingHeadsetGrey = fone de ouvido de passageiro
     .desc = Um fone de ouvido utilizado pela população desempregada.

@@ -12,4 +12,4 @@ eta-units-seconds = segundos
 
 round-end-system-shuttle-reminder = A nave de emergência será enviada em breve.
 
-round-end-system-station-name = estação
+round-end-system-station-name = sítio

@@ -1,7 +1,7 @@
 ent-VendingMachine = máquina de venda
     .desc = Só adicionar capitalismo!
 
-ent-VendingMachineAmmo = Estação Liberdade
+ent-VendingMachineAmmo = sítioiberdade
     .desc = Te faz querer travar guerras desnecessárias contra o sul galáctico!
 
 ent-VendingMachineBooze = Breja-O-Mat

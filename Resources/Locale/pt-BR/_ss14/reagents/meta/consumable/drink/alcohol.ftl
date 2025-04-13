@@ -170,7 +170,7 @@ reagent-name-manhattan = manhattan
 reagent-desc-manhattan = A escolha de um detetive. Ele nunca poderia mandar um gin pra dentro...
 
 reagent-name-manhattan-project = manhattan project
-reagent-desc-manhattan-project = A escolha de um cientista. para pensar formas de explodir a estação.
+reagent-desc-manhattan-project = A escolha de um cientista. para pensar formas de explodir a sítio
 
 reagent-name-manly-dorf = viril anão
 reagent-desc-manly-dorf = Cerveja e Ale, juntos numa mistura deliciosa. Apenas para anões robustos.

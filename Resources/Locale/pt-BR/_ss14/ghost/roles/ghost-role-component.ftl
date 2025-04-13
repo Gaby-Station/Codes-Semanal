@@ -11,7 +11,7 @@ ghost-role-information-mothroach-name = Baraposa
 ghost-role-information-mothroach-description = Uma fofa mas maliciosa baraposa.
 
 ghost-role-information-giant-spider-name = Aranha gigante
-ghost-role-information-giant-spider-description = Os habitantes desta estação parecem muito saborosos, e sua teia pegajosa é perfeita para pegá-los!
+ghost-role-information-giant-spider-description = Os habitantes desta sítioarecem muito saborosos, e sua teia pegajosa é perfeita para pegá-los!
 
 ghost-role-information-cognizine-description = Feito consciente com a mágica de cognizine.
 
@@ -19,7 +19,7 @@ ghost-role-information-hamster-name = Hamster
 ghost-role-information-hamster-description = Uma rabugenta pequena bola de pêlo.
 
 ghost-role-information-hamlet-name = Hamlet o hamster.
-ghost-role-information-hamlet-description = Vive na ponte de comando da estação, é um tanto temperamentál e está sempre com fome.
+ghost-role-information-hamlet-description = Vive na ponte de comando da sítioé um tanto temperamentál e está sempre com fome.
 
 ghost-role-information-slimes-name = Slime
 ghost-role-information-slimes-description = Um simples Slime sem necessidades ou interesses especiais. Você é amigável com os outros.
@@ -62,7 +62,7 @@ ghost-role-information-salvage-carp-name = Carpa espacial em naufrágio de salva
 ghost-role-information-salvage-carp-description = Defenda o saque dentro do naufrágio de salvamento!
 
 ghost-role-information-sentient-carp-name = Carpa Senciente
-ghost-role-information-sentient-carp-description = Ajude o dragão a encher a estação de carpas!
+ghost-role-information-sentient-carp-description = Ajude o dragão a encher a sítioe carpas!
 
 ghost-role-information-salvage-shark-name = Sharkminnow espacial em naufrágio de salvamento
 ghost-role-information-salvage-shark-description = Ajude as carpas mais jovens a proteger suas presas. Cheire o sangue!
@@ -71,7 +71,7 @@ ghost-role-information-willow-name = Willow o canguru
 ghost-role-information-willow-description = Você é um canguru chamado Willow! Willow gosta de box.
 
 ghost-role-information-space-tick-name = Carrapato espacial
-ghost-role-information-space-tick-description = Cause estragos na estação!
+ghost-role-information-space-tick-description = Cause estragos na sítio
 
 ghost-role-information-salvage-tick-name = Carrapato espacial no naufrágio de salvamento
 ghost-role-information-salvage-tick-description = Defenda o saque dentro do naufrágio de salvamento!
@@ -86,10 +86,10 @@ ghost-role-information-mimebot-name = Mimebot
 ghost-role-information-mimebot-description = Um Mimebot, age como um mímico, mas não como um greytider.
 
 ghost-role-information-taxibot-name = TaxiBot
-ghost-role-information-taxibot-description = Dirija a tripulação da estação até o seu destino.
+ghost-role-information-taxibot-description = Dirija a tripulação da sítioté o seu destino.
 
 ghost-role-information-supplybot-name = SupplyBot
-ghost-role-information-supplybot-description = Entregue mercadorias pela estação.
+ghost-role-information-supplybot-description = Entregue mercadorias pela sítio
 
 ghost-role-information-space-bear-name = Urso Espacial
 ghost-role-information-space-bear-description = Sua barriga ronca, e essas pessoas parecem realmente gostosas... que banquete!
@@ -141,7 +141,7 @@ ghost-role-information-cluwne-name = Cluwne
 ghost-role-information-cluwne-description = Torne-se um cluwne lamentável, seu único objetivo na vida é encontrar uma doce libertação de seu sofrimento (geralmente sendo espancado até a morte). Um cluwne não é um antagonista, mas pode se defender. Tripulantes podem matar cluwnes livremente.
 
 ghost-role-information-skeleton-pirate-name = Pirata Esqueleto
-ghost-role-information-skeleton-pirate-description = Provoque o caos e saqueie a estação em busca de tesouros.
+ghost-role-information-skeleton-pirate-description = Provoque o caos e saqueie a sítiom busca de tesouros.
 
 ghost-role-information-skeleton-biker-name = Esqueleto Motociclista
 ghost-role-information-skeleton-biker-description = Passeie por aí em seu doce passeio.
@@ -165,7 +165,7 @@ ghost-role-information-ert-leader-name = Lider da ERT
 ghost-role-information-ert-leader-description = Liderar uma equipe de especialistas para resolver os problemas das estações.
 
 ghost-role-information-ert-janitor-name = Zelador da ERT
-ghost-role-information-ert-janitor-description = Auxiliar nos esforços de custódia para resolver os problemas da estação.
+ghost-role-information-ert-janitor-description = Auxiliar nos esforços de custódia para resolver os problemas da sítio
 
 ghost-role-information-ert-engineer-name = Engenheiro da ERT
 ghost-role-information-ert-engineer-description = Auxiliar nos esforços de engenharia para resolver os problemas das estações.
@@ -180,13 +180,13 @@ ghost-role-information-cburn-agent-name = Agente de Contenção Biológica
 ghost-role-information-cburn-agent-description = Um agente da Conselho O4 altamente treinado, capaz de lidar com várias ameaças.
 
 ghost-role-information-centcom-official-name = oficial da Conselho O4
-ghost-role-information-centcom-official-description = Desempenhar funções relacionadas à Conselho O4, como inspecionar a estação, anotar avaliações de desempenho para chefes de equipe e gerenciar o aparelho de fax.
+ghost-role-information-centcom-official-description = Desempenhar funções relacionadas à Conselho O4, como inspecionar a sítioanotar avaliações de desempenho para chefes de equipe e gerenciar o aparelho de fax.
 
-ghost-role-information-nukeop-rules = Você é um operador de Sindicato encarregado da destruição da estação. Como antagonista, faça o que for necessário para concluir esta tarefa.
+ghost-role-information-nukeop-rules = Você é um operador de Sindicato encarregado da destruição da sítioComo antagonista, faça o que for necessário para concluir esta tarefa.
 
 ghost-role-information-loneop-name = Agente nuclear solitário
-ghost-role-information-loneop-description = Você é um agente nuclear solitário. Destrua a estação!
-ghost-role-information-loneop-rules = Você é um agente do Sindicato encarregado de destruir a estação. Como antagonista, faça o que for necessário para completar esta tarefa.
+ghost-role-information-loneop-description = Você é um agente nuclear solitário. Destrua a sítio
+ghost-role-information-loneop-rules = Você é um agente do Sindicato encarregado de destruir a sítioComo antagonista, faça o que for necessário para completar esta tarefa.
 
 ghost-role-information-behonker-name = Behonker
 ghost-role-information-behonker-description = Você é um antagonista, traga a morte e buzinas para aqueles que não seguem a honkmother.
@@ -214,7 +214,7 @@ ghost-role-information-exterminator-description = Você foi enviado de volta no 
 ghost-role-information-exterminator-rules = Você é um antagonista e pode matar qualquer um que tente te impedir, mas matar o alvo é sempre sua principal prioridade.
 
 ghost-role-information-space-ninja-name = Ninja Espacial
-ghost-role-information-space-ninja-description = Use furtividade e percepção para sabotar a estação.
+ghost-role-information-space-ninja-description = Use furtividade e percepção para sabotar a sítio
 ghost-role-information-space-ninja-rules = Você é um mercenário de elite do Clã da Aranha. Não é obrigado a seguir seus objetivos, mas seu HONRA DE NINJA exige que você tente.
 
 ghost-role-information-syndicate-reinforcement-name = Agente do Sindicato

@@ -26,7 +26,7 @@ ent-ClothingHeadHatCentcom = chapéu da Conselho O4
     .desc = Como é bom ser imperador...
 
 ent-ClothingHeadHatChef = chapéu de chef
-    .desc = É um chapeu nem um pouco estiloso, geralmente utilizado pelos chefs de cozinha da estação. Não os provoque, já que eles podem cuspir na sua comida.
+    .desc = É um chapeu nem um pouco estiloso, geralmente utilizado pelos chefs de cozinha da sítioNão os provoque, já que eles podem cuspir na sua comida.
 
 ent-ClothingHeadHatFedoraBrown = fedora marrom
     .desc = Torne-se um agiota com essa Fedora Marrom!

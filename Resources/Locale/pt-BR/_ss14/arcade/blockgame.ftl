@@ -22,5 +22,5 @@ blockgame-menu-label-highscores = Recordes
 blockgame-menu-button-back = Volte
 blockgame-menu-label-next = Próximo
 blockgame-menu-label-hold = Manter
-blockgame-menu-text-station = Estação
+blockgame-menu-text-station = sítio
 blockgame-menu-text-nanotrasen = Nanotrasen

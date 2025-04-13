@@ -71,7 +71,7 @@ ent-SignDirectionalWash = placa do banheiro
     .desc = Uma placa direcional, apontado onde fica o banheiro.
 
 ent-SignAi = placa de IA
-    .desc = Uma placa que indica a inteligência artificial da estação.
+    .desc = Uma placa que indica a inteligência artificial da sítio
 
 ent-SignArmory = placa do artenal
     .desc = Uma placa que indica o arsenal.
@@ -362,7 +362,7 @@ ent-SignSomethingOld = placa velha
     .desc = Contém informação sobre alguma coisa. Ja está desgastada demais para ler.
 
 ent-SignSomethingOld2 = placa velha
-    .desc = Contém uma imagem de um planeta colidindo contra a estação. Um pouco preucupante.
+    .desc = Contém uma imagem de um planeta colidindo contra a sítioUm pouco preucupante.
 
 ent-SignSecurity = placa da segurança
     .desc = Uma placa que apresenta uma insígnia da segurança.

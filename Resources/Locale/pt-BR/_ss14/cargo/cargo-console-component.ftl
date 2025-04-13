@@ -23,7 +23,7 @@ cargo-console-menu-cargo-order-row-cancel-button = Cancelar
 
 # Orders
 cargo-console-order-not-allowed = Acesso não permitido
-cargo-console-station-not-found = Nenhuma estação disponível
+cargo-console-station-not-found = Nenhuma sítio disponível
 cargo-console-invalid-product = ID do produto inválido
 cargo-console-too-many = Muitos pedidos aprovados
 cargo-console-snip-snip = Pedido reduzido à capacidade

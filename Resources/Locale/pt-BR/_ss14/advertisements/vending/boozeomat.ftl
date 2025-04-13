@@ -1,7 +1,7 @@
 advertisement-boozeomat-1 = Nem me vem com café ou chá, me traz uma gelada!
 advertisement-boozeomat-2 = Álcool é seu melhor amigo, você abandona seus amigos?
 advertisement-boozeomat-3 = É um prazer te servir!
-advertisement-boozeomat-4 = Tem alguém com sede na estação?
+advertisement-boozeomat-4 = Tem alguém com sede na sítio
 advertisement-boozeomat-5 = Beba!
 advertisement-boozeomat-6 = Tome uma geladinha!
 advertisement-boozeomat-7 = Álcool é seu melhor amigo.

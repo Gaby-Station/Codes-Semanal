@@ -22,8 +22,8 @@ ent-CrateEngineeringCableBulk = Caixa de Cabos Gerais
 ent-CrateEngineeringElectricalSupplies = Caixa de Suprimentos Elétricos
     .desc = A NT não é responsável por nenhuma briga interna no local de trabalho relacionada às luvas isoladas incluídas nessas caixas.
 
-ent-CrateEngineeringStationBeaconBundle = Caixa de Sinalizadores de Estação
-    .desc = Uma caixa contendo 5 sinalizadores de estação para modificar o mapa da estação.
+ent-CrateEngineeringStationBeaconBundle = Caixa de Sinalizadores de sítio
+    .desc = Uma caixa contendo 5 sinalizadores de sítioara modificar o mapa da sísítio
 
 ent-CrateEngineeringJetpack = Caixa de Jetpack
     .desc = Dois jetpacks para quem não sabe usar extintores.

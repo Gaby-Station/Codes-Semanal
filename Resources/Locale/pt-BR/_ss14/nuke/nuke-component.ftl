@@ -1,7 +1,7 @@
 nuke-component-cant-anchor-floor = Os parafusos de ancoragem não conseguem travar no chão!
 nuke-component-announcement-sender = Explosivo de fissão nuclear
-nuke-component-announcement-armed = Atenção! O mecanismo de auto-destruição da estação foi ativado. {$time} segundos até a detonação.
-nuke-component-announcement-unarmed = A auto-destruição da estação foi desativada! Tenham um bom dia!
+nuke-component-announcement-armed = Atenção! O mecanismo de auto-destruição da sítiooi ativado. {$time} segundos até a detonação.
+nuke-component-announcement-unarmed = A auto-destruição da sítiooi desativada! Tenham um bom dia!
 nuke-component-announcement-send-codes = Atenção! Os códigos de auto-destruição foram enviados aos consoles de comunicação.
 nuke-component-doafter-warning = Você começa a mexer nos fios para desativar a nuke.. Isto pode demorar um pouco.
 

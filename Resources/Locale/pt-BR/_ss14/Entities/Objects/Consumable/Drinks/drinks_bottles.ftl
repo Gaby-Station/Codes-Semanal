@@ -17,7 +17,7 @@ ent-DrinkGrenadineBottleFull = garrafa de granadina Rosa Briar
      .desc = Doce e picante, um xarope em barra usado para adicionar cor ou sabor às bebidas.
 
 ent-DrinkGinBottleFull = Gin Griffeter
-     .desc = Uma garrafa de gin de alta qualidade, produzida na Estação Espacial New London.
+     .desc = Uma garrafa de gin de alta qualidade, produzida na sítiospacial New London.
 
 ent-DrinkGoldschlagerBottleFull = garrafa de Goldschläger
      .desc = 100 schnapps de canela à prova, feito para adolescentes alcoólatras nas férias de primavera.

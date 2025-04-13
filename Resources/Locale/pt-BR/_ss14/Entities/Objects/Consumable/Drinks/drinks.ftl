@@ -200,7 +200,7 @@ ent-DrinkManhattanGlass = copo de manhattan
      .desc = A bebida secreta preferida do detetive. Ele nunca teve estômago para gim...
 
 ent-DrinkManhattanProjectGlass = copo do projeto Manhattan
-     .desc = A bebida preferida de um cientista, para ponderar maneiras de explodir a estação.
+     .desc = A bebida preferida de um cientista, para ponderar maneiras de explodir a sítio.
 
 ent-DrinkManlyDorfGlass = copo de dorf viril
      .desc = Uma mistura masculina feita de cerveja e cerveja. Destinado apenas a homens verdadeiros.

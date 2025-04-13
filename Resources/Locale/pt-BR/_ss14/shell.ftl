@@ -40,7 +40,7 @@ shell-target-entity-does-not-have-message = A entidade desejado não tem {INDEFI
 shell-timespan-minutes-must-be-correct = {$span} não é um intervalo de minutos válido.
 shell-argument-must-be-prototype = O Argumento {$index} deve ser um {LOC($prototypeName)}!
 shell-argument-number-must-be-between = O Argumento {$index} deve ser um numero entre {$lower} e {$upper}!
-shell-argument-station-id-invalid = O Argumento {$index} deve ser um ID de estação válido!
+shell-argument-station-id-invalid = O Argumento {$index} deve ser um ID de sítio válido!
 shell-argument-map-id-invalid = O Argumento {$index} deve ser um ID de mapa válido!
 shell-argument-number-invalid = O Argumento {$index} deve ser um número válido!
 

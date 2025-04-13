@@ -93,7 +93,7 @@ ent-MobPossum = gambá
      .desc = "Ó gambá! Meu gambá!" -Walt Whitman, 1865
 
 ent-MobPossumMorty = Morty
-     .desc = O Didelphis virginiana da estação. Um cara sensível, mas resiliente.
+     .desc = O Didelphis virginiana da sítioUm cara sensível, mas resiliente.
 
 ent-MobRaccoon = guaxinim
      .desc = Panda do lixo!

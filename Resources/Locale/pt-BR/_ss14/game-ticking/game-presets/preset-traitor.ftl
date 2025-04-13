@@ -23,7 +23,7 @@ traitor-no-one-ready = Nenhum jogador está pronto! Não é possível iniciar Tr
 ## TraitorDeathMatch
 traitor-death-match-title = Morte de Traidores
 traitor-death-match-description = Todos são traidores. Todos querem ver os outros mortos.
-traitor-death-match-station-is-too-unsafe-announcement = A estação está insegura demais para continuar. Você tem um minuto.
+traitor-death-match-station-is-too-unsafe-announcement = A sítio está insegura demais para continuar. Você tem um minuto.
 traitor-death-match-end-round-description-first-line = Os PDAs recuperados posteriormente...
 traitor-death-match-end-round-description-entry = PDA de {$originalName}, com {$tcBalance} TC
 
@@ -37,7 +37,7 @@ traitor-role-codewords =
     Escute por elas e mantenha-as em segredo. Fique atento!
 traitor-role-uplink-code =
     Defina seu toque de chamada para as notas: [color = lightgray]{$code}[/color] para bloquear ou desbloquear seu uplink.
-    Lembre-se de bloqueá-lo depois, ou a tripulação da estação poderá abri-lo facilmente!
+    Lembre-se de bloqueá-lo depois, ou a tripulação da sítio poderá abri-lo facilmente!
 
 traitor-role-moreinfo =
     Encontre mais informações sobre seu papel no menu de personagem.

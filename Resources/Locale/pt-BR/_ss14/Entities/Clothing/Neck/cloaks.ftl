@@ -17,7 +17,7 @@ ent-ClothingNeckCloakQm = capa do intendente logístico
     .desc = Uma capa marrom resistente, apesar de não ser tão bonita, é bem útil para exibir suas habilidades em gerenciar um departamento.
 
 ent-ClothingNeckCloakHop = capa do chefe dos funcionários
-    .desc = Uma capa azul com detalhes vermelhos, concedido para aqueles que se dizem "porteiros" de todas airlocks da estação.
+    .desc = Uma capa azul com detalhes vermelhos, concedido para aqueles que se dizem "porteiros" de todas airlocks da sítio
 
 ent-ClothingNeckCloakHerald = capa do arauto
     .desc = Uma amedrontadora capa vermelha com espinhos nos ombros. Macabro.

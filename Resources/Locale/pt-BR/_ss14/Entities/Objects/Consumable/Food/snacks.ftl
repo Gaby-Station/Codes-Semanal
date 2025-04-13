@@ -20,7 +20,7 @@ ent-FoodSnackEnergyBar = barra de energia
      .desc = Uma barra energética com muito vigor.
 
 ent-FoodSnackPopcorn = pipoca
-     .desc = Cultivado em um planeta desconhecido, por um fazendeiro desconhecido, colocado por algum idiota em uma estação espacial.
+     .desc = Cultivado em um planeta desconhecido, por um fazendeiro desconhecido, colocado por algum idiota em uma sítiospacial.
 
 ent-FoodSnackRaisins = passas de uva de 4no
      .desc = As melhores passas do universo. Não sei por quê.

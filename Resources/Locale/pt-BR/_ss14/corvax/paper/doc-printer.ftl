@@ -2,7 +2,7 @@ doc-text-printer-ReportStation =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM-CIC[/bold]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM-CIC[/bold]
    ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                                 RELATÓRIO DE SITUAÇÃO
@@ -25,7 +25,7 @@ doc-text-printer-ReportOnEliminationOfViolations =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM[/bold]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM[/bold]
    ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                             RELATÓRIO DE ELIMINAÇÃO DE VIOLAÇÕES
@@ -47,7 +47,7 @@ doc-text-printer-ReporDepartment =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM[/bold]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM[/bold]
    ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                                 RELATÓRIO DE DESEMPENHO DO DEPARTAMENTO
@@ -69,7 +69,7 @@ doc-text-printer-ReportEmployeePerformance =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 ADM-COM[/bold]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioADM-COM[/bold]
    ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         RELATÓRIO DE DESEMPENHO DO FUNCIONÁRIO
@@ -87,7 +87,7 @@ doc-text-printer-ReportOnTheChaptersMeeting =
    ⠀[color=#1b487e]███░███░░░░██░░░
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM[/bold]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM[/bold]
    ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                                 RELATÓRIO DA REUNIÃO DOS CHEFES
@@ -114,7 +114,7 @@ doc-text-printer-InternalAffairsAgentsReport =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 JUR-COM[/bold]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioJUR-COM[/bold]
    ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                 RELATÓRIO DE INVESTIGAÇÃO INTERNA
@@ -133,7 +133,7 @@ doc-text-printer-ConditionReport =
    ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
    ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
    ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 ENG[/bold]
+   ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioENG[/bold]
    ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         RELATÓRIO DE CONDIÇÃO TÉCNICA
@@ -155,7 +155,7 @@ doc-text-printer-ReportStudyObject =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COD[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOD[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         RELATÓRIO DE ESTUDO DE OBJETO
@@ -175,7 +175,7 @@ doc-text-printer-ExperimentReport =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 NRD-COM[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioNRD-COM[/bold]
    ⠀ [color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         RELATÓRIO DE EXPERIMENTO
@@ -203,7 +203,7 @@ doc-text-printer-DisposalReport =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 SNB[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioSNB[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         RELATÓRIO DE DESCARTE
@@ -221,7 +221,7 @@ doc-text-printer-ApplicationAppointmentInterim =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     REQUERIMENTO DE NOMEAÇÃO INTERINA
@@ -240,7 +240,7 @@ doc-text-printer-ApplicationEmployment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 PD-COM[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioPD-COM[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         REQUERIMENTO DE EMPREGO
@@ -257,7 +257,7 @@ doc-text-printer-LetterResignation =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 PD-COM[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioPD-COM[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         DECLARAÇÃO DE RESIGNAÇÃO
@@ -267,7 +267,7 @@ doc-text-printer-LetterResignation =
     Posição do redator:
 
     Eu, (NOME), atualmente no cargo de (nome completo do cargo), desejo renunciar ao departamento (nome do departamento) por motivo de (motivo).
-    Comprometo-me a pagar a multa estabelecida pelos termos da rescisão do contrato, seja ele a prazo ou sem prazo, na estação da Central Command.
+    Comprometo-me a pagar a multa estabelecida pelos termos da rescisão do contrato, seja ele a prazo ou sem prazo, na sítioral Command.
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -275,7 +275,7 @@ doc-text-printer-ApplicationAccess =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 PD-COM[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioPD-COM[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     PEDIDO DE ACESSO
@@ -294,7 +294,7 @@ doc-text-printer-ApplicationEquipment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 PD-COM[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioPD-COM[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     PEDIDO DE EQUIPAMENTO
@@ -314,7 +314,7 @@ doc-text-printer-Appeal =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 PD-COM[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioPD-COM[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                             APELO
@@ -334,7 +334,7 @@ doc-text-printer-EvacuationShuttleRequest =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM-CC[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM-CC[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     PEDIDO DE NAVE DE EVACUAÇÃO
@@ -353,7 +353,7 @@ doc-text-printer-ShuttleRegistrationRequest =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM-CC[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM-CC[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         PEDIDO DE REGISTRO DE NAVE
@@ -378,7 +378,7 @@ doc-text-printer-RequestCallMembersCentralCommitteeDSO =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM-CC[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM-CC[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     SOLICITAÇÃO DE CHAMADA DE MEMBROS DO CC, DSO
@@ -387,7 +387,7 @@ doc-text-printer-RequestCallMembersCentralCommitteeDSO =
     Redator do documento:
     Posição do redator:
 
-    Eu, (NOME), no cargo de (nome completo do cargo), solicito a possibilidade de chamar para a estação:
+    Eu, (NOME), no cargo de (nome completo do cargo), solicito a possibilidade de chamar para a sítio
 
     Razão da chamada:
 
@@ -398,7 +398,7 @@ doc-text-printer-RequestToEstablishThreatLevel =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM-CC[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM-CC[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     SOLICITAÇÃO PARA ESTABELECER O NÍVEL DE AMEAÇA
@@ -407,7 +407,7 @@ doc-text-printer-RequestToEstablishThreatLevel =
     Redator do documento:
     Posição do redator:
 
-    Eu, (NOME), no cargo de (nome completo do cargo), solicito a avaliação da possibilidade de estabelecer o nível de ameaça na estação:
+    Eu, (NOME), no cargo de (nome completo do cargo), solicito a avaliação da possibilidade de estabelecer o nível de ameaça na sítio
 
     Razão para estabelecer o código:
 
@@ -417,7 +417,7 @@ doc-text-printer-RequestChangeSalary =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM-CC[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM-CC[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             PEDIDO DE ALTERAÇÃO DE SALÁRIO
@@ -436,7 +436,7 @@ doc-text-printer-RequestForNonlistedEmployment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM-CC[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM-CC[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             PEDIDO DE EMPREGO NÃO LISTADO
@@ -463,7 +463,7 @@ doc-text-printer-RequestForPromotion=
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM-CC[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM-CC[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             PEDIDO DE PROMOÇÃO
@@ -485,7 +485,7 @@ doc-text-printer-RequestDocuments=
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 JUR-CODE[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioJUR-CODE[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             SOLICITAÇÃO DE DOCUMENTOS
@@ -503,7 +503,7 @@ doc-text-printer-RequestEuthanasia =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 PD-MED[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioPD-MED[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             SOLICITAÇÃO DE EUTANÁSIA
@@ -521,7 +521,7 @@ doc-text-printer-RequestConstructionWork =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COD-ENG[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOD-ENG[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
         SOLICITAÇÃO DE TRABALHOS DE CONSTRUÇÃO
@@ -540,7 +540,7 @@ doc-text-printer-RequestModernization =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COD-NIO[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOD-NIO[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                 SOLICITAÇÃO DE MODERNIZAÇÃO
@@ -559,7 +559,7 @@ doc-text-printer-ComplaintViolationLaborRules =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 PD-JUR[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioPD-JUR[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             RECLAMAÇÃO DE VIOLAÇÃO DAS NORMAS DE TRABALHO
@@ -577,7 +577,7 @@ doc-text-printer-ComplaintOffense =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 PD-SB[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioPD-SB[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         RECLAMAÇÃO DE INFRAÇÃO
@@ -596,7 +596,7 @@ doc-text-printer-PermissionEquipment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COD[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOD[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
         PERMISSÃO PARA UTILIZAR EQUIPAMENTO
@@ -614,7 +614,7 @@ doc-text-printer-PermissionToTravelInCaseOfThreat=
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COD[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOD[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             PERMISSÃO PARA VIAJAR EM CASO DE AMEAÇA
@@ -623,10 +623,10 @@ doc-text-printer-PermissionToTravelInCaseOfThreat=
     Redator do documento:
     Posição do redator:
 
-    Eu, (NOME), no cargo de (nome completo do cargo), redatorizo o funcionário (NOME) no cargo de (nome completo do cargo) a se movimentar pela estação para cumprir suas responsabilidades de trabalho.
+    Eu, (NOME), no cargo de (nome completo do cargo), redatorizo o funcionário (NOME) no cargo de (nome completo do cargo) a se movimentar pela sítiomprir suas responsabilidades de trabalho.
     Níveis de códigos de ameaça nos quais esta permissão é válida:
 
-    Partes permitidas da estação para a localização do funcionário (pode especificar toda a estação):
+    Partes permitidas da sítiolocalização do funcionário (pode especificar toda a síiíiííisíto
 
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
@@ -634,7 +634,7 @@ doc-text-printer-SearchPermission =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 SB[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioSB[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         PERMISSÃO DE BUSCA
@@ -653,7 +653,7 @@ doc-text-printer-PermissionToCarryWeapons =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 SB[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioSB[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     PERMISSÃO PARA PORTAR ARMAS
@@ -676,7 +676,7 @@ doc-text-printer-PrescriptionDrugAuthorization =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 MED-SB[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioMED-SB[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                 AUTORIZAÇÃO DE MEDICAMENTO CONTROLADO
@@ -696,7 +696,7 @@ doc-text-printer-PermissionDisposeBody =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 MED[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioMED[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     PERMISSÃO PARA DESCARTE DE CORPO
@@ -715,7 +715,7 @@ doc-text-printer-ConstructionPermit =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 ENG-COD[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioENG-COD[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         PERMISSÃO PARA CONSTRUÇÃO
@@ -724,7 +724,7 @@ doc-text-printer-ConstructionPermit =
     Redator do documento:
     Posição do redator:
 
-    Eu, (NOME), no cargo de (nome completo do cargo), redatorizo a realização de (NOME), no cargo de (nome completo do cargo), para remodelar parte da estação (indicar o local da remodelação) devido a (razão da remodelação).
+    Eu, (NOME), no cargo de (nome completo do cargo), redatorizo a realização de (NOME), no cargo de (nome completo do cargo), para remodelar parte da sítior o local da remodelação) devido a (razão da remodelação).
     Volume de remodelação aprovado:
 
     =============================================
@@ -734,7 +734,7 @@ doc-text-printer-PermissionToExtendMarriage =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 PD-SRV[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioPD-SRV[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                 PERMISSÃO PARA AMPLIAÇÃO DO CASAMENTO
@@ -757,7 +757,7 @@ doc-text-printer-OrderDismissal =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                             ORDEM DE DEMISSÃO
@@ -775,7 +775,7 @@ doc-text-printer-OrderDeprivationAccess =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         ORDEM DE PRIVAÇÃO DE ACESSO
@@ -793,7 +793,7 @@ doc-text-printer-OrderEncouragement =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                             ORDEM DE ELOGIO
@@ -810,7 +810,7 @@ doc-text-printer-OrderParolePrisoner =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     ORDEM DE LIBERDADE CONDICIONAL DE PRISIONEIRO
@@ -829,7 +829,7 @@ doc-text-printer-OrderRecognizingSentienceCreature =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 NIO[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioNIO[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             ORDEM DE RECONHECIMENTO DE INTELIGÊNCIA DE CRIATURA
@@ -843,7 +843,7 @@ doc-text-printer-OrderRecognizingSentienceCreature =
 
     Nome completo atribuído à criatura:
 
-    A criatura é aceita/não aceita como passageira na estação até o final do turno.
+    A criatura é aceita/não aceita como passageira na sítifinal do turno.
     =============================================
                                 ⠀[italic]Espaço para carimbos[/italic]
 
@@ -851,7 +851,7 @@ doc-text-printer-OrderMedicalIntervention =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COD-MED[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOD-MED[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
     ORDEM DE INTERVENÇÃO MÉDICA
@@ -869,7 +869,7 @@ doc-text-printer-ProductManufacturingOrder =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COD-COD[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOD-COD[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     ORDEM DE PRODUÇÃO DE PRODUTO
@@ -890,7 +890,7 @@ doc-text-printer-OrderPurchaseResourcesEquipment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COD-SNB[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOD-SNB[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             ORDEM DE COMPRA DE RECURSOS, EQUIPAMENTOS
@@ -912,7 +912,7 @@ doc-text-printer-OrderingSpecialEquipment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM-CC[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM-CC[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     ORDEM DE SOLICITAÇÃO DE EQUIPAMENTO ESPECIAL
@@ -921,7 +921,7 @@ doc-text-printer-OrderingSpecialEquipment =
     Redator do documento:
     Posição do redator:
 
-    Eu, (NOME), no cargo de (nome completo do cargo), solicito o fornecimento de equipamento especial para a estação pela  Conselho O4.
+    Eu, (NOME), no cargo de (nome completo do cargo), solicito o fornecimento de equipamento especial para a sítioonselho O4.
     Lista do equipamento solicitado:
 
     Razão da solicitação:
@@ -932,7 +932,7 @@ doc-text-printer-OrderPurchaseWeapons =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 SE-SNB[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioSE-SNB[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             ORDEM DE COMPRA DE ARMAMENTO
@@ -951,7 +951,7 @@ doc-text-printer-Certificate =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM-PD[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM-PD[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                                         CERTIFICADO
@@ -969,7 +969,7 @@ doc-text-printer-CertificateAdvancedTraining =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 COM[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioCOM[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
     CERTIFICADO DE TREINAMENTO AVANÇADO
@@ -985,7 +985,7 @@ doc-text-printer-CertificateOffense =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 PD-SB[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioPD-SB[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                 CERTIFICADO DE INFRAÇÃO
@@ -1011,7 +1011,7 @@ doc-text-printer-DeathCertificate =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 MED[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioMED[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                             CERTIFICADO DE ÓBITO
@@ -1034,7 +1034,7 @@ doc-text-printer-MarriageCertificate =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 SRV-PD[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioSRV-PD[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                 CERTIFICADO DE CASAMENTO
@@ -1055,7 +1055,7 @@ doc-text-printer-DivorceCertificate =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 SRV-PD[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioSRV-PD[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                 CERTIFICADO DE DIVÓRCIO
@@ -1079,7 +1079,7 @@ doc-text-printer-ClosingIndictment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 SB[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioSB[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                         ORDEM DE PRISÃO
@@ -1102,7 +1102,7 @@ doc-text-printer-Sentence =
         ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
         ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
         ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-        ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 SB[/bold]
+        ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioSB[/bold]
         ⠀[color=#1b487e]░░░░██░░░████░███[/color]
         =============================================
                                         SENTENÇA
@@ -1125,7 +1125,7 @@ doc-text-printer-Judgment =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 JUR[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioJUR[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     SENTENÇA JUDICIAL
@@ -1158,7 +1158,7 @@ doc-text-printer-StatementHealth =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 MED-PD[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioMED-PD[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
                     DECLARAÇÃO DE SAÚDE
@@ -1185,7 +1185,7 @@ doc-text-printer-DecisionToStartTrial =
     ⠀[color=#1b487e]███░███░░░░██░░░░[/color]
     ⠀[color=#1b487e]░██░████░░░██░░░░[/color]      [head=3]Documento em Branco[/head]
     ⠀[color=#1b487e]░░█░██░██░░██░█░░[/color]               [head=3]NanoTrasen[/head]
-    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]Estação XX-000 JUR[/bold]
+    ⠀[color=#1b487e]░░░░██░░██░██░██░[/color] [bold]sítioJUR[/bold]
     ⠀[color=#1b487e]░░░░██░░░████░███[/color]
     =============================================
             DECISÃO DE INICIAR O JULGAMENTO
@@ -1203,7 +1203,7 @@ doc-text-printer-ErrorLoadingFormHeader =
     ⠀[color=#B50F1D] ███░██████░███[/color]
     ⠀[color=#B50F1D] █░░░██░░░░░░░█[/color]    [head=3]Documento em Branco[/head]
     ⠀[color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Sindicato[/head]
-    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]Estação XX-000 SIN[/bold]
+    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]sítioSIN[/bold]
     ⠀[color=#B50F1D] ███░██████░███[/color]
     =============================================
                         NOME DO DOCUMENTO
@@ -1219,7 +1219,7 @@ doc-text-printer-NOTICEOFLIQUIDATION =
     ⠀[color=#B50F1D] ███░██████░███[/color]
     ⠀[color=#B50F1D] █░░░██░░░░░░░█[/color]    [head=3]Documento em Branco[/head]
     ⠀[color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Sindicato[/head]
-    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]Estação XX-000 SIN-PD[/bold]
+    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]sítioSIN-PD[/bold]
     ⠀[color=#B50F1D] ███░██████░███[/color]
     =============================================
                         AVISO DE LIQUIDAÇÃO
@@ -1227,7 +1227,7 @@ doc-text-printer-NOTICEOFLIQUIDATION =
     Tempo desde o início do turno e data:
     Apelido do agente:
 
-    Estimado (NOME), no cargo de (nome completo do cargo)! A administração do Sindicato tomou a decisão de liquidá-lo imediatamente durante este turno. Pedimos que prepare antecipadamente um testamento e o envie ao Departamento Médico da estação. A destruição do seu corpo será realizada pelas forças do Sindicato.
+    Estimado (NOME), no cargo de (nome completo do cargo)! A administração do Sindicato tomou a decisão de liquidá-lo imediatamente durante este turno. Pedimos que prepare antecipadamente um testamento e o envie ao Departamento Médico da sítioruição do seu corpo será realizada pelas forças do Sindicato.
     Motivo da liquidação:
 
     =============================================
@@ -1237,7 +1237,7 @@ doc-text-printer-BUSINESSDEAL =
     ⠀[color=#B50F1D] ███░██████░███[/color]
     ⠀[color=#B50F1D] █░░░██░░░░░░░█[/color]    [head=3]Documento em Branco[/head]
     ⠀[color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Sindicato[/head]
-    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]Estação XX-000 SIN-COM[/bold]
+    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]sítioSIN-COM[/bold]
     ⠀[color=#B50F1D] ███░██████░███[/color]
     =============================================
                                 NEGÓCIO FECHADO
@@ -1245,7 +1245,7 @@ doc-text-printer-BUSINESSDEAL =
     Tempo desde o início do turno e data:
     Apelido do agente:
 
-    O Sindicato gentilmente propõe concluir um acordo entre a estação e o agente (apelido do agente). Do lado da estação, é necessário:
+    O Sindicato gentilmente propõe concluir um acordo entre a sítiante (apelido do agente). Do lado da síiíiíiísítio
 
     Motivo para cumprir as condições do acordo:
 
@@ -1255,7 +1255,7 @@ doc-text-printer-NOTEBEGINNINGMILITARYACTIONS =
     ⠀[color=#B50F1D] ███░██████░███[/color]
     ⠀[color=#B50F1D] █░░░██░░░░░░░█[/color]    [head=3]Documento em Branco[/head]
     ⠀[color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Sindicato[/head]
-    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]Estação XX-000 SIN[/bold]
+    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]sítioSIN[/bold]
     ⠀[color=#B50F1D] ███░██████░███[/color]
     =============================================
                     NOTA SOBRE O INÍCIO DAS AÇÕES MILITARES
@@ -1273,7 +1273,7 @@ doc-text-printer-REPORTACCOMPLISHMENTGOALS =
     ⠀[color=#B50F1D] ███░██████░███[/color]
     ⠀[color=#B50F1D] █░░░██░░░░░░░█[/color]    [head=3]Documento em Branco[/head]
     ⠀[color=#B50F1D] █░░░░████░░░░█[/color]             [head=3]Sindicato[/head]
-    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]Estação XX-000 PD-SIN[/bold]
+    ⠀[color=#B50F1D] █░░░░░░░██░░░█[/color]   [bold]sítioPD-SIN[/bold]
     ⠀[color=#B50F1D] ███░██████░███[/color]
     =============================================
                         RELATÓRIO DE CUMPRIMENTO DE OBJETIVOS

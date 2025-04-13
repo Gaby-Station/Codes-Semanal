@@ -66,7 +66,7 @@ salvage-map-proto-MediumCrashedShuttle = Nave acidentado
 salvage-map-proto-Meatball = Almôndega
 salvage-map-proto-VeganMeatball = Almôndega Vegana
 
-salvage-map-proto-StationStation = Estação estação
+salvage-map-proto-StationStation = sítioísítio
 salvage-map-proto-AsteroidBase = Base de Asteroides
 salvage-map-proto-RuinCargoBase = Armazenamento de carga arruinado
 salvage-map-proto-SecurityChunk = Pedaço do Departamento de Segurança

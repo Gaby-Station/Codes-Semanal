@@ -1,23 +1,23 @@
 ﻿zombie-title = Zumbis
-zombie-description = Os mortos-vivos foram libertados na estação! Trabalhe com a tripulação para sobreviver ao surto e garantir a segurança da estação.
+zombie-description = Os mortos-vivos foram libertados na sítioTrabalhe com a tripulação para sobreviver ao surto e garantir a segurança da sísítio
 
 zombieteors-title = Zumbieteoros
-zombieteors-description = Os mortos-vivos foram libertados na estação em meio a uma chuva de meteoros catastrófica! Trabalhe com seus companheiros de tripulação e faça o seu melhor para sobreviver!
+zombieteors-description = Os mortos-vivos foram libertados na sítiom meio a uma chuva de meteoros catastrófica! Trabalhe com seus companheiros de tripulação e faça o seu melhor para sobreviver!
 
 zombie-not-enough-ready-players = Jogadores prontos insuficientes para iniciar o jogo! {$readyPlayersCount} jogadores estavam prontos de um total de {$minimumPlayers} necessário(s). Não é possível iniciar Zumbis.
 zombie-no-one-ready = Nenhum jogador está pronto! Não é possível iniciar Zumbis.
 
-zombie-patientzero-role-greeting = Você é um dos infectados iniciais. Pegue suprimentos e prepare-se para sua eventual transformação. Seu objetivo é dominar a estação e infectar o máximo de pessoas possível.
+zombie-patientzero-role-greeting = Você é um dos infectados iniciais. Pegue suprimentos e prepare-se para sua eventual transformação. Seu objetivo é dominar a sítio infectar o máximo de pessoas possível.
 zombie-healing = Você sente um agito em sua carne
 zombie-infection-warning = Você sente o vírus zumbi tomando conta
 zombie-infection-underway = Seu sangue começa a engrossar
 
 ## goob edit
-zombie-start-announcement = Surto confirmado de nível 7 de risco biológico a bordo da estação. Todo o pessoal deve conter o surto.
+zombie-start-announcement = Surto confirmado de nível 7 de risco biológico a bordo da sítioTodo o pessoal deve conter o surto.
 
 zombie-alone = Você se sente completamente sozinho.
 
-zombie-shuttle-call = Detectamos que os mortos-vivos tomaram conta da estação. Enviando uma nave de emergência para coletar os sobreviventes restante.
+zombie-shuttle-call = Detectamos que os mortos-vivos tomaram conta da sítioEnviando uma nave de emergência para coletar os sobreviventes restante.
 
 zombie-round-end-initial-count = {$initialCount ->
     [one] Havia um infectado inicial:

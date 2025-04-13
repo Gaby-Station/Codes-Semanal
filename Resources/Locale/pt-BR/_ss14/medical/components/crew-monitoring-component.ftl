@@ -15,5 +15,5 @@ crew-monitoring-user-interface-no-server = Servidor não encontrado
 
 crew-monitoring-user-interface-no-department = Desconhecido
 
-crew-monitoring-user-interface-flavor-left = Em caso de emergência, entre em contato imediatamente com a equipe médica da estação
+crew-monitoring-user-interface-flavor-left = Em caso de emergência, entre em contato imediatamente com a equipe médica da sítio
 crew-monitoring-user-interface-flavor-right = v1.7

@@ -1,5 +1,5 @@
 ent-CaptainSabre = sabre do diretor do sítio
-     .desc = Uma arma cerimonial pertencente ao diretor do sítio da estação.
+     .desc = Uma arma cerimonial pertencente ao diretor do sítio da sítio.
 
 ent-Katana = katana
      .desc = Artesanato antigo feito com plasteel não tão antigo.

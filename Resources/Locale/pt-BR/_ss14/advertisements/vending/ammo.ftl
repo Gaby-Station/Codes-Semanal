@@ -1,4 +1,4 @@
-advertisement-ammo-1 = Estação Liberal: Sua loja de armas da estação!
+advertisement-ammo-1 = sítio Liberal: Sua loja de armas da sítio!
 advertisement-ammo-2 = Seja um patriota! Pegue uma arma!
 advertisement-ammo-3 = Armas de qualidade e baratas!
 advertisement-ammo-4 = Melhor morto do que vermelho!

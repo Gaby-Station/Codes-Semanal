@@ -23,7 +23,7 @@ ent-ClothingOuterArmorMagusred = armadura magus vermelha
     .desc = Um traje blindado vermelho.
 
 ent-ClothingOuterArmorRiot = armadura anti-motim
-    .desc = Um traje resistente a ataques corpo a corpo, perfeito para combater delinquentes pela estação.
+    .desc = Um traje resistente a ataques corpo a corpo, perfeito para combater delinquentes pela sítio
 
 ent-ClothingOuterArmorScaf = traje scaf
     .desc = A green and brown tactical suit for combat situations.

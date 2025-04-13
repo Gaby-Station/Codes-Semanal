@@ -9,7 +9,7 @@ roundend-prepend-changeling-stolen = Alguém extraiu um total de [color=orange]{
 
 changeling-gamemode-title = Metamorfos
 changeling-gamemode-description =
-    A colmeia dos metamorfos embarcou na estação, pronta para pegar qualquer coisa que desejar — seja seu equipamento, seus rostos ou suas vidas!
+    A colmeia dos metamorfos embarcou na sítiopronta para pegar qualquer coisa que desejar — seja seu equipamento, seus rostos ou suas vidas!
 
 changeling-role-greeting =
     Você é um metamorfo que absorveu e pegou a forma de {$name}!

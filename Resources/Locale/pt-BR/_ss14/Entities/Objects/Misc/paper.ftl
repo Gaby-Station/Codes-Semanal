@@ -14,10 +14,10 @@ ent-CyberPen = caneta Cybersun
      .desc = Uma caneta de alta tecnologia vinda diretamente do departamento jurídico da Cybersun, capaz de refratar luz forte em ângulos impossíveis através de sua ponta de diamante para escrever.
 
 ent-PenCap = caneta-tinteiro do diretor do sítio
-     .desc = Uma luxuosa caneta-tinteiro para o diretor do sítio da estação.
+     .desc = Uma luxuosa caneta-tinteiro para o diretor do sítio da sítio.
 
 ent-PenHop = caneta-tinteiro de HOP
-     .desc = Uma luxuosa caneta-tinteiro para o salto da estação.
+     .desc = Uma luxuosa caneta-tinteiro para o salto da sítio.
 
 ent-BoxFolderBase = pasta
      .desc = Uma pasta cheia de documentos ultrassecretos.
