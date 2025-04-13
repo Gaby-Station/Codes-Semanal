@@ -1,6 +1,6 @@
 ghost-roles-window-rules-role-button = Regras
 
-ui-map-vote-secret-map = Mapa Secreto
+ui-vote-secret-map = Mapa Secreto
 
 round-end-summary-window-stats-tab-tittle = Status
 round-end-summary-window-my-stats-tab-tittle = Meu status
@@ -58,3 +58,6 @@ chat-radio-logistics-service = Logística
 chat-radio-food-and-sanitation-service = Alimentação e Saneamento
 
 chat-radio-chaos = Insurgência do Caos
+
+body-normal = Normal
+body-slim = Magro
