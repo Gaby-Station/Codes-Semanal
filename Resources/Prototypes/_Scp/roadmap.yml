@@ -7,96 +7,96 @@
       goals:
         scp-173:
           id: scp-173
-          name: SCP-173 "Estátua"
-          desc: Estátua que mata ao perder o contato visual. Rápida, silenciosa e letal se você piscar.
+          name: SCP-173 «Статуя»
+          desc: Статуя, убивающая при потере зрительного контакта. Быстрая, бесшумная и смертельная, если моргнуть.
           state: Complete
         scp-999:
           id: scp-999
-          name: SCP-999 "Monstro de Gelatina"
-          desc: Entidade gelatinosa amigável que provoca alegria extrema e risadas. Capaz de aliviar o estresse e curar depressão.
+          name: SCP-999 «Желейный Монстр»
+          desc: Дружелюбная студнеобразная сущность, вызывающая безграничную радость и смех. Способен снимать стресс и лечить депрессию.
           state: Complete
         scp-096:
           id: scp-096
-          name: SCP-096 "Envergonhado"
-          desc: Criatura extremamente perigosa que reage ao ser vista. Se alguém olhar para o seu rosto, nada pode salvar a vítima.
+          name: SCP-096 «Скромник»
+          desc: Чрезвычайно опасное существо, реагирующее на взгляд. Если кто-то увидит его лицо - жертву ничто не спасёт.
           state: Complete
         scp-939:
           id: scp-939
-          name: SCP-939 "Com Muitas Vozes"
-          desc: Criaturas predadoras sem olhos que atraem vítimas com as vozes de vítimas anteriores. Ideais para ataques furtivos no escuro.
+          name: SCP-939 «Со множеством голосов»
+          desc: Хищные существа без глаз, привлекающие жертв голосами предыдущих жертв. Идеальны для скрытных атак в темноте.
           state: Complete
         scp-106:
           id: scp-106
-          name: SCP-106 "O Velho"
-          desc: Monstro velho e podre que surge de portais corrosivos. Caça suas vítimas com sadismo.
+          name: SCP-106 «Старик»
+          desc: Старый, гнилой монстр, появляющийся из коррозионных порталов. Охотится на жертвы с садистской жестокостью.
           state: Complete
         scp-049:
           id: scp-049
-          name: SCP-049 "Doutor da Peste"
-          desc: Humanoide misterioso com manto, que se considera um médico. Seu toque é mortal, e seu objetivo é "curar" a humanidade.
+          name: SCP-049 «Чумной Доктор»
+          desc: Загадочный гуманоид в мантии, считающий себя врачом. Его прикосновение смертельно, а цель - «излечить» человечество.
           state: Complete
     2025:
       name: 2025
       goals:
         scp-082:
           id: scp-082
-          name: SCP-082 "Canibal Fernand"
-          desc: Gigante com modos refinados e gosto por carne humana. Gosta de contar histórias antes de fazer um banquete.
+          name: SCP-082 «Каннибал Фернанд»
+          desc: Гигант с изысканными манерами и вкусом к человеческой плоти. Любит рассказывать истории перед тем, как устроить пир.
           state: InProgress
         scp-rebalance:
           id: scp-rebalance
-          name: Rebalanceamento dos SCPs
-          desc: Os objetos SCP serão totalmente reequilibrados. Os fracos e chatos ficarão mais fortes e divertidos, e os muito fortes deixarão de ser. A força dos SCPs será baseada em sua classe de contenção – Seguro, Euclídeo ou Keter.
+          name: Ребаланс SCP
+          desc: Сцп объекты будут полностью перебалансированы. Слабые и скучные объекты станут сильнее и веселее, слишком сильные наоборот перестанут быть таковыми. Мощность сцп будет рассчитана из их класса содержания - Безопасного, Евклид или Кетер
           state: InProgress
         access:
           id: access
-          name: Cartões de acesso por nível
-          desc: Os cartões de acesso serão divididos por nível, do 0 ao 5, como no lore.
+          name: Карты доступа по уровням
+          desc: Карты доступа будут сделаны по уровням, от 0го до 5го, прямо как в лоре
           state: InProgress
         sounds:
           id: sounds
-          name: Grande atualização de sons e ambientes
-          desc: Adição de novos ambientes sonoros, músicas, e reformulação de sons principais com mais qualidade, tons escuros e abafados para combinar com a atmosfera SCP. Um novo design sonoro para melhorar a sensação opressiva do complexo.
+          name: Большой апдейт звуков и амбиентов
+          desc: Добавление новых атмосферных амбиентов, музыки, переделка основных звуков на более качественные, темные, приглушенные для соответствия атмосфере сцп. Новый подход к звуковому дизайну позволит сильно улучшить гнетущую атмосферу комплекса SCP
           state: Complete
         foundation-map:
           id: foundation-map
-          name: Novo mapa – Complexo
-          desc: Um novo mapa será finalizado – o Complexo, completamente novo e diferente da estação.
+          name: Новая карта - комплекс
+          desc: Будет доделана новая карта - комплекс, полностью новая и совершенно непохожая на станцию.
           state: Complete
         rules:
           id: rules
-          name: Regras transformadas em mecânicas
-          desc: A maioria das regras ligadas a novos objetos ou papéis será convertida em mecânicas que automaticamente permitem ou impedem ações dos jogadores. O jogo observará os jogadores, não os administradores.
+          name: Переделка правил в механики
+          desc: Большинство правил связанных с новыми объектами или ролями будут переработаны под механики, которые сами будут позволять игроку что-то делать, а что-то не делать. Игра будет следить за игрокам, а не администрация.
           state: InProgress
         new-roles:
           id: new-roles
-          name: Reestruturação de papéis para a Fundação SCP
-          desc: Todos os papéis serão refeitos com base nos funcionários da Fundação SCP, com sprites únicos, novos departamentos e sistema de interação entre si.
+          name: Переработка ролей под фонд SCP
+          desc: Все роли будут переработаны под работников фонда SCP, получат уникальные спрайты экипировки, новые департаменты и систему взаимодействия друг с другом.
           state: InProgress
         resprite:
           id: resprite
-          name: Grande reformulação visual (resprite)
-          desc: Reformulação de todos os objetos principais do complexo para criar uma imersão maior com um estilo visual unificado e condizente com a atmosfera pesada, em vez da aparência plástica e "de brinquedo" da estação comum.
+          name: Большой респрайт
+          desc: Респрайт всех основных объектов комплекса для достижения максимального погружения за счет единого визуального стиля подходящего для тяжелой атмосферы комплекса взамен пластиковой и ненастоящей, игрушечной атмосферы обычной станции
           state: Planned
         mtf:
           id: mtf
-          name: Chamada da Força-Tarefa Móvel (MTF)
-          desc: Jogadores poderão chamar a MTF para restaurar a contenção dos SCPs. Equipamentos e mecânicas da MTF serão totalmente refeitos.
+          name: Вызов отряда МОГ
+          desc: Возможность самостоятельного вызова отряда МОГ для восстановления условий содержания SCP. Снаряжение и механики отряда будут полностью переработаны
           state: Planned
         chaos:
           id: chaos
-          name: Rebeldes do Caos
-          desc: Novos modos de jogo envolvendo a infiltração dos Rebeldes do Caos no complexo. Desde invasões com tiroteio até infiltrações furtivas.
+          name: Повстанцы хаоса
+          desc: Будут добавлены игровые режимы, связанные с проникновением в комплекс повстанцев хаоса. Как полноценный рейд с перестрелками, так и скрытное проникновение.
           state: Planned
         gamemodes:
           id: gamemodes
-          name: Reformulação dos modos de jogo padrão
-          desc: Os modos de jogo serão refeitos com base no lore do SCP. Ex: revolução virará motim da Classe D, com mecânicas únicas como fuga silenciosa, ataque agressivo ou outros desdobramentos.
+          name: Переработка стандартных игровых режимов
+          desc: Игровые режимы будут полностью переработаны под лор SCP. Например революция превратится в бунт класса Д, с уникальными игровыми механиками для этого, вроде разных вариантов развития событий - тихого подкопа, агрессивной атаки или еще чего.
           state: Planned
         scpsl:
           id: scpsl
-          name: Modo SCP SL
-          desc: Modo de jogo inspirado no SCP: Secret Laboratory. Jogadores começam durante uma falha massiva de contenção, em um complexo gerado proceduralmente. O objetivo é sobreviver e escapar. Unidades MTF ou Rebeldes do Caos podem ajudar ou atrapalhar.
+          name: Режим SCP SL
+          desc: Уникальный игровой режим взятый с одноименной игры. Персонал стартует во время массово нарушения условий содержания в полностью процедурно генерируемом комплексе. Задача игроков - выжить, сбежав из комплекса. Прибывающие отряды МОГ или Повстанцев хаоса помогут или помешают этому.
           state: Planned
     2026:
       name: 2026
