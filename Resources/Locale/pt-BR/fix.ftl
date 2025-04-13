@@ -61,3 +61,32 @@ chat-radio-chaos = Insurgência do Caos
 
 body-normal = Normal
 body-slim = Magro
+
+comp-pda-ui-shuttle-call-time = Até a evacuação: [color=white]{ $time }[/color]
+comp-pda-ui-shuttle-arrival-time = Até a chegada da nave: [color=white]{ $time }[/color]
+comp-pda-ui-shuttle-launch-time = Até o lançamento da nave: [color=white]{ $time }[/color]
+
+alert-level-rollcall = Chamada
+alert-level-rollcall-announcement = Iniciou-se o período de chamada no sítio. Todos os prisioneiros devem se dirigir ao local específico para isso.
+alert-level-rollcall-instructions = Os prisioneiros devem se reunir no local especialmente designado para a chamada. Os guardas devem garantir a presença de todos os prisioneiros na chamada.
+alert-level-breakfast = Café da manhã
+alert-level-breakfast-announcement = Iniciou-se o período de café da manhã no sítio. Todos os prisioneiros devem se dirigir ao refeitório.
+alert-level-breakfast-instructions = Os prisioneiros devem se dirigir ao refeitório. Os guardas devem garantir a presença de todos os prisioneiros no café da manhã.
+alert-level-work = Trabalho
+alert-level-work-announcement = Iniciou-se o período de trabalho no sítio. Os prisioneiros com trabalho designado devem se apresentar para cumprir suas tarefas.
+alert-level-work-instructions = Os prisioneiros com trabalho devem se apresentar para cumprir suas tarefas. Os guardas devem garantir que os prisioneiros estejam cumprindo suas funções.
+alert-level-exercise = Exercícios físicos
+alert-level-exercise-announcement = Iniciou-se o período de exercícios físicos no sítio. Todos os prisioneiros devem se dirigir à academia.
+alert-level-exercise-instructions = Os prisioneiros devem se dirigir à academia. Os guardas devem garantir que todos os prisioneiros estejam frequentando a academia.
+alert-level-rest = Descanso
+alert-level-rest-announcement = Iniciou-se o período de descanso no sítio. Os prisioneiros podem usufruir de seu tempo livre.
+alert-level-rest-instructions = Os prisioneiros podem usufruir de seu tempo livre. Os guardas devem manter a ordem durante o descanso.
+alert-level-shower = Banho
+alert-level-shower-announcement = Iniciou-se o período de banho no sítio. Os prisioneiros devem se dirigir ao chuveiro.
+alert-level-shower-instructions = Os prisioneiros devem se dirigir ao chuveiro. Os guardas devem manter a ordem durante o banho.
+alert-level-lightsout = Hora de dormir
+alert-level-lightsout-announcement = Iniciou-se o período de descanso noturno. Os prisioneiros devem se dirigir às suas celas.
+alert-level-lightsout-instructions = Os prisioneiros devem se dirigir às suas celas. Os guardas devem garantir que todos os prisioneiros estejam nas celas.
+alert-level-lockdown = Lockdown
+alert-level-lockdown-announcement = Foi declarado lockdown no sítio. Todos os prisioneiros devem retornar às suas celas imediatamente. Os guardas devem capturar ou eliminar a ameaça.
+alert-level-lockdown-instructions = Todos os prisioneiros devem retornar às suas celas imediatamente. Os guardas devem capturar ou iliminar a ameaça.
