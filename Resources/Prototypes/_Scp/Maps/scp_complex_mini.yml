@@ -1,6 +1,6 @@
 - type: gameMap
   id: ScpComplexMini
-  mapName: 'Мини-комплекс SCP'
+  mapName: 'Mini Complexo SCP'
   mapPath: /Maps/_Scp/scp_complex_mini.yml
   maxRandomOffset: 0
   randomRotation: false

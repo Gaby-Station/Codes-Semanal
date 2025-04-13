@@ -90,3 +90,10 @@ alert-level-lightsout-instructions = Os prisioneiros devem se dirigir às suas c
 alert-level-lockdown = Lockdown
 alert-level-lockdown-announcement = Foi declarado lockdown no sítio. Todos os prisioneiros devem retornar às suas celas imediatamente. Os guardas devem capturar ou eliminar a ameaça.
 alert-level-lockdown-instructions = Todos os prisioneiros devem retornar às suas celas imediatamente. Os guardas devem capturar ou iliminar a ameaça.
+
+ui-options-tab-extra = Extra
+ui-options-light-flicking-enable = Piscar das luzes
+ui-options-scp = Configurações SCP
+
+ui-options-grain-toggle-overlay = Usar shader de granulação
+ui-options-grain-strength = Intensidade do shader de granulação

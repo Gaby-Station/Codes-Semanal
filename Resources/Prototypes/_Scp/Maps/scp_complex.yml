@@ -1,6 +1,6 @@
 - type: gameMap
   id: ScpComplex
-  mapName: 'Комплекс SCP'
+  mapName: 'Complexo SCP'
   mapPath: /Maps/_Scp/scp_complex.yml
   maxRandomOffset: 0
   randomRotation: false
