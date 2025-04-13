@@ -1,12 +1,11 @@
 ﻿using System.Linq;
+using Content.Shared._Scp.Helpers;
 using Content.Shared._Scp.Scp173;
 using Content.Shared.Alert;
 using Content.Shared.Examine;
 using Content.Shared.Eye.Blinding.Systems;
 using Content.Shared.Mobs.Systems;
-using Robust.Shared.Audio;
 using Robust.Shared.Audio.Systems;
-using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Timing;
 
@@ -18,9 +17,8 @@ public abstract class SharedBlinkingSystem : EntitySystem
     [Dependency] private readonly SharedEyeClosingSystem _closingSystem = default!;
     [Dependency] private readonly ExamineSystemShared _examine = default!;
     [Dependency] private readonly AlertsSystem _alertsSystem = default!;
-    [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly SharedScpHelpersSystem _scpHelpers = default!;
     [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly ISharedPlayerManager _player = default!;
     [Dependency] private readonly IGameTiming _gameTiming = default!;
 
     private readonly TimeSpan _blinkingInterval = TimeSpan.FromSeconds(8);
@@ -30,10 +28,7 @@ public abstract class SharedBlinkingSystem : EntitySystem
 
 
     // TODO: Рефактор моргания с целью сделать как в контеймент бриче юнити.
-    private readonly SoundSpecifier _blinkingStartSound = new SoundPathSpecifier("/Audio/_Scp/Effects/Blinking/start.ogg");
-    private readonly SoundSpecifier _blinkingEndSound = new SoundPathSpecifier("/Audio/_Scp/Effects/Blinking/end.ogg");
 
-    private readonly SoundSpecifier _blinkSound = new SoundPathSpecifier("/Audio/_Scp/Effects/Blinking/blink.ogg");
 
     public bool IsBlind(EntityUid uid, BlinkableComponent? component = null, bool useTimeCompensation = false)
     {
@@ -94,7 +89,7 @@ public abstract class SharedBlinkingSystem : EntitySystem
         Dirty(uid, component);
 
         if (_gameTiming.IsFirstTimePredicted)
-            _audio.PlayGlobal(_blinkSound, uid);
+            PlayBlinkSound(uid);
 
         var variance = _random.NextDouble() * BlinkingIntervalVariance.TotalSeconds * 2 - BlinkingIntervalVariance.TotalSeconds;
 
@@ -108,7 +103,7 @@ public abstract class SharedBlinkingSystem : EntitySystem
     /// <param name="uid">Моргающий</param>
     /// <param name="component">Компонент моргания</param>
     /// <param name="interval">Через сколько будет следующее моргание</param>
-    /// <param name="variance">Плюс минус время следующего моргания, чтобы вся станция не моргала в один такт</param>
+    /// <param name="variance">Плюс-минус время следующего моргания, чтобы вся станция не моргала в один такт</param>
     public void SetNextBlink(EntityUid uid, BlinkableComponent component, TimeSpan interval, double variance = 0)
     {
         component.NextBlink = _gameTiming.CurTime + interval + TimeSpan.FromSeconds(variance) + TimeSpan.FromSeconds(component.AdditionalBlinkingTime);
@@ -119,8 +114,15 @@ public abstract class SharedBlinkingSystem : EntitySystem
 
     private bool IsScp173Nearby(EntityUid uid)
     {
-        var entities = GetScp173().ToList();
-        return entities.Count != 0 && entities.Any(scp => _examine.InRangeUnOccluded(uid, scp, 12f, ignoreInsideBlocker:false));
+        var entities = _scpHelpers.GetAll<Scp173Component>().ToHashSet();
+
+        if (entities.Count == 0)
+            return false;
+
+        if (!entities.Any(scp => _examine.InRangeUnOccluded(uid, scp, 12f, ignoreInsideBlocker: false)))
+            return false;
+
+        return true;
     }
 
     protected virtual void UpdateAlert(EntityUid uid, BlinkableComponent component)
@@ -169,7 +171,7 @@ public abstract class SharedBlinkingSystem : EntitySystem
         Dirty(uid, component);
 
         if (_gameTiming.IsFirstTimePredicted)
-            _audio.PlayGlobal(_blinkSound, uid);
+            PlayBlinkSound(uid);
 
         // Set next blink slightly after forced blindness ends
         SetNextBlink(uid, component, duration + TimeSpan.FromSeconds(1));
@@ -177,12 +179,6 @@ public abstract class SharedBlinkingSystem : EntitySystem
         UpdateAlert(uid, component);
     }
 
-    public IEnumerable<Entity<Scp173Component>> GetScp173()
-    {
-        var query = EntityManager.AllEntityQueryEnumerator<Scp173Component>();
-        while (query.MoveNext(out var uid, out var component))
-        {
-            yield return (uid, component);
-        }
-    }
+    protected virtual void PlayBlinkSound(EntityUid uid) { }
 }
+

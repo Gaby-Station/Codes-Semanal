@@ -32,6 +32,7 @@
   - ClothingNeckAllyPin
   - ClothingNeckAromanticPin
   - ClothingNeckAsexualPin
+  - ClothingNeckAroacePin
   - ClothingNeckBisexualPin
   - ClothingNeckGayPin
   - ClothingNeckIntersexPin
@@ -89,6 +90,7 @@
   - EmergencyWithoutGas  # Sunrise-Edit
   - EmergencyDwarf  # Sunrise-Edit
 
+# nitrogen or oxygen tank, depending on what your species needs
 - type: loadoutGroup
   id: GroupEVATank
   name: loadout-group-EVA-tank
@@ -96,6 +98,14 @@
   loadouts:
   - LoadoutSpeciesEVANitrogen
   - LoadoutSpeciesEVAOxygen
+
+# vox get a nitrogen tank, other species get nothing
+- type: loadoutGroup
+  id: GroupEVATankVox
+  name: loadout-group-vox-tank
+  hidden: true
+  loadouts:
+  - LoadoutSpeciesVoxNitrogen
 
 - type: loadoutGroup
   id: GroupPocketTankDouble
@@ -146,6 +156,7 @@
   loadouts:
   - CaptainOuterArmor # Sunrise-Edit
   - CaptainOuterCoat # Sunrise-Edit
+  - CaptainOuterOverCoat  # Sunrise-Edit
   - CaptainWintercoat
 
 #- type: loadoutGroup
@@ -597,6 +608,7 @@
   - PanFlute
   - Ocarina
   - Bagpipe
+  - SuperSynthesizer
 
 # Cargo
 #- type: loadoutGroup
@@ -812,6 +824,7 @@
 - type: loadoutGroup
   id: StationEngineerHead
   name: loadout-group-station-engineer-head
+  minLimit: 0
   loadouts:
 #sunrise-start
   - Sunrise-EngineerHeadBeret
@@ -1015,6 +1028,11 @@
   loadouts:
   - HeadofSecurityHead
   - HeadofSecurityBeret
+  #Sunrise-Start
+  - HeadofSecurityHatCap
+  - HeadofSecurityCapUSSPBlack
+  - HeadofSecurityCapLeather
+  #Sunrise-End
 
 - type: loadoutGroup
   id: HeadofSecurityJumpsuit
@@ -1026,6 +1044,8 @@
   - HeadofSecurityTurtleneckSkirt
   - HeadofSecurityFormalSuit
   - HeadofSecurityFormalSkirt
+  - HeadofSecurityJumpsuitHoSOld  #Sunrise-Edit
+  - HeadofSecurityJumpsuitUSSPBlack #Sunrise-Edit
 
 #- type: loadoutGroup
 #  id: HeadofSecurityNeck
@@ -1041,6 +1061,12 @@
   loadouts:
   - HeadofSecurityCoat
   - HeadofSecurityWinterCoat
+  #Sunrise-Start
+  - HeadofSecurityGreatcoat
+  - HeadofSecurityGreatcoatBlack
+  - HeadofSecurityOvercoat
+  - HeadofSecurityUSSPBlack
+  #Sunrise-End
 
 - type: loadoutGroup
   id: WardenHead
@@ -1395,6 +1421,7 @@
   - PurpleSurgeryCap
 # Sunrise-end
   - ParamedicHead
+  - ParamedicBeret # Sunrise-Edit
 # Sunrise-start
   - Sunrise-HatRedsoft
   - Sunrise-HatOrangesoft

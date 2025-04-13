@@ -838,6 +838,38 @@
     color: "#F317F3"
 
 - type: entity
+  parent: ComputerComms
+  id: CentcommComputerComms
+  name: central command communications computer
+  description: A computer used to make world wide announcements via keyboard. The superior cousin of the regular communications computer.
+  components:
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: comm_logs
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: AccessReader
+    access: [[ "CentralCommand" ]]
+  - type: CommunicationsConsole
+    title: comms-console-announcement-title-centcom
+    color: "#1d8bad"
+    canShuttle: false
+    global: true
+  - type: Computer
+    board: CentcommCommsComputerCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#00FF00"
+
+- type: entity
   parent: BaseComputerAiAccess
   id: ComputerSolarControl
   name: solar control computer
@@ -1040,58 +1072,58 @@
     - CargoBounties
     - Cargo
 
-#- type: entity
-#  parent: BaseComputerAiAccess
-#  id: ComputerCloningConsole
-#  name: cloning console computer
-#  description: The centerpiece of the cloning system, medicine's greatest accomplishment. It has lots of ports and wires.
-#  components:
-#  - type: CloningConsole
-#  - type: DeviceList
-#  - type: DeviceNetwork
-#    deviceNetId: Wired
-#  - type: Sprite
-#    layers:
-#    - map: ["computerLayerBody"]
-#      state: computer
-#    - map: ["computerLayerKeyboard"]
-#      state: generic_keyboard
-#    - map: ["computerLayerScreen"]
-#      state: dna
-#    - map: ["computerLayerKeys"]
-#      state: generic_keys
-#    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
-#      state: generic_panel_open
-#  - type: ApcPowerReceiver
-#    powerLoad: 3100 #We want this to fail first so I transferred most of the scanner and pod's power here. (3500 in total)
-#  - type: Computer
-#    board: CloningConsoleComputerCircuitboard
-#  - type: PointLight
-#    radius: 1.5
-#    energy: 1.6
-#    color: "#1f8c28"
-#  - type: DeviceLinkSource
-#    range: 4
-#    ports:
-#      - MedicalScannerSender
-#      - CloningPodSender
-#  - type: ActivatableUI
-#    key: enum.CloningConsoleUiKey.Key
-#  - type: UserInterface
-#    interfaces:
-#        enum.CloningConsoleUiKey.Key:
-#          type: CloningConsoleBoundUserInterface
-#        enum.WiresUiKey.Key:
-#          type: WiresBoundUserInterface
-#  - type: Speech
-#    speechVerb: Robotic
-#    speechSounds: Pai
-#  - type: Damageable
-#    damageContainer: StructuralInorganic
-#    damageModifierSet: StructuralMetallicStrong
-#  - type: GuideHelp
-#    guides:
-#    - Cloning
+- type: entity
+  parent: BaseComputerAiAccess
+  id: ComputerCloningConsole
+  name: cloning console computer
+  description: The centerpiece of the cloning system, medicine's greatest accomplishment. It has lots of ports and wires.
+  components:
+  - type: CloningConsole
+  - type: DeviceList
+  - type: DeviceNetwork
+    deviceNetId: Wired
+  - type: Sprite
+    layers:
+    - map: ["computerLayerBody"]
+      state: computer
+    - map: ["computerLayerKeyboard"]
+      state: generic_keyboard
+    - map: ["computerLayerScreen"]
+      state: dna
+    - map: ["computerLayerKeys"]
+      state: generic_keys
+    - map: [ "enum.WiresVisualLayers.MaintenancePanel" ]
+      state: generic_panel_open
+  - type: ApcPowerReceiver
+    powerLoad: 3100 #We want this to fail first so I transferred most of the scanner and pod's power here. (3500 in total)
+  - type: Computer
+    board: CloningConsoleComputerCircuitboard
+  - type: PointLight
+    radius: 1.5
+    energy: 1.6
+    color: "#1f8c28"
+  - type: DeviceLinkSource
+    range: 4
+    ports:
+      - MedicalScannerSender
+      - CloningPodSender
+  - type: ActivatableUI
+    key: enum.CloningConsoleUiKey.Key
+  - type: UserInterface
+    interfaces:
+        enum.CloningConsoleUiKey.Key:
+          type: CloningConsoleBoundUserInterface
+        enum.WiresUiKey.Key:
+          type: WiresBoundUserInterface
+  - type: Speech
+    speechVerb: Robotic
+    speechSounds: Pai
+  - type: Damageable
+    damageContainer: StructuralInorganic
+    damageModifierSet: StructuralMetallicStrong
+  - type: GuideHelp
+    guides:
+    - Cloning
 
 - type: entity
   id: ComputerSalvageExpedition
@@ -1312,6 +1344,7 @@
   # Putting this as "DO NOT MAP" until the performance issues are fixed.
   # And it's more fleshed out.
   suffix: TESTING, DO NOT MAP
+  categories: [ DoNotMap ]
   components:
     - type: Sprite
       layers:

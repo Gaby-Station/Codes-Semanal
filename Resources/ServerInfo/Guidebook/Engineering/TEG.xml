@@ -1,8 +1,13 @@
 <Document>
   # Thermo-electric Engine (TEG)
 
+<<<<<<< HEAD
   The TEG generates power by exchanging heat between hot and cold gases. On the station, hot gas is usually created by burning plasma, and an array of heat-exchanging pipes in space radiates away heat to cool down circulated gases.
   On the station, hot gas is usually created by burning plasma, and an array of [textlink="heat-exchanging" link="Radiators"] pipes in space radiates away heat to cool down circulated gases.
+=======
+  The TEG generates power by exchanging heat between hot and cold gasses.
+  On the station, hot gas is usually created by burning plasma, and an array of [textlink="heat-exchanging" link="Radiators"] pipes in space radiates away heat to cool down circulated gasses.
+>>>>>>> fire/master
 
   The TEG relies heavily on atmospherics piping. The only truly special component about it is the generator core and circulators; the rest is all off-the-shelf atmospherics equipment. Note that while the exact layout may vary significantly depending on the station, the general components and setup are usually the same.
   The only truly special component about it is the generator core and circulators; the rest is all off-the-shelf atmospherics equipment.
@@ -29,8 +34,13 @@
   You can see this direction in-game by examining the circulator itself.
   A pressure difference is required across the input and output, so pumps are generally provided and must be turned on.
 
+<<<<<<< HEAD
   As I'm sure a wise person once said: the best way to make something hot is to light it on fire. Well, depending on context, that may not be very wise, but luckily your engineering department has just what's needed to do it wisely after all.
   The gases in the two "loops" are never mixed, [color=#a4885c]only energy is exchanged between them[/color].
+=======
+  There is no preference for which side must be hot or cold, there need only be a difference in temperature between them.
+  The gasses in the two "loops" are never mixed, [color=#a4885c]only energy is exchanged between them[/color].
+>>>>>>> fire/master
   The hot side will cool down, the cold side will heat up.
 
   As stated above, there are many different layouts one can follow to heat up (or cool down) gases; this part of the guide will cover 2 common methods one will often see for the hot loop when the TEG is setup: [color=#a4885c]The Pipe Burn[/color], and [color=red]the Burn Chamber[/color].
@@ -43,7 +53,11 @@
   Also known as the naive method, this is generally discouraged when working for efficiency. However, if all you need is a smidge of power to run the station, and you don't feel like setting up the burn chamber, this method will do.
   Well, depending on context, that may not be very wise, but luckily your engineering department has just what's needed to do it wisely after all.
 
+<<<<<<< HEAD
   [color=#444444]TODO: Remove this section when atmos pipes are updated to have pressure/temperature limits in a future atmos refactor.[/color]
+=======
+  As stated above, there are many different layouts one can follow to heat up (or cool down) gasses; this part of the guide will cover some common methods one will often see for the hot loop, involving [color=red]the Burn Chamber[/color].
+>>>>>>> fire/master
 
   Most (if not all) pipe burns follow this general layout:
     Gas input -> High-pressure pump -> Pipe segment (with heater) -> Low-pressure pump -> Circulator
@@ -58,7 +72,7 @@
 
   ## The Burn Chamber
 
-  The burn chamber is the preferred method for heating up gases, and it is commonly used for other purposes too. (see: Tritium production)
+  The burn chamber is the preferred method for heating up gasses, and it is commonly used for other purposes too. (see: Tritium production)
 
   Most (if not all) stations have the burn chamber separated from the main atmospherics block by a 1-wide spaced grid, presumably to prevent conduction. The chambers consist of 3(+1) important parts:
   - The Air Injector/Passive Vent
@@ -101,8 +115,13 @@
   The space vent (designated as a blast door to space on one side of the burn chamber) allows waste gases to be expelled and destroyed. Open this every now and then to keep the pressure under control, or to space excess input gas.
   Ideally, switch out the [textlink="air injector" link="AirInjector"] for a [textlink="passive vent" link="PassiveVent"] connected to a volume pump.
 
+<<<<<<< HEAD
   The scrubber array filters out all the burnt gasses and sends them through the TEG. Note that using default settings on the scrubbers is a bad idea, as valuable plasma will be filtered out too.
   Instead, use a network configurator to connect all the scrubbers to a nearby air alarm, and set the air alarm's scrubber settings to scrub everything except Oxygen and Plasma, and to siphon air as well. This ensures that as much heat as available can be collected and sent to the TEG.
+=======
+  The space vent (designated as a blast door to space on one side of the burn chamber) allows waste gasses to be expelled and destroyed.
+  Open this occasionally to keep the pressure under control, or to space excess input gas.
+>>>>>>> fire/master
   You even might find the pneumatic valve useful for occasionally spacing the gas.
 
   Note that these are just two of many ways you can setup the hot loop; [color=#a4885c]feel free to mix and match setups as needed![/color] Volume pumps in replacement of pressure pumps, radiator loops for heat collection, or even a Pyroclastic anomaly to provide said heat! The stars are the limit!
@@ -241,14 +260,14 @@
 
   ## In the Pursuit of Greater Efficiency
   Remember, Atmospherics is a science, and as such, it is always evolving.
-  The setups above are just the tip of the iceberg; there are many ways to setup the TEG, and many ways to improve upon the setups above.
+  The setups above are just the tip of the iceberg; there are many ways to setup the TEG and many ways to improve upon the setups above.
   [color=#a4885c]Experiment![/color]
 
-  Always seek to improve upon the designs you see, and always seek to improve upon the designs you make.
-  The TEG is a powerful tool, and with great power comes great responsibility.
-  Make sure to use it wisely, and make sure to use it well.
+  Always seek to improve upon the designs you see and always seek to improve upon the designs you make.
+  The TEG is a powerful tool and with great power comes great responsibility.
+  Make sure to use it wisely and make sure to use it well.
 
-  Space Station 14 atmospherics is a complex system, and the TEG is just one part of it.
+  Space Station 14 atmospherics is a complex system and the TEG is just one part of it.
   [bold]It's like a giant puzzle, so go out and solve it![/bold]
 
 </Document>

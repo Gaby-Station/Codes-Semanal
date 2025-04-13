@@ -1,4 +1,5 @@
 <Document>
+<<<<<<< HEAD
 ## Starting Out
 This is not an extensive list of recipes, these listings are to showcase the basics.
 
@@ -26,26 +27,29 @@ Buzz! Don't forget about Moth diet!
 - Cotton Dough = 5 Flour, 10 Fabric, 10 Water
 - Cotton bread baked the same as default but with cotton dough instead
 - Cotton Pizza: Microwave 1 Flat Cotton Dough and 4 Cotton Bolls for 30 Seconds
+=======
 
-<Box>
-<GuideEntityEmbed Entity="FoodDough"/>
-<GuideEntityEmbed Entity="FoodDoughCornmeal"/>
-<GuideEntityEmbed Entity="FoodDoughCotton"/>
-<GuideEntityEmbed Entity="FoodTofu"/>
-<GuideEntityEmbed Entity="FoodDoughPie"/>
-<GuideEntityEmbed Entity="FoodCakeBatter"/>
-<GuideEntityEmbed Entity="FoodDoughFlat"/>
-<GuideEntityEmbed Entity="FoodDoughTortilla"/>
-</Box>
+# Microwave Recipes
 
-<Box>
-<GuideEntityEmbed Entity="FoodButter"/>
-<GuideEntityEmbed Entity="FoodMeatMeatball"/>
-<GuideEntityEmbed Entity="FoodCheese"/>
-<GuideEntityEmbed Entity="FoodChevre"/>
-<GuideEntityEmbed Entity="FoodSnackChocolateBar"/>
-</Box>
+This is the latest published version of NanoTrasen Central Command Kitchen de Cuisine's recipe collection for chefs upon NanoTrasen vessels to prepare.
 
+## Pizza Pies
+<GuideMicrowaveGroupEmbed Group="Pizza"/>
+
+## Savory Cooking
+<GuideMicrowaveGroupEmbed Group="Savory"/>
+
+## Breads
+<GuideMicrowaveGroupEmbed Group="Breads"/>
+>>>>>>> fire/master
+
+## Breakfast Foods
+<GuideMicrowaveGroupEmbed Group="Breakfast"/>
+
+## Moth Foods
+<GuideMicrowaveGroupEmbed Group="Moth"/>
+
+<<<<<<< HEAD
 ## Secondary Products
 
 - Dough Slice: Cut Dough
@@ -71,23 +75,36 @@ Buzz! Don't forget about Moth diet!
 - Banana Cream Pie : Microwave 1 Pie Dough, 3 Bananas, and 1 Pie Tin for 15 Seconds
 - Carrot Fries : Microwave 1 Carrot, 15u Salt for 15 Seconds
 - Pancake : Microwave 5u Flour, 5u Milk, 1 Egg (6u) for 5 Seconds
+=======
+## Pastas & Noodles
+<GuideMicrowaveGroupEmbed Group="Pasta"/>
 
-<Box>
-<GuideEntityEmbed Entity="FoodBreadPlain"/>
-<GuideEntityEmbed Entity="FoodBurgerPlain"/>
-<GuideEntityEmbed Entity="FoodSoupTomato"/>
-<GuideEntityEmbed Entity="FoodSaladCitrus"/>
-</Box>
-<Box>
-<GuideEntityEmbed Entity="FoodPizzaMargherita"/>
-<GuideEntityEmbed Entity="FoodCakePlain"/>
-<GuideEntityEmbed Entity="FoodPieApple"/>
-</Box>
-<Box>
-<GuideEntityEmbed Entity="FoodMealCubancarp"/>
-<GuideEntityEmbed Entity="FoodPieBananaCream"/>
-<GuideEntityEmbed Entity="FoodMealFriesCarrot"/>
-<GuideEntityEmbed Entity="FoodBakedPancake"/>
-</Box>
+## Pastries & Desserts
+<GuideMicrowaveGroupEmbed Group="Dessert"/>
+
+## Soups & Stews
+<GuideMicrowaveGroupEmbed Group="Soup"/>
+
+## Pies & Tarts
+<GuideMicrowaveGroupEmbed Group="Pie"/>
+>>>>>>> fire/master
+
+## Bars & Cookies
+<GuideMicrowaveGroupEmbed Group="BarsAndCookies"/>
+
+## Cakes
+<GuideMicrowaveGroupEmbed Group="Cake"/>
+
+## Salads
+<GuideMicrowaveGroupEmbed Group="Salad"/>
+
+## Medicinal
+<GuideMicrowaveGroupEmbed Group="Medicinal"/>
+
+## Other
+<GuideMicrowaveGroupEmbed Group="Other"/>
+
+## Secret
+<GuideMicrowaveGroupEmbed Group="Secret"/>
 
 </Document>

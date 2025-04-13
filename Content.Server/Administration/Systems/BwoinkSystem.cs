@@ -110,6 +110,7 @@ namespace Content.Server.Administration.Systems
 
             SubscribeLocalEvent<GameRunLevelChangedEvent>(OnGameRunLevelChanged);
             SubscribeNetworkEvent<BwoinkClientTypingUpdated>(OnClientTypingUpdated);
+            SubscribeNetworkEvent<BwoinkRequestDbMessages>(OnRequestDbMessages);
             SubscribeLocalEvent<RoundRestartCleanupEvent>(_ => _activeConversations.Clear());
 
         	_rateLimit.Register(
@@ -333,6 +334,102 @@ namespace Content.Server.Administration.Systems
                 RaiseNetworkEvent(update, admin);
             }
         }
+
+        // Sunrise-Start
+        private async void OnRequestDbMessages(BwoinkRequestDbMessages msg, EntitySessionEventArgs args)
+        {
+            var isAdmin = _adminManager.IsAdmin(args.SenderSession);
+
+            var messages = await _dbManager.GetAHelpMessagesByReceiverAsync(msg.UserId);
+
+            /*
+             * SUNRISE-TODO: Мы отправляем всю историю по одному сообщению используя ванильный класс.
+             * Вероятно более разумно было бы отправлять все сообщения одним эвентом... Возможно.
+             */
+            foreach (var aHelpMessage in messages)
+            {
+                var formatMessage = await FormatDbAhelpMessage(
+                    aHelpMessage.Message,
+                    (NetUserId) aHelpMessage.SenderUserId,
+                    aHelpMessage.PlaySound,
+                    aHelpMessage.AdminOnly);
+
+                if (aHelpMessage.AdminOnly && !isAdmin)
+                    continue;
+
+                var bwoinkTextMessage = new BwoinkTextMessage(
+                    (NetUserId) aHelpMessage.ReceiverUserId,
+                    (NetUserId) aHelpMessage.SenderUserId,
+                    formatMessage,
+                    aHelpMessage.SentAt.DateTime.ToLocalTime(),
+                    playSound: aHelpMessage.PlaySound,
+                    adminOnly: aHelpMessage.AdminOnly,
+                    dbLoad: true);
+
+                RaiseNetworkEvent(bwoinkTextMessage, args.SenderSession.Channel);
+            }
+
+            var loaded = new BwoinkDbLoadedMessage(msg.UserId);
+            RaiseNetworkEvent(loaded, args.SenderSession.Channel);
+        }
+
+        private async Task<string> FormatDbAhelpMessage(string message, NetUserId senderUserId,
+            bool playSound = true, bool adminOnly = false)
+        {
+            /*
+             * SUNRISE-TODO: Ахуенная идея, обращаться к БД при каждом форматировании сообщения.
+             * Очевидно нужно использовать кеширование, но мне впадлу.
+             */
+            var senderAdmin = await _adminManager.LoadAdminData(senderUserId);
+            var senderData = await _dbManager.GetPlayerRecordByUserId(senderUserId);
+            var username = "";
+            if (senderData != null)
+            {
+                username = senderData.LastSeenUserName;
+            }
+
+            string bwoinkText;
+            var adminPrefix = "";
+
+            if (_config.GetCVar(CCVars.AhelpAdminPrefix) && senderAdmin is not null && senderAdmin.Value.dat.Title is not null)
+            {
+                adminPrefix = $"[bold]\\[{senderAdmin.Value.dat.Title}\\][/bold] ";
+            }
+
+            if (senderAdmin is not null &&
+                senderAdmin.Value.dat.Flags ==
+                AdminFlags.Adminhelp) // Mentor. Not full admin. That's why it's colored differently.
+            {
+                bwoinkText = $"[color=purple]{adminPrefix}{username}[/color]";
+            }
+            else if (senderAdmin is not null && senderAdmin.Value.dat.Flags.HasFlag(AdminFlags.Adminhelp))
+            {
+                bwoinkText = $"[color=red]{adminPrefix}{username}[/color]";
+            }
+            else if (_sponsorsManager != null)
+            {
+                _sponsorsManager.TryGetOocColor(senderUserId, out var oocColor);
+                _sponsorsManager.TryGetOocTitle(senderUserId, out var oocTitle);
+                var sponsorTitle = oocTitle is null ? "" : $"\\[{oocTitle}\\]";
+                if (oocColor != null)
+                {
+                    bwoinkText = $"[color={oocColor.Value.ToHex()}]{sponsorTitle} {username}[/color]";
+                }
+                else
+                {
+                    bwoinkText = $"{sponsorTitle} {username}";
+                }
+            }
+            else
+            {
+                bwoinkText = $"{username}";
+            }
+
+            var escapedText = FormattedMessage.EscapeText(message);
+
+            return $"{(adminOnly ? Loc.GetString("bwoink-message-admin-only") : !playSound ? Loc.GetString("bwoink-message-silent") : "")} {bwoinkText}: {escapedText}";
+        }
+        // Sunrise-End
 
         private void OnServerNameChanged(string obj)
         {
@@ -644,7 +741,7 @@ namespace Content.Server.Administration.Systems
             var personalChannel = senderSession.UserId == message.UserId;
             var senderAdmin = _adminManager.GetAdminData(senderSession);
             var senderAHelpAdmin = senderAdmin?.HasFlag(AdminFlags.Adminhelp) ?? false;
-            var authorized = personalChannel || senderAHelpAdmin;
+            var authorized = personalChannel && !message.AdminOnly || senderAHelpAdmin;
             if (!authorized)
             {
                 // Unauthorized bwoink (log?)
@@ -695,14 +792,19 @@ namespace Content.Server.Administration.Systems
                 bwoinkText = $"{senderSession.Name}";
             }
 
-            bwoinkText = $"{(message.PlaySound ? "" : "(S) ")}{bwoinkText}: {escapedText}";
+            bwoinkText = $"{(message.AdminOnly ? Loc.GetString("bwoink-message-admin-only") : !message.PlaySound ? Loc.GetString("bwoink-message-silent") : "")} {bwoinkText}: {escapedText}";
 
-            // If it's not an admin / admin chooses to keep the sound then play it.
-            var playSound = !senderAHelpAdmin || message.PlaySound;
-            var msg = new BwoinkTextMessage(message.UserId, senderSession.UserId, bwoinkText, playSound: playSound);
+            // If it's not an admin / admin chooses to keep the sound and message is not an admin only message, then play it.
+            var playSound = (!senderAHelpAdmin || message.PlaySound) && !message.AdminOnly;
+            var msg = new BwoinkTextMessage(message.UserId, senderSession.UserId, bwoinkText, playSound: playSound, adminOnly: message.AdminOnly);
             // Sunrise-Sponsors-End
 
             LogBwoink(msg);
+
+            // Sunrise-Start
+            var sentAt = DateTimeOffset.UtcNow;
+            _dbManager.AddAHelpMessage(senderSession.UserId, message.UserId, message.Text, sentAt, message.PlaySound, message.AdminOnly);
+            // Sunrise-End
 
             var admins = GetTargetAdmins();
 
@@ -720,7 +822,7 @@ namespace Content.Server.Administration.Systems
             }
 
             // Notify player
-            if (_playerManager.TryGetSessionById(message.UserId, out var session))
+            if (_playerManager.TryGetSessionById(message.UserId, out var session) && !message.AdminOnly)
             {
                 if (!admins.Contains(session.Channel))
                 {
@@ -779,6 +881,7 @@ namespace Content.Server.Administration.Systems
                     _gameTicker.RoundDuration().ToString("hh\\:mm\\:ss"),
                     _gameTicker.RunLevel,
                     playedSound: playSound,
+                    adminOnly: message.AdminOnly,
                     noReceivers: nonAfkAdmins.Count == 0
                 );
                 _messageQueues[msg.UserId].Enqueue(GenerateAHelpMessage(messageParams));
@@ -811,7 +914,7 @@ namespace Content.Server.Administration.Systems
                 .ToList();
         }
 
-        private static DiscordRelayedData GenerateAHelpMessage(AHelpMessageParams parameters)
+        private DiscordRelayedData GenerateAHelpMessage(AHelpMessageParams parameters)
         {
             var stringbuilder = new StringBuilder();
 
@@ -827,7 +930,7 @@ namespace Content.Server.Administration.Systems
             if (parameters.RoundTime != string.Empty && parameters.RoundState == GameRunLevel.InRound)
                 stringbuilder.Append($" **{parameters.RoundTime}**");
             if (!parameters.PlayedSound)
-                stringbuilder.Append(" **(S)**");
+                stringbuilder.Append($" **{(parameters.AdminOnly ? Loc.GetString("bwoink-message-admin-only") : Loc.GetString("bwoink-message-silent"))}**");
             if (parameters.Icon == null)
                 stringbuilder.Append($" **{parameters.Username}:** ");
             else
@@ -890,6 +993,7 @@ namespace Content.Server.Administration.Systems
         public string RoundTime { get; set; }
         public GameRunLevel RoundState { get; set; }
         public bool PlayedSound { get; set; }
+        public readonly bool AdminOnly;
         public bool NoReceivers { get; set; }
         public string? Icon { get; set; }
 
@@ -900,6 +1004,7 @@ namespace Content.Server.Administration.Systems
             string roundTime,
             GameRunLevel roundState,
             bool playedSound,
+            bool adminOnly = false,
             bool noReceivers = false,
             string? icon = null)
         {
@@ -909,6 +1014,7 @@ namespace Content.Server.Administration.Systems
             RoundTime = roundTime;
             RoundState = roundState;
             PlayedSound = playedSound;
+            AdminOnly = adminOnly;
             NoReceivers = noReceivers;
             Icon = icon;
         }

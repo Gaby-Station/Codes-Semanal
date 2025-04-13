@@ -1,21 +1,172 @@
+# Руководство
+
+- type: department
+  id: Administration
+  name: department-Administration
+  description: department-Administration-description
+  color: "#6aa84f"
+  weight: 100
+  roles:
+  - Director
+  - ScientificServiceDirector
+  - SecurityCommander
+  - ChiefTechnicalSpecialist
+  - PersonnelOfficer
+  - HeadOfMedicalSector
+  - SeniorLogisticsOfficer
+
+# Гады следящие за буквой закона
+
+- type: department
+  id: InternalSecurity
+  name: department-InternalSecurity
+  description: department-InternalSecurity-description
+  color: "#980000"
+  weight: 95
+  roles:
+  - MentalControlOfficer
+  - InternalSecurityOperative
+
+- type: department
+  id: EthicsCommittee
+  name: department-EthicsCommittee
+  description: department-EthicsCommittee-description
+  color: "#741b47"
+  weight: 90
+  roles:
+  - EthicsCommitteeRepresentative
+
+- type: department
+  id: InternalTribunalService
+  name: department-InternalTribunalService
+  description: department-InternalTribunalService-description
+  color: "#c27ba0"
+  weight: 85
+  roles:
+  - JudicialInspector
+  - TribunalOfficer
+
+# Служба безопасности
+
+- type: department
+  id: HeavyContainmentSecurityService
+  name: department-HeavyContainmentSecurityService
+  description: department-HeavyContainmentSecurityService-description
+  color: "#ff0000"
+  weight: 80
+  roles:
+  - HeavyContainmentZoneCommandant
+  - SeniorHeavyContainmentZoneOfficer
+  - HeavyContainmentZoneOfficer
+  - JuniorHeavyContainmentZoneOfficer
+  - FieldMedicalSpecialist
+
+- type: department
+  id: ExternalAdministrativeZoneSecurityService
+  name: department-ExternalAdministrativeZoneSecurityService
+  description: department-ExternalAdministrativeZoneSecurityService-description
+  color: "#999999"
+  weight: 75
+  roles:
+  - ExternalAdministrativeZoneCommandant
+  - SeniorExternalAdministrativeZoneOfficer
+  - ExternalAdministrativeZoneOfficer
+  - JuniorExternalAdministrativeZoneOfficer
+
+# Научный отдел
+
+- type: department
+  id: ScientificService
+  name: department-ScientificService
+  description: department-ScientificService-description
+  color: "#674ea7"
+  weight: 70
+  roles:
+  - ScientificServiceDirector
+  - LeadResearcher
+  - AnomabiologyResearcher
+  - AnomarchologyResearcher
+  - ProductionSpecialist
+  - JuniorResearcher
+
+# Медицинский отдел
+
+- type: department
+  id: MedicalService
+  name: department-MedicalService
+  description: department-MedicalService-description
+  color: "#52b4e9"
+  weight: 65
+  roles:
+  - HeadOfMedicalSector
+  - SeniorMedicalSpecialist
+  - PharmaceuticalSpecialist
+  - MedicalSpecialist
+  - Psychotherapist
+  - HospitalIntern
+
+# Инженерный отдел
+
+- type: department
+  id: EngineeringTechnicalService
+  name: department-EngineeringTechnicalService
+  description: department-EngineeringTechnicalService-description
+  color: "#fbbc04"
+  weight: 60
+  roles:
+  - ChiefTechnicalSpecialist
+  - LeadTechnicalSpecialist
+  - GeneralTechnicalSpecialist
+  - ElectricalTechnicalSpecialist
+  - TechnicalTrainee
+
+# Отдел логистики
+
+- type: department
+  id: LogisticsService
+  name: department-LogisticsService
+  description: department-LogisticsService-description
+  color: "#bf9000"
+  weight: 55
+  roles:
+  - SeniorLogisticsOfficer
+  - LogisticsOfficer
+
+# Департамент продовольственного и санитарного обслуживания
+
+- type: department
+  id: FoodAndSanitationServiceDepartment
+  name: department-FoodAndSanitationServiceDepartment
+  description: department-FoodAndSanitationServiceDepartment-description
+  color: "#b8d8aa"
+  weight: 50
+  roles:
+  - GastronomicSpecialist
+  - BotanistPhytogeneticist
+  - ServicePersonnel
+
+# Класс Д
+
 - type: department
   id: LowAccessPersonnel
-  name: department-low-access-personnel
-  description: department-low-access-personnel
+  name: department-LowAccessPersonnel
+  description: department-LowAccessPersonnel-description
   color: "#FF5297"
-  weight: 80
+  weight: 45
   roles:
   - ClassDCook
   - ClassDBotanist
   - ClassDJanitor
   - ClassD
 
+# Сосать
+
 - type: department
   id: SCP
-  name: department-scp
-  description: department-scp
+  name: department-SCP
+  description: department-SCP-description
   color: "#FF5297"
-  weight: 80
+  weight: 120
   roles:
   - Scp049
   - Scp939

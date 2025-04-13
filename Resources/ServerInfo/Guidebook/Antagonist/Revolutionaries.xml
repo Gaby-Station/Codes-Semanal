@@ -10,8 +10,13 @@
 
   Os revolucionários são antagonistas de conversão patrocinados pelo [color=#ff0000]Sindicato[/color], cujo objetivo é tomar o controle da estação. Eles não têm truques extravagantes ou artimanhas baratas; possuem apenas uma causa e força em números.
 
+<<<<<<< HEAD
   ## Objetivos
   Você deve algemar, matar ou exilar todos os membros da [textlink="Equipe de Comando" link="Command"] na estação, em qualquer ordem.
+=======
+  ## Objectives
+  You must convert, cuff or kill all of the [textlink="Command staff" link="Command"] on station in no particular order.
+>>>>>>> fire/master
 
   Seu objetivo [bold]não é destruir a estação[/bold], mas sim [italic]tomá-la[/italic], portanto, tente minimizar os danos sempre que possível.
 
@@ -40,7 +45,11 @@
   - [bold]Visivelmente se destruírem ao serem implantados em um [color=#5e9cff]Revolucionário Chefe[/color][/bold], revelando sua identidade
   - NÃO proteger contra desorientação causada por luz
 
+<<<<<<< HEAD
   Assuma que todos os membros da [color=#cb0000]Segurança[/color] e [color=#1b67a5]Comando[/color] já estão implantados com proteções mentais.
+=======
+  Assume all of [color=#cb0000]Security[/color] and [color=#1b67a5]Command[/color] are implanted with mindshields already, [bold]however they can be removed using an empty implanter, obtainable from the Medical department's MedFab.[/bold]
+>>>>>>> fire/master
 
   <Box>
     <GuideEntityEmbed Entity="MindShieldImplanter"/>

@@ -130,6 +130,7 @@
     - ServiceStatic
     - PowerCellsStatic
     - ElectronicsStatic
+    - HydroponicsStatic
   - type: EmagLatheRecipes
     emagStaticPacks:
     - SecurityAmmoStatic
@@ -195,6 +196,7 @@
     dynamicPacks:
     - AdvancedTools
     - ScienceEquipment
+    - ScienceExplosives
     - ScienceClothing
     - PowerCells
     - ScienceWeapons
@@ -405,12 +407,16 @@
     - SecurityWeaponsStatic
     - SecurityStaticSunrise # Sunrise-Add
     dynamicPacks:
+    - SalvageSecurityBoards
+    - SalvageSecurityWeapons
     - SecurityEquipment
     - SecurityBoards
     - SecurityExplosives
     - SecurityAmmo
     - SecurityWeapons
+    - SecurityDisablers
     - SecurityDynamicSunrise # Sunrise-Add
+    - SecurityDynamicWeaponsScp # Fire added
   - type: MaterialStorage
     whitelist:
       tags:

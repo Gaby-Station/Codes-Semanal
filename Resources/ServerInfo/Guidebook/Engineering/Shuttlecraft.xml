@@ -44,7 +44,11 @@
     <GuideEntityEmbed Entity="FloorTileItemWhite" Caption=""/>
   </Box>
 
+<<<<<<< HEAD
   From there, once you have the shape you want, bring out and install thrusters at the edges. They must be pointing outward into space to function and will not fire if there's a tile in the way of the nozzle. Install a gyroscope where convenient, and use your substation and generator to set up power. Construct a wall on top of an MV cable and then install an APC on that to power the devices onboard.
+=======
+  Head out into space with steel sheets and metal rods in hand and click on the edge of the station to place lattice.
+>>>>>>> fire/master
 
   Place a line of lattice about 3-4 tiles away from the station, then start building a platform with lattice.
 
@@ -52,7 +56,7 @@
 
   Once you're finished constructing the base of your shuttle, you can use wirecutters to snip the connecting lattice that joins your new ship and the station.
 
-  This platform is considered a different grid from the station, and thus will not have any gravity or be held in place by a station anchor — it can move around freely.
+  This platform is considered a different grid from the station and thus will not have any gravity or be held in place by a station anchor — it can move around freely.
 
   You can expand your lattice platform further by clicking just off the edge with some rods in hand.
 

@@ -7,8 +7,12 @@
     <GuideEntityEmbed Entity="FirelockGlass" Caption=""/>
   </Box>
 
+<<<<<<< HEAD
   ## Vazamento no Espaço
   O espaço é, sem dúvida, a parte mais fácil de se lidar. Esteja ciente de que vazamentos ativos irão lentamente drenar o ar das reservas de ar da estação. Se você achar impossível corrigir danos estruturais devido a outro risco, certifique-se de limitar o fluxo de ar para essa área. (Atualmente, isso é apenas parcialmente válido devido aos Minadores de Gás, que repõem infinitamente a maioria dos gases úteis)
+=======
+  They often make high-pressure and high-temperature gasses, which can quickly spread throughout the station if firelocks or doors are opened carelessly, even if only for a moment.
+>>>>>>> fire/master
 
   Embora torne uma área inabitável, isso pode ser facilmente resolvido seguindo um processo de dois passos. O primeiro passo é vedar o buraco que causou o vácuo.
 

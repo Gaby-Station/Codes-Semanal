@@ -10,7 +10,7 @@
   Basically, if you connect an RTG to your power grid, it'll give you [color=#a4885c]free power[/color].
   However, they're only accessible through salvage finding one on an expedition. Should they bring some in, make sure to thank them!
 
-  RTGs always generate [color=orange][protodata="GeneratorRTG" comp="PowerSupplier" member="MaxSupply" format="N0"/] W[/color] of power, and must be connected to an [color=orange]HV power[/color] [textlink="network" link="VoltageNetworks"] to function.
+  RTGs always generate [color=orange][protodata="GeneratorRTG" comp="PowerSupplier" member="MaxSupply" format="N0"/] W[/color] of power and must be connected to an [color=orange]HV power[/color] [textlink="network" link="VoltageNetworks"] to function.
 
   However, they're only accessible through salvage finding one on an expedition. Should they bring some in, make sure to thank them!
 
