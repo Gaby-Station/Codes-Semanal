@@ -97,3 +97,6 @@ ui-options-scp = Configurações SCP
 
 ui-options-grain-toggle-overlay = Usar shader de granulação
 ui-options-grain-strength = Intensidade do shader de granulação
+
+radio-icon-tag-short = [radicon path="{ $path }" text="{ $text }" color="{ $color }"]
+radio-icon-tag = [radicon path="{ $path }" scale={ $scale } text="{ $text }" color="{ $color }"]
