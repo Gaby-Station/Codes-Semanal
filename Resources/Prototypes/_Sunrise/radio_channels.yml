@@ -16,7 +16,7 @@
 - type: radioChannel
   id: USSPSec
   name: chat-radio-ussp-sec
-  keycode: 's' # Fire edit - чтобы не конфликтовало
+  keycode: 'q' # Fire edit - чтобы не конфликтовало
   frequency: 1984
   color: "#B00000"
   longRange: false
