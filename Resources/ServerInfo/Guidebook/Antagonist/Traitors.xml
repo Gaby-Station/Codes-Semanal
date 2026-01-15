@@ -26,11 +26,7 @@
     <GuideEntityEmbed Entity="BaseUplinkRadio" Caption="Implante Uplink"/>
   </Box>
 
-<<<<<<< HEAD
-  [bold]Make sure to close your PDA uplink to prevent anyone else from seeing it.[/bold] You don't want [color=#cb0000]Security[/color] to notice you have it and confiscate it from you!
-=======
   [bold]Certifique-se de fechar o uplink do seu PDA para impedir que outras pessoas o vejam.[/bold] Você não quer que a [color=#cb0000]Segurança[/color] ponha as mãos nessa seleção premium de contrabando!
->>>>>>> fire
 
   Os uplinks implantados normalmente não são acessíveis a outras pessoas, portanto, não possuem medidas de segurança. No entanto, podem ser removidos de você com um implante vazio.
 
@@ -44,13 +40,8 @@
 
   As compras que você fizer devem ajudar com seus objetivos. Alguns equipamentos podem não ser úteis para você, e você terá que escolher entre ser sorrateiro ou ir para a agressão.
 
-<<<<<<< HEAD
-  ## Coordination
-  Codewords are words or phrases that every traitor will know. They provide a discreet way to identify or establish contact with a fellow traitor, which can be useful if your objectives include [italic][color=cyan]helping them with their objectives.[/color][/italic]
-=======
   ## Coordenação
   Códigos de palavras são palavras ou frases que todo traidor conhecerá. Eles fornecem uma maneira discreta de identificar ou estabelecer contato com um traidor colega, o que pode ser útil se seus objetivos incluírem [italic][color=cyan]manter eles vivos[/color][/italic] ou [italic][color=cyan]ajudar eles com seus objetivos.[/color][/italic]
->>>>>>> fire
 
   Quando encontrar alguns amigos, [bold]você pode retirar [color=red]telecristais[/color] do seu uplink para dar a eles.[/bold] Eles podem colocar esses cristais em seus próprios uplinks para gastar por si mesmos.
 
@@ -70,23 +61,13 @@
 
   Alternativamente, seus objetivos podem exigir que você [italic][color=cyan]morra uma morte gloriosa.[/color][/italic] [bold]Certifique-se de não voltar da morte,[/bold] ou você pode acordar algemado.
 
-<<<<<<< HEAD
-  ## Appropriation
-  More often than not, you'll have to [italic][color=cyan]steal a possession of a department head.[/color][/italic]
-=======
   ## Apropriação
   Mais frequentemente, você terá que [italic][color=cyan]roubar uma posse de um chefe de departamento.[/color][/italic]
->>>>>>> fire
 
   O alvo pode estar no seu escritório ou com ele. Pode ser necessário matar quem estiver carregando, caso você não consiga roubar sem ser percebido.
 
-<<<<<<< HEAD
-  Some of the things you may be tasked with include:
-  - Stealing the [color=yellow]Captain[/color]'s [bold]ID Card[/bold], [bold]antique laser pistol[/bold], [bold]jetpack[/bold], or [bold]nuclear authentication disk[/bold].
-=======
   Você pode ser encarregado de:
   - Roubar o [color=yellow]Cartão de ID do Capitão[/color], [bold]pistola laser antiga[/bold], [bold]jetpack[/bold], ou [bold]disco de autenticação nuclear[/bold].
->>>>>>> fire
   <Box>
     <GuideEntityEmbed Entity="CaptainIDCard" Caption=""/>
     <GuideEntityEmbed Entity="WeaponAntiqueLaser" Caption=""/>

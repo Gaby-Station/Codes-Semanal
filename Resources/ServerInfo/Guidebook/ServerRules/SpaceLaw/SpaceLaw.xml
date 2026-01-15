@@ -15,13 +15,8 @@
   - Prisioneiros devem receber seus PDAs de volta após pagarem suas penas, a menos que haja evidências de adulteração envolvendo o PDA. No caso de adulteração, o PDA deve ser confiscado e substituído com uma unidade nova (o Chefe dos Funcionários pode fazer isso).
   - Prisioneiros devem ter acesso à liberdade de movimento, e não devem ser presos com algemas ou outros dispositivos após o encarceramento a menos que haja um risco à vida. De forma similar, quaisquer prisioneiros cumprindo confinamento permanente devem ser postos na cela comunitária, e não devem ser confinados em uma cela solitária a menos que haja um risco à vida.
 
-<<<<<<< HEAD
-  ## Search and Seizure
-  A personnel search is a seizure of the objects in a person's backpack, hands, coat, belt, and pockets. If any contraband is found during a search, the officer may choose to further the search into a detainment or simply confiscate the restricted items. Non-restricted items may be seized by Security if they were used to facilitate a crime. After the search is conducted, all legal items are to be returned to the person. A crewmate may legally decline any search conducted without probable cause or a warrant while the alert level is green. It should be noted that if the alert level is blue or above, all personnel searches are legal.
-=======
   ## Revista e Apreensão
   Uma revista é a apreensão dos objetos na bolsa, mãos, sobretudos, cintos, bolsos e chapéus. Se qualquer contrabando for encontrado durante a revista, o Oficial pode escolher entre elevar a revista para uma prisão ou simplesmente confiscar o contrabando. Depois da revista ter sido conduzida, todos os itens permitidos devem ser retornados para o revistado. Um tripulante pode, legalmente, recusar uma revista sem fundada suspeita ou mandado enquanto o nível de alerta for verde. Deve ser notado que, se o nível de alerta estiver como azul ou acima, revistas  sem fundada suspeita ou mandado são permitidas.
->>>>>>> fire
 
   Uma revista departamental é a limpeza de uma área ou departamento inteiro em busca de contrabando. É recomendado que os oficiais sejam extremamente atenciosos, checando todos os armários, caixas e portas. Esse tipo de revista só pode ser feita com permissão ou, idealmente, um mandado assinado e carimbado pelo Chefe de Segurança ou a maior autoridade na nave atual - normalmente o Capitão.
 
@@ -47,23 +42,14 @@
   - Exemplo: um suspeito cometeu um 2-01 (posse: maior) e um 3-01 (posse: sindicato). A pena máxima seria 30 minutos, já que ambos os crimes são conectados e 3-01 é o maior crime.
   - Exemplo 2: um suspeito cometeu um 1-01 (posse: menor) e um 1-03 (vandalismo). Ambos os crimes acumulam já que não estão conectados. Você poderia sentenciar por um máximo de 20 minutos, mas o contexto varia bastante, e sentenças máximas devem ser aplicadas apenas para os piores criminosos.
 
-<<<<<<< HEAD
-  - Example: A suspect has committed a 2-01 (possession: major) and a 3-01 (possession: highly illegal). The maximum sentence here would be 10 minutes due to them being linked crimes, and 3-01 is the greater crime.
-  - Example 2: A suspect commits a 3-04 (Secure trespassing) and a 3-06 (manslaughter). Those crimes stack since they are not linked crimes. You could sentence for a maximum of 20 minutes, but context matters heavily, and maximum sentences should only be used for the worst offenders.
-=======
   [color=#a4885c]Criminosos Recorrentes[/color]: Crimes são considerados repetidos quando um suspeito é solto após cumprir pena por um crime e, logo depois, comete o mesmo crime ainda no mesmo turno. Crimes repetidos vão aumentando por cinco minutos (crimes menores e moderados) ou dez minutos (crimes maiores e extremos); ou seja, dez minutos na segunda vez, vinte minutos na terceira vez, e assim vai. É notável que o aumento por crimes repetidos é por ofensa, e não por prisão - isso significa que se alguém cometer dois crimes, o aumento na repetição é de dez minutos (crimes menores e moderados) ou vinte minutos (crimes maiores e extremos).
->>>>>>> fire
 
   [color=#a4885c]Assessoria, Tentativa e Intenção[/color]: Caso alguém intencionalmente, reconhecidamente e substancialmente provê suporte a um criminoso cometendo um crime, ele também pode ser julgado pelas mesmas ofensas; um exemplo é um assistente confessar que vai invadir uma certa área, e um engenheiro dar ferramentas de invasão para o dito assistente. O mesmo é aplicado para tentativas claras e sólidas de um crime, ou uma pessoa que demonstra intenção clara de cometer um crime, como um Operativo Nuclear do Sindicato armando a bomba nuclear mas sendo preso antes que ela exploda e ainda sendo julgado por terrorismo. Não se aplica a crimes que já tem uma listagem de tentativa, como Tentativa de Assassinato.
 
-<<<<<<< HEAD
-  [color=#a4885c]Accessory, Attempting, And Intention:[/color] If someone intentionally, knowingly and substantially assists someone in enacting a crime they can be charged with the relevant crimes, such as an engineer giving someone tools, who says they are going to break into an area. Same goes for a clear and solid attempt at a crime, or a person who shows clear intent to act out a crime, such as a syndicate nuclear operative arming a nuke but getting arrested before it goes off, they can still be charged with station-wide destruction. Does not apply to crimes that have an attempted listing already, like attempted murder.
-=======
   ## Punições Comuns
   - [color=#a4885c]Avisos[/color]: Para crimes menores, conserte o problema e avise o criminoso para não cometer o mesmo crime novamente. Caso ele ainda tente cometer, o confinamento é a melhor opção.
   - [color=#a4885c]Confinamento[/color]: O confinamento típico; ser preso(a) temporariamente de acordo com seus crimes.
   - [color=#a4885c]Rebaixamento[/color]: Cobre a remoção de todo equipamento departamental que o criminoso possui e revogação do acesso departamental. Essa punição requer a aprovação do Capitão ou do Chefe do departamento em específico. Rebaixamentos só devem ser aplicados caso o suspeito possa abusar do seu equipamento departamental para cometer mais crimes, e naturalmente reduz a pena do suspeito em quinze minutos.
->>>>>>> fire
 
   ## Punições Maiores
   [color=#a4885c]Confinamento Permanente[/color]: Ser confinado(a) na prisão permanente pela duração do turno inteiro. Uma pessoa está elegível para confinamento permanente caso suas penas atuais sejam iguais ou maiores do que 45 minutos ou cometam crimes capitais. Todo prisioneiro sob prisão permanente deve ser levado à CentComm no final do turno algemado(a). Um prisioneiro não pode ser privado de quaisquer direitos da seção "Tratamento de Prisioneiros".

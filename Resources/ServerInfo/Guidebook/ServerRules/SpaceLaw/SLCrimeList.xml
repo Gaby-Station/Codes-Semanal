@@ -56,11 +56,7 @@
     </ColorBox>
     <ColorBox Color="#593a4e">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-<<<<<<< HEAD
-        Breach of Permanent Confinement (E)
-=======
         Recusa de MindShield (E)
->>>>>>> fire
       </Box>
     </ColorBox>
     <ColorBox>
@@ -80,11 +76,7 @@
     </ColorBox>
     <ColorBox Color="#2f3832">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-<<<<<<< HEAD
-        Possession: Highly Illegal (P)
-=======
         Posse: Sindicato (P)
->>>>>>> fire
       </Box>
     </ColorBox>
     <ColorBox>
@@ -149,11 +141,7 @@
     </ColorBox>
     <ColorBox Color="#453a59">
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-<<<<<<< HEAD
-        Station-Wide Destruction (D)
-=======
         Terrorismo (D)
->>>>>>> fire
       </Box>
     </ColorBox>
     <ColorBox>
@@ -642,33 +630,21 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-<<<<<<< HEAD
-        Possession/Use of Highly Illegal Contraband
-=======
         Posse / Uso de Contrabando do Sindicato
->>>>>>> fire
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-<<<<<<< HEAD
-        To make, hold, or use highly illegal contraband.
-=======
         Fabricar, possuir ou usar contrabando do Sindicato sem autorização.
->>>>>>> fire
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-<<<<<<< HEAD
-        Highly illegal contraband includes Syndicate contraband and magical contraband. Without explicit authorization from Central Command, highly illegal contraband may only be used in emergencies, and only to prevent death or gross bodily harm.
-=======
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Contrabando do Sindicato deve ser usado APENAS em emergências, e APENAS para prevenção de mortes ou danos físicos graves.
->>>>>>> fire
       </Box>
     </ColorBox>
     <ColorBox>
@@ -867,15 +843,11 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-<<<<<<< HEAD
-        Includes breaking out other people.
-=======
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
         Mesmo que raro, essa ofensa pode ser elevada à execução caso o criminoso tenha repetidamente violado a custódia. A pena também se aplica para aqueles que liberem outros.
->>>>>>> fire
       </Box>
     </ColorBox>
     <ColorBox>
@@ -984,29 +956,17 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-<<<<<<< HEAD
-        Breach of Permanent Confinement
-=======
         Recusa de MindShield
->>>>>>> fire
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-<<<<<<< HEAD
-        To break someone sentenced to Permanent Confinement out of a cell or custody with the intention of escaping.
-=======
         Recusar a cooperar com um procedimento válido de MindShielding.
->>>>>>> fire
       </Box>
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-<<<<<<< HEAD
-        Includes breaking out other people sentenced to Permanent Confinement.
-=======
         Aplica-se caso o suspeito esteja sendo excessivamente não-cooperativo ou o implante falhe em funcionar pelo estado mental do prisioneiro já estar perdido demais. Se o implante falhar, execução é extremamente recomendada.
->>>>>>> fire
       </Box>
     </ColorBox>
     <ColorBox>
@@ -1016,11 +976,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-<<<<<<< HEAD
-        Station-Wide Destruction
-=======
         Terrorismo
->>>>>>> fire
       </Box>
     </ColorBox>
     <ColorBox>
@@ -1030,11 +986,7 @@
     </ColorBox>
     <ColorBox>
       <Box HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="2">
-<<<<<<< HEAD
-        Summed up; extreme sabotage of station systems or setting off self-destruction systems. This includes any means causing the entire station to become uninhabitable, such as through station-wide atmospherics sabotage.
-=======
         Resumidamente: sabotagem extrema dos sistemas da estação. Ativar a bomba nuclear, por exemplo, se encaixaria nisso.
->>>>>>> fire
       </Box>
     </ColorBox>
     <ColorBox>

@@ -68,11 +68,6 @@ Listados abaixo estão os dois tipos comuns de bombas que você encontrará dura
   - [color=red]Corte o fio[/color]: Cortar o fio desativará os parafusos, jogue-o no espaço!
   - [color=green]Consertar o fio[/color]: Remendar o fio reativará os parafusos.
 
-<<<<<<< HEAD
-  [color=#a4885c]Dummy Wire[/color]
-  - Dummy wires don't do anything. You can pulse, cut, and mend them freely without affecting the bomb at all.
-=======
   [color=#a4885c]Fio fictício[/color]
   - Fios falsos não fazem nada. Você pode pulsar, cortar e consertá-los livremente e eles não afetarão a bomba de forma alguma.
->>>>>>> fire
 </Document>

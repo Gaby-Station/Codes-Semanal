@@ -1,15 +1,8 @@
 <Document>
   # Antagonistas Menores
 
-<<<<<<< HEAD
-  Minor Antagonists are ghost-controlled roles that give dead people a second chance to interact (and cause chaos!) around the station. They are spawned by random events.
-=======
   A maioria, se não todos, os Antagonistas Menores são papéis controlados por fantasmas que dão aos mortos novas maneiras de causar caos na estação. Eles são gerados por eventos aleatórios.
->>>>>>> fire
 
-<<<<<<< HEAD
-  # Aparição
-=======
   # Paradox Clone
 
   <Box>
@@ -21,7 +14,6 @@
 They have no special abilities, but are identical in appearance, DNA, fingerprints, clothing, equipment and IDs, making it hard to figure out who is the original and who is the clone... unless you know your fellow crewmembers well!
 
   # Revenant
->>>>>>> fire/master
 
   <Box>
     <GuideEntityEmbed Entity="MobRevenant"/>
@@ -44,15 +36,6 @@ They have no special abilities, but are identical in appearance, DNA, fingerprin
     <GuideEntityEmbed Entity="MobRatServant" Caption=""/>
   </Box>
 
-<<<<<<< HEAD
-  Rat kings are abnormally large rodents capable of [color=yellow]raising huge rat armies[/color] by eating equally huge amounts of food.
-  - You have several abilities that come at the cost of your [bold]hunger.[/bold]
-  - One such ability is [color=yellow][italic]Raise Army[/italic][/color], which summons a [bold]Rat Servant[/bold]. You can [bold]command[/bold] your servants to stay in place, follow you, attack a target of your choice or attack indiscriminately.
-  - You can conjure a cloud of [color=#77b58e]ammonia[/color] using [color=purple][italic]Rat King's Domain[/italic][/color]. This purple gas is mildly poisonous to humans but heals rats.
-  - [color=#9daa98][italic]Rummage[/italic][/color] through a disposal unit by using the context menu. Use this to find [bold]scraps of food[/bold] to grow your army.
-  - Besides your abilities, [bold]you are stronger than most other animals.[/bold] You and your servants are capable of speech and you're both small enough to fit under airlocks and tables.
-  - [bold]Your underlings are still very fragile![/bold] Beware of spacings, explosions and the business end of a melee weapon.
-=======
   Reis dos Ratos são roedores anormalmente grandes, capazes de [color=yellow]criar enormes exércitos de ratos[/color] ao consumir enormes quantidades de comida.
   - Você possui várias habilidades que consomem sua [bold]fome.[/bold]
   - Uma dessas habilidades é [color=yellow][italic]Levantar Exército[/italic][/color], que invoca um [bold]Servo Rato[/bold]. Você pode [bold]comandar[/bold] seus servos para permanecerem no lugar, seguirem você, atacarem um alvo específico ou atacarem indiscriminadamente.
@@ -60,7 +43,6 @@ They have no special abilities, but are identical in appearance, DNA, fingerprin
   - [color=#9daa98][italic]Vasculhe[/italic][/color] uma unidade de descarte usando o menu de contexto. Use isso para encontrar [bold]restos de comida[/bold] e aumentar seu exército.
   - Além de suas habilidades, [bold]você é mais forte do que a maioria dos outros animais.[/bold] Você e seus servos são capazes de falar e ambos são pequenos o suficiente para passar por baixo de portas e mesas.
   - [bold]Seus subordinados ainda são muito frágeis![/bold] Tenha cuidado com vácuos, explosões e o lado letal de uma arma de combate corpo a corpo.
->>>>>>> fire
 
   # Dragão Espacial
 
@@ -88,13 +70,7 @@ They have no special abilities, but are identical in appearance, DNA, fingerprin
     <GuideEntityEmbed Entity="MobGiantSpiderAngry" Caption=""/>
   </Box>
 
-<<<<<<< HEAD
-  Slimes and spiders have no remarkable features, but will [color=cyan]infest the station[/color] from time to time regardless. Both will give chase and attack anything they see.
-  - Slimes may [bold]deal extra cellular or poison damage[/bold], based upon their color. Water hurts them just as it would hurt a slime person.
-  - Spiders have a venomous bite and can [bold]create webs[/bold] that are hard to move through, but are easily destroyed with a blade. They can also pry open doors, windoors, and airlocks.
-=======
   Slimes e aranhas não possuem características notáveis, mas [color=cyan]infestarão a estação[/color] ocasionalmente. Ambos perseguirão e atacarão qualquer coisa que vejam.
   - Slimes podem [bold]causar dano celular adicional ou envenenar[/bold], dependendo de sua cor. Água os machuca, assim como faria com um slime humanoide.
   - Aranhas possuem uma mordida venenosa e podem [bold]criar teias[/bold] que dificultam o movimento. Teias são facilmente destruídas com lâminas. Elas também conseguem abrir portas herméticas.
->>>>>>> fire
 </Document>

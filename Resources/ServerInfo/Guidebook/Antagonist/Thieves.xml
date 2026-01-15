@@ -1,9 +1,5 @@
 <Document>
-<<<<<<< HEAD
-  # Ladrões
-=======
   # Thieves
->>>>>>> fire/master
 
   <Box>
     [color=#999999][italic]"Peguei! Vou levar isso! E aquilo! Ooh, não me importo se eu pegar isso também!"[/italic][/color]
@@ -18,15 +14,6 @@
   Ao contrário de outros antagonistas, [bold]ficar fora de problemas é quase um requisito para você[/bold] devido ao seu implante.
   Você só pode fugir se [color=#cb0000]a Segurança[/color] começar uma briga com você, e como trabalha sozinho, não tem amigos para tirá-lo de apuros.
 
-<<<<<<< HEAD
-  But against all odds, you'll sucessfully swipe what you want using determination, sleight of hand, a few tools and your [color=cyan]pickpocketing skills.[/color]
-
-  The pickpocketing skills you have give you a major advantage: [bold]the ability to take things from people without them even noticing.[/bold] With a little practice you can steal their wallet and keep up a conversation at the same time.
-
-  It is advised to get a pair of gloves as your fingerprints could still be traced back to the stolen goods if they're found.
-
-
-=======
   Mas, contra todas as probabilidades, você conseguirá roubar o que quiser usando determinação, truques de prestidigitação, algumas ferramentas e suas [color=cyan]luvas de ladrão.[/color]
 
   As luvas que você possui lhe dão uma grande vantagem: [bold]a habilidade de pegar coisas das pessoas sem que elas percebam.[/bold] Com um pouco de prática, você pode roubar suas carteiras enquanto continua a conversa.
@@ -36,15 +23,9 @@
   <Box>
     <GuideEntityEmbed Entity="ClothingHandsChameleonThief" Caption="suas luvas de ladrão"/>
   </Box>
->>>>>>> fire
 
-<<<<<<< HEAD
-  ## Ferramentas do Ofício
-  Você tem mais dois ases na manga: seu [color=cyan]beacon[/color] e sua [color=cyan]caixa de ferramentas.[/color]
-=======
   ## Tools of the Trade
   You've got two more aces up your stolen sleeves: your [color=cyan]beacon[/color] and your [color=cyan]satchel.[/color]
->>>>>>> fire/master
 
   Seu [color=cyan]beacon[/color] fornece uma passagem segura para casa para objetos que podem não ser fáceis de carregar com você no transporte de evacuação. Basta encontrar um lugar isolado na estação para abrir o beacon e definir suas coordenadas para seu esconderijo.
   Quaisquer itens brilhantes próximos a ele serão [bold]teletransportados para seu cofre ao final do turno,[/bold] cumprindo seus objetivos.
@@ -55,28 +36,12 @@
     <GuideEntityEmbed Entity="ThiefBeacon"/>
   </Box>
 
-<<<<<<< HEAD
-  Sua [color=cyan]caixa de ferramentas[/color] contém... bem, o que você lembrou de embalar. [bold]Você pode selecionar dois kits pré-fabricados[/bold] para ajudá-lo a completar roubos mais ambiciosos.
-  Aprove suas escolhas em um lugar seguro, pois a caixa de ferramentas se dissolverá e os equipamentos cairão aos seus pés.
-=======
   Your [color=cyan]satchel[/color] contains... well, whatever you remembered to pack. [bold]You can select two pre-made kits[/bold] to help you complete grander heists.
->>>>>>> fire/master
 
   <Box>
     <GuideEntityEmbed Entity="SatchelThief"/>
   </Box>
   <Box>
-<<<<<<< HEAD
-    <GuideEntityEmbed Entity="Implanter" Caption="Anatomy"/>
-    <GuideEntityEmbed Entity="C4" Caption="Breacher"/>
-    <GuideEntityEmbed Entity="ChameleonProjector" Caption="Chameleon"/>
-    <GuideEntityEmbed Entity="BaseUplinkRadio" Caption="Communicator"/>
-  </Box>
-  <Box>
-    <GuideEntityEmbed Entity="NitrousOxideTank" Caption="Sleeper"/>
-    <GuideEntityEmbed Entity="Fulton" Caption="Smuggler"/>
-    <GuideEntityEmbed Entity="Telecrystal" Caption="Syndie"/>
-=======
     <GuideEntityEmbed Entity="StorageImplanter" Caption="Anatomia"/>
     <GuideEntityEmbed Entity="C4" Caption="Explosivo"/>
     <GuideEntityEmbed Entity="ChameleonProjector" Caption="Camaleão"/>
@@ -86,18 +51,12 @@
     <GuideEntityEmbed Entity="NitrousOxideTank" Caption="Adormecedor"/>
     <GuideEntityEmbed Entity="Emag" Caption="Contrabandista"/>
     <GuideEntityEmbed Entity="Telecrystal" Caption="Sindicalista"/>
->>>>>>> fire
   </Box>
 
-<<<<<<< HEAD
-  ## A Joia da Coleção
-  Sua cleptomania o levará a lugares. Um dia, você sentirá vontade de roubar algumas miniaturas. No outro, você desejará roubar uma máquina industrial.
-=======
   ## Centerpiece of the Collection
   Your kleptomania will take you places. One day, you'll feel like stealing a few figurines. Another day, you'll feel like stealing an industrial machine.
 
   No matter. They'll all be a part of your collection within a matter of time.
->>>>>>> fire/master
 
   Não importa. Todos farão parte de sua coleção em pouco tempo.
 
@@ -107,23 +66,13 @@
 
   Coisas que você pode desejar incluem, mas não se limitam a:
 
-<<<<<<< HEAD
-=======
   Things that you may desire include but are not limited to:
 
->>>>>>> fire/master
   <Box>
-<<<<<<< HEAD
-    <GuideEntityEmbed Entity="ToyFigurineGreytider" Caption="Figurines"/>
-    <GuideEntityEmbed Entity="PassengerIDCard" Caption="ID cards"/>
-    <GuideEntityEmbed Entity="ChemDispenser" Caption="Structures"/>
-    <GuideEntityEmbed Entity="MobCorgiIan" Caption="Animals/Pets"/>
-=======
    <GuideEntityEmbed Entity="ToyFigurineGreytider" Caption="Miniaturas"/>
    <GuideEntityEmbed Entity="PassengerIDCard" Caption="Cartões de Identificação"/>
    <GuideEntityEmbed Entity="ChemDispenser" Caption="Estruturas"/>
    <GuideEntityEmbed Entity="MobCorgiIan" Caption="Animais/Pets"/>
->>>>>>> fire
   </Box>
 
 </Document>
