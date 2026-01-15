@@ -1,0 +1,16 @@
+ent-ClothingHeadsetHeavyContainmentSecurityService = { ent-ClothingHeadset } службы безопасности
+    .desc = { ent-ClothingHeadset.desc }
+ent-ClothingHeadsetFieldMedicalSpecialist = { ent-ClothingHeadset } амнестезиолога
+    .desc = { ent-ClothingHeadset.desc }
+ent-ClothingHeadsetExternalAdministrativeZoneSecurityService = { ent-ClothingHeadsetHeavyContainmentSecurityService }
+    .desc = { ent-ClothingHeadset.desc }
+ent-ClothingHeadsetScientificService = { ent-ClothingHeadset } научной службы
+    .desc = { ent-ClothingHeadset.desc }
+ent-ClothingHeadsetMedicalService = { ent-ClothingHeadset } медицинской службы
+    .desc = { ent-ClothingHeadset.desc }
+ent-ClothingHeadsetEngineeringTechnicalService = { ent-ClothingHeadset } инженерно-технической службы
+    .desc = { ent-ClothingHeadset.desc }
+ent-ClothingHeadsetLogistics = { ent-ClothingHeadset } логистической службы
+    .desc = { ent-ClothingHeadset.desc }
+ent-ClothingHeadsetFoodAndSanitation = { ent-ClothingHeadset } сервисной службы
+    .desc = { ent-ClothingHeadset.desc }

@@ -89,7 +89,7 @@ ignore_list:
   - 'STG 44'
   - 'ACP-14'
   - 'Glock-22'
-  - 'GL-79'
+  - 'GL-70'
   - 'M-41'
   - 'DEAD-BEEF'
   - 'UwU'
@@ -154,6 +154,28 @@ ignore_list:
   - 'v 1.6'
   - 'Sol Dry'
   - 'Ds ujdjhbnt nhfyckbnjv.'
+  - SS14
+  - scar-h
+  - N
+  - D1984
+  - $amount
+  - '{$amount ->'
+  - '{$linked ->'
+  - <username>
+  - <index>
+  - AMH-C227 # Fire added
+  - name # Fire added
+  - value # Fire added
+  - 6x3 # Fire added
+  - 6x2 # Fire added
+  - 5x3 # Fire added
+  - 5x2 # Fire added
+  - 5x1 # Fire added
+  - 4x3 # Fire added
+  - 3x3 # Fire added
+  - G36 # Fire added
+  - AR18 # Fire added
+  - P90 # Fire added
 
 ignore_files:
   - 'italian.ftl'
@@ -176,3 +198,11 @@ ignore_files:
   - 'flesh_hugger.ftl'
   - 'flesh_spider.ftl'
   - 'spells-actions.ftl'
+  - artifact-component.ftl
+  - plant-analyzer-component.ftl
+  - xenoborg.ftl
+  - delivery-spam.ftl
+  - stacks.ftl
+  - role-types.ftl
+  - rmobjective.ftl
+  - persistence-save-command.ftl

@@ -18,6 +18,12 @@
         layer:
           - MachineLayer
   - type: Lathe
+    producingSound:
+      path: /Audio/Machines/circuitprinter.ogg
+      params:
+        volume: -2
+        maxDistance: 4
+        pitch: 0.7
   - type: MaterialStorage
   - type: Destructible
     thresholds:
@@ -112,6 +118,7 @@
         - Sheet
         - RawMaterial
         - Ingot
+  - type: OreSiloClient
   - type: Lathe
     idleState: icon
     runningState: building
@@ -133,7 +140,8 @@
     - HydroponicsStatic
   - type: EmagLatheRecipes
     emagStaticPacks:
-    - SecurityAmmoStatic
+    #- SecurityAmmoStatic
+    - SecurityStaticSunrise
   - type: BlueprintReceiver
     whitelist:
       tags:
@@ -185,12 +193,16 @@
         - Sheet
         - RawMaterial
         - Ingot
+        - SheetPaper #Sunrise-edit
+
+  - type: OreSiloClient
   - type: Lathe
     idleState: icon
     runningState: building
     unlitIdleState: unlit
     unlitRunningState: unlit-building
     staticPacks:
+    - PaperStatic #Sunrise-edit
     - ChemistryStatic
     - SurgeryStatic
     dynamicPacks:
@@ -221,6 +233,11 @@
     - SecurityEquipment
     - SecurityWeapons
     - SecurityDynamicSunrise # Sunrise-Add
+    - SecurityDynamicSunriseClothing # Sunrise-Add
+    - SecurityDynamicSunriseMech # Sunrise-Add
+    - MedicalCyberlimbDynamic # Sunrise-Add
+    - MedicalCyberOrgansDynamic # Sunrise-Add
+    - MedicalImplantDynamic # Sunrise-Add
 
 - type: entity
   id: ProtolatheHyperConvection
@@ -283,6 +300,7 @@
         - Sheet
         - RawMaterial
         - Ingot
+  - type: OreSiloClient
   - type: RequireProjectileTarget
 
 - type: entity
@@ -327,12 +345,16 @@
     - MechParts
     - MechEquipment
     - RoboticsDynamicSunrise # Sunrise-Add
+    - MedicalCyberlimbDynamic # Sunrise-Add
+    - MedicalCyberOrgansDynamic # Sunrise-Add
+    - MedicalImplantDynamic # Sunrise-Add
   - type: MaterialStorage
     whitelist:
       tags:
       - Sheet
       - RawMaterial
       - Ingot
+  - type: OreSiloClient
   - type: GuideHelp
     guides:
     - Robotics
@@ -403,10 +425,11 @@
     staticPacks:
     - SecurityEquipmentStatic
     - SecurityPracticeStatic
-    - SecurityAmmoStatic
+    #- SecurityAmmoStatic
     - SecurityWeaponsStatic
     - SecurityStaticSunrise # Sunrise-Add
     dynamicPacks:
+    - SecurityDynamicWeaponsScp # Fire added
     - SalvageSecurityBoards
     - SalvageSecurityWeapons
     - SecurityEquipment
@@ -416,13 +439,17 @@
     - SecurityWeapons
     - SecurityDisablers
     - SecurityDynamicSunrise # Sunrise-Add
-    - SecurityDynamicWeaponsScp # Fire added
+    - SecurityDynamicSunriseClothing # Sunrise-Add
+    - SecurityDynamicSunriseMech # Sunrise-Add
   - type: MaterialStorage
     whitelist:
       tags:
         - Sheet
         - RawMaterial
         - Ingot
+  - type: OreSiloClient
+  - type: LatheAnnouncing
+    channels: [Security]
 
 - type: entity
   id: AmmoTechFab
@@ -449,13 +476,15 @@
       idleState: icon
       runningState: icon
       staticPacks:
-      - SecurityAmmoStatic
+      #- SecurityAmmoStatic
+      - SecurityStaticSunrise # Sunrise-Add
     - type: MaterialStorage
       whitelist:
         tags:
           - Sheet
           - RawMaterial
           - Ingot
+    - type: OreSiloClient
 
 - type: entity
   id: MedicalTechFab
@@ -492,10 +521,16 @@
     - Chemistry
     - SurgeryDynamicSunrise # Sunrise-Add
     - MedicalDynamicSunrise # Sunrise-Add
+    - MedicalCyberlimbDynamic # Sunrise-Add
+    - MedicalCyberOrgansDynamic # Sunrise-Add
+    - MedicalImplantDynamic # Sunrise-Add
   - type: Machine
     board: MedicalTechFabCircuitboard
   - type: StealTarget
     stealGroup: MedicalTechFabCircuitboard
+  - type: OreSiloClient
+  - type: LatheAnnouncing
+    channels: [Medical]
 
 - type: entity
   parent: BaseLathe
@@ -542,6 +577,7 @@
         - Sheet
         - RawMaterial
         - Ingot
+  - type: OreSiloClient
 
 - type: entity
   id: Biogenerator
@@ -662,6 +698,7 @@
       tags:
       - Raw
       - Wooden
+      - Boll
   - type: Lathe
     idleState: base_machine
     runningState: base_machine_processing
@@ -694,7 +731,7 @@
     idleState: icon
     runningState: building
     staticPacks:
-    - FloorTilesStatic
+    - ScpFloorTilesStatic # Fire Edit
   - type: MaterialStorage
     whitelist:
       tags:
@@ -703,3 +740,4 @@
         - Wooden
         - RawMaterial
         - Plastic
+  - type: OreSiloClient

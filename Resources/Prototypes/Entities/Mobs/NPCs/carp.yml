@@ -15,7 +15,7 @@
           true
     - type: NpcFactionMember
       factions:
-      - Carps
+      - Carps # Sunrise-Edit
     - type: Sprite
       drawdepth: Mobs
       sprite: Mobs/Aliens/Carps/space.rsi
@@ -76,6 +76,7 @@
       tags:
         - Carp
         - DoorBumpOpener
+        - CannotSuicide
         - NoPaint  # Sunrise-edit
     - type: ReplacementAccent
       accent: genericAggressive
@@ -90,9 +91,7 @@
     - type: CollectiveMind
       minds:
       - Carp
-    - type: NightVision
-      isToggle: true
-      color: "#808080"
+    - type: ToggleableNightVision
     # Sunrise-End
 
 - type: entity
@@ -165,6 +164,10 @@
   suffix: "Salvage Ruleset"
   components:
     - type: SalvageMobRestrictions
+    - type: MobThresholds
+      thresholds:
+        0: Alive
+        30: Dead
 
 - type: entity
   name: space carp
@@ -181,12 +184,18 @@
       rules: ghost-role-information-space-dragon-summoned-carp-rules
       mindRoles:
       - MindRoleGhostRoleTeamAntagonistFlock
-      raffle:
-        settings: short
     - type: GhostTakeoverAvailable
     - type: HTN
       rootTask:
         task: DragonCarpCompound
+    # Sunrise-start
+    - type: Tag
+      tags:
+      - Carp
+      - DoorBumpOpener
+      - NoPaint  # Sunrise-edit
+      - CarpRiftHealTarget  # Sunrise-edit
+    # Sunrise-end
 
 - type: entity
   id: MobCarpDungeon
@@ -233,7 +242,7 @@
     - type: MobThresholds
       thresholds:
         0: Alive
-        150: Dead
+        82: Dead # Might seem random, but this brings up the hits to kill with a crusher mark to 3
     - type: Stamina
       critThreshold: 150
     - type: DamageStateVisuals
@@ -252,8 +261,7 @@
         - id: FoodMeatFish
           amount: 4
         - id: MaterialToothSharkminnow1
-          amount: 1
-          maxAmount: 3
+          amount: 3
     - type: MeleeWeapon
       damage:
         types:

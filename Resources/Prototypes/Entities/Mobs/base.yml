@@ -5,10 +5,16 @@
   id: BaseMob
   abstract: true
   components:
+  # Fire edit start
+  - type: GrainOverlay
+  - type: VignetteOverlay
+  - type: FieldOfViewOccludable
+  # Fire edit end
   - type: Sprite
     noRot: true
     drawdepth: Mobs
   - type: MobCollision
+  - type: GravityAffected
   - type: Physics
     bodyType: KinematicController
   - type: Fixtures
@@ -44,11 +50,55 @@
   - type: MovementSpeedModifier
   - type: RequireProjectileTarget
     active: False
+  - type: StunVisuals
   # Sunrise-Start
   - type: TTS
   - type: DamageOverlay
   - type: EmoteAnimation
-  # Sunrise-End
+  - type: CustomLimbVisualizer
+    displacements:
+      LHand:
+        sizeMaps:
+          32:
+            sprite: _Sunrise/CustomLimb/displacement.rsi
+            state: l_hand
+      RHand:
+        sizeMaps:
+          32:
+            sprite: _Sunrise/CustomLimb/displacement.rsi
+            state: r_hand
+      LLeg:
+        sizeMaps:
+          32:
+            sprite: _Sunrise/CustomLimb/displacement.rsi
+            state: l_leg
+      RLeg:
+        sizeMaps:
+          32:
+            sprite: _Sunrise/CustomLimb/displacement.rsi
+            state: r_leg
+      LFoot:
+        sizeMaps:
+          32:
+            sprite: _Sunrise/CustomLimb/displacement.rsi
+            state: l_foot
+      RFoot:
+        sizeMaps:
+          32:
+            sprite: _Sunrise/CustomLimb/displacement.rsi
+            state: r_foot
+      LArm:
+        sizeMaps:
+          32:
+            sprite: _Sunrise/CustomLimb/displacement.rsi
+            state: l_arm
+      RArm:
+        sizeMaps:
+          32:
+            sprite: _Sunrise/CustomLimb/displacement.rsi
+            state: r_arm
+  # Sunrise-end
+
 
 - type: entity
   save: false
@@ -70,7 +120,7 @@
     - trigger:
         !type:DamageGroupTrigger # Sunrise-Edit
         damageGroup: Brute # Sunrise-Edit
-        damage: 400
+        damage: 1000 # Fire edit
       behaviors:
       - !type:GibBehavior { }
     - trigger:
@@ -112,6 +162,9 @@
     - Shock
     - Cold
     - Caustic
+    - Asphyxiation
+    - Radiation
+    - Mangleness # Sunrise-Edit
   - type: DamageOnHighSpeedImpact
     damage:
       types:

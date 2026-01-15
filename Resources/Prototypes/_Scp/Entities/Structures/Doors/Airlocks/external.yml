@@ -1,6 +1,7 @@
 - type: entity
   parent: ScpAirlockRCDResistant
-  id: ScpAirlockExternal
+  id: ScpAirlockExit
+  suffix: SCP, Exit
   components:
   - type: Door
     crushDamage:
@@ -14,16 +15,15 @@
       path: /Audio/Machines/airlock_deny.ogg
   - type: Sprite
     sprite: _Scp/Structures/Doors/Airlocks/Standard/external.rsi
-  - type: PaintableAirlock
-    group: External
-    department: null
   - type: Wires
     layoutId: AirlockExternal
+  - type: Paintable
+    group: null
 
 - type: entity
-  parent: ScpAirlockExternal
-  id: ScpAirlockExternalGlass
-  suffix: SCP Glass, External
+  parent: ScpAirlockExit
+  id: ScpAirlockExitGlass
+  suffix: SCP Glass, Exit
   components:
   - type: Door
     occludes: false
@@ -31,8 +31,6 @@
     enabled: false
   - type: Sprite
     sprite: _Scp/Structures/Doors/Airlocks/Glass/external.rsi
-  - type: PaintableAirlock
-    group: ExternalGlass
   - type: Fixtures
     fixtures:
       fix1:
@@ -44,3 +42,5 @@
         - FullTileMask
         layer:     #removed opaque from the layer, allowing lasers to pass through glass airlocks
         - GlassAirlockLayer
+  - type: Paintable
+    group: null

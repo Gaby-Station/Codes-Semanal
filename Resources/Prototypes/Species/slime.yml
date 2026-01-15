@@ -2,6 +2,7 @@
   id: SlimePerson
   name: species-name-slime
   roundStart: false # Fire edit
+  stationRecordsHidden: true # Fire added
   prototype: MobSlimePerson
   bodyTypes:
   - SlimeNormal
@@ -10,6 +11,10 @@
   markingLimits: MobSlimeMarkingLimits
   dollPrototype: MobSlimePersonDummy
   skinColoration: Hues
+  # Sunrise-Edit
+  buttScan:
+    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
+    state: human # Sunrise-Edit
 
 - type: bodyType
   id: SlimeNormal
@@ -69,7 +74,7 @@
       points: 1
       required: false
     Chest:
-      points: 1
+      points: 2
       required: false
     Legs:
       points: 4

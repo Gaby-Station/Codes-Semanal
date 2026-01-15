@@ -5,7 +5,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobPassenger
+      role: JobServicePersonnel # Fire Edit
       time: 36000 #10 hrs, silly reward for people who play passenger a lot
 
 # Head of Greytide (for grey mantle)
@@ -15,7 +15,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobPassenger
+      role: JobServicePersonnel # Fire Edit
       time: 72000 #20 hrs, fun mantle for the most experienced greytiders
 
 # Face
@@ -47,6 +47,15 @@
     proto: GreyTider
   equipment:
     jumpsuit: ClothingUniformColorRainbow
+
+# Rainbow Jumpskirt
+- type: loadout
+  id: RainbowJumpskirt
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: GreyTider
+  equipment:
+    jumpsuit: ClothingUniformJumpskirtColorRainbow
 
 # Ancient
 - type: loadout

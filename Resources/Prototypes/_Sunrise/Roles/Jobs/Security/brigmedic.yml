@@ -15,12 +15,15 @@
   supervisors: job-supervisors-hos
   canBeAntag: false
   displayWeight: 15
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
   access:
   - Medical
   - Security
   - Brig
   - Maintenance
   - External
+  - Cryogenics
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -34,8 +37,13 @@
     eyes: ClothingEyesHudMedSec
     head: ClothingHeadHatBeretSecurityMedic
     id: BrigmedicPDA
+    pocket1: HandheldBrigmedicCrewMonitor
     ears: ClothingHeadsetBrigmedic
     belt: ClothingBeltMedicalFilled
   storage:
     back:
     - Flash
+
+- type: chameleonOutfit
+  id: BrigmedicChameleonOutfit
+  job: Brigmedic

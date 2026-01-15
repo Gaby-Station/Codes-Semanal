@@ -4,7 +4,7 @@
   id: Administration
   name: department-Administration
   description: department-Administration-description
-  color: "#6aa84f"
+  color: "#065290"
   weight: 100
   roles:
   - Director
@@ -15,12 +15,38 @@
   - HeadOfMedicalSector
   - SeniorLogisticsOfficer
 
+# Мобильные Оперативные Группы
+
+- type: department
+  id: MobileTaskForce
+  name: department-MobileTaskForce
+  description: department-MobileTaskForce-description
+  color: "#808080"
+  roles:
+  - RRHLeader # А-1
+  - RRHSpecialist
+  - HDLeader # Ню-7
+  - HDSpecialist
+  - HDCadet
+  - MHLeader # Б-7
+  - MHSpecialist
+  - MHCadet
+  - LLHLeader # О-1
+  - LLHSpecialist
+  - NTFLeader # Э-11
+  - NTFSpecialist
+  - NTFCadet
+  editorHidden: true
+  alwaysShowInBanPanel: true
+  weight: 99 # что бы оперативники МОГ показывались под Администрацией комплекса
+
 # Гады следящие за буквой закона
 
 - type: department
   id: InternalSecurity
   name: department-InternalSecurity
   description: department-InternalSecurity-description
+  editorHidden: true # выводим ОВБ до лучших времен
   color: "#980000"
   weight: 95
   roles:
@@ -40,6 +66,7 @@
   id: InternalTribunalService
   name: department-InternalTribunalService
   description: department-InternalTribunalService-description
+  editorHidden: true # выводим СВТ до лучших времен
   color: "#c27ba0"
   weight: 85
   roles:
@@ -52,14 +79,13 @@
   id: HeavyContainmentSecurityService
   name: department-HeavyContainmentSecurityService
   description: department-HeavyContainmentSecurityService-description
-  color: "#ff0000"
+  color: "#770101"
   weight: 80
   roles:
   - HeavyContainmentZoneCommandant
   - SeniorHeavyContainmentZoneOfficer
   - HeavyContainmentZoneOfficer
   - JuniorHeavyContainmentZoneOfficer
-  - FieldMedicalSpecialist
 
 - type: department
   id: ExternalAdministrativeZoneSecurityService
@@ -72,6 +98,7 @@
   - SeniorExternalAdministrativeZoneOfficer
   - ExternalAdministrativeZoneOfficer
   - JuniorExternalAdministrativeZoneOfficer
+  - FieldMedicalSpecialist
 
 # Научный отдел
 
@@ -79,12 +106,11 @@
   id: ScientificService
   name: department-ScientificService
   description: department-ScientificService-description
-  color: "#674ea7"
+  color: "#43356d"
   weight: 70
   roles:
   - ScientificServiceDirector
   - LeadResearcher
-  - AnomabiologyResearcher
   - AnomarchologyResearcher
   - ProductionSpecialist
   - JuniorResearcher
@@ -95,7 +121,7 @@
   id: MedicalService
   name: department-MedicalService
   description: department-MedicalService-description
-  color: "#52b4e9"
+  color: "#3b627a"
   weight: 65
   roles:
   - HeadOfMedicalSector
@@ -111,7 +137,7 @@
   id: EngineeringTechnicalService
   name: department-EngineeringTechnicalService
   description: department-EngineeringTechnicalService-description
-  color: "#fbbc04"
+  color: "#c07d1e"
   weight: 60
   roles:
   - ChiefTechnicalSpecialist
@@ -126,7 +152,7 @@
   id: LogisticsService
   name: department-LogisticsService
   description: department-LogisticsService-description
-  color: "#bf9000"
+  color: "#9E6A34"
   weight: 55
   roles:
   - SeniorLogisticsOfficer
@@ -138,7 +164,7 @@
   id: FoodAndSanitationServiceDepartment
   name: department-FoodAndSanitationServiceDepartment
   description: department-FoodAndSanitationServiceDepartment-description
-  color: "#b8d8aa"
+  color: "#4e7c22"
   weight: 50
   roles:
   - GastronomicSpecialist
@@ -151,7 +177,7 @@
   id: LowAccessPersonnel
   name: department-LowAccessPersonnel
   description: department-LowAccessPersonnel-description
-  color: "#FF5297"
+  color: "#91381e"
   weight: 45
   roles:
   - ClassDCook
@@ -165,7 +191,7 @@
   id: SCP
   name: department-SCP
   description: department-SCP-description
-  color: "#FF5297"
+  color: "#7a7070"
   weight: 120
   roles:
   - Scp049

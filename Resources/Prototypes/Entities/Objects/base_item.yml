@@ -3,6 +3,9 @@
   id: BaseItem
   abstract: true
   components:
+  # Fire added start
+  - type: FieldOfViewOccludable
+  # Fire added end
   - type: Item
     size: Small
   - type: Animateable
@@ -24,6 +27,7 @@
     soundHit:
       collection: MetalThud
   - type: CollisionWake
+  - type: GravityAffected
   - type: Physics
     bodyType: Dynamic
     fixedRotation: false
@@ -44,7 +48,7 @@
   - type: Pullable
   - type: DamageExaminable
   - type: TTS
-    voice: FactCore # Sunrise-TTS
+    voice: Portal2FactCore # Sunrise-TTS
   - type: StaticPrice
     price: 0 # Sunrise-TTS
 
@@ -54,6 +58,7 @@
   parent: BaseItem
   abstract: true
   components:
+  - type: ContainerInteractionAnimation # Sunrise added
   - type: Storage
   - type: UserInterface
     interfaces:

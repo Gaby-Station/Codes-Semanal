@@ -38,13 +38,15 @@ namespace Content.Shared.Administration
         }
 
         [Serializable, NetSerializable]
-        public sealed class BwoinkDbLoadedMessage : EntityEventArgs
+        public sealed class BwoinkTextHistoryMessage : EntityEventArgs
         {
             public NetUserId UserId { get; }
+            public List<BwoinkTextMessage> Messages { get; }
 
-            public BwoinkDbLoadedMessage(NetUserId userId)
+            public BwoinkTextHistoryMessage(NetUserId userId, List<BwoinkTextMessage> messages)
             {
                 UserId = userId;
+                Messages = messages;
             }
         }
         // Sunrise-End
@@ -133,6 +135,20 @@ namespace Content.Shared.Administration
             Channel = channel;
             PlayerName = playerName;
             Typing = typing;
+        }
+    }
+
+    /// <summary>
+    ///     Sent by server to notify a client when their message was blocked due to cooldown.
+    /// </summary>
+    [Serializable, NetSerializable]
+    public sealed class BwoinkCooldownMessage : EntityEventArgs
+    {
+        public TimeSpan RemainingCooldown { get; }
+
+        public BwoinkCooldownMessage(TimeSpan remainingCooldown)
+        {
+            RemainingCooldown = remainingCooldown;
         }
     }
 }

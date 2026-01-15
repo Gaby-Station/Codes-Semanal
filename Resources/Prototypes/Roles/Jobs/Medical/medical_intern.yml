@@ -11,6 +11,8 @@
   supervisors: job-supervisors-medicine
   canBeAntag: true # Sunrise-Edit
   displayWeight: 0  # Sunrise-Edit
+  overrideConsoleVisibility: false
+  setPreference: false # Fire added
   access:
   - Medical
   - Maintenance
@@ -27,3 +29,14 @@
   #storage:
     #back:
     #- Stuff
+
+- type: chameleonOutfit
+  id: MedicalInternChameleonOutfit
+  job: MedicalIntern
+  equipment:
+    head: ClothingHeadHatBeretMedic
+    eyes: ClothingEyesHudMedical
+    mask: ClothingMaskSterile
+    neck: ClothingNeckStethoscope
+    outerClothing: ClothingOuterCoatLabOpened
+    gloves: ClothingHandsGlovesLatex

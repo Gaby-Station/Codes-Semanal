@@ -15,6 +15,7 @@ using Robust.Client.Graphics;
 using Robust.Client.ResourceManagement;
 using Robust.Shared.Configuration;
 using Robust.Shared.Input;
+using Robust.Shared.Utility;
 
 namespace Content.Client.Lobby.UI
 {
@@ -27,6 +28,7 @@ namespace Content.Client.Lobby.UI
         [Dependency] private readonly IRobustRandom _random = default!;
         [Dependency] private readonly IResourceCache _resourceCache = default!;
         [Dependency] private readonly IConfigurationManager _configurationManager = default!;
+        [Dependency] private readonly IUriOpener _uriOpener = default!;
 
         public string LobbyParallax = "FastSpace"; // Sunrise-edit
         public bool ShowParallax; // Sunrise-edit
@@ -53,6 +55,10 @@ namespace Content.Client.Lobby.UI
 
             LeaveButton.OnPressed += _ => _consoleHost.ExecuteCommand("disconnect");
             OptionsButton.OnPressed += _ => UserInterfaceManager.GetUIController<OptionsUIController>().ToggleWindow();
+            ReplaysButton.OnPressed += _ => _uriOpener.OpenUri(_configurationManager.GetCVar(SunriseCCVars.InfoLinksReplays));
+
+            //CollapseButton.OnPressed += _ => TogglePanel(false);
+            //ExpandButton.OnPressed += _ => TogglePanel(true);
 
             // Sunrise-start
             ChatHider.OnKeyBindUp += args =>
@@ -100,6 +106,15 @@ namespace Content.Client.Lobby.UI
                 ServersHubHider.Texture = ServersHubContent.Visible ? IconExpanded : IconCollapsed;
             };
 
+            ContributorsHider.OnKeyBindUp += args =>
+            {
+                if (args.Function != EngineKeyFunctions.Use)
+                    return;
+
+                ContributorsContent.Visible = !ContributorsContent.Visible;
+                ContributorsHider.Texture = ContributorsContent.Visible ? IconExpanded : IconCollapsed;
+            };
+
             ChangelogHider.OnKeyBindUp += args =>
             {
                 if (args.Function != EngineKeyFunctions.Use)
@@ -130,14 +145,11 @@ namespace Content.Client.Lobby.UI
 
             LobbySongPanel.PanelOverride = _back;
 
-            _configurationManager.OnValueChanged(SunriseCCVars.LobbyOpacity, OnLobbyOpacityChanged);
-            _configurationManager.OnValueChanged(SunriseCCVars.ServersHubEnable, OnServersHubEnableChanged);
-            _configurationManager.OnValueChanged(SunriseCCVars.ServiceAuthEnabled, OnServiceAuthEnableChanged);
+            _configurationManager.OnValueChanged(SunriseCCVars.LobbyOpacity, OnLobbyOpacityChanged, true);
+            _configurationManager.OnValueChanged(SunriseCCVars.ServersHubEnable, OnServersHubEnableChanged, true);
+            _configurationManager.OnValueChanged(SunriseCCVars.ServiceAuthEnabled, OnServiceAuthEnableChanged, true);
             _configurationManager.OnValueChanged(SunriseCCVars.ServerName, OnServerNameChanged, true);
-
-            SetLobbyOpacity(_configurationManager.GetCVar(SunriseCCVars.LobbyOpacity));
-            SetServersHubEnable(_configurationManager.GetCVar(SunriseCCVars.ServersHubEnable));
-            SetUserProfileEnable(_configurationManager.GetCVar(SunriseCCVars.ServiceAuthEnabled));
+            _configurationManager.OnValueChanged(SunriseCCVars.InfoLinksReplays, OnReplaysLinkChanged, true);
 
             Chat.SetChatOpacity();
 
@@ -164,17 +176,23 @@ namespace Content.Client.Lobby.UI
             }
 
             ServersHubHider.Texture = ServersHubContent.Visible ? IconExpanded : IconCollapsed;
+            ContributorsHider.Texture = ContributorsContent.Visible ? IconExpanded : IconCollapsed;
             ChangelogHider.Texture = ChangelogContent.Visible ? IconExpanded : IconCollapsed;
             ServerInfoHider.Texture = ServerInfoContent.Visible ? IconExpanded : IconCollapsed;
             CharacterInfoHider.Texture = CharacterInfoContent.Visible ? IconExpanded : IconCollapsed;
             ChatHider.Texture = ChatContent.Visible ? IconExpanded : IconCollapsed;
             UserProfileHider.Texture = CharacterInfoContent.Visible ? IconExpanded : IconCollapsed;
             ServersHubHider.Modulate = StyleNano.NanoGold;
+            ContributorsHider.Modulate = StyleNano.NanoGold;
             ChangelogHider.Modulate = StyleNano.NanoGold;
             ServerInfoHider.Modulate = StyleNano.NanoGold;
             CharacterInfoHider.Modulate = StyleNano.NanoGold;
             ChatHider.Modulate = StyleNano.NanoGold;
             UserProfileHider.Modulate = StyleNano.NanoGold;
+
+            // Скрываем чейнджлог по умолчанию
+            ChangelogContent.Visible = false;
+            ChangelogHider.Texture = IconCollapsed;
         }
 
         private void OnServersHubEnableChanged(bool enable)
@@ -185,6 +203,7 @@ namespace Content.Client.Lobby.UI
         private void OnServiceAuthEnableChanged(bool enable)
         {
             SetUserProfileEnable(enable);
+            SetContributorsEnable(enable);
         }
 
         private void SetServersHubEnable(bool enable)
@@ -192,9 +211,19 @@ namespace Content.Client.Lobby.UI
             ServersHubBox.Visible = enable;
         }
 
+        private void SetContributorsEnable(bool enable)
+        {
+            ContributorsBox.Visible = enable;
+        }
+
         private void SetUserProfileEnable(bool enable)
         {
             UserProfileBox.Visible = enable;
+        }
+
+        private void OnReplaysLinkChanged(string replaysUrl)
+        {
+            ReplaysButton.Visible = !string.IsNullOrEmpty(replaysUrl);
         }
         // Sunrise-End
 
@@ -227,6 +256,12 @@ namespace Content.Client.Lobby.UI
                     break;
             }
         }
+
+        //private void TogglePanel(bool value)
+        //{
+        //    RightSide.Visible = value;
+        //    ExpandPanel.Visible = !value;
+        //}
 
         // Sunrise-start
         protected override void Draw(DrawingHandleScreen handle)

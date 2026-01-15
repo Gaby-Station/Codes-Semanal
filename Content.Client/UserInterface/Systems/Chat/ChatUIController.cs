@@ -15,6 +15,7 @@ using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Screens;
 using Content.Client.UserInterface.Systems.Chat.Widgets;
 using Content.Client.UserInterface.Systems.Gameplay;
+using Content.Shared._Scp.Watching.FOV;
 using Content.Shared._Sunrise.CollectiveMind;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
@@ -22,6 +23,7 @@ using Content.Shared.Chat;
 using Content.Shared.Decals;
 using Content.Shared.Damage.ForceSay;
 using Content.Shared.Decals;
+using Content.Shared.Examine;
 using Content.Shared.Input;
 using Content.Shared.Radio;
 using Content.Shared.Roles.RoleCodeword;
@@ -43,9 +45,10 @@ using Robust.Shared.Replays;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 
+
 namespace Content.Client.UserInterface.Systems.Chat;
 
-public sealed class ChatUIController : UIController
+public sealed partial class ChatUIController : UIController
 {
     [Dependency] private readonly IClientAdminManager _admin = default!;
     [Dependency] private readonly IChatManager _manager = default!;
@@ -69,8 +72,7 @@ public sealed class ChatUIController : UIController
     [UISystemDependency] private readonly MindSystem? _mindSystem = default!;
     [UISystemDependency] private readonly RoleCodewordSystem? _roleCodewordSystem = default!;
 
-    [ValidatePrototypeId<ColorPalettePrototype>]
-    private const string ChatNamePalette = "ChatNames";
+    private static readonly ProtoId<ColorPalettePrototype> ChatNamePalette = "ChatNames";
     private string[] _chatNameColors = default!;
     private bool _chatNameColorsEnabled;
 
@@ -242,7 +244,7 @@ public sealed class ChatUIController : UIController
         gameplayStateLoad.OnScreenLoad += OnScreenLoad;
         gameplayStateLoad.OnScreenUnload += OnScreenUnload;
 
-        var nameColors = _prototypeManager.Index<ColorPalettePrototype>(ChatNamePalette).Colors.Values.ToArray();
+        var nameColors = _prototypeManager.Index(ChatNamePalette).Colors.Values.ToArray();
         _chatNameColors = new string[nameColors.Length];
         for (var i = 0; i < nameColors.Length; i++)
         {
@@ -251,6 +253,7 @@ public sealed class ChatUIController : UIController
 
         _config.OnValueChanged(CCVars.ChatWindowOpacity, OnChatWindowOpacityChanged);
 
+        InitializeHighlights();
     }
 
     public void OnScreenLoad()
@@ -270,12 +273,18 @@ public sealed class ChatUIController : UIController
 
     private void OnChatWindowOpacityChanged(float opacity)
     {
-        SetChatWindowOpacity(1f); // Fire edit - нахуй вы наш сепаратед чат делаете полупрозрачным
+        SetChatWindowOpacity(opacity);
     }
 
     public void SetChatWindowOpacity(float opacity)
     {
         var chatBox = UIManager.ActiveScreen?.GetWidget<ChatBox>() ?? UIManager.ActiveScreen?.GetWidget<ResizableChatBox>();
+
+        // Fire added start - если у нас маленький чат, то его прозрачность можно будет поменять
+        // Если нет - всегда 0
+        var isResizableChat = UIManager.ActiveScreen?.GetWidget<ResizableChatBox>() != null;
+        opacity = isResizableChat ? opacity : 0f;
+        // Fire added end
 
         var panel = chatBox?.ChatWindowPanel;
         if (panel is null)
@@ -437,6 +446,8 @@ public sealed class ChatUIController : UIController
     private void OnAttachedChanged(EntityUid uid)
     {
         UpdateChannelPermissions();
+
+        UpdateAutoFillHighlights();
     }
 
     private void AddSpeechBubble(ChatMessage msg, SpeechBubble.SpeechType speechType)
@@ -860,12 +871,23 @@ public sealed class ChatUIController : UIController
 
     public void ProcessChatMessage(ChatMessage msg, bool speechBubble = true)
     {
+        // Fire added start - через стены не слышно
+        if (!CanHear(_player.LocalEntity, _ent.GetEntity(msg.SenderEntity), msg.Channel))
+            return;
+        // Fire added end
+
         // color the name unless it's something like "the old man"
         if ((msg.Channel == ChatChannel.Local || msg.Channel == ChatChannel.Whisper) && _chatNameColorsEnabled)
         {
             var grammar = _ent.GetComponentOrNull<GrammarComponent>(_ent.GetEntity(msg.SenderEntity));
             if (grammar != null && grammar.ProperNoun == true)
                 msg.WrappedMessage = SharedChatSystem.InjectTagInsideTag(msg, "Name", "color", GetNameColor(SharedChatSystem.GetStringInsideTag(msg, "Name")));
+        }
+
+        // Color any words chosen by the client.
+        foreach (var highlight in _highlights)
+        {
+            msg.WrappedMessage = SharedChatSystem.InjectTagAroundString(msg, highlight, "color", _highlightsColor);
         }
 
         // Color any codewords for minds that have roles that use them
@@ -931,6 +953,34 @@ public sealed class ChatUIController : UIController
         }
     }
 
+    // Fire added start - через стены не будет слышно
+    private bool CanHear(EntityUid? player, EntityUid sender, ChatChannel channel)
+    {
+        if (channel != ChatChannel.Emotes && channel != ChatChannel.Local && channel != ChatChannel.Whisper)
+            return true;
+
+        if (_examine == null || _transform == null)
+            return false;
+
+        if (!_ent.EntityExists(sender) || !_ent.EntityExists(player))
+            return false;
+
+        if (!_examine.IsOccluded(player.Value))
+            return true;
+
+        // Все, что не через стены - слышно
+        if (_examine.InRangeUnOccluded(player.Value, sender))
+            return true;
+
+        // Если подойти вплотную к стене, то будет слышно
+        if (_transform.InRange(player.Value, sender, 2.5f))
+            return true;
+
+        // Иначе не слышно
+        return false;
+    }
+    // Fire added end
+
     public void OnDeleteChatMessagesBy(MsgDeleteChatMessagesBy msg)
     {
         // This will delete messages from an entity even if different players were the author.
@@ -959,6 +1009,11 @@ public sealed class ChatUIController : UIController
     public void NotifyChatTextChange()
     {
         _typingIndicator?.ClientChangedChatText();
+    }
+
+    public void NotifyChatFocus(bool isFocused)
+    {
+        _typingIndicator?.ClientChangedChatFocus(isFocused);
     }
 
     public void Repopulate()

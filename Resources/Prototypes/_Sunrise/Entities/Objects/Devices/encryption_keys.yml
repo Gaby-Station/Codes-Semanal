@@ -12,6 +12,24 @@
       layers:
       - state: crypt_silver
       - state: nano_label
+    - type: Tag
+      tags:
+      - EncryptionLaw
+
+- type: entity
+  parent: EncryptionKey
+  id: EncryptionKeyBlueShield
+  name: blue shield encryption key
+  description:
+  components:
+  - type: EncryptionKey
+    channels:
+    - BlueShield
+    defaultChannel: BlueShield
+  - type: Sprite
+    layers:
+    - state: crypt_silver
+    - state: nano_label
 
 - type: entity
   parent: EncryptionKey

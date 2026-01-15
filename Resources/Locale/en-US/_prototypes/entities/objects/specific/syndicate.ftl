@@ -1,6 +1,8 @@
+ent-TelecrystalBase = { ent-BaseItem }
+    .desc = It seems to be pulsing with suspiciously enticing energies.
 ent-Telecrystal = telecrystal
     .desc = It seems to be pulsing with suspiciously enticing energies.
-    .suffix = 20 TC
+    .suffix = 100 TC
 ent-Telecrystal1 = { ent-Telecrystal }
     .suffix = 1 TC
     .desc = { ent-Telecrystal.desc }
@@ -30,4 +32,7 @@ ent-BaseUplinkRadio0TC = { ent-BaseUplinkRadio }
     .desc = { ent-BaseUplinkRadio.desc }
 ent-BaseUplinkRadioDebug = { ent-BaseUplinkRadio }
     .suffix = DEBUG
+    .desc = { ent-BaseUplinkRadio.desc }
+ent-BaseUplinkRadioDebug999 = { ent-BaseUplinkRadio }
+    .suffix = DEBUG, NukeOps
     .desc = { ent-BaseUplinkRadio.desc }

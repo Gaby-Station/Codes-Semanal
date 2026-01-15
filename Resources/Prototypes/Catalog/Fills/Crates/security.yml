@@ -56,11 +56,12 @@
         amount: 2
       - id: RiotShield
         amount: 2
-    #      - SecGasmask  # Sunrise-Scp
-      - id: ClothingMaskGasSwat  # Sunrise-Scp
-        amount: 2  # Sunrise-Scp
-      - id: TearGasGrenade  # Sunrise-Scp
-        amount: 4  # Sunrise-Scp
+      # Fire added start
+      - id: ClothingMaskGasSwat
+        amount: 2
+      - id: TearGasGrenade
+        amount: 4
+      # Fire added end
 
 - type: entity
   id: CrateSecuritySupplies
@@ -117,4 +118,19 @@
       - id: TrackingImplanter
         amount: 4
 
-# Cosmetic Crates
+- type: entity
+  parent: CrateSecgear
+  id: CrateSecNonlethalThrowables
+  name: nonlethal throwables crate
+  description: Contains one box each of flashbangs, stingers, tear gas grenades, and four bolas. Requires Security access to open.
+  components:
+  - type: StorageFill
+    contents:
+    - id: BoxFlashbang
+      amount: 1
+    - id: BoxStinger
+      amount: 1
+    - id: BoxTearGas
+      amount: 1
+    - id: Bola # replace with 4 e-bolas when added
+      amount: 4

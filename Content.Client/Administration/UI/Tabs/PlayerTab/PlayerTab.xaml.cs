@@ -1,6 +1,8 @@
 using System.Linq;
 using Content.Client._Sunrise.AntagObjectives;
 using Content.Client.Administration.Systems;
+using Content.Shared.Administration; // Sunrise-Edit
+using Content.Shared.Administration.Managers; // Sunrise-Edit
 using Content.Client.Administration.UI.AntagObjectives;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
@@ -23,6 +25,7 @@ public sealed partial class PlayerTab : Control
     [Dependency] private readonly IEntityManager _entManager = default!;
     [Dependency] private readonly IConfigurationManager _config = default!;
     [Dependency] private readonly IPlayerManager _playerMan = default!;
+    [Dependency] private readonly ISharedAdminManager _adminManager = default!; // Sunrise-Edit
 
     private const string ArrowUp = "↑";
     private const string ArrowDown = "↓";
@@ -39,6 +42,10 @@ public sealed partial class PlayerTab : Control
     private bool _ascending = true;
     private bool _showDisconnected;
 
+    private AdminPlayerTabColorOption _playerTabColorSetting;
+    private AdminPlayerTabRoleTypeOption _playerTabRoleSetting;
+    private AdminPlayerTabSymbolOption _playerTabSymbolSetting;
+
     private readonly AntagObjectivesUIController _antagObjectivesUIController; // Sunrise-Edit
 
     public event Action<GUIBoundKeyEventArgs, ListData>? OnEntryKeyBindDown;
@@ -53,9 +60,9 @@ public sealed partial class PlayerTab : Control
         _adminSystem.OverlayEnabled += OverlayEnabled;
         _adminSystem.OverlayDisabled += OverlayDisabled;
 
-        _config.OnValueChanged(CCVars.AdminPlayerlistSeparateSymbols, PlayerListSettingsChanged);
-        _config.OnValueChanged(CCVars.AdminPlayerlistHighlightedCharacterColor, PlayerListSettingsChanged);
-        _config.OnValueChanged(CCVars.AdminPlayerlistRoleTypeColor, PlayerListSettingsChanged);
+        _config.OnValueChanged(CCVars.AdminPlayerTabRoleSetting, RoleSettingChanged, true);
+        _config.OnValueChanged(CCVars.AdminPlayerTabColorSetting, ColorSettingChanged, true);
+        _config.OnValueChanged(CCVars.AdminPlayerTabSymbolSetting, SymbolSettingChanged, true);
 
         OverlayButton.OnPressed += OverlayButtonPressed;
         ShowDisconnectedButton.OnPressed += ShowDisconnectedPressed;
@@ -87,6 +94,11 @@ public sealed partial class PlayerTab : Control
 
     private void OverlayButtonPressed(ButtonEventArgs args)
     {
+        // Sunrise-Start
+        if (_playerMan.LocalEntity is not { } playerUid
+        || !_adminManager.HasAdminFlag(playerUid, AdminFlags.Moderator))
+            return;
+        // Sunrise-End
         if (args.Button.Pressed)
         {
             _adminSystem.AdminOverlayOn();
@@ -123,13 +135,37 @@ public sealed partial class PlayerTab : Control
 
     #region ListContainer
 
-    private void PlayerListSettingsChanged(bool _)
+    private void RoleSettingChanged(string s)
     {
+        if (!Enum.TryParse<AdminPlayerTabRoleTypeOption>(s, out var format))
+            format = AdminPlayerTabRoleTypeOption.Subtype;
+        _playerTabRoleSetting = format;
+        RefreshPlayerList(_adminSystem.PlayerList);
+    }
+
+    private void ColorSettingChanged(string s)
+    {
+        if (!Enum.TryParse<AdminPlayerTabColorOption>(s, out var format))
+            format = AdminPlayerTabColorOption.Both;
+        _playerTabColorSetting = format;
+        RefreshPlayerList(_adminSystem.PlayerList);
+    }
+
+    private void SymbolSettingChanged(string s)
+    {
+        if (!Enum.TryParse<AdminPlayerTabSymbolOption>(s, out var format))
+            format = AdminPlayerTabSymbolOption.Specific;
+        _playerTabSymbolSetting = format;
         RefreshPlayerList(_adminSystem.PlayerList);
     }
 
     private void RefreshPlayerList(IReadOnlyList<PlayerInfo> players)
     {
+        // Sunrise-Start
+        if (_playerMan.LocalEntity is not { } playerUid
+        || !_adminManager.HasAdminFlag(playerUid, AdminFlags.Moderator))
+            return;
+        // Sunrise-End
         _players = players;
         PlayerCount.Text = Loc.GetString("player-tab-player-count", ("count", _playerMan.PlayerCount));
 
@@ -169,10 +205,16 @@ public sealed partial class PlayerTab : Control
         if (data is not PlayerListData { Info: var player})
             return;
 
-        var entry = new PlayerTabEntry(player, new StyleBoxFlat(button.Index % 2 == 0 ? _altColor : _defaultColor));
+        var entry = new PlayerTabEntry(
+            player,
+            new StyleBoxFlat(button.Index % 2 == 0 ? _altColor : _defaultColor),
+            _playerTabColorSetting,
+            _playerTabRoleSetting,
+            _playerTabSymbolSetting);
         entry.OnObjectives += GetObjectives; // Sunrise-Edit
         button.AddChild(entry);
         button.ToolTip = $"{player.Username}, {player.CharacterName}, {player.IdentityName}, {player.StartingJob}";
+        button.StyleClasses.Clear();
     }
 
     // Sunrise-Start

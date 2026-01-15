@@ -1,13 +1,32 @@
 ﻿using Content.Shared._Scp.Scp106.Components;
+using Content.Shared._Scp.Watching;
 using Content.Shared.DoAfter;
+using Content.Shared.Examine;
 using Content.Shared.Mobs;
+using Content.Shared.Movement.Systems;
 using Content.Shared.Physics;
 using Robust.Shared.Physics;
+using Robust.Shared.Physics.Systems;
 
 namespace Content.Shared._Scp.Scp106.Systems;
 
 public abstract partial class SharedScp106System
 {
+    [Dependency] private readonly SharedPhysicsSystem _physics = default!;
+    [Dependency] private readonly EyeWatchingSystem _watching = default!;
+
+    private void InitializePhantom()
+    {
+        SubscribeLocalEvent<Scp106PhantomComponent, Scp106ReverseAction>(OnScp106ReverseAction);
+        SubscribeLocalEvent<Scp106PhantomComponent, Scp106LeavePhantomAction>(OnScp106LeavePhantomAction);
+        SubscribeLocalEvent<Scp106PhantomComponent, Scp106PassThroughAction>(OnScp106PassThroughAction);
+
+        SubscribeLocalEvent<Scp106PhantomComponent, Scp106PassThroughActionEvent>(OnScp106PassThroughActionEvent);
+
+        SubscribeLocalEvent<Scp106PhantomComponent, ExaminedEvent>(OnExamined);
+        SubscribeLocalEvent<Scp106PhantomComponent, AttemptMobCollideEvent>(OnCollideAttempt);
+    }
+
     private void OnScp106ReverseAction(Entity<Scp106PhantomComponent> ent, ref Scp106ReverseAction args)
     {
         if (args.Handled)
@@ -75,5 +94,22 @@ public abstract partial class SharedScp106System
         }
 
         args.Handled = true;
+    }
+
+    private void OnExamined(Entity<Scp106PhantomComponent> ent, ref ExaminedEvent args)
+    {
+        if (!_mob.IsAlive(args.Examiner))
+            return;
+
+        if (!_watching.SimpleIsWatchedBy(ent.Owner, [args.Examiner]))
+            return;
+
+        // Ликвидируйся
+        _mob.ChangeMobState(ent, MobState.Dead, origin: args.Examiner);
+    }
+
+    private static void OnCollideAttempt(Entity<Scp106PhantomComponent> ent, ref AttemptMobCollideEvent args)
+    {
+        args.Cancelled = true;
     }
 }

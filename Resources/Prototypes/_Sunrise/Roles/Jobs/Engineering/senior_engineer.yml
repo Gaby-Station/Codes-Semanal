@@ -18,6 +18,8 @@
   icon: "JobIconSeniorEngineer"
   supervisors: job-supervisors-ce
   displayWeight: 30
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
   access:
   - Maintenance
   - Engineering
@@ -34,3 +36,14 @@
   storage:
     back:
     - ClothingOuterHardsuitEngineeringCompact
+
+- type: chameleonOutfit
+  id: SeniorEngineerChameleonOutfit
+  job: SeniorEngineer
+  equipment:
+    mask: ClothingMaskGas
+    gloves: ClothingHandsGlovesColorYellow
+    head: ClothingHeadHatHardhatYellow
+    outerClothing: ClothingOuterVestHazard
+    shoes: ClothingShoesBootsMag
+    neck: ClothingNeckScarfStripedOrange

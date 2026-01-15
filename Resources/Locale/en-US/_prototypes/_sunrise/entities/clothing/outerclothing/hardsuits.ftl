@@ -1,6 +1,6 @@
 ent-ClothingOuterHardsuitCBURNLeader = CBURN commander exosuit
     .desc = A lightweight yet strong exosuit used for special cleanup operations.
-ent-ClothingOuterHardsuitBlueshield = blueshield's hardsuit
+ent-ClothingOuterHardsuitBlueShield = blue shield hardsuit
     .desc = Tough and reliable, just like its owner.
 ent-ClothingOuterHardsuitNTRG = NTR Guard's hardsuit
     .desc = Tough and reliable, just like its owner.
@@ -35,3 +35,5 @@ ent-ClothingOuterHardsuitPirateCapSun = pirate captain's hardsuit
     .suffix = Pirate, Sunrise
 ent-ClothingOuterHardsuitChameleon = syndicate chameleon
     .desc = Looking at his material, Sci-fi images inadvertently pop up in your head.
+ent-ClothingOuterHardsuitInfiltration = syndicate infiltration hardsuit
+    .desc = The Syndicate's Special Operations' hardsuit of choice, this hardsuit, as well as durability, has been built with stealth in mind.

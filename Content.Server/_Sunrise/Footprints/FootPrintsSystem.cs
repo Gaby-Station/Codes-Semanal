@@ -31,25 +31,22 @@ public sealed class FootprintSystem : EntitySystem
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly SharedStandingStateSystem _standingStateSystem = default!;
+    [Dependency] private readonly StandingStateSystem _standingStateSystem = default!;
     [Dependency] private readonly SharedGravitySystem _gravity = default!;
     #endregion
 
     #region Entity Queries
     private EntityQuery<TransformComponent> _transformQuery;
-    private EntityQuery<MobThresholdsComponent> _mobStateQuery;
     private EntityQuery<AppearanceComponent> _appearanceQuery;
+    private EntityQuery<PhysicsComponent> _physicsQuery;
     #endregion
 
     public static readonly float FootsVolume = 5;
     public static readonly float BodySurfaceVolume = 15;
 
     // Dictionary to track footprints per tile to prevent overcrowding
-    private readonly Dictionary<(EntityUid GridId, Vector2i TilePosition), HashSet<EntityUid>> _tileFootprints = new();
     private const int MaxFootprintsPerTile = 20; // Fire edit
     private const int MaxMarksPerTile = 20; // Fire edit
-
-    private EntityQuery<PhysicsComponent> _physicsQuery;
 
     #region Initialization
     /// <summary>
@@ -60,14 +57,18 @@ public sealed class FootprintSystem : EntitySystem
         base.Initialize();
 
         _transformQuery = GetEntityQuery<TransformComponent>();
-        _mobStateQuery = GetEntityQuery<MobThresholdsComponent>();
         _appearanceQuery = GetEntityQuery<AppearanceComponent>();
         _physicsQuery = GetEntityQuery<PhysicsComponent>();
 
         SubscribeLocalEvent<FootprintEmitterComponent, ComponentStartup>(OnEmitterStartup);
         SubscribeLocalEvent<FootprintEmitterComponent, MoveEvent>(OnEntityMove);
-        SubscribeNetworkEvent<RoundRestartCleanupEvent>(Reset);
         SubscribeLocalEvent<FootprintEmitterComponent, ComponentInit>(OnFootprintEmitterInit);
+        SubscribeLocalEvent<FootprintComponent, SolutionContainerChangedEvent>(OnSolutionUpdate);
+    }
+
+    private void OnSolutionUpdate(Entity<FootprintComponent> entity, ref SolutionContainerChangedEvent args)
+    {
+        UpdateAppearance(entity, args.Solution);
     }
 
     private void OnFootprintEmitterInit(Entity<FootprintEmitterComponent> entity, ref ComponentInit args)
@@ -175,11 +176,6 @@ public sealed class FootprintSystem : EntitySystem
         UpdateEmitterState(emitter, transform);
     }
 
-    private void Reset(RoundRestartCleanupEvent msg)
-    {
-        _tileFootprints.Clear();
-    }
-
     #endregion
 
     #region Footprint Creation and Management
@@ -197,24 +193,35 @@ public sealed class FootprintSystem : EntitySystem
         var coords = CalculateFootprintPosition(gridUid, emitter, transform, stand);
         var entity = Spawn(stand ? emitter.FootprintPrototype : emitter.DragMarkPrototype, coords);
 
-        if (_appearanceQuery.TryComp(entity, out var appearance))
-        {
-            var visualType = DetermineVisualState(emitterOwner, stand);
-            _appearanceSystem.SetData(entity,
-                FootprintVisualParameter.VisualState,
-                GetStateId(visualType, emitter),
-                appearance);
+        var appearance = UpdateAppearance(entity, emitterSolution);
 
-            var rawAlpha = emitterSolution.Volume.Float() / emitterSolution.MaxVolume.Float();
-            var alpha = Math.Clamp((0.8f * rawAlpha) + 0.3f, 0f, 1f);
+        if (appearance == null)
+            return entity;
 
-            _appearanceSystem.SetData(entity,
-                FootprintVisualParameter.TrackColor,
-                emitterSolution.GetColor(_prototypeManager).WithAlpha(alpha),
-                appearance);
-        }
+        var visualType = DetermineVisualState(emitterOwner, stand);
+        _appearanceSystem.SetData(entity,
+            FootprintVisualParameter.VisualState,
+            GetStateId(visualType, emitter),
+            appearance);
 
         return entity;
+    }
+
+    private AppearanceComponent? UpdateAppearance(EntityUid entity, Solution emitterSolution)
+    {
+        if (!_appearanceQuery.TryComp(entity, out var appearance))
+            return null;
+
+        var rawAlpha = emitterSolution.Volume.Float() / emitterSolution.MaxVolume.Float();
+        var alpha = Math.Clamp((0.8f * rawAlpha) + 0.3f, 0.5f, 1f);
+
+        _appearanceSystem.SetData(entity,
+            FootprintVisualParameter.TrackColor,
+            emitterSolution.GetColor(_prototypeManager).WithAlpha(alpha),
+            appearance);
+
+        return appearance;
+
     }
 
     private string GetStateId(FootprintVisualType visualType, FootprintEmitterComponent emitter)

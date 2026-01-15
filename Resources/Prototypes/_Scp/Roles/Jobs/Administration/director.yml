@@ -3,24 +3,34 @@
   name: job-name-director
   description: job-description-director
   playTimeTracker: JobDirector
-  requirements: # TODO: Поменять после того, как игроки наберут время на новых ролях
-  - !type:OverallPlaytimeRequirement
-    time: 180000 # 50 часов
+  requirements:
+    - !type:DepartmentTimeRequirement
+      department: Administration
+      time: 54000
   weight: 5
   icon: JobDirector
   joinNotifyCrew: true
-  supervisors: job-supervisors-regional-administration
+  supervisors: job-supervisors-O5-command
   canBeAntag: false
   displayWeight: 100
   radioBold: true
   accessGroups:
-  - AllAccess
+  - Director
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
   - !type:AddComponentSpecial
     components:
     - type: CommandStaff
+    - type: EmployeeClass
+      class: B
+    - type: AccessLevel
+      level: Four
+    - type: ScpAnnounceOnSpawn
+      text: head-announce-on-spawn
+      channels:
+      - Administration
+      includeJobName: true
 
 - type: startingGear
   id: DirectorGear
@@ -32,8 +42,9 @@
     gloves: ClothingHandsGlovesDirectorSpecial
     shoes: ClothingShoesBootsLaceup
     back: ClothingBackpackSatchelLeatherDirectorFilled
-    id: DirectorPDA
+    id: KeyCardDirector
     ears: ClothingHeadsetAltAdministration
+    pocket2: DirectorPDA
   storage:
     back:
     - Flash

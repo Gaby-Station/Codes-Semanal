@@ -60,6 +60,9 @@
   save: false
   abstract: true
   components:
+  # Fire added start
+  - type: FieldOfViewOccludable
+  # Fire added end
   - type: MobMover
   - type: Mech
   - type: MechAir
@@ -91,6 +94,7 @@
     requireAnchored: false
     joinSystem: true
   - type: DoAfter
+  - type: MechVulnerableToEMP # Sunrise-edit
   - type: Repairable
     doAfterDelay: 3
     damage:
@@ -100,6 +104,7 @@
         Piercing: -15
         Caustic: -15
         Structural: -15
+        Mangleness: 7.5 # Sunrise-Edit
   - type: UserInterface
     interfaces:
       enum.MechUiKey.Key:
@@ -119,16 +124,19 @@
   - type: InteractionOutline
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
-    baseSprintSpeed: 2
+    baseSprintSpeed: 3.9 # sunrise-edit
   - type: Tag
     tags:
     - DoorBumpOpener
     - FootstepSound
   - type: Pullable
+  - type: Physics
+    bodyType: KinematicController
+    angularDamping: 10 # sunrise-edit
+    linearDamping: 10 # sunrise-edit
+  - type: GravityAffected
   - type: Clickable
   - type: WiresPanel
-  - type: Physics
-    bodyType: Dynamic
   - type: Fixtures
     fixtures:
       fix1:
@@ -188,6 +196,7 @@
       - !type:DoActsBehavior
         acts: ["Destruction"]
   - type: Prying
+    speedModifier: 6
   - type: StatusIcon
     bounds: "-0.6,-0.6, 0.6, 0.6"
   - type: PointLight
@@ -195,10 +204,13 @@
     mask: /Textures/Effects/LightMasks/cone.png
     autoRot: true
     energy: 3 # Sunrise-edit
-    radius: 15 # Sunrise-edit
+    radius: 18 # Sunrise-edit
     netsync: false
   - type: AccessReader
   - type: DamageOverlay # Sunrise-Edit
+  - type: ExplosionResistance # Sunrise-Edit
+    damageCoefficient: 0.8 # Sunrise-Edit
+  - type: ProtectedFromStepTriggers # Sunrise-added
 
 # Ripley MK-I
 - type: entity
@@ -222,13 +234,10 @@
     baseState: ripley
     openState: ripley-open
     brokenState: ripley-broken
-    mechToPilotDamageMultiplier: 0.50
+    mechToPilotDamageMultiplier: 0.75
     pilotWhitelist:
       components:
         - HumanoidAppearance
-    pilotBlacklist:
-      species:
-      - Felinid
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -237,11 +246,11 @@
         Blunt: 14 #intentionally shit so people realize that going into combat with the ripley is usually a bad idea.
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.5
-    baseSprintSpeed: 3.8
+    baseSprintSpeed: 4.65 # sunrise-edit
   - type: Reflect
-    reflectProb: 0.15
+    reflectProb: 0.05
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
   - type: Tag
@@ -262,6 +271,30 @@
   parent: MechRipley
   suffix: Battery
   components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCageMedium
+
+# Ripley Mk-I Hauler
+- type: entity
+  id: MechHauler
+  parent: MechRipley
+  suffix: Filled
+  name: APLU "Hauler"
+  description: A cargo tech"s best friend — ready to haul crates, ignore traffic rules on-station, and assert dominance over pedestrians. Still the standard APLU model — Autonomous Power Loading Unit — but now with 30% more dents, lost manifests, and spilled kvass.
+  components:
+  - type: Sprite
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: hauler
+  - type: Mech
+    baseState: hauler
+    openState: hauler-open
+    brokenState: hauler-broken
+    startingEquipment:
+      - MechEquipmentGrabberSmall
+      - MechEquipmentGrabberSmall
   - type: ContainerFill
     containers:
       mech-battery-slot:
@@ -289,29 +322,99 @@
     baseState: ripleymkii
     openState: ripleymkii-open
     brokenState: ripleymkii-broken
-    mechToPilotDamageMultiplier: 0.30
+    mechToPilotDamageMultiplier: 0.40
     airtight: true
     pilotWhitelist:
       components:
         - HumanoidAppearance
-    pilotBlacklist:
-      species:
-      - Felinid
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
     damage:
       types:
         Blunt: 20
+    bluntStaminaDamageFactor: 1
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1.5
-    baseSprintSpeed: 2.5
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4
   - type: Damageable
     damageModifierSet: MediumArmorNT
   - type: Reflect
-    reflectProb: 0.20
+    reflectProb: 0.10
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
+    reflects:
+    - NonEnergy
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - FootstepSound
+    - Ripley
+  - type: MobThresholds
+    currentThresholdState : Alive
+    thresholds:
+      0: Alive
+      400: Critical
+    showOverlays: false
+    allowRevives: true
+
+- type: entity
+  id: MechRipley2Battery
+  parent: MechRipley2
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCageMedium
+
+# Ripley MK-II "Death"
+- type: entity
+  id: MechRipley2Death
+  parent: [ MechRipley2, IndustrialMech, CombatMech, BaseMajorContraband ]
+  name: Ripley APLU MK-II
+  description: The "MK-II" has a pressurized cabin for space opera....wait!! why is it red? Oh no, it's a Death Ripley!
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/ripley.rsi
+    scale: 1.08, 1.08
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: death
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    baseState: death
+    openState: death-open
+    brokenState: death-broken
+    mechToPilotDamageMultiplier: 0.25
+    airtight: true
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: MeleeThrowOnHit
+    distance: 1
+    speed: 8
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 30
+        Structural: 20
+    bluntStaminaDamageFactor: 1.5
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 3.5
+    baseSprintSpeed: 4.25
+  - type: Damageable
+    damageModifierSet: HeavyArmorSyndi
+  - type: Reflect
+    reflectProb: 0.15
+    spread: 180
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
   - type: Tag
@@ -326,16 +429,113 @@
       500: Critical
     showOverlays: false
     allowRevives: true
+  - type: AccessReader
+    access: [["SyndicateAgent"]]
 
 - type: entity
-  id: MechRipley2Battery
-  parent: MechRipley2
+  id: MechRipley2DeathBattery
+  parent: MechRipley2Death
   suffix: Battery
   components:
   - type: ContainerFill
     containers:
       mech-battery-slot:
       - PowerCageMedium
+
+# Paddy
+- type: entity
+  id: MechPaddy
+  parent: [ BaseMech, CombatMech, IndustrialMech, BaseSecurityContraband ]
+  name: Paddy
+  description: Autonomous Power Loader Unit Subtype Paddy. A Modified MK-II Ripley design intended for light security use.
+  components:
+  - type: Sprite
+    drawdepth: Mobs
+    noRot: true
+    sprite: Objects/Specific/Mech/ripley.rsi
+    scale: 1.08, 1.08
+    layers:
+    - map: [ "enum.MechVisualLayers.Base" ]
+      state: paddy
+    # - state: base-sirens  # Todo: port siren system from starlight
+    #   map: [ "enum.MechVisualLayers.Siren" ]
+    #   shader: unshaded
+  - type: FootstepModifier
+    footstepSoundCollection:
+      path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
+  - type: Mech
+    equipmentWhitelist:
+      tags:
+      - CombatMech
+      - IndustrialMech
+    baseState: paddy
+    openState: paddy-open
+    brokenState: paddy-broken
+    mechToPilotDamageMultiplier: 0.60
+    airtight: true
+    #siren: true # Todo: port siren system from starlight
+    pilotWhitelist:
+      components:
+        - HumanoidAppearance
+  - type: Damageable
+    damageModifierSet: MediumArmorNT
+  - type: Reflect
+    reflectProb: 0.10
+    spread: 180
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
+    reflects:
+    - NonEnergy
+  - type: MeleeThrowOnHit
+    distance: 1
+    speed: 8
+  - type: MeleeWeapon
+    hidden: true
+    attackRate: 1
+    damage:
+      types:
+        Blunt: 30 #intentionally shit so people realize that going into combat with the ripley is usually a bad idea.
+        Structural: 10
+    bluntStaminaDamageFactor: 1.25
+  - type: MovementSpeedModifier
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 4
+  - type: PointLight
+    mask: /Textures/Effects/LightMasks/cone.png
+    autoRot: true
+    radius: 5
+    energy: 5
+    enabled: false
+  - type: AccessReader
+    access: [["Security"]]
+  - type: MobThresholds
+    currentThresholdState : Alive
+    thresholds:
+      0: Alive
+      425: Critical
+    showOverlays: false
+    allowRevives: true
+
+
+- type: entity
+  id: MechPaddyBattery
+  parent: MechPaddy
+  suffix: Battery
+  components:
+  - type: ContainerFill
+    containers:
+      mech-battery-slot:
+      - PowerCageMedium
+
+- type: entity
+  id: MechPaddyFilled
+  parent: MechPaddyBattery
+  suffix: Battery, Filled
+  components:
+  - type: Mech
+    startingEquipment:
+      - WeaponMechCombatDisabler
+      - WeaponMechCombatFlashbangLauncher
+      - MechEquipmentGrabberSmall
 
 # Clarke
 - type: entity
@@ -364,9 +564,6 @@
     pilotWhitelist:
       components:
         - HumanoidAppearance
-    pilotBlacklist:
-      species:
-      - Felinid
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -375,20 +572,20 @@
         Blunt: 26
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.5
-    baseSprintSpeed: 4
+    baseSprintSpeed: 4.75
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: Reflect
     reflectProb: 0.1
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
   - type: MobThresholds
     currentThresholdState : Alive
     thresholds:
       0: Alive
-      320: Critical
+      425: Critical
     showOverlays: false
     allowRevives: true
   - type: PointLight
@@ -437,14 +634,11 @@
     baseState: bigbrother
     openState: bigbrother-open
     brokenState: bigbrother-broken
-    mechToPilotDamageMultiplier: 0.20
+    mechToPilotDamageMultiplier: 0.25
     airtight: true
     pilotWhitelist:
       components:
         - HumanoidAppearance
-    pilotBlacklist:
-      species:
-      - Felinid
     equipmentWhitelist:
       tags:
       - IndustrialMech
@@ -461,24 +655,25 @@
         Piercing: 4
         Slash: 5
         Blunt: 10
+    bluntStaminaDamageFactor: 0.5
     soundHit:
       path: "/Audio/Items/drill_use.ogg"
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
-    baseSprintSpeed: 2.75
+    baseSprintSpeed: 4
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: Reflect
-    reflectProb: 0.20
+    reflectProb: 0.1
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
   - type: MobThresholds
     currentThresholdState : Alive
     thresholds:
       0: Alive
-      500: Critical
+      450: Critical
     showOverlays: false
     allowRevives: true
   - type: PointLight
@@ -536,20 +731,17 @@
     pilotWhitelist:
       components:
       - HumanoidAppearance
-    pilotBlacklist:
-      species:
-      - Felinid
   - type: Reflect
-    reflectProb: 0.15
+    reflectProb: 0.35
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
   - type: MobThresholds
     currentThresholdState : Alive
     thresholds:
       0: Alive
-      350: Critical
+      450: Critical
     showOverlays: false
     allowRevives: true
 
@@ -602,8 +794,6 @@
     pilotWhitelist:
       tags:
       - Hamster
-      species:
-      - Felinid
   - type: MeleeWeapon
     hidden: true
     attackRate: 0.8
@@ -613,18 +803,18 @@
         Structural: 2
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.4
-    baseSprintSpeed: 3.7
+    baseSprintSpeed: 5.2 # sunrise-edit
   - type: Reflect
-    reflectProb: 0.15
+    reflectProb: 0.05
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
   - type: MobThresholds
     currentThresholdState : Alive
     thresholds:
       0: Alive
-      150: Critical
+      200: Critical
     showOverlays: false
     allowRevives: true
 
@@ -681,8 +871,6 @@
     pilotWhitelist:
       tags:
       - VimPilot
-      species:
-      - Felinid
   - type: MeleeWeapon
     hidden: true
     attackRate: 0.8
@@ -692,21 +880,21 @@
         Structural: 2
   - type: MovementSpeedModifier
     baseWalkSpeed: 2.25
-    baseSprintSpeed: 3.6
+    baseSprintSpeed: 5.2 # sunrise-edit
   - type: Access
     tags:
     - Maintenance
   - type: Reflect
-    reflectProb: 0.15
+    reflectProb: 0.05
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
   - type: MobThresholds
     currentThresholdState : Alive
     thresholds:
       0: Alive
-      150: Critical
+      200: Critical
     showOverlays: false
     allowRevives: true
   # Sunrise-Start
@@ -749,38 +937,39 @@
     footstepSoundCollection:
       path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
-    baseState: gygax
-    openState: gygax-open
-    brokenState: gygax-broken
-    mechToPilotDamageMultiplier: 0.25
+    baseState: base
+    openState: base-open
+    brokenState: base-broken
+    mechToPilotDamageMultiplier: 0.3
     airtight: true
     pilotWhitelist:
       components:
         - HumanoidAppearance
-    pilotBlacklist:
-      species:
-      - Felinid
+  - type: MeleeThrowOnHit
+    distance: 1
+    speed: 8
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
     damage:
       types:
-        Blunt: 30
-        Structural: 190
+        Blunt: 25
+        Structural: 180
+    bluntStaminaDamageFactor: 1.5
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
-    baseSprintSpeed: 3
+    baseSprintSpeed: 4.75
   - type: Reflect
-    reflectProb: 0.20
+    reflectProb: 0.15
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
   - type: MobThresholds
     currentThresholdState : Alive
     thresholds:
       0: Alive
-      540: Critical
+      475: Critical
     showOverlays: false
     allowRevives: true
   - type: Tag
@@ -813,47 +1002,48 @@
     scale: 1.08, 1.08
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
-      state: durand
+      state: base
   - type: FootstepModifier
     footstepSoundCollection:
       path: /Audio/Mecha/sound_mecha_powerloader_step.ogg
   - type: Mech
-    baseState: durand
-    openState: durand-open
-    brokenState: durand-broken
-    mechToPilotDamageMultiplier: 0.20
+    baseState: base
+    openState: base-open
+    brokenState: base-broken
+    mechToPilotDamageMultiplier: 0.25
     airtight: true
     pilotWhitelist:
       components:
         - HumanoidAppearance
-    pilotBlacklist:
-      species:
-      - Felinid
+  - type: MeleeThrowOnHit
+    distance: 1
+    speed: 8
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
     damage:
       types:
-        Blunt: 50
-        Structural: 250
+        Blunt: 45
+        Structural: 225
+    bluntStaminaDamageFactor: 1.5
   - type: MovementSpeedModifier
-    baseWalkSpeed: 1.5
-    baseSprintSpeed: 2
+    baseWalkSpeed: 2.5
+    baseSprintSpeed: 3.5
   - type: Damageable
     damageModifierSet: MediumArmorNT
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: Reflect
-    reflectProb: 0.25
+    reflectProb: 0.20
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
   - type: MobThresholds
     currentThresholdState : Alive
     thresholds:
       0: Alive
-      750: Critical
+      550: Critical
     showOverlays: false
     allowRevives: true
   - type: Tag
@@ -895,15 +1085,12 @@
     baseState: phazon
     openState: phazon-open
     brokenState: phazon-broken
-    mechToPilotDamageMultiplier: 0.50
-    maxEquipmentAmount: 6
+    mechToPilotDamageMultiplier: 0.25
+    maxEquipmentAmount: 5
     airtight: true
     pilotWhitelist:
       components:
         - HumanoidAppearance
-    pilotBlacklist:
-      species:
-      - Felinid
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -913,11 +1100,13 @@
         Structural: 80
   - type: MovementSpeedModifier
     baseWalkSpeed: 3.2
-    baseSprintSpeed: 4
+    baseSprintSpeed: 5 # sunrise-edit
+  - type: Damageable
+    damageModifierSet: MediumArmorNT
   - type: Reflect
-    reflectProb: 0.65
+    reflectProb: 0.5
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
     - Energy
@@ -925,7 +1114,7 @@
     currentThresholdState : Alive
     thresholds:
       0: Alive
-      280: Critical
+      450: Critical
     showOverlays: false
     allowRevives: true
   - type: Tag
@@ -977,20 +1166,24 @@
     pilotBlacklist:
       species:
       - Felinid
+  - type: MeleeThrowOnHit
+    distance: 1
+    speed: 8
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
     damage:
       types:
         Blunt: 35
-        Structural: 250
+        Structural: 220
+    bluntStaminaDamageFactor: 1.5
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
-    baseSprintSpeed: 3
+    baseSprintSpeed: 4.75
   - type: Reflect
-    reflectProb: 0.20
+    reflectProb: 0.15
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
   - type: Damageable
@@ -1001,7 +1194,7 @@
     currentThresholdState : Alive
     thresholds:
       0: Alive
-      550: Critical
+      500: Critical
     showOverlays: false
     allowRevives: true
   - type: Tag
@@ -1065,31 +1258,35 @@
     pilotBlacklist:
       species:
       - Felinid
+  - type: MeleeThrowOnHit
+    distance: 1
+    speed: 8
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
     damage:
       types:
-        Blunt: 55
-        Structural: 370
+        Blunt: 50
+        Structural: 350
+    bluntStaminaDamageFactor: 1.5
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
-    baseSprintSpeed: 1.5
+    baseSprintSpeed: 2.7 # sunrise-edit
   - type: Damageable
     damageModifierSet: HeavyArmorNT
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: Reflect
-    reflectProb: 0.25
+    reflectProb: 0.20
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
   - type: MobThresholds
     currentThresholdState : Alive
     thresholds:
       0: Alive
-      800: Critical
+      600: Critical
     showOverlays: false
     allowRevives: true
   - type: AccessReader
@@ -1148,6 +1345,9 @@
     pilotBlacklist:
       species:
       - Felinid
+  - type: MeleeThrowOnHit
+    distance: 1
+    speed: 8
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
@@ -1155,24 +1355,25 @@
       types:
         Blunt: 60
         Structural: 400
+    bluntStaminaDamageFactor: 1.5
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
-    baseSprintSpeed: 1.5
+    baseSprintSpeed: 3.7 # sunrise-edit
   - type: Damageable
     damageModifierSet: HeavyArmorNT
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: Reflect
-    reflectProb: 0.25
+    reflectProb: 0.20
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
   - type: MobThresholds
     currentThresholdState : Alive
     thresholds:
       0: Alive
-      800: Critical
+      650: Critical
     showOverlays: false
     allowRevives: true
   - type: AccessReader
@@ -1213,7 +1414,7 @@
   - type: Sprite
     drawdepth: Mobs
     noRot: true
-    sprite: Objects/Specific/Mech/gygax.rsi
+    sprite: Objects/Specific/Mech/mecha.rsi
     scale: 1.08, 1.08
     layers:
     - map: [ "enum.MechVisualLayers.Base" ]
@@ -1234,31 +1435,35 @@
     pilotBlacklist:
       species:
       - Felinid
+  - type: MeleeThrowOnHit
+    distance: 1
+    speed: 8
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
     damage:
       types:
         Blunt: 35
-        Structural: 280
+        Structural: 250
+    bluntStaminaDamageFactor: 1.5
   - type: MovementSpeedModifier
     baseWalkSpeed: 2
-    baseSprintSpeed: 3
+    baseSprintSpeed: 4.8
   - type: Damageable
     damageModifierSet: MediumArmorSyndi
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: Reflect
-    reflectProb: 0.25
+    reflectProb: 0.15
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
   - type: MobThresholds
     currentThresholdState : Alive
     thresholds:
       0: Alive
-      550: Critical
+      500: Critical
     showOverlays: false
     allowRevives: true
   - type: Tag
@@ -1320,31 +1525,35 @@
     pilotBlacklist:
       species:
       - Felinid
+  - type: MeleeThrowOnHit
+    distance: 1
+    speed: 8
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
     damage:
       types:
         Blunt: 50
-        Structural: 360
+        Structural: 350
+    bluntStaminaDamageFactor: 1.5
   - type: MovementSpeedModifier
     baseWalkSpeed: 1.5
-    baseSprintSpeed: 2
+    baseSprintSpeed: 3.8 # sunrise-edit
   - type: Damageable
     damageModifierSet: MediumArmorSyndi
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: Reflect
-    reflectProb: 0.25
+    reflectProb: 0.20
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
   - type: MobThresholds
     currentThresholdState : Alive
     thresholds:
       0: Alive
-      750: Critical
+      600: Critical
     showOverlays: false
     allowRevives: true
   - type: AccessReader
@@ -1401,24 +1610,28 @@
     pilotBlacklist:
       species:
       - Felinid
+  - type: MeleeThrowOnHit
+    distance: 1
+    speed: 8
   - type: MeleeWeapon
     hidden: true
     attackRate: 1
     damage:
       types:
-        Blunt: 60
-        Structural: 390
+        Blunt: 50
+        Structural: 400
+    bluntStaminaDamageFactor: 1.5
   - type: MovementSpeedModifier
     baseWalkSpeed: 1
-    baseSprintSpeed: 1.5
+    baseSprintSpeed: 2.75 # sunrise-edit
   - type: Damageable
     damageModifierSet: HeavyArmorSyndi
   - type: CanMoveInAir
   - type: MovementAlwaysTouching
   - type: Reflect
-    reflectProb: 0.25
+    reflectProb: 0.20
     spread: 180
-    soundOnReflect: /Audio/Weapons/block_metal1.ogg
+    soundOnReflect: /Audio/_Starlight/Armor/Ricochet/ricochet1_1.ogg
     reflects:
     - NonEnergy
   - type: Tag
@@ -1430,7 +1643,7 @@
     currentThresholdState : Alive
     thresholds:
       0: Alive
-      800: Critical
+      645: Critical
     showOverlays: false
     allowRevives: true
   - type: AccessReader

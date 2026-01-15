@@ -28,7 +28,6 @@
 - type: entity
   id: OrganArachnidStomach
   parent: [OrganAnimalStomach, BaseOrganStomach]
-  name: stomach
   description: "Gross. This is hard to stomach."
   components:
   - type: Sprite
@@ -160,6 +159,9 @@
   - type: Item
     size: Small
     heldPrefix: eyeballs
+  - type: OrganVisualization
+    layer: Eyes
+    prototype: MobArachnidEyes
 
 - type: entity
   id: OrganArachnidTongue

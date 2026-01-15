@@ -3,6 +3,7 @@
   id: IAAPDA
   name: internal affairs agent PDA
   description: Corporation and profit are best friends.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
     - type: Pda
       id: IAAIDCard
@@ -20,6 +21,7 @@
   parent: CaptainPDA
   id: MagistratPDA
   name: magistrat PDA
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Pda
     id: MagistratIDCard
@@ -41,13 +43,52 @@
 
 - type: entity
   parent: BasePDA
-  id: BlueShieldPDA
-  name: blue shield officer's PDA
+  id: BlueShieldOfficerPDA
+  name: blue shield officer PDA
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Devices/pda.rsi
   - type: Pda
-    id: BlueShieldIDCard
+    id: BlueShieldOfficerIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-blueshield
+  - type: Icon
+    sprite: _Sunrise/Objects/Devices/pda.rsi
+    state: pda-blueshield
+
+- type: entity
+  parent: BasePDA
+  id: BlueShieldEnsignPDA
+  name: blue shield ensign PDA
+  categories: [ HideSpawnMenu ] # Fire added
+  components:
+  - type: Sprite
+    sprite: _Sunrise/Objects/Devices/pda.rsi
+  - type: Pda
+    id: BlueShieldEnsignIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-blueshield
+  - type: Icon
+    sprite: _Sunrise/Objects/Devices/pda.rsi
+    state: pda-blueshield
+
+- type: entity
+  parent: BasePDA
+  id: BlueShieldOperativePDA
+  name: blue shield operative PDA
+  categories: [ HideSpawnMenu ] # Fire added
+  components:
+  - type: Sprite
+    sprite: _Sunrise/Objects/Devices/pda.rsi
+  - type: Pda
+    id: BlueShieldOperativeIDCard
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
@@ -61,6 +102,7 @@
   parent: BaseMedicalPDA
   id: PathologistPDA
   name: Pathologist PDA
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Devices/pda.rsi
@@ -77,20 +119,38 @@
   - type: Icon
     sprite: _Sunrise/Objects/Devices/pda.rsi
     state: pda-patologoanatom
-  - type: GuideHelp
-    guides:
-    - Medical Doctor
 
 - type: entity
   parent: BasePDA
-  id: PrisonerPDA
+  id: PlanetPrisonerPDA
   name: prisoner's PDA
   description: In the colour of the robe for a complete set.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Devices/pda.rsi
   - type: Pda
-    id: PrisonerIDCard
+    id: PlanetPrisonerIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-space-prison-prisoner
+  - type: Icon
+    sprite: _Sunrise/Objects/Devices/pda.rsi
+    state: pda-space-prison-prisoner
+
+- type: entity
+  parent: BasePDA
+  id: FugitivePrisonerPDA
+  name: prisoner's PDA
+  description: In the colour of the robe for a complete set.
+  categories: [ HideSpawnMenu ] # Fire added
+  components:
+  - type: Sprite
+    sprite: _Sunrise/Objects/Devices/pda.rsi
+  - type: Pda
+    id: PlanetPrisonerIDCard
   - type: Appearance
     appearanceDataInit:
       enum.PdaVisuals.PdaType:
@@ -105,6 +165,7 @@
   id: GuardPDA
   name: prison guard's PDA
   description: Bent and scuffed, but every scratch is evidence of a continuous struggle for safety.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Devices/pda.rsi
@@ -123,6 +184,7 @@
   parent: BasePDA
   id: PrisonEngineerPDA
   name: prison engineer's PDA
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Pda
     id: PrisonEngineeringIDCard
@@ -137,6 +199,7 @@
   id: PrisonPilotPDA
   name: prison pilot's PDA
   description: Shiny and technologically advanced, as if it had just been pulled out of the cockpit.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Devices/pda.rsi
@@ -159,6 +222,7 @@
   id: HeadOfPrisonPDA
   name: Prison governor's PDA
   description: Has the look of a prestigious instrument of power, but a little scratched from constant emergency calls.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Devices/pda.rsi
@@ -181,6 +245,7 @@
   id: RoboticistPDA
   name: roboticist's PDA
   description: It's covered in something sticky.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Pda
     id: RoboticistIDCard
@@ -205,6 +270,7 @@
   parent: BaseSecurityPDA
   id: SecurityPilotPDA
   name: Security pilot's PDA
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Pda
     id: SecurityPilotIDCard
@@ -223,6 +289,7 @@
   parent: CaptainPDA
   id: NanoTrasenRepresentativePDA
   name: NanoTrasenRepresentative PDA
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Pda
     id: NanoTrasenRepresentativeIDCard
@@ -246,6 +313,7 @@
   parent: BasePDA
   id: BarberPDA
   name: barber's PDA
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Pda
     id: BarberIDCard
@@ -262,6 +330,7 @@
   id: AdjutantPDA
   name: adjuntant PDA
   description: It sorely lacks the camera monitor function.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Devices/pda.rsi
@@ -284,6 +353,7 @@
   id: USSPPDA
   name: USSP PDA
   description: Since you live in a Soviet country, your dreams should be Soviet as well.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Devices/pda.rsi
@@ -304,6 +374,7 @@
   id: USSPOfficerPDA
   name: USSP PDA
   description: Since you live in a Soviet country, your dreams should be Soviet as well.
+  categories: [ HideSpawnMenu ] # Fire added
   suffix: Militia
   components:
   - type: Pda
@@ -319,6 +390,7 @@
   id: USSPSoldierPDA
   name: Millitary USSP PDA
   description: Since you live in a Soviet country, your dreams should be Soviet as well.
+  categories: [ HideSpawnMenu ] # Fire added
   suffix: Combat
   components:
   - type: Pda
@@ -335,6 +407,7 @@
   id: USSPOfficerSoldierPDA
   name: Millitary USSP PDA
   description: Since you live in a Soviet country, your dreams should be Soviet as well.
+  categories: [ HideSpawnMenu ] # Fire added
   suffix: Combat
   components:
   - type: Pda
@@ -351,6 +424,7 @@
   id: USSPCaptainPDA
   name: Officer USSP PDA
   description: Since you live in a Soviet country, your dreams should be Soviet as well.
+  categories: [ HideSpawnMenu ] # Fire added
   suffix: Officer
   components:
   - type: Pda
@@ -368,6 +442,7 @@
   id: NtrGuardPDA
   name: NTR Guard's PDA
   description: NTR Guard's PDA
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Devices/pda.rsi
@@ -387,6 +462,7 @@
   id: NtrLeadGuardPDA
   name: NTR Guard's PDA
   description: NTR Guard's PDA
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Pda
     id: NtrLeadGuardIDCard
@@ -396,6 +472,7 @@
   id: MailCarrierPDA
   name: mail carrier's PDA
   description: PDA for the delivery man.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Pda
     id: MailCarrierIDCard
@@ -409,3 +486,52 @@
     accentVColor: "#003cc9"
   - type: Icon
     state: pda-cargo
+
+- type: entity
+  parent: BasePDA
+  id: MiningPDA
+  name: mining PDA
+  description: there is dirt in every crack.
+  categories: [ HideSpawnMenu ] # Fire added
+  components:
+  - type: Sprite
+    sprite: _Sunrise/Objects/Devices/pda.rsi
+  - type: Pda
+    id: MiningIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-mining
+  - type: PdaBorderColor
+    borderColor: "#af9366"
+    accentVColor: "#3e3ac3"
+  - type: Icon
+    sprite: _Sunrise/Objects/Devices/pda.rsi
+    state: pda-mining
+  - type: CartridgeLoader
+    uiKey: enum.PdaUiKey.Key
+    preinstalled:
+    - CrewManifestCartridge
+    - NotekeeperCartridge
+    - NewsReaderCartridge
+    - AstroNavCartridge
+
+- type: entity
+  parent: BasePDA
+  id: CommaidPDA
+  name: Command maid PDA
+  components:
+  - type: Sprite
+    sprite: _Sunrise/Objects/Devices/pda.rsi
+  - type: Pda
+    id: CommaidIDCard
+  - type: Appearance
+    appearanceDataInit:
+      enum.PdaVisuals.PdaType:
+        !type:String
+        pda-commaid
+  - type: Icon
+    sprite: _Sunrise/Objects/Devices/pda.rsi
+    state: pda-commaid
+

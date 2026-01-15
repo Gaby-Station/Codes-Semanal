@@ -10,8 +10,8 @@
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgeLightRifle  # 762x39
-    proto: CartridgeLightRifle  # 762x39
+        - CartridgeLightRifle
+    proto: CartridgeLightRifleSP
     capacity: 30
   - type: Item
     size: Small
@@ -41,11 +41,11 @@
     - MagazineMP38
   - type: BallisticAmmoProvider
     mayTransfer: true
-    proto: CartridgeLightRifle  # 57x28
+    proto: CartridgePistolSP
     whitelist:
       tags:
-      - CartridgeLightRifle  # 57x28
-    capacity: 45
+      - CartridgePistol
+    capacity: 32
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -74,11 +74,11 @@
     - MagazineScorpion
   - type: BallisticAmmoProvider
     mayTransfer: true
-    proto: CartridgeLightRifle  # 57x28
+    proto: CartridgePistolSP
     whitelist:
       tags:
-      - CartridgeLightRifle  # 57x28
-    capacity: 45
+      - CartridgePistol
+    capacity: 20
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -107,10 +107,10 @@
     - MagazineNewVector
   - type: BallisticAmmoProvider
     mayTransfer: true
-    proto: CartridgeLightRifle  # 57x28
+    proto: CartridgeLightRifleSP
     whitelist:
       tags:
-      - CartridgeLightRifle  # 57x28
+      - CartridgeLightRifle
     capacity: 45
   - type: Item
     size: Small
@@ -135,17 +135,19 @@
   name: RPD magazine
   parent: BaseMagazineLightRifle
   components:
+  - type: Item
+    size: Normal
   - type: Tag
     tags:
     - MagazineRPD
   - type: BallisticAmmoProvider
-    proto: CartridgeLightRifle  # 762x39
-    capacity: 80
+    proto: CartridgeLightRifleSP
+    capacity: 100
   - type: Sprite
     sprite: Objects/Weapons/Guns/Ammunition/Magazine/LightRifle/pk_box.rsi
   - type: MagazineVisuals
     magState: mag
-    steps: 7
+    steps: 8
     zeroVisible: false
   - type: Appearance
 
@@ -159,11 +161,11 @@
     - MagazineMachineGunMG42
   - type: BallisticAmmoProvider
     mayTransfer: true
-    proto: CartridgeRifle  # 556
+    proto: CartridgeRifleHeavySP
     whitelist:
       tags:
-      - CartridgeRifle  # 556
-    capacity: 150
+      - CartridgeHeavyRifle
+    capacity: 50
   - type: Item
     size: Normal
   - type: ContainerContainer
@@ -192,11 +194,11 @@
     - MagazineLightMachineGunMG60
   - type: BallisticAmmoProvider
     mayTransfer: true
-    proto: CartridgeLightRifle  # 762x39
+    proto: CartridgeHeavyRifleRSP  # 762x54
     whitelist:
       tags:
-      - CartridgeLightRifle  # 762x39
-    capacity: 200
+      - CartridgeHeavyRifleR  # 762x54
+    capacity: 100
   - type: Item
     size: Normal
   - type: ContainerContainer
@@ -224,11 +226,11 @@
       tags:
         - MagazineVP70
     - type: BallisticAmmoProvider
-      proto: CartridgePistol  # 57x28
+      proto: CartridgePistol40SP  # 45 ACP
       mayTransfer: true
       whitelist:
         tags:
-          - CartridgePistol  # 57x28
+          - CartridgePistolDP # 45 ACP
       capacity: 16
     - type: Item
       size: Small
@@ -258,7 +260,7 @@
     - MagazineHIBrowning
   - type: BallisticAmmoProvider
     mayTransfer: true
-    proto: CartridgePistol  # 57x28
+    proto: CartridgePistolFMJ  # 57x28
     whitelist:
       tags:
       - CartridgePistol  # 57x28
@@ -291,11 +293,11 @@
     - MagazineACP14
   - type: BallisticAmmoProvider
     mayTransfer: true
-    proto: CartridgePistol  # 57x28
+    proto: CartridgePistol40SP  # 45 ACP
     whitelist:
       tags:
-      - CartridgePistol  # 57x28
-    capacity: 15
+      - CartridgePistolDP # 45 ACP
+    capacity: 10
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -324,11 +326,11 @@
     - MagazineSTG44
   - type: BallisticAmmoProvider
     mayTransfer: true
-    proto: CartridgeLightRifle  # 57x28
     whitelist:
       tags:
-      - CartridgeLightRifle  # 57x28
-    capacity: 71
+      - CartridgeLightRifle
+    proto: CartridgeLightRifleSP
+    capacity: 30
   - type: Item
     size: Small
   - type: ContainerContainer
@@ -356,7 +358,7 @@
     tags:
       - MagazineDl6902
   - type: BallisticAmmoProvider
-    proto: CartridgeLightRifle
+    proto: CartridgeLightRifleSP
     capacity: 200
   - type: Item
   - type: Sprite
@@ -380,7 +382,7 @@
     whitelist:
       tags:
       - CartridgeLightRifle  # 762x39
-    proto: CartridgeLightRifle  # 762x39
+    proto: CartridgeLightRifleSP # Fire edit? почему тут ошибка на санрайзе
     capacity: 30
   - type: Item
   - type: Sprite
@@ -400,9 +402,9 @@
     mayTransfer: true
     whitelist:
       tags:
-        - CartridgeLightRifle  # 762x39
-    proto: CartridgeLightRifle  # 762x39
-    capacity: 20
+        - CartridgeHeavyRifle
+    proto: CartridgeRifleHeavySP
+    capacity: 30
   - type: Item
     size: Small
   - type: ContainerContainer

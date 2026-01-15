@@ -14,6 +14,7 @@
   setPreference: false # Fire edit
   radioBold: true
   displayWeight: 75
+  overrideConsoleVisibility: false # Fire added
   access:
   - Magistrat
   - Bar
@@ -35,7 +36,7 @@
   - Maintenance
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ MindShieldImplant, TrackingImplant, DeathRattleImplantBlueShield ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
@@ -60,3 +61,7 @@
     - GavelBlock
     - Flash
     - Telebaton
+
+- type: chameleonOutfit
+  id: MagistratChameleonOutfit
+  job: Magistrat

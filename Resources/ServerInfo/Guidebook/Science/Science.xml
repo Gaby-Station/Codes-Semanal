@@ -9,7 +9,7 @@
    <GuideEntityEmbed Entity="ToyFigurineScientist" Caption="Scientist"/>
    <GuideEntityEmbed Entity="ToyFigurineResearchDirector" Caption="RD"/>
   </Box>
-  
+
 ## Technologies
   <Box>
     <GuideEntityEmbed Entity="ComputerResearchAndDevelopment"/>

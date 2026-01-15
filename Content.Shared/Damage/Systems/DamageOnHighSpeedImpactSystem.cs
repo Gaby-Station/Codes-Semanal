@@ -30,9 +30,10 @@ public sealed class DamageOnHighSpeedImpactSystem : EntitySystem
         if (!args.OurFixture.Hard || !args.OtherFixture.Hard)
             return;
 
-        if (!EntityManager.HasComponent<DamageableComponent>(uid))
+        if (!HasComp<DamageableComponent>(uid))
             return;
 
+        //TODO: This should solve after physics solves
         var speed = args.OurBody.LinearVelocity.Length();
 
         if (speed < component.MinimumSpeed)
@@ -45,15 +46,19 @@ public sealed class DamageOnHighSpeedImpactSystem : EntitySystem
         component.LastHit = _gameTiming.CurTime;
 
         if (_robustRandom.Prob(component.StunChance))
-            _stun.TryStun(uid, TimeSpan.FromSeconds(component.StunSeconds), true);
+            _stun.TryUpdateStunDuration(uid, TimeSpan.FromSeconds(component.StunSeconds));
 
         var damageScale = component.SpeedDamageFactor * speed / component.MinimumSpeed;
 
         _damageable.TryChangeDamage(uid, component.Damage * damageScale);
 
+        // Fire edit start
         if (_gameTiming.IsFirstTimePredicted)
-            _audio.PlayPvs(component.SoundHit, uid, AudioParams.Default.WithVariation(0.125f).WithVolume(-0.125f));
-        _color.RaiseEffect(Color.Red, new List<EntityUid>() { uid }, Filter.Pvs(uid, entityManager: EntityManager));
+            _audio.PlayPredicted(component.SoundHit, uid, uid, component.SoundHit.Params.WithVariation(0.125f).AddVolume(-0.125f));
+
+        if (component.UseColor)
+            _color.RaiseEffect(Color.Red, new List<EntityUid>() { uid }, Filter.Pvs(uid, entityManager: EntityManager));
+        // Fire edit end
     }
 
     public void ChangeCollide(EntityUid uid, float minimumSpeed, float stunSeconds, float damageCooldown, float speedDamage, DamageOnHighSpeedImpactComponent? collide = null)

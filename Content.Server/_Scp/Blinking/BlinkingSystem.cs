@@ -1,31 +1,33 @@
-﻿using Content.Shared._Scp.Blinking;
+﻿using Content.Server.Actions;
+using Content.Shared._Scp.Blinking;
+using Content.Shared.GameTicking;
+using Robust.Shared.Player;
 
 namespace Content.Server._Scp.Blinking;
 
 public sealed class BlinkingSystem : SharedBlinkingSystem
 {
+    [Dependency] private readonly ActionsSystem _actions = default!;
+
     public override void Initialize()
     {
         base.Initialize();
 
-        SubscribeLocalEvent<BlinkableComponent, ComponentInit>(OnCompInit);
         SubscribeLocalEvent<BlinkableComponent, MapInitEvent>(OnMapInit);
-        SubscribeLocalEvent<BlinkableComponent, EntityUnpausedEvent>(OnUnpaused);
+        SubscribeLocalEvent<BlinkableComponent, PlayerSpawnCompleteEvent>(OnPlayerSpawn);
     }
 
-    private void OnCompInit(Entity<BlinkableComponent> ent, ref ComponentInit args)
+    private void OnMapInit(Entity<BlinkableComponent> ent, ref MapInitEvent _)
     {
-        ResetBlink(ent.Owner, ent.Comp);
-    }
-
-    private void OnMapInit(Entity<BlinkableComponent> ent, ref MapInitEvent args)
-    {
-        ResetBlink(ent.Owner, ent.Comp);
-    }
-
-    private void OnUnpaused(Entity<BlinkableComponent> ent, ref EntityUnpausedEvent args)
-    {
-        ent.Comp.NextBlink += args.PausedTime;
+        _actions.AddAction(ent, ref ent.Comp.EyeToggleActionEntity, ent.Comp.EyeToggleAction);
+        _actions.SetUseDelay(ent.Comp.EyeToggleActionEntity, ent.Comp.BlinkingDuration);
         Dirty(ent);
+
+        ResetBlink(ent.AsNullable());
+    }
+
+    private void OnPlayerSpawn(Entity<BlinkableComponent> ent, ref PlayerSpawnCompleteEvent args)
+    {
+        RaiseNetworkEvent(new PlayerOpenEyesAnimation(GetNetEntity(ent)), Filter.SinglePlayer(args.Player));
     }
 }

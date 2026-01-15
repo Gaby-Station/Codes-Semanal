@@ -11,11 +11,9 @@
   supervisors: job-supervisors-security
   canBeAntag: false
   displayWeight: 0 # Sunrise-Edit
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
   access:
-  - Research # Fire
-  - Kitchen # Fire
-  - Hydroponics # Fire
-  - Janitor # Fire
   - Security
   - Brig
 #  - Maintenance #Sunrise-Edit
@@ -34,7 +32,22 @@
     mask: ClothingMaskSecurityBandBlack
     id: SecurityCadetPDA
     ears: ClothingHeadsetSecurity
+    eyes: ClothingEyesHudSecurity #Sunrise-edit
+    belt: ClothingBeltSecurityFilled
+    gloves: ClothingHandsGlovesColorGray
     pocket1: HyperLinkBookCorporateLaw # Sunrise-edit
   storage:
     back:
     - Flash
+
+- type: chameleonOutfit
+  id: SecurityCadetChameleonOutfit
+  job: SecurityCadet
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHelmetBasic
+    eyes: ClothingEyesHudSecurity
+    mask: ClothingMaskGasSecurity
+    neck: ClothingNeckScarfStripedRed
+    belt: ClothingBeltSecurity
+    gloves: ClothingHandsGlovesColorBlack

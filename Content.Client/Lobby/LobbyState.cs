@@ -1,13 +1,16 @@
 using System.Linq;
+using Content.Client._Sunrise.Contributors;
 using Content.Client._Sunrise.Latejoin;
 using Content.Client._Sunrise.ServersHub;
 using Content.Client.Audio;
 using Content.Client.GameTicking.Managers;
 using Content.Client.Lobby.UI;
 using Content.Client.Message;
+using Content.Client.Playtime;
 using Content.Client.UserInterface.Systems.Chat;
 using Content.Client.Voting;
 using Content.Shared.CCVar;
+using Content.Shared._Sunrise.Contributors;
 using Robust.Client;
 using Robust.Client.Console;
 using Robust.Client.ResourceManagement;
@@ -42,10 +45,12 @@ namespace Content.Client.Lobby
         [Dependency] private readonly IUserInterfaceManager _userInterfaceManager = default!;
         [Dependency] private readonly IGameTiming _gameTiming = default!;
         [Dependency] private readonly IVoteManager _voteManager = default!;
+        [Dependency] private readonly ClientsidePlaytimeTrackingManager _playtimeTracking = default!;
         [Dependency] private readonly IParallaxManager _parallaxManager = default!;
         [Dependency] private readonly ISerializationManager _serialization = default!;
         [Dependency] private readonly IResourceManager _resource = default!;
         [Dependency] private readonly ServersHubManager _serversHubManager = default!;
+        [Dependency] private readonly ContributorsManager _contributorsManager = default!;
         [Dependency] private readonly ChangelogManager _changelogManager = default!;
         [Dependency] private readonly IConfigurationManager _cfg = default!;
         [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
@@ -123,6 +128,9 @@ namespace Content.Client.Lobby
             _gameTicker.LobbyLateJoinStatusUpdated += LobbyLateJoinStatusUpdated;
 
             _serversHubManager.ServersDataListChanged += RefreshServersHubHeader;
+            _contributorsManager.ContributorsDataListChanged += RefreshContributorsHeader;
+
+            RefreshContributorsHeader(_contributorsManager.ContributorsDataList);
         }
 
         protected override void Shutdown()
@@ -143,6 +151,7 @@ namespace Content.Client.Lobby
             Lobby = null;
 
             _serversHubManager.ServersDataListChanged -= RefreshServersHubHeader;
+            _contributorsManager.ContributorsDataListChanged -= RefreshContributorsHeader;
         }
 
         private void RefreshServersHubHeader(List<ServerHubEntry> servers)
@@ -150,6 +159,11 @@ namespace Content.Client.Lobby
             var totalPlayers = _serversHubManager.ServersDataList.Sum(server => server.CurrentPlayers);
             var maxPlayers = _serversHubManager.ServersDataList.Sum(server => server.MaxPlayers);
             Lobby!.ServersHubHeaderLabel.Text = Loc.GetString("serverhub-playingnow", ("total", totalPlayers), ("max", maxPlayers)); // Sunrise-Edit
+        }
+
+        private void RefreshContributorsHeader(List<ContributorEntry> contributors)
+        {
+            Lobby!.ContributorsHeaderLabel.Text = Loc.GetString("contributors-header-count", ("count", contributors.Count));
         }
 
         public void SwitchState(LobbyGui.LobbyGuiState state)
@@ -260,6 +274,26 @@ namespace Content.Client.Lobby
             {
                 Lobby!.ServerInfo.SetInfoBlob(_gameTicker.ServerInfoBlob);
             }
+
+            var minutesToday = _playtimeTracking.PlaytimeMinutesToday;
+            if (minutesToday > 60)
+            {
+                Lobby!.PlaytimeComment.Visible = true;
+
+                var hoursToday = Math.Round(minutesToday / 60f, 1);
+
+                var chosenString = minutesToday switch
+                {
+                    < 180 => "lobby-state-playtime-comment-normal",
+                    < 360 => "lobby-state-playtime-comment-concerning",
+                    < 720 => "lobby-state-playtime-comment-grasstouchless",
+                    _ => "lobby-state-playtime-comment-selfdestructive"
+                };
+
+                Lobby.PlaytimeComment.SetMarkup(Loc.GetString(chosenString, ("hours", hoursToday)));
+            }
+            else
+                Lobby!.PlaytimeComment.Visible = false;
         }
 
         private void UpdateLobbySoundtrackInfo(LobbySoundtrackChangedEvent ev)

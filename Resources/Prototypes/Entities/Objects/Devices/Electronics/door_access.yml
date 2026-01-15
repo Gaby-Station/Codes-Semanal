@@ -3,39 +3,28 @@
   parent: DoorElectronics
   id: DoorElectronicsCaptain
   suffix: Captain, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Captain"]]
-    # Sunrise-start
-    alertAccesses:
-      delta: AllAccess
-    # Sunrise-end
 
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsHeadOfPersonnel
   suffix: HeadOfPersonnel, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["HeadOfPersonnel"]]
-    # Sunrise-start
-    alertAccesses:
-      delta: AllAccess
-    # Sunrise-end
 
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsCommand
   suffix: Command, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Command"]]
-    # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 
 
@@ -44,17 +33,10 @@
   parent: DoorElectronics
   id: DoorElectronicsBar
   suffix: Bar, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Bar"]]
-    # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 
 
@@ -62,17 +44,10 @@
   parent: DoorElectronics
   id: DoorElectronicsBarKitchen
   suffix: Bar, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Bar"], ["Kitchen"]]
-    # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 
 
@@ -80,34 +55,20 @@
   parent: DoorElectronics
   id: DoorElectronicsHydroponics
   suffix: Hydroponics, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Hydroponics"]]
-    # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsChapel
   suffix: Chapel, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Chapel"]]
-    # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 
 
@@ -115,17 +76,10 @@
   parent: DoorElectronics
   id: DoorElectronicsTheatre
   suffix: Theatre, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Theatre"]]
-    # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 
 
@@ -133,17 +87,10 @@
   parent: DoorElectronics
   id: DoorElectronicsKitchen
   suffix: Kitchen, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Kitchen"]]
-    # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 
 
@@ -151,17 +98,10 @@
   parent: DoorElectronics
   id: DoorElectronicsKitchenHydroponics
   suffix: Kitchen/Hydroponics, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Kitchen"], ["Hydroponics"]]
-    # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 
 
@@ -169,35 +109,20 @@
   parent: DoorElectronics
   id: DoorElectronicsJanitor
   suffix: Janitor, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Janitor"]]
-    # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsLawyer
   suffix: Lawyer, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Lawyer"]]
-    # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
-
 
 
 - type: entity
@@ -207,90 +132,64 @@
   components:
   - type: AccessReader
     access: [["Service"]]
-    # Sunrise-start
-    alertAccesses:
-      red: RedAlertAccesses
-      blue: BlueAlertAccessesHOS
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
+
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsServiceTheatre
+  suffix: Service, Theatre, Locked
+  categories: [ HideSpawnMenu ] # Fire added
+  components:
+  - type: AccessReader
+    access: [["Service"], ["Theatre"]]
 
 # Cargo
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsQuartermaster
   suffix: Quartermaster, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Quartermaster"]]
-    # Sunrise-start
-    alertAccesses:
-      delta: AllAccess
-    # Sunrise-end
 
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsSalvage
   suffix: Salvage, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Salvage"]]
-    # Sunrise-start
-    alertAccesses:
-      blue: BlueAlertAccessesHOS
-      red: RedAlertAccesses
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsCargo
   suffix: Cargo, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Cargo"]]
-    # Sunrise-start
-    alertAccesses:
-      blue: BlueAlertAccessesHOS
-      red: RedAlertAccesses
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
-
 
 # Engineering
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsChiefEngineer
   suffix: ChiefEngineer, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["ChiefEngineer"]]
-    # Sunrise-start
-    alertAccesses:
-      delta: AllAccess
-    # Sunrise-end
 
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsAtmospherics
   suffix: Atmospherics, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Atmospherics"]]
-    # Sunrise-start
-    alertAccesses:
-      blue: BlueAlertAccessesHOS
-      red: RedAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 
 - type: entity
@@ -300,44 +199,26 @@
   components:
   - type: AccessReader
     access: [["Engineering"]]
-    # Sunrise-start
-    alertAccesses:
-      blue: BlueAlertAccessesHOS
-      red: RedAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
-
 
 # Science
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsMorgue
   suffix: Morgue, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Medical"], ["Detective"], ["Chapel"]]
-    # Sunrise-start
-    alertAccesses:
-      blue: BlueAlertAccesses
-      red: RedAlertAccesses
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsResearchDirector
   suffix: ResearchDirector, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["ResearchDirector"]]
-    # Sunrise-start
-    alertAccesses:
-      delta: AllAccess
-    # Sunrise-end
 
 - type: entity
   parent: DoorElectronics
@@ -346,14 +227,6 @@
   components:
   - type: AccessReader
     access: [["Research"], ["Medical"]]
-    # Sunrise-start
-    alertAccesses:
-      blue: BlueAlertAccessesHOS
-      red: RedAlertAccesses
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 
 - type: entity
@@ -363,45 +236,32 @@
   components:
   - type: AccessReader
     access: [["Research"]]
-    # Sunrise-start
-    alertAccesses:
-      blue: BlueAlertAccessesHOS
-      red: RedAlertAccesses
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 # Security
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsHeadOfSecurity
   suffix: HeadOfSecurity, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["HeadOfSecurity"]]
-    # Sunrise-start
-    alertAccesses:
-      delta: AllAccess
-    # Sunrise-end
 
 
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsArmory
   suffix: Armory, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Armory"]]
-    # Sunrise-start
-    alertAccesses:
-      delta: AllAccess
-    # Sunrise-end
 
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsDetective
   suffix: Detective, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Detective"]]
@@ -418,67 +278,46 @@
   components:
   - type: AccessReader
     access: [["Security"]]
-    # Sunrise-start
-    alertAccesses:
-      delta: AllAccess
-    # Sunrise-end
 
 
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsSecurityLawyer
   suffix: Security/Lawyer, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Security"], ["Lawyer"]]
-    # Sunrise-start
-    alertAccesses:
-      delta: AllAccess
-    # Sunrise-end
 
 
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsBrig
   suffix: Brig, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Brig"]]
-    # Sunrise-start
-    alertAccesses:
-      yellow: YellowAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 # Medical
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsChiefMedicalOfficer
   suffix: ChiefMedicalOfficer, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["ChiefMedicalOfficer"]]
-    # Sunrise-start
-    alertAccesses:
-      delta: AllAccess
-    # Sunrise-end
 
 
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsChemistry
   suffix: Chemistry, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Chemistry"]]
-    # Sunrise-start
-    alertAccesses:
-      blue: BlueAlertAccessesHOS
-      red: RedAlertAccesses
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 - type: entity
   parent: DoorElectronics
@@ -487,20 +326,13 @@
   components:
   - type: AccessReader
     access: [["Medical"]]
-    # Sunrise-start
-    alertAccesses:
-      blue: BlueAlertAccessesHOS
-      red: RedAlertAccesses
-      yellow: YellowAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 # Syndicate
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsNukeop
   suffix: Nukeop, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["NuclearOperative"]]
@@ -509,6 +341,7 @@
   parent: DoorElectronics
   id: DoorElectronicsSyndicateAgent
   suffix: SyndicateAgent, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["SyndicateAgent"]]
@@ -518,6 +351,7 @@
   parent: DoorElectronics
   id: DoorElectronicsCentralCommand
   suffix: CentralCommand, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["CentralCommand"]]
@@ -526,42 +360,35 @@
   parent: DoorElectronics
   id: DoorElectronicsExternal
   suffix: External, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["External"]]
-    # Sunrise-start
-    alertAccesses:
-      blue: BlueAlertAccessesHOS
-      red: RedAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsMaintenance
   suffix: Maintenance, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Maintenance"]]
-    # Sunrise-start
-    alertAccesses:
-      blue: BlueAlertAccesses
-      red: RedAlertAccesses
-      gamma: GammaAlertAccesses
-      delta: AllAccess
-    # Sunrise-end
 
 
 - type: entity
   parent: DoorElectronics
   id: DoorElectronicsVault
   suffix: Vault, Locked
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: AccessReader
     access: [["Security"], ["Command"]]
-    # Sunrise-start
-    alertAccesses:
-      delta: AllAccess
-    # Sunrise-end
 
+- type: entity
+  parent: DoorElectronics
+  id: DoorElectronicsXenoborg
+  suffix: Xenoborg, Locked
+  categories: [ HideSpawnMenu ] # Fire added
+  components:
+  - type: AccessReader
+    access: [["Xenoborg"]]

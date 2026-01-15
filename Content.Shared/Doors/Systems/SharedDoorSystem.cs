@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Scp.Other.Events;
 using Content.Shared.Access.Components;
 using Content.Shared.Access.Systems;
 using Content.Shared.Administration.Logs;
@@ -23,39 +24,41 @@ using Robust.Shared.Physics.Components;
 using Robust.Shared.Physics.Events;
 using Robust.Shared.Physics.Systems;
 using Robust.Shared.Timing;
+using Robust.Shared.Audio.Systems;
+using Robust.Shared.Network;
+using Robust.Shared.Map.Components;
+using Robust.Shared.Prototypes;
 
 namespace Content.Shared.Doors.Systems;
 
 public abstract partial class SharedDoorSystem : EntitySystem
 {
-    [ValidatePrototypeId<TagPrototype>]
-    public const string DoorBumpTag = "DoorBumpOpener";
-
+    [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
+    [Dependency] protected readonly IGameTiming GameTiming = default!;
+    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] protected readonly SharedPhysicsSystem PhysicsSystem = default!;
+    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
+    [Dependency] private readonly EmagSystem _emag = default!;
+    [Dependency] private readonly SharedStunSystem _stunSystem = default!;
+    [Dependency] protected readonly TagSystem Tags = default!;
+    [Dependency] protected readonly SharedAudioSystem Audio = default!;
+    [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
+    [Dependency] protected readonly SharedAppearanceSystem AppearanceSystem = default!;
+    [Dependency] private readonly OccluderSystem _occluder = default!;
     [Dependency] private readonly AccessReaderSystem _accessReaderSystem = default!;
+    [Dependency] private readonly PryingSystem _pryingSystem = default!;
+    [Dependency] protected readonly SharedPopupSystem Popup = default!;
+    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
+    [Dependency] private readonly SharedPowerReceiverSystem _powerReceiver = default!;
+
+    public static readonly ProtoId<TagPrototype> DoorBumpTag = "DoorBumpOpener";
 
     /// <summary>
     ///     A set of doors that are currently opening, closing, or just queued to open/close after some delay.
     /// </summary>
     private readonly HashSet<Entity<DoorComponent>> _activeDoors = new();
 
-    [Dependency] private readonly ISharedAdminLogManager _adminLog = default!;
-    [Dependency] private readonly DamageableSystem _damageableSystem = default!;
-
     private readonly HashSet<Entity<PhysicsComponent>> _doorIntersecting = new();
-    [Dependency] private readonly EmagSystem _emag = default!;
-    [Dependency] private readonly EntityLookupSystem _entityLookup = default!;
-    [Dependency] private readonly SharedMapSystem _mapSystem = default!;
-    [Dependency] private readonly INetManager _net = default!;
-    [Dependency] private readonly OccluderSystem _occluder = default!;
-    [Dependency] private readonly SharedPowerReceiverSystem _powerReceiver = default!;
-    [Dependency] private readonly PryingSystem _pryingSystem = default!;
-    [Dependency] private readonly SharedStunSystem _stunSystem = default!;
-    [Dependency] protected readonly SharedAppearanceSystem AppearanceSystem = default!;
-    [Dependency] protected readonly SharedAudioSystem Audio = default!;
-    [Dependency] protected readonly IGameTiming GameTiming = default!;
-    [Dependency] protected readonly SharedPhysicsSystem PhysicsSystem = default!;
-    [Dependency] protected readonly SharedPopupSystem Popup = default!;
-    [Dependency] protected readonly TagSystem Tags = default!;
 
     // Fire edit start
     private readonly SoundSpecifier _doorSmashSound = new SoundCollectionSpecifier("DoorSmash");
@@ -560,8 +563,12 @@ public abstract partial class SharedDoorSystem : EntitySystem
             if (door.CrushDamage != null)
                 _damageableSystem.TryChangeDamage(entity, door.CrushDamage, origin: uid);
 
-            _stunSystem.TryParalyze(entity, stunTime, true);
-            Audio.PlayPredicted(_doorSmashSound, entity, entity); // Fire
+            _stunSystem.TryUpdateParalyzeDuration(entity, stunTime);
+
+            // Fire edit start - чтобы двери могли убивать людей
+            Audio.PlayPredicted(_doorSmashSound, entity, entity);
+            RaiseLocalEvent(uid, new AirlockCrushedEvent(GetNetEntity(entity)));
+            // Fire edit end
         }
 
         if (door.CurrentlyCrushing.Count == 0)
@@ -655,7 +662,7 @@ public abstract partial class SharedDoorSystem : EntitySystem
 
         var otherUid = args.OtherEntity;
 
-        if (Tags.HasTag(otherUid, DoorBumpTag))
+        if (Tags.HasTag(otherUid, DoorBumpTag) && door.ClickOpen)
             TryOpen(uid, door, otherUid, quiet: door.State == DoorState.Denying, predicted: true);
     }
 
@@ -816,10 +823,13 @@ public abstract partial class SharedDoorSystem : EntitySystem
         door.NextStateChange = null;
 
         // Sunrise-Edit: А вот нехуй.
-        if (door.CurrentlyCrushing.Count > 0 && !door.ForcedCrushClose)
+        if (door.CurrentlyCrushing.Count > 0 && door.State != DoorState.Opening && !door.ForcedCrushClose)
+        {
             // This is a closed door that is crushing people and needs to auto-open. Note that we don't check "can open"
             // here. The door never actually finished closing and we don't want people to get stuck inside of doors.
             StartOpening(ent, door);
+            return;
+        }
 
         switch (door.State)
         {

@@ -20,7 +20,7 @@ public sealed class AlertLevelSystem : EntitySystem
     [Dependency] private readonly RoundEndSystem _roundEnd = default!;
 
     // Until stations are a prototype, this is how it's going to have to be.
-    public const string DefaultAlertLevelSet = "stationAlerts";
+    public const string DefaultAlertLevelSet = "FacilityAlerts";
 
     public override void Initialize()
     {
@@ -119,6 +119,20 @@ public sealed class AlertLevelSystem : EntitySystem
     }
 
     /// <summary>
+    /// Get the default alert level for a station entity.
+    /// Returns an empty string if the station has no alert levels defined.
+    /// </summary>
+    /// <param name="station">The station entity.</param>
+    public string GetDefaultLevel(Entity<AlertLevelComponent?> station)
+    {
+        if (!Resolve(station.Owner, ref station.Comp) || station.Comp.AlertLevels == null)
+        {
+            return string.Empty;
+        }
+        return station.Comp.AlertLevels.DefaultLevel;
+    }
+
+    /// <summary>
     /// Set the alert level based on the station's entity ID.
     /// </summary>
     /// <param name="station">Station entity UID.</param>
@@ -151,6 +165,9 @@ public sealed class AlertLevelSystem : EntitySystem
             component.ActiveDelay = true;
         }
 
+        // Sunrise added - добавил сохраненый прежний уровень для системы автодоступов
+        var previousLevel = component.CurrentLevel;
+
         component.CurrentLevel = level;
         component.IsLevelLocked = locked;
 
@@ -172,7 +189,7 @@ public sealed class AlertLevelSystem : EntitySystem
         }
 
         // The full announcement to be spat out into chat.
-        var announcementFull = Loc.GetString("alert-level-announcement", ("name", name), ("announcement", announcement));
+        var announcementFull = Loc.GetString("alert-level-scp-announcement", ("name", name), ("announcement", announcement)); // Fire edit
 
         var playDefault = false;
         if (playSound)
@@ -198,7 +215,8 @@ public sealed class AlertLevelSystem : EntitySystem
         }
         // Sunrise-End
 
-        RaiseLocalEvent(new AlertLevelChangedEvent(station, level));
+        // Sunrise edit - добавил прежний уровень для системы автодоступов
+        RaiseLocalEvent(new AlertLevelChangedEvent(station, level, previousLevel));
     }
 }
 
@@ -213,9 +231,12 @@ public sealed class AlertLevelChangedEvent : EntityEventArgs
     public EntityUid Station { get; }
     public string AlertLevel { get; }
 
-    public AlertLevelChangedEvent(EntityUid station, string alertLevel)
+    public string PreviousLevel; // Sunrise added - прежний уровень для системы автодоступов
+
+    public AlertLevelChangedEvent(EntityUid station, string alertLevel, string previousLevel)
     {
         Station = station;
         AlertLevel = alertLevel;
+        PreviousLevel = previousLevel; // Sunrise added - прежний уровень для системы автодоступов
     }
 }

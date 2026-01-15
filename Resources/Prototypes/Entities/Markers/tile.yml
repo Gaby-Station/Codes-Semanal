@@ -1,37 +1,63 @@
 - type: entity
-  id: BaseRoofMarker
-  abstract: true
-  placement:
-    mode: SnapgridCenter
-  components:
-  - type: Transform
-    anchored: true
-  - type: Sprite
-    drawdepth: Overdoors
-    sprite: Markers/cross.rsi
-
-- type: entity
   id: RoofMarker
   name: Roof
   suffix: Enabled
-  parent: BaseRoofMarker
+  parent: MarkerBase
   components:
   - type: SetRoof
     value: true
+    blockWeather: true
   - type: Sprite
+    sprite: _Scp/Markers/roof.rsi
     layers:
-    - state: green
+    - state: roof_on
+      color: "#FFFFFF4D"
       shader: unshaded
 
 - type: entity
   id: NoRoofMarker
   name: Roof
   suffix: Disabled
-  parent: BaseRoofMarker
+  parent: MarkerBase
   components:
   - type: SetRoof
     value: false
+    blockWeather: false
   - type: Sprite
+    sprite: _Scp/Markers/roof.rsi
     layers:
-    - state: red
+    - state: roof_off
+      color: "#FFFFFF4D"
+      shader: unshaded
+
+- type: entity
+  id: NoRoofMarkerBlockWeather
+  name: Roof
+  suffix: Disabled, Blocks weather
+  parent: MarkerBase
+  components:
+  - type: SetRoof
+    value: false
+    blockWeather: true
+  - type: Sprite
+    sprite: _Scp/Markers/roof.rsi
+    layers:
+    - state: roof_off
+      color: "#FFFFFF4D"
+      shader: unshaded
+
+- type: entity
+  id: RoofMarkerIgnoreWeather
+  name: Roof
+  suffix: Enabled, Ignores weather
+  parent: MarkerBase
+  components:
+  - type: SetRoof
+    value: true
+    blockWeather: false
+  - type: Sprite
+    sprite: _Scp/Markers/roof.rsi
+    layers:
+    - state: roof_on
+      color: "#FFFFFF4D"
       shader: unshaded

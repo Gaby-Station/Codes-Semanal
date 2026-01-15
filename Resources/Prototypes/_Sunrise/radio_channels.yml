@@ -1,9 +1,17 @@
 - type: radioChannel
   id: Law
   name: chat-radio-law
-  keycode: "l" # Fire edit - чтобы не конфликтовало
+  keycode: 'l' # Fire edit - чтобы не конфликтовало
   frequency: 1780
   color: "#ff178b"
+
+- type: radioChannel
+  id: BlueShield
+  name: chat-radio-blue-shield
+  keycode: 'Z' # Fire edit - чтобы не конфликтовало
+  frequency: 1781
+  color: "#005bfb"
+  longRange: false
 
 - type: radioChannel
   id: USSP

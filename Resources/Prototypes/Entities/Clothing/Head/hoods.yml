@@ -13,15 +13,21 @@
     sprite: Clothing/Head/Hoods/Bio/general.rsi
   - type: BreathMask
   - type: IngestionBlocker
+  - type: GroupExamine
+  - type: Armor
+    modifiers: { }
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.9
   - type: Tag
     tags:
     - WhitelistChameleon
+    - FullCovered # Sunrise-Edit
   - type: HideLayerClothing
-    slots:
-    - Hair
-    - Snout
-    - HeadTop
-    - HeadSide
+    layers:
+      Hair: HEAD
+      Snout: HEAD
+      HeadTop: HEAD
+      HeadSide: HEAD
 
 - type: entity
   parent: ClothingHeadHatHoodBioGeneral
@@ -35,6 +41,8 @@
     sprite: Clothing/Head/Hoods/Bio/cmo.rsi
   - type: Clothing
     sprite: Clothing/Head/Hoods/Bio/cmo.rsi
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.8
 
 - type: entity
   parent: ClothingHeadHatHoodBioGeneral
@@ -80,13 +88,15 @@
   id: ClothingHeadHatHoodBioVirology
   name: bio hood
   suffix: Virology
-  description: A hood that protects the head and face from biological contaminants.
+  description: A hood that strongly protects the head and face from biological contaminants.
   components:
   - type: IdentityBlocker
   - type: Sprite
     sprite: Clothing/Head/Hoods/Bio/virology.rsi
   - type: Clothing
     sprite: Clothing/Head/Hoods/Bio/virology.rsi
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.8
 
 - type: entity
   parent: ClothingHeadBase
@@ -103,6 +113,7 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
+    - TopCovered # Sunrise-Edit
   - type: HideLayerClothing
     slots:
     - Hair
@@ -120,6 +131,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - TopCovered # Sunrise-Edit
   - type: HideLayerClothing
     slots:
     - Hair
@@ -138,6 +150,7 @@
     tags:
     - HamsterWearable
     - WhitelistChameleon
+    - TopCovered # Sunrise-Edit
   - type: HideLayerClothing
     slots:
     - Hair
@@ -165,6 +178,13 @@
     - Snout
     - HeadTop
     - HeadSide
+  # Sunrise-Start
+  - type: Tag
+    tags:
+    - HamsterWearable
+    - TopCovered
+    - WhitelistChameleon
+  # Sunrise-End
 
 - type: entity
   parent: ClothingHeadBase
@@ -179,6 +199,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - TopCovered # Sunrise-Edit
   - type: HideLayerClothing
     slots:
     - Hair
@@ -197,6 +218,14 @@
   - type: HideLayerClothing
     slots:
     - Hair
+  - type: Tag
+    tags:
+    - CorgiWearable
+    - ClothMade
+    - WhitelistChameleon
+    # Sunrise-Start
+    - FullCovered
+    # Sunrise-End
 
 - type: entity
   parent: ClothingHeadBase
@@ -212,6 +241,13 @@
   - type: HideLayerClothing
     slots:
     - Hair
+  # Sunrise-Start
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - FullCovered
+  # Sunrise-End
 
 - type: entity
   parent: ClothingHeadHatHoodCarp
@@ -229,6 +265,13 @@
   # wear carp suit and security helmet, they'll know you are fake
   - type: FactionClothing
     faction: Carps
+  # Sunrise-Start
+  - type: Tag
+    tags:
+    - ClothMade
+    - WhitelistChameleon
+    - FullCovered
+  # Sunrise-End
 
 - type: entity
   parent: ClothingHeadBase
@@ -244,6 +287,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - FullCovered # Sunrise-Edit
   - type: HideLayerClothing
     slots:
     - Hair
@@ -762,6 +806,7 @@
   - type: Tag
     tags:
     - WhitelistChameleon
+    - TopCovered # Sunrise-Edit
   - type: HideLayerClothing
     slots:
     - Hair

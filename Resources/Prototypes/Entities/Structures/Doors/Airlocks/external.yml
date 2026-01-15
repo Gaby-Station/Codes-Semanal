@@ -3,6 +3,7 @@
   id: AirlockExternal
   suffix: External
   description: It opens, it closes, it might crush you, and there might be only space behind it.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Door
     crushDamage:
@@ -16,16 +17,16 @@
       path: /Audio/Machines/airlock_deny.ogg
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/external.rsi
-  - type: PaintableAirlock
-    group: External
-    department: null
   - type: Wires
     layoutId: AirlockExternal
+  - type: Paintable
+    group: null
 
 - type: entity
   parent: AirlockExternal
   id: AirlockExternalGlass
   suffix: Glass, External
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Door
     occludes: false
@@ -33,8 +34,6 @@
     enabled: false
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/external.rsi
-  - type: PaintableAirlock
-    group: ExternalGlass
   - type: Fixtures
     fixtures:
       fix1:

@@ -1,9 +1,5 @@
-ent-BaseChangelingObjective = { ent-BaseObjective }
-    .desc = { ent-BaseObjective.desc }
-ent-ChangelingSurviveObjective = Выжить
-    .desc = Я должен выжить любой ценой.
 ent-ChangelingKillRandomPersonObjective = { ent-BaseChangelingObjective }
-    .desc = Do it however you like, just make sure they don't make it to centcomm.
+    .desc = Сделайте это как угодно, главное, чтобы они не добрались до Центкома.
 ent-ChangelingKillRandomAntagObjective = { ent-BaseChangelingObjective }
     .desc = { ent-BaseChangelingObjective.desc }
 ent-ChangelingAbsorbObjective = { ent-BaseChangelingObjective }

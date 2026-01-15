@@ -12,11 +12,9 @@
   supervisors: job-supervisors-hos
   canBeAntag: false
   displayWeight: 10
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
   access:
-  - Research # Fire
-  - Kitchen # Fire
-  - Hydroponics # Fire
-  - Janitor # Fire
   - Security
   - Brig
 #  - Maintenance #Sunrise-Edit
@@ -42,3 +40,13 @@
     back:
     - Flash
 #    - MagazineGlock22 # Sunrise-Edit
+
+- type: chameleonOutfit
+  id: SecurityOfficerChameleonOutfit
+  job: SecurityOfficer
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatBeretSecurity
+    mask: ClothingMaskGasSecurity
+    neck: Dinkystar
+    gloves: ClothingHandsGlovesColorBlack

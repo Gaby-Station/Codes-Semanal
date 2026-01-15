@@ -1,11 +1,18 @@
 using System.Linq;
+using System.Numerics;
+using Content.Client._Scp.UI;
 using Content.Client.CharacterInfo;
 using Content.Client.Gameplay;
+using Content.Client.Mind;
+using Content.Client.Roles;
 using Content.Client.Stylesheets;
 using Content.Client.UserInterface.Controls;
 using Content.Client.UserInterface.Systems.Character.Controls;
 using Content.Client.UserInterface.Systems.Character.Windows;
 using Content.Client.UserInterface.Systems.Objectives.Controls;
+using Content.Shared._Scp.CharacterInfo.AccessLevel;
+using Content.Shared._Scp.CharacterInfo.EmployeeClass;
+using Content.Shared._Scp.Fear.Components;
 using Content.Shared.Input;
 using Content.Shared.Mind;
 using Content.Shared.Mind.Components;
@@ -28,20 +35,22 @@ namespace Content.Client.UserInterface.Systems.Character;
 public sealed class CharacterUIController : UIController, IOnStateEntered<GameplayState>, IOnStateExited<GameplayState>, IOnSystemChanged<CharacterInfoSystem>
 {
     [Dependency] private readonly IEntityManager _ent = default!;
-    [Dependency] private readonly ILogManager _logMan = default!;
     [Dependency] private readonly IPlayerManager _player = default!;
     [Dependency] private readonly IPrototypeManager _prototypeManager = default!;
 
     [UISystemDependency] private readonly CharacterInfoSystem _characterInfo = default!;
     [UISystemDependency] private readonly SpriteSystem _sprite = default!;
-
-    private ISawmill _sawmill = default!;
+    // Fire added start
+    [Dependency] private readonly ILocalizationManager _loc = default!;
+    [UISystemDependency] private readonly EmployeeClassSystem _employeeClass = default!;
+    [UISystemDependency] private readonly AccessLevelSystem _accessLevel = default!;
+    [UISystemDependency] private readonly MindSystem _mind = default!;
+    [UISystemDependency] private readonly JobSystem _job = default!;
+    // Fire added end
 
     public override void Initialize()
     {
         base.Initialize();
-
-        _sawmill = _logMan.GetSawmill("character");
 
         SubscribeNetworkEvent<MindRoleTypeChangedEvent>(OnRoleTypeChanged);
     }
@@ -140,9 +149,15 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         _window.SpriteView.SetEntity(entity);
 
         UpdateRoleType();
+        // Fire added start
+        UpdateJobInfo(job, ref _window);
+        UpdateFears(entity, ref _window);
+        UpdateEmployeeClass(entity, ref _window);
+        UpdateAccessLevel(entity, ref _window);
+        // Fire added end
 
         _window.NameLabel.Text = entityName;
-        _window.SubText.Text = job;
+        // _window.SubText.Text = job; Fire edit
         _window.Objectives.RemoveAllChildren();
         _window.ObjectivesLabel.Visible = objectives.Any();
 
@@ -201,7 +216,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
             _window.Objectives.AddChild(control);
         }
 
-        _window.RolePlaceholder.Visible = briefing == null && !controls.Any() && !objectives.Any();
+        _window.RolePlaceholder.Visible = false; // Fire edit - не сри мне тут
     }
 
     private void OnRoleTypeChanged(MindRoleTypeChangedEvent ev, EntitySessionEventArgs _)
@@ -221,19 +236,117 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         if (!_ent.TryGetComponent<MindComponent>(container.Mind.Value, out var mind))
             return;
 
-        var roleText = Loc.GetString("role-type-crew-aligned-name");
-        var color = Color.White;
-        if (_prototypeManager.TryIndex(mind.RoleType, out var proto))
-        {
-            roleText = Loc.GetString(proto.Name);
-            color = proto.Color;
-        }
-        else
-            _sawmill.Error($"{_player.LocalEntity} has invalid Role Type '{mind.RoleType}'. Displaying '{roleText}' instead");
+        if (!_prototypeManager.TryIndex(mind.RoleType, out var proto))
+            Log.Error($"Player '{_player.LocalSession}' has invalid Role Type '{mind.RoleType}'. Displaying default instead");
 
-        _window.RoleType.Text = roleText;
-        _window.RoleType.FontColorOverride = color;
+        _window.RoleType.Text = Loc.GetString(proto?.Name ?? "role-type-crew-aligned-name");
+        _window.RoleType.FontColorOverride = proto?.Color ?? Color.White;
     }
+
+    // Fire added start
+    private void UpdateJobInfo(string jobProtoId, ref CharacterWindow window)
+    {
+        window.JobInfo.Visible = false;
+        window.SubText.Visible = false;
+        window.Separator.Visible = false;
+
+        if (!_prototypeManager.TryIndex<JobPrototype>(jobProtoId, out var job))
+            return;
+
+        window.JobInfo.Visible = true;
+        window.JobInfo.Text = $"{job.LocalizedName}: {job.LocalizedDescription}";
+
+        // ФАК Ю, РИЧ ТЕКСТ, КОТОРЫЙ НЕ ХОЧЕТ СТАНОВИТЬСЯ НОРМАЛЬНЫМ
+        // ПОКА Я НЕ РЕСАЙЗНУ ОКНО :>
+        window.SetSize = new Vector2(window.Size.X + 1, window.Size.Y + 1);
+        window.SetSize = new Vector2(window.Size.X - 1, window.Size.Y - 1);
+
+        if (!_job.TryGetDepartment(job.ID, out var department))
+            return;
+
+        window.SubText.Text = Loc.GetString(department.Name);
+        window.SubText.Visible = true;
+        window.Separator.Visible = true;
+    }
+
+    private void UpdateFears(EntityUid uid, ref CharacterWindow window)
+    {
+        window.Fears.RemoveAllChildren();
+        window.FearsPlaceholder.Visible = true;
+
+        if (!_ent.TryGetComponent<FearComponent>(uid, out var fear))
+            return;
+
+        foreach (var phobia in fear.Phobias)
+        {
+            if (!_prototypeManager.TryIndex(phobia, out var phobiaProto))
+                continue;
+
+            var item = new ColoredInfo
+            {
+                NameString = _loc.GetString(phobiaProto.Name),
+                DescriptionString = _loc.GetString(phobiaProto.Description),
+                Color = phobiaProto.Color,
+            };
+
+            window.Fears.AddChild(item);
+        }
+
+        window.FearsPlaceholder.Visible = false;
+    }
+
+    private void UpdateEmployeeClass(EntityUid uid, ref CharacterWindow window)
+    {
+        window.EmployeeClass.RemoveAllChildren();
+        window.EmployeeClassPlaceholder.Visible = true;
+
+        if (!_employeeClass.TryGetName(uid, out var name, false))
+            return;
+
+        if (!_employeeClass.TryGetDescription(uid, out var description, false))
+            return;
+
+        var item = new ColoredInfo
+        {
+            NameString = name,
+            DescriptionString = description,
+            Color = EmployeeClassComponent.InfoColor,
+        };
+
+        window.EmployeeClass.AddChild(item);
+        window.EmployeeClassPlaceholder.Visible = false;
+    }
+
+    private void UpdateAccessLevel(EntityUid uid, ref CharacterWindow window)
+    {
+        window.AccessLevel.RemoveAllChildren();
+        window.AccessLevelPlaceholder.Visible = true;
+
+        if (!_accessLevel.TryGetName(uid, out var name, false))
+            return;
+
+        if (!_accessLevel.TryGetDescription(uid, out var description, false))
+            return;
+
+        var item = new ColoredInfo
+        {
+            NameString = name,
+            DescriptionString = description,
+            Color = AccessLevelComponent.InfoColor,
+        };
+
+        window.AccessLevel.AddChild(item);
+        window.AccessLevelPlaceholder.Visible = false;
+    }
+
+    private void OnResized()
+    {
+        if (_window == null)
+            return;
+
+
+    }
+    // Fire added end
 
     private void CharacterDetached(EntityUid uid)
     {
@@ -250,7 +363,7 @@ public sealed class CharacterUIController : UIController, IOnStateEntered<Gamepl
         _window?.Close();
     }
 
-    private void ToggleWindow()
+    public void ToggleWindow()
     {
         if (_window == null)
             return;

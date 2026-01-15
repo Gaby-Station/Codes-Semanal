@@ -8,3 +8,86 @@
   id: RedJumpskirt
   equipment:
     jumpsuit: ClothingUniformJumpskirtColorRed
+
+# Sumrise_Start
+- type: loadoutEffectGroup
+  id: MasterCadet5h
+  effects:
+  # Fire edit start
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: HeavyContainmentSecurityService
+      time: 9000 #2.5 hrs
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: ExternalAdministrativeZoneSecurityService
+      time: 9000 #2.5 hrs
+  # Fire edit end
+
+- type: loadoutEffectGroup
+  id: MasterCadet10h
+  effects:
+  # Fire edit start
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: HeavyContainmentSecurityService
+      time: 18000 #5 hrs
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: ExternalAdministrativeZoneSecurityService
+      time: 18000 #5 hrs
+  # Fire edit end
+
+- type: loadoutEffectGroup
+  id: MasterCadet20h
+  effects:
+  # Fire edit start
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: HeavyContainmentSecurityService
+      time: 36000 #10 hrs
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: ExternalAdministrativeZoneSecurityService
+      time: 36000 #10 hrs
+  # Fire edit end
+
+- type: loadout
+  id: CadetWeaponACP14Box
+  startingGear: ACP14Box
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterCadet20h
+
+- type: loadout
+  id: CadetWeaponGlockBox
+  startingGear: GlockBox
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterCadet10h
+
+- type: loadout
+  id: CadetWeaponMiniEnergyGun
+  startingGear: WeaponMiniEnergyGun
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterCadet5h
+
+- type: loadout
+  id: CadetWeaponMK58Box
+  startingGear: MK58Box
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: MasterCadet5h
+
+- type: loadout
+  id: CadetWeaponDisabler
+  startingGear: WeaponDisabler
+
+# sunrise end

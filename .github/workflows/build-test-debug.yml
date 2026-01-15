@@ -38,11 +38,14 @@ jobs:
       with:
         dotnet-version: 9.0.x
 
+    - name: Install system dependencies
+      run: sudo apt-get update && sudo apt-get install -y libopenal1
+    
     - name: Install dependencies
       run: dotnet restore
 
     - name: Build Project
-      run: dotnet build --configuration DebugOpt --no-restore /p:WarningsAsErrors=nullable /m
+      run: dotnet build --configuration DebugOpt --no-restore /m
 
     - name: Run Content.Tests
       run: dotnet test --no-build --configuration DebugOpt Content.Tests/Content.Tests.csproj -- NUnit.ConsoleOut=0

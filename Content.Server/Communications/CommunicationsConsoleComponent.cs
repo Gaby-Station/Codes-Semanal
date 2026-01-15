@@ -68,11 +68,36 @@ namespace Content.Server.Communications
         /// Announce sound file path
         /// </summary>
         [DataField]
-        public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/_Sunrise/Announcements/announce_dig.ogg"); // Sunrise-Edit
+        public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Announcements/announce.ogg");
+
+        /// <summary>
+        /// Hides the sender identity (If they even have one).
+        /// In practise this removes the "Sent by ScugMcWawa (Slugcat Captain)" at the bottom of the announcement.
+        /// </summary>
+        [DataField]
+        public bool AnnounceSentBy = false;
 
         // Sunrise-Start
         [DataField("announceVoice", customTypeSerializer:typeof(PrototypeIdSerializer<TTSVoicePrototype>))]
         public string AnnounceVoice = "CBMTF1"; // Fire edit
-        // Sunrise-Start
+
+        [ViewVariables]
+        public bool IsRelaying;
+
+        [ViewVariables]
+        public float RelayTimeRemaining;
+
+        [ViewVariables]
+        public float RelayCooldownRemaining;
+
+        [DataField]
+        public float RelayDuration = 60f;
+
+        [DataField]
+        public float RelayCooldown = 300f;
+
+        [DataField]
+        public float RelayRange = 7f;
+        // Sunrise-End
     }
 }

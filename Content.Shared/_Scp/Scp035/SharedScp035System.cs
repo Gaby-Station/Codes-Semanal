@@ -1,4 +1,5 @@
-﻿using Content.Shared.Actions;
+﻿using Content.Shared._Scp.Fear.Components;
+using Content.Shared.Actions;
 using Content.Shared.Clothing;
 using Content.Shared.Damage;
 using Content.Shared.Damage.Components;
@@ -7,10 +8,12 @@ using Content.Shared.Hands.EntitySystems;
 using Content.Shared.Humanoid;
 using Content.Shared.Interaction.Components;
 using Content.Shared.Inventory.Events;
+using Content.Shared.Item.ItemToggle.Components;
 using Content.Shared.Mobs;
 using Content.Shared.Mobs.Systems;
 using Content.Shared.NPC.Systems;
 using Content.Shared.Popups;
+using Content.Shared.Rejuvenate;
 using Content.Shared.Stunnable;
 using Content.Shared.Weapons.Melee.Events;
 using Robust.Shared.Audio;
@@ -22,21 +25,23 @@ using Robust.Shared.Random;
 
 namespace Content.Shared._Scp.Scp035;
 
+// TODO: Рефактор с целью анхардкода всяких значений в прототипы, перевод строк на EntProtoId, а переводов на локаль
+// TODO: А еще чето с акшенами придумать, не очень смотрятся эти AddAction x6
 public abstract class SharedScp035System : EntitySystem
 {
-    [Dependency] private readonly INetManager _net = default!;
     [Dependency] private readonly SharedStunSystem _stun = default!;
     [Dependency] private readonly SharedPopupSystem _popup = default!;
-    [Dependency] private readonly SharedContainerSystem _containerSystem = default!;
+    [Dependency] private readonly SharedContainerSystem _container= default!;
     [Dependency] private readonly SharedTransformSystem _transform = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly SharedPhysicsSystem _physics = default!;
     [Dependency] private readonly SharedActionsSystem _action = default!;
     [Dependency] private readonly MobStateSystem _mobState = default!;
-    [Dependency] private readonly NpcFactionSystem _factionSystem = default!;
+    [Dependency] private readonly NpcFactionSystem _faction = default!;
     [Dependency] private readonly MobThresholdSystem _mobThreshold = default!;
     [Dependency] private readonly SharedHandsSystem _hands = default!;
     [Dependency] private readonly SharedAudioSystem _audio = default!;
+    [Dependency] private readonly INetManager _net = default!;
+    [Dependency] private readonly IRobustRandom _random = default!;
 
     private readonly SoundSpecifier _equipSound = new SoundCollectionSpecifier("EquipScp035");
 
@@ -53,13 +58,11 @@ public abstract class SharedScp035System : EntitySystem
         SubscribeLocalEvent<Scp035MaskUserComponent, MaskStunActionEvent>(OnStun);
         SubscribeLocalEvent<Scp035MaskUserComponent, MaskOrderActionEvent>(OnOrder);
         SubscribeLocalEvent<Scp035MaskUserComponent, MobStateChangedEvent>(OnMobStateChanged);
+        SubscribeLocalEvent<Scp035MaskUserComponent, ComponentStartup>(OnMaskUserStartUp);
         SubscribeLocalEvent<Scp035MaskUserComponent, ComponentShutdown>(OnMaskShutdown);
 
         SubscribeLocalEvent<Scp035ServantComponent, ComponentShutdown>(OnServantShutdown);
     }
-
-    // TODO: Рефактор с целью анхардкода всяких значений в прототипы, перевод строк на EntProtoId, а переводов на локаль
-    // TODO: А еще чето с акшенами придумать, не очень смотрятся эти AddAction x6
 
     private void OnMaskEquipped(Entity<Scp035MaskComponent> ent, ref ClothingGotEquippedEvent args)
     {
@@ -79,20 +82,23 @@ public abstract class SharedScp035System : EntitySystem
         _action.AddAction(args.Wearer, "ActionScp035Stun", maskUserComponent.ActionStunEntity);
         Dirty(args.Wearer, maskUserComponent);
 
-        _factionSystem.ClearFactions(args.Wearer);
-        _factionSystem.AddFaction(args.Wearer, "SimpleHostile");
+        _faction.ClearFactions(args.Wearer);
+        _faction.AddFaction(args.Wearer, "SimpleHostile");
 
         _mobThreshold.SetMobStateThreshold(args.Wearer, FixedPoint2.New(800), MobState.Critical);
         _mobThreshold.SetMobStateThreshold(args.Wearer, FixedPoint2.New(800), MobState.Dead);
         RemComp<SlowOnDamageComponent>(args.Wearer);
 
-        _stun.TryParalyze(args.Wearer, TimeSpan.FromSeconds(5), true);
+        _stun.TryAddParalyzeDuration(args.Wearer, TimeSpan.FromSeconds(5));
 
         _popup.PopupClient("Вы ошеломлены!", args.Wearer, args.Wearer, PopupType.LargeCaution);
         _audio.PlayEntity(_equipSound, args.Wearer, args.Wearer);
 
         var chainsaw = Spawn("Chainsaw", Transform(args.Wearer).Coordinates);
         _hands.TryForcePickupAnyHand(args.Wearer, chainsaw, false);
+
+        var toggleUsed = new ItemToggledEvent(true, false, null);
+        RaiseLocalEvent(ent, ref toggleUsed);
     }
 
     private void OnMaskUnequipped(Entity<Scp035MaskComponent> ent, ref ClothingGotUnequippedEvent args)
@@ -100,16 +106,22 @@ public abstract class SharedScp035System : EntitySystem
         ent.Comp.User = null;
         Dirty(ent);
 
+        var toggleUsed = new ItemToggledEvent(true, true, null);
+        RaiseLocalEvent(ent, ref toggleUsed);
+
         RemComp<Scp035MaskUserComponent>(args.Wearer);
     }
 
     private void OnEquippeAttempt(Entity<Scp035MaskComponent> ent, ref BeingEquippedAttemptEvent args)
     {
+        if (!_mobState.IsAlive(ent))
+            return;
+
         if (!HasComp<HumanoidAppearanceComponent>(args.Equipee))
         {
             args.Cancel();
 
-            _stun.TryParalyze(args.Equipee, TimeSpan.FromSeconds(10), true);
+            _stun.TryAddParalyzeDuration(args.Equipee, TimeSpan.FromSeconds(10));
 
             if (_net.IsServer)
             {
@@ -132,7 +144,7 @@ public abstract class SharedScp035System : EntitySystem
         var maskEntity = ent.Comp.Mask.Value;
 
         RemComp<UnremoveableComponent>(maskEntity);
-        _containerSystem.TryRemoveFromContainer(maskEntity, true);
+        _container.TryRemoveFromContainer(maskEntity, true);
         _transform.AttachToGridOrMap(maskEntity);
 
         var ash = Spawn("Ash", Transform(maskEntity).Coordinates);
@@ -159,12 +171,21 @@ public abstract class SharedScp035System : EntitySystem
             return;
         }
 
-        _stun.TryParalyze(args.Target, TimeSpan.FromSeconds(10), true);
+        _stun.TryAddParalyzeDuration(args.Target, TimeSpan.FromSeconds(10));
 
         if (_net.IsServer)
             _popup.PopupEntity("ваше тело онемело!", args.Target, args.Target, PopupType.LargeCaution);
 
         args.Handled = true;
+    }
+
+    private void OnMaskUserStartUp(Entity<Scp035MaskUserComponent> ent, ref ComponentStartup args)
+    {
+        RaiseLocalEvent(ent, new RejuvenateEvent());
+
+        // Маска овладевает разумом человека и блокирует страх.
+        // ЧТО БУДЕТ ЕСЛИ ЧЕЛОВЕК ОВЛАДЕЕТ РАЗУМОМ НА ВСЕ 100????!!
+        RemCompDeferred<FearComponent>(ent);
     }
 
     private void OnMaskShutdown(Entity<Scp035MaskUserComponent> ent, ref ComponentShutdown args)
@@ -177,12 +198,12 @@ public abstract class SharedScp035System : EntitySystem
             _mobState.ChangeMobState(servant, MobState.Dead);
         }
 
-        _action.RemoveAction(ent, ent.Comp.ActionRaiseArmy);
-        _action.RemoveAction(ent, ent.Comp.ActionOrderStayEntity);
-        _action.RemoveAction(ent, ent.Comp.ActionOrderFollowEntity);
-        _action.RemoveAction(ent, ent.Comp.ActionOrderKillEmEntity);
-        _action.RemoveAction(ent, ent.Comp.ActionOrderLooseEntity);
-        _action.RemoveAction(ent, ent.Comp.ActionStunEntity);
+        _action.RemoveAction(ent.Owner, ent.Comp.ActionRaiseArmy);
+        _action.RemoveAction(ent.Owner, ent.Comp.ActionOrderStayEntity);
+        _action.RemoveAction(ent.Owner, ent.Comp.ActionOrderFollowEntity);
+        _action.RemoveAction(ent.Owner, ent.Comp.ActionOrderKillEmEntity);
+        _action.RemoveAction(ent.Owner, ent.Comp.ActionOrderLooseEntity);
+        _action.RemoveAction(ent.Owner, ent.Comp.ActionStunEntity);
     }
 
     private void OnServantShutdown(Entity<Scp035ServantComponent> ent, ref ComponentShutdown args)

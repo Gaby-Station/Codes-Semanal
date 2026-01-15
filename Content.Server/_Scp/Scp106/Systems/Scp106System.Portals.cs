@@ -11,6 +11,15 @@ namespace Content.Server._Scp.Scp106.Systems;
 
 public sealed partial class Scp106System
 {
+    private static readonly TimeSpan PortalSpawnRate = TimeSpan.FromSeconds(60f);
+
+    private void InitializePortals()
+    {
+        SubscribeLocalEvent<Scp106PortalSpawnerComponent, ComponentInit>(OnPortalSpawn);
+        SubscribeLocalEvent<Scp106PortalSpawnerComponent, InteractHandEvent>(OnHandInteract);
+        SubscribeLocalEvent<BodyComponent, MobStateChangedEvent>(OnHumanMobStateChanged);
+    }
+
     private void OnHandInteract(Entity<Scp106PortalSpawnerComponent> ent, ref InteractHandEvent args)
     {
         if (args.Handled)

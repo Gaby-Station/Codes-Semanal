@@ -2,6 +2,7 @@
   parent: MarkerBase
   id: RandomPosterAny
   name: random poster spawner
+  categories: [ HideSpawnMenu ] # Fire edit
   components:
   - type: Sprite
     layers:
@@ -22,6 +23,7 @@
   parent: MarkerBase
   id: RandomPosterContraband
   name: random contraband poster spawner
+  categories: [ HideSpawnMenu ] # Fire edit
   components:
   - type: Sprite
     layers:
@@ -37,7 +39,7 @@
       - PosterContrabandFreeTonto
       - PosterContrabandAtmosiaDeclarationIndependence
       - PosterContrabandFunPolice
-      - PosterContrabandLustyExomorph
+      - PosterContrabandRealExomorph
       - PosterContrabandSyndicateRecruitment
       - PosterContrabandClown
       - PosterContrabandSmoke
@@ -68,7 +70,7 @@
       - PosterContrabandPunchShit
       - PosterContrabandTheGriffin
       - PosterContrabandFreeDrone
-      - PosterContrabandBustyBackdoorExoBabes6
+      - PosterContrabandRouny
       - PosterContrabandRobustSoftdrinks
       - PosterContrabandShamblersJuice
       - PosterContrabandPwrGame
@@ -95,12 +97,16 @@
       - PosterContrabandInterdyne
       - PosterContrabandWaffleCorp
       - PosterContrabandMissingSpacepen
+      - PosterContrabandExoAcid
+      - PosterContrabandExoRun
+      - PosterContrabandExoChomp
     chance: 1
 
 - type: entity
   parent: MarkerBase
   id: RandomPosterLegit
   name: random legit poster spawner
+  categories: [ HideSpawnMenu ] # Fire edit
   components:
   - type: Sprite
     layers:
@@ -150,7 +156,6 @@
       - PosterLegitJustAWeekAway
       - PosterLegitSecWatch
       - PosterLegitVacation
-      - PosterLegitPeriodicTable
       - PosterLegitRenault
       - PosterLegitNTTGC
       - PosterLegitSafetyMothDelam
@@ -161,4 +166,5 @@
       - PosterLegitSafetyMothSSD
       - PosterLegitOppenhopper
       - PosterLegitTyrone
+      - PosterLegitHelio
     chance: 1

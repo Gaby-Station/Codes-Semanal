@@ -16,6 +16,7 @@ using Content.Shared.Verbs;
 using Content.Shared.Wall;
 using Content.Shared.Whitelist;
 using Content.Shared.ActionBlocker;
+using Content.Shared.Mobs.Components;
 using Content.Shared.DoAfter;
 using Robust.Shared.Audio.Systems;
 using Robust.Shared.Containers;
@@ -50,12 +51,12 @@ public abstract class SharedEntityStorageSystem : EntitySystem
 
     public const string ContainerName = "entity_storage";
 
-    protected void OnEntityUnpausedEvent(EntityUid uid, SharedEntityStorageComponent component, EntityUnpausedEvent args)
+    protected void OnEntityUnpausedEvent(EntityUid uid, EntityStorageComponent component, EntityUnpausedEvent args)
     {
         component.NextInternalOpenAttempt += args.PausedTime;
     }
 
-    protected void OnGetState(EntityUid uid, SharedEntityStorageComponent component, ref ComponentGetState args)
+    protected void OnGetState(EntityUid uid, EntityStorageComponent component, ref ComponentGetState args)
     {
         args.State = new EntityStorageComponentState(component.Open,
             component.Capacity,
@@ -65,7 +66,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
             component.NextInternalOpenAttempt);
     }
 
-    protected void OnHandleState(EntityUid uid, SharedEntityStorageComponent component, ref ComponentHandleState args)
+    protected void OnHandleState(EntityUid uid, EntityStorageComponent component, ref ComponentHandleState args)
     {
         if (args.Current is not EntityStorageComponentState state)
             return;
@@ -77,19 +78,19 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         component.NextInternalOpenAttempt = state.NextInternalOpenAttempt;
     }
 
-    protected virtual void OnComponentInit(EntityUid uid, SharedEntityStorageComponent component, ComponentInit args)
+    protected virtual void OnComponentInit(EntityUid uid, EntityStorageComponent component, ComponentInit args)
     {
         component.Contents = _container.EnsureContainer<Container>(uid, ContainerName);
         component.Contents.ShowContents = component.ShowContents;
         component.Contents.OccludesLight = component.OccludesLight;
     }
 
-    protected virtual void OnComponentStartup(EntityUid uid, SharedEntityStorageComponent component, ComponentStartup args)
+    protected virtual void OnComponentStartup(EntityUid uid, EntityStorageComponent component, ComponentStartup args)
     {
         _appearance.SetData(uid, StorageVisuals.Open, component.Open);
     }
 
-    protected void OnInteract(EntityUid uid, SharedEntityStorageComponent component, ActivateInWorldEvent args)
+    protected void OnInteract(EntityUid uid, EntityStorageComponent component, ActivateInWorldEvent args)
     {
         if (args.Handled || !args.Complex)
             return;
@@ -98,9 +99,9 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         ToggleOpen(args.User, uid, component);
     }
 
-    public abstract bool ResolveStorage(EntityUid uid, [NotNullWhen(true)] ref SharedEntityStorageComponent? component);
+    public abstract bool ResolveStorage(EntityUid uid, [NotNullWhen(true)] ref EntityStorageComponent? component);
 
-    protected void OnLockToggleAttempt(EntityUid uid, SharedEntityStorageComponent target, ref LockToggleAttemptEvent args)
+    protected void OnLockToggleAttempt(EntityUid uid, EntityStorageComponent target, ref LockToggleAttemptEvent args)
     {
         // Cannot (un)lock open lockers.
         if (target.Open)
@@ -111,7 +112,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
             args.Cancelled = true;
     }
 
-    protected void OnDestruction(EntityUid uid, SharedEntityStorageComponent component, DestructionEventArgs args)
+    protected void OnDestruction(EntityUid uid, EntityStorageComponent component, DestructionEventArgs args)
     {
         component.Open = true;
         Dirty(uid, component);
@@ -127,7 +128,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         }
     }
 
-    protected void OnRelayMovement(EntityUid uid, SharedEntityStorageComponent component, ref ContainerRelayMovementEntityEvent args)
+    protected void OnRelayMovement(EntityUid uid, EntityStorageComponent component, ref ContainerRelayMovementEntityEvent args)
     {
         /* Fire edit - нахуя мне руки
         if (!HasComp<HandsComponent>(args.Entity))
@@ -140,21 +141,21 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         if (_timing.CurTime < component.NextInternalOpenAttempt)
             return;
 
-        component.NextInternalOpenAttempt = _timing.CurTime + SharedEntityStorageComponent.InternalOpenAttemptDelay;
+        component.NextInternalOpenAttempt = _timing.CurTime + EntityStorageComponent.InternalOpenAttemptDelay;
         Dirty(uid, component);
 
         if (component.OpenOnMove)
             TryOpenStorage(args.Entity, uid, requireHands: false);
     }
 
-    protected void OnFoldAttempt(EntityUid uid, SharedEntityStorageComponent component, ref FoldAttemptEvent args)
+    protected void OnFoldAttempt(EntityUid uid, EntityStorageComponent component, ref FoldAttemptEvent args)
     {
         if (args.Cancelled)
             return;
         args.Cancelled = component.Open || component.Contents.ContainedEntities.Count != 0;
     }
 
-    protected void AddToggleOpenVerb(EntityUid uid, SharedEntityStorageComponent component, GetVerbsEvent<InteractionVerb> args)
+    protected void AddToggleOpenVerb(EntityUid uid, EntityStorageComponent component, GetVerbsEvent<InteractionVerb> args)
     {
         if (!args.CanAccess || !args.CanInteract)
             return;
@@ -179,14 +180,14 @@ public abstract class SharedEntityStorageSystem : EntitySystem
     }
 
 
-    public void ToggleOpen(EntityUid user, EntityUid target, SharedEntityStorageComponent? component = null)
+    public void ToggleOpen(EntityUid user, EntityUid target, EntityStorageComponent? component = null)
     {
         if (!ResolveStorage(target, ref component))
             return;
 
         if (component.Open)
         {
-            TryCloseStorage(target);
+            TryCloseStorage(target, user);
         }
         else
         {
@@ -194,7 +195,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         }
     }
 
-    public void EmptyContents(EntityUid uid, SharedEntityStorageComponent? component = null)
+    public void EmptyContents(EntityUid uid, EntityStorageComponent? component = null)
     {
         if (!ResolveStorage(uid, ref component))
             return;
@@ -210,7 +211,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
     // Fire edit start
     // Я добавил возможность сделать открытие шкафов с дуафтером, пришлось чут чут переписать этот метод и добавить еще один
     // А еще я добавил EntityUid? user = null, чтобы дуафтер мог запускаться на открывающем двери игроке
-    public void OpenStorage(EntityUid uid, SharedEntityStorageComponent? component = null, EntityUid? user = null, bool force = false)
+    public void OpenStorage(EntityUid uid, EntityStorageComponent? component = null, EntityUid? user = null, bool force = false)
     {
         if (!ResolveStorage(uid, ref component))
             return;
@@ -237,10 +238,10 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         }
 
         // Остальные нормальные случаи, когда мы не используем дуафтер
-        DoOpenStorage(uid, component);
+        DoOpenStorage(uid, component, user);
     }
 
-    protected void DoOpenStorage(EntityUid uid, SharedEntityStorageComponent component)
+    protected void DoOpenStorage(EntityUid uid, EntityStorageComponent component, EntityUid? user = null)
     {
         component.Open = true;
         Dirty(uid, component);
@@ -248,8 +249,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         EmptyContents(uid, component);
         ModifyComponents(uid, component);
 
-        if (_net.IsClient && _timing.IsFirstTimePredicted)
-            _audio.PlayPvs(component.OpenSound, uid);
+        _audio.PlayPredicted(component.OpenSound, uid, user);
 
         ReleaseGas(uid, component);
         var afterev = new StorageAfterOpenEvent();
@@ -257,7 +257,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
     }
     // Fire edit end
 
-    public void CloseStorage(EntityUid uid, SharedEntityStorageComponent? component = null)
+    public void CloseStorage(EntityUid uid, EntityStorageComponent? component = null, EntityUid? user = null)
     {
         if (!ResolveStorage(uid, ref component))
             return;
@@ -301,14 +301,16 @@ public abstract class SharedEntityStorageSystem : EntitySystem
 
         TakeGas(uid, component);
         ModifyComponents(uid, component);
-        if (_net.IsClient && _timing.IsFirstTimePredicted)
-            _audio.PlayPvs(component.CloseSound, uid);
+
+        // Fire edit start - чтобы с сервера нормально шли звуки
+        _audio.PlayPredicted(component.CloseSound, uid, user);
+        // Fire edit end
 
         var afterev = new StorageAfterCloseEvent();
         RaiseLocalEvent(uid, ref afterev);
     }
 
-    public bool Insert(EntityUid toInsert, EntityUid container, SharedEntityStorageComponent? component = null)
+    public bool Insert(EntityUid toInsert, EntityUid container, EntityStorageComponent? component = null)
     {
         if (!ResolveStorage(container, ref component))
             return false;
@@ -329,7 +331,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         return true;
     }
 
-    public bool Remove(EntityUid toRemove, EntityUid container, SharedEntityStorageComponent? component = null, TransformComponent? xform = null)
+    public bool Remove(EntityUid toRemove, EntityUid container, EntityStorageComponent? component = null, TransformComponent? xform = null)
     {
         if (!Resolve(container, ref xform, false))
             return false;
@@ -356,7 +358,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         return true;
     }
 
-    public bool CanInsert(EntityUid toInsert, EntityUid container, SharedEntityStorageComponent? component = null)
+    public bool CanInsert(EntityUid toInsert, EntityUid container, EntityStorageComponent? component = null)
     {
         if (!ResolveStorage(container, ref component))
             return false;
@@ -378,12 +380,25 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         if (attemptEvent.Cancelled)
             return false;
 
+        // Allow other components on the container to prevent inserting the item: e.g. the container is folded
+        var containerAttemptEvent = new EntityStorageInsertedIntoAttemptEvent(toInsert);
+        RaiseLocalEvent(container, ref containerAttemptEvent);
+
+        if (containerAttemptEvent.Cancelled)
+            return false;
+
+        // Fire edit start - поддержка блеклиста
+
         // Consult the whitelist. The whitelist ignores the default assumption about how entity storage works.
-        if (component.Whitelist != null)
-            return _whitelistSystem.IsValid(component.Whitelist, toInsert);
+        if (!_whitelistSystem.IsWhitelistPassOrNull(component.Whitelist, toInsert))
+            return false;
+
+        if (_whitelistSystem.IsBlacklistPass(component.Blacklist, toInsert))
+            return false;
+        // Fire edit end
 
         // The inserted entity must be a mob or an item.
-        return HasComp<BodyComponent>(toInsert) || HasComp<ItemComponent>(toInsert);
+        return HasComp<MobStateComponent>(toInsert) || HasComp<ItemComponent>(toInsert);
     }
 
     public bool TryOpenStorage(EntityUid user, EntityUid target, bool silent = false, bool requireHands = true)
@@ -395,18 +410,21 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         return true;
     }
 
-    public bool TryCloseStorage(EntityUid target)
+    public bool TryCloseStorage(EntityUid target, EntityUid? user = null)
     {
-        if (!CanClose(target))
+        if (!CanClose(target, user))
         {
             return false;
         }
 
-        CloseStorage(target);
+        // Fire edit start - добавил поле user для predicted audio
+        CloseStorage(target, user: user);
+        // Fire edit end
+
         return true;
     }
 
-    public bool IsOpen(EntityUid target, SharedEntityStorageComponent? component = null)
+    public bool IsOpen(EntityUid target, EntityStorageComponent? component = null)
     {
         if (!ResolveStorage(target, ref component))
             return false;
@@ -414,7 +432,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         return component.Open;
     }
 
-    public bool CanOpen(EntityUid user, EntityUid target, bool silent = false, SharedEntityStorageComponent? component = null, bool requireHands = true)
+    public bool CanOpen(EntityUid user, EntityUid target, bool silent = false, EntityStorageComponent? component = null, bool requireHands = true)
     {
         if (!ResolveStorage(target, ref component))
             return false;
@@ -450,15 +468,15 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         return !ev.Cancelled;
     }
 
-    public bool CanClose(EntityUid target, bool silent = false)
+    public bool CanClose(EntityUid target, EntityUid? user = null, bool silent = false)
     {
-        var ev = new StorageCloseAttemptEvent();
+        var ev = new StorageCloseAttemptEvent(user);
         RaiseLocalEvent(target, ref ev, silent);
 
         return !ev.Cancelled;
     }
 
-    public bool AddToContents(EntityUid toAdd, EntityUid container, SharedEntityStorageComponent? component = null)
+    public bool AddToContents(EntityUid toAdd, EntityUid container, EntityStorageComponent? component = null)
     {
         if (!ResolveStorage(container, ref component))
             return false;
@@ -469,7 +487,7 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         return Insert(toAdd, container, component);
     }
 
-    private void ModifyComponents(EntityUid uid, SharedEntityStorageComponent? component = null)
+    private void ModifyComponents(EntityUid uid, EntityStorageComponent? component = null)
     {
         if (!ResolveStorage(uid, ref component))
             return;
@@ -501,12 +519,12 @@ public abstract class SharedEntityStorageSystem : EntitySystem
         _appearance.SetData(uid, StorageVisuals.HasContents, component.Contents.ContainedEntities.Count > 0);
     }
 
-    protected virtual void TakeGas(EntityUid uid, SharedEntityStorageComponent component)
+    protected virtual void TakeGas(EntityUid uid, EntityStorageComponent component)
     {
 
     }
 
-    public virtual void ReleaseGas(EntityUid uid, SharedEntityStorageComponent component)
+    public virtual void ReleaseGas(EntityUid uid, EntityStorageComponent component)
     {
 
     }

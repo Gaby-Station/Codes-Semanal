@@ -1,4 +1,5 @@
 using System.Globalization;
+using Content.Server._Sunrise.TraitorTarget;
 using Content.Server.Chat.Managers;
 using Content.Server.Chat.Systems;
 using Content.Server.Ghost;
@@ -97,8 +98,7 @@ public sealed class CryostorageSystem : SharedCryostorageSystem
         EntityUid? entity = null;
         if (args.Type == CryostorageRemoveItemBuiMessage.RemovalType.Hand)
         {
-            if (_hands.TryGetHand(cryoContained, args.Key, out var hand))
-                entity = hand.HeldEntity;
+            entity = _hands.GetHeldItem(cryoContained, args.Key);
         }
         else
         {
@@ -216,6 +216,8 @@ public sealed class CryostorageSystem : SharedCryostorageSystem
 
         comp.AllowReEnteringBody = false;
         _transform.SetParent(ent, PausedMap.Value);
+        RaiseLocalEvent(ent, new CryostorageEnteredEvent());
+        RemCompDeferred<AntagTargetComponent>(ent);
         cryostorageComponent.StoredPlayers.Add(ent);
         Dirty(ent, comp);
         UpdateCryostorageUIState((cryostorageEnt.Value, cryostorageComponent));
@@ -319,10 +321,10 @@ public sealed class CryostorageSystem : SharedCryostorageSystem
 
         foreach (var hand in _hands.EnumerateHands(uid))
         {
-            if (hand.HeldEntity == null)
+            if (!_hands.TryGetHeldItem(uid, hand, out var heldEntity))
                 continue;
 
-            data.HeldItems.Add(hand.Name, Name(hand.HeldEntity.Value));
+            data.HeldItems.Add(hand, Name(heldEntity.Value));
         }
 
         return data;
@@ -346,4 +348,8 @@ public sealed class CryostorageSystem : SharedCryostorageSystem
             HandleEnterCryostorage((uid, containedComp), id);
         }
     }
+}
+
+public class CryostorageEnteredEvent
+{
 }

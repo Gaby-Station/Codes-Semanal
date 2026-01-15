@@ -11,6 +11,8 @@
   icon: "JobIconAtmosphericTechnician"
   supervisors: job-supervisors-ce
   displayWeight: 20  # Sunrise
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
   access:
   - Maintenance
   - Engineering
@@ -31,3 +33,13 @@
   #storage:
     #back:
     #- Stuff
+
+- type: chameleonOutfit
+  id: AtmosphericTechnicianChameleonOutfit
+  job: AtmosphericTechnician
+  equipment:
+    head: ClothingHeadHelmetAtmosFire
+    mask: ClothingMaskGasAtmos
+    neck: ClothingNeckScarfStripedLightBlue
+    outerClothing: ClothingOuterSuitAtmosFire
+    gloves: ClothingHandsGlovesColorYellow

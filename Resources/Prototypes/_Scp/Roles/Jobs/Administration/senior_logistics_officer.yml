@@ -3,9 +3,10 @@
   name: job-name-senior-logistics-officer
   description: job-description-senior-logistics-officer
   playTimeTracker: JobSeniorLogisticsOfficer
-  requirements: # TODO: Поменять после того, как игроки наберут время на новых ролях
-  - !type:OverallPlaytimeRequirement
-    time: 90000 # 25 часов
+  requirements:
+  - !type:RoleTimeRequirement
+    role: JobLogisticsOfficer
+    time: 36000
   weight: 10
   startingGear: SeniorLogisticsOfficerGear
   icon: JobSeniorLogisticsOfficer
@@ -13,27 +14,29 @@
   canBeAntag: true
   radioBold: true
   displayWeight: 40
-  access:
-  - Cargo
-  - Salvage
-  - Quartermaster
-  - Maintenance
-  - External
-  - Command
-  - Brig
-  - Cryogenics
+  accessGroups:
+  - SeniorLogisticsOfficer
   special:
   - !type:AddComponentSpecial
     components:
     - type: CommandStaff
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Three
+    - type: ScpAnnounceOnSpawn
+      text: head-announce-on-spawn
+      channels:
+      - LogisticsService
+      includeJobName: true
 
 - type: startingGear
   id: SeniorLogisticsOfficerGear
   equipment:
-    id: QuartermasterPDA
+    id: KeyCardSeniorLogisticsOfficer
     ears: ClothingHeadsetAltLogistics
-    #    belt: BoxFolderClipboard
     pocket1: AppraisalTool
+    pocket2: SeniorLogisticsOfficerPDA
   storage:
     back:
     - Flash

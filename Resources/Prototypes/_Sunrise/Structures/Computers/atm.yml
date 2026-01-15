@@ -20,7 +20,7 @@
     - map: ["computerLayerBody"]
       state: base
     - map: ["computerLayerScreen"]
-      state: screen
+      state: screenstatic
     - map: ["enum.WiresVisualLayers.MaintenancePanel"]
       state: panel
       visible: false
@@ -44,16 +44,25 @@
   - type: Pullable
   - type: StaticPrice
     price: 300
-  - type: SpamEmitSoundRequirePower
-  - type: SpamEmitSound
-    minInterval: 30
-    maxInterval: 90
-    sound:
-      collection: ArcadeNoise
-      params:
-        volume: -8
-        maxDistance: 10
-        variation: 0.05
+  # need new sounds
+  #- type: SpamEmitSoundRequirePower
+  #- type: SpamEmitSound
+    #minInterval: 30
+    #maxInterval: 90
+    #sound:
+    #  collection: ArcadeNoise
+    #  params:
+    #    volume: -8
+    #    maxDistance: 10
+    #    variation: 0.05
+  - type: Vocalizer
+    minVocalizeInterval: 1m # Arcades are noisy
+    maxVocalizeInterval: 4m
+    hideChat: true
+  - type: DatasetVocalizer
+    dataset: ATMAds
+  - type: SpeakOnUIClosed
+    pack: BlockGameGoodbyes
 
 - type: entity
   id: ATMWallmountBase
@@ -86,18 +95,12 @@
     - map: ["computerLayerBody"]
       state: base
     - map: ["computerLayerScreen"]
-      state: screen
+      state: screenstatic #screen #Sunrise-TODO: Анимацию в мете прописать
     - map: ["enum.WiresVisualLayers.MaintenancePanel"]
       state: panel
       visible: false
   - type: Computer
     board: FPIATMComputerCircuitboard
-  - type: Advertise
-    pack: BlockGameAds
-    minimumWait: 120
-    maximumWait: 240
-  - type: SpeakOnUIClosed
-    pack: BlockGameGoodbyes
   - type: Damageable
     damageContainer: StructuralInorganic
     damageModifierSet: StructuralMetallic

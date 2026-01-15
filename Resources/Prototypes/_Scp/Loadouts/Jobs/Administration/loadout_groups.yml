@@ -38,10 +38,16 @@
   - DirectorGlovesSpecial
 
 - type: loadoutGroup
+  id: DirectorKeyCard
+  name: loadout-group-key-card
+  loadouts:
+  - DirectorKeyCard
+
+- type: loadoutGroup
   id: DirectorPDA
   name: loadout-group-pda
   loadouts:
-  - DirectorPDA
+  - LoadoutDirectorPDA
 
 - type: loadoutGroup
   id: DirectorBack
@@ -78,6 +84,8 @@
 - type: loadoutGroup
   id: CommonAdministrationHeadset
   name: loadout-group-ears
+  minLimit: 1
+  maxLimit: 1
   loadouts:
   - AdministrationHeadset
 

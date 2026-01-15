@@ -3,6 +3,7 @@
 # Sunrise edit start
 - type: entity
   id: BaseClothingBeltSounds
+  abstract: true
   components:
   - type: EmitSoundOnPickup
     sound:
@@ -29,7 +30,9 @@
     maxItemSize: Normal
     storageInsertSound: # Sunrise
       path: /Audio/Items/belt_equip.ogg
-    # TODO: Fill this out more.
+    # Don't add more than absolutely needed to this whitelist!
+    # Utility belts shouldn't just be free extra storage.
+    # This is only intended for basic engineering equipment.
     whitelist:
       tags:
         - Powerdrill
@@ -49,9 +52,18 @@
         - JawsOfLife
         - GPS
         - WeldingMask
+        - RemoteSignaller
+        # Sunrise-Start
+        - ImprovisedCrowbar
+        - ImprovisedScrewdriver
+        - ImprovisedWirecutter
+        - ImprovisedWrench
+        - ImprovisedMultitool
+        # Sunrise-End
       components:
         - StationMap
         - SprayPainter
+        - SprayPainterAmmo
         - NetworkConfigurator
         - RCD
         - RCDAmmo
@@ -71,10 +83,12 @@
         whitelist:
           tags:
           - Wirecutter
+          - ImprovisedWirecutter
       crowbar:
         whitelist:
           tags:
           - Crowbar
+          - ImprovisedCrowbar
       crowbar_red:
         whitelist:
           tags:
@@ -87,16 +101,22 @@
         whitelist:
           tags:
           - Screwdriver
+          - ImprovisedScrewdriver
       wrench:
         whitelist:
           tags:
           - Wrench
+          - ImprovisedWrench
       multitool:
         whitelist:
           tags:
             - Multitool
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
+  - type: Tag
+    tags:
+    - UtilityBelt
+    - WhitelistChameleon
 
 - type: entity
   parent: [ClothingBeltStorageBase, BaseClothingBeltSounds] # Sunrise
@@ -131,9 +151,18 @@
         - HolofanProjector
         - Multitool
         - AppraisalTool
+        - GPS
+        - WeldingMask
+        - RemoteSignaller
+        - ImprovisedCrowbar # Sunrise-Add
+        - ImprovisedScrewdriver
+        - ImprovisedWirecutter
+        - ImprovisedWrench
+        - ImprovisedMultitool
       components:
         - StationMap
         - SprayPainter
+        - SprayPainterAmmo
         - NetworkConfigurator
         - RCD
         - RCDAmmo
@@ -154,10 +183,12 @@
         whitelist:
           tags:
           - Wirecutter
+          - ImprovisedWirecutter
       crowbar:
         whitelist:
           tags:
           - Crowbar
+          - ImprovisedCrowbar
       crowbar_red:
         whitelist:
           tags:
@@ -170,6 +201,7 @@
         whitelist:
           tags:
           - Screwdriver
+          - ImprovisedScrewdriver
       multitool:
         whitelist:
           tags:
@@ -178,6 +210,7 @@
         whitelist:
           tags:
           - Wrench
+          - ImprovisedWrench
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
 
@@ -233,6 +266,21 @@
     sound:
       path: /Audio/_Sunrise/Items/Handling/toolbelt_drop.ogg
   # Sunrise edit end
+# Sunrise-start
+- type: entity
+  parent: ClothingBeltAssault
+  id: ClothingBeltAssaultFilled
+  name: assault belt
+  description: A tactical assault belt.
+  components:
+  - type: StorageFill
+    contents:
+    - id: GrenadeFlashBang
+    - id: TearGasGrenade
+    - id: Stunbaton
+    - id: Handcuffs
+    - id: Handcuffs
+# Sunrise-end
 
 - type: entity
   parent: ClothingBeltStorageBase
@@ -257,6 +305,8 @@
         - WetFloorSign
         - HolosignProjector
         - Plunger
+        - GoldenPlunger
+        - WireBrush
       components:
         - LightReplacer
         - SmokeOnTrigger
@@ -275,6 +325,7 @@
         whitelist:
           tags:
           - Wrench
+          - ImprovisedWrench
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
 
@@ -341,6 +392,7 @@
         whitelist:
           tags:
           - Wrench
+          - ImprovisedWrench
     sprite: Clothing/Belt/belt_overlay.rsi
   - type: Appearance
 
@@ -513,6 +565,7 @@
         - MagazineMagnum
         - CombatKnife
         - Truncheon
+        - HandGrenade
       components:
         - Stunbaton
         - FlashOnTrigger
@@ -553,7 +606,9 @@
   - type: Clothing
     sprite: Clothing/Belt/sheath.rsi
   - type: Item
-    size: Ginormous
+    shape:
+    - 0,0,0,6 # Sunrise edit
+    size: Normal
   - type: ItemSlots
     slots:
       item:
@@ -594,7 +649,11 @@
     whitelist:
       tags:
         - ShellShotgun
-    capacity: 14
+        - CartridgeMagnum
+        - CartridgePistolImprovised
+        - CartridgeLightRifleImprovised
+        - CartridgeMagnumImprovised
+    capacity: 21 # Sunrise-edit
 
 - type: entity
   parent: ClothingBeltBase
@@ -650,6 +709,8 @@
         - Gun
         - BallisticAmmoProvider
         - CartridgeAmmo
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   parent: [ ClothingBeltStorageBase, BaseSecurityContraband ]
@@ -695,7 +756,9 @@
   - type: Clothing
     sprite: Clothing/Belt/militarywebbing.rsi
   - type: ExplosionResistance
-    damageCoefficient: 0.5
+    damageCoefficient: 0.1
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   parent: ClothingBeltMilitaryWebbing

@@ -11,11 +11,15 @@
       time: 36000 # 15 hrs # Sunrise-RoleTime
   startingGear: ParamedicGear
   icon: "JobIconParamedic"
+  canBeAntag: false # Sunrise-Edit
   supervisors: job-supervisors-cmo
   displayWeight: 25  # Sunrise
+  overrideConsoleVisibility: false
+  setPreference: false # Fire added
   access:
   - Medical
   - Maintenance
+  - External # Sunrise-Add
   extendedAccess:
   - Chemistry
 
@@ -29,3 +33,15 @@
   storage:
     back:
     - EmergencyRollerBedSpawnFolded
+    - HandheldCrewMonitor # Sunrise-Edit
+
+- type: chameleonOutfit
+  id: ParamedicChameleonOutfit
+  job: Paramedic
+  equipment:
+    head: ClothingHeadHatParamedicsoft
+    eyes: ClothingEyesHudMedical
+    mask: ClothingMaskSterile
+    neck: ClothingNeckStethoscope
+    outerClothing: ClothingOuterCoatParamedicWB
+    gloves: ClothingHandsGlovesLatex

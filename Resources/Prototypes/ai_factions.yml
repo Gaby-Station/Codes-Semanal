@@ -1,4 +1,24 @@
 - type: npcFaction
+  id: Dragon
+  friendly:
+  - Carps # Sunrise Edit
+  hostile:
+  - NanoTrasen
+  - Syndicate
+  - Xeno
+  - PetsNT
+  - Zombie
+  - Revolutionary
+  - AllHostile
+  - Wizard
+  # Sunrise Edit
+  - Thief
+  - Vampire
+  - FleshHuman
+  - Flesh
+  - BloodCult
+
+- type: npcFaction
   id: NanoTrasen
   hostile:
   - SimpleHostile
@@ -8,10 +28,11 @@
   - Revolutionary
   - AllHostile
   - Wizard
+  - Xenoborg
+  - Dragon
   # Sunrise Edit
   - Thief
   - Carps
-  - Changeling
   - Vampire
   - Flesh
   - BloodCult
@@ -38,6 +59,7 @@
   - Xeno
   - AllHostile
   - Wizard
+  - Dragon
   # Sunrise Edit
   - Carps
   - Flesh
@@ -53,12 +75,14 @@
   - PetsNT
   - Zombie
   - Revolutionary
+  - Dragon
+  - Xeno
   - AllHostile
   - Wizard
+  - Xenoborg
   # Sunrise Edit
   - Thief
   - Carps
-  - Changeling
   - Vampire
   - FleshHuman
   - Flesh
@@ -80,10 +104,11 @@
   - Zombie
   - AllHostile
   - Wizard
+  - Xenoborg
+  - Dragon
   # Sunrise Edit
   - Thief
   - Carps
-  - Changeling
   - Vampire
   - FleshHuman
   - Flesh
@@ -102,10 +127,11 @@
   - Revolutionary
   - AllHostile
   - Wizard
+  - Dragon
+  - Xenoborg
   # Sunrise Edit
   - Thief
   - Carps
-  - Changeling
   - Vampire
   - FleshHuman
   - Flesh
@@ -126,10 +152,11 @@
   - Revolutionary
   - AllHostile
   - Wizard
+  - Dragon
+  - Xenoborg
   # Sunrise Edit
   - Thief
   - Carps
-  - Changeling
   - Vampire
   - FleshHuman
   - Flesh
@@ -146,9 +173,10 @@
   - SimpleHostile
   - AllHostile
   - Wizard
+  - Xenoborg
+  - Dragon
   # Sunrise Edit
   - Carps
-  - Changeling
   - Vampire
   - FleshHuman
   - Flesh
@@ -170,10 +198,11 @@
   - Zombie
   - Revolutionary
   - Wizard
+  - Xenoborg
+  - Dragon
   # Sunrise Edit
   - Thief
   - Carps
-  - Changeling
   - Vampire
   - FleshHuman
   - Flesh
@@ -196,10 +225,11 @@
   - Zombie
   - Revolutionary
   - AllHostile
+  - Xenoborg
+  - Dragon
   # Sunrise Edit
   - Thief
   - Carps
-  - Changeling
   - Vampire
   - FleshHuman
   - Flesh
@@ -208,3 +238,28 @@
   # Fire Edit
   - Chaos
   - SCPs
+
+- type: npcFaction
+  id: Xenoborg
+  hostile:
+  # they have brains
+  - NanoTrasen
+  - Syndicate
+  - Zombie
+  - Revolutionary
+  - Wizard
+
+  - Xeno # rivalry
+
+  # cause they are hostile to them
+  - SimpleHostile
+  - AllHostile
+
+  # Sunrise Edit
+  - Thief
+  - Carps
+  - Vampire
+  - FleshHuman
+  - Flesh
+  - Xeno
+  - BloodCult

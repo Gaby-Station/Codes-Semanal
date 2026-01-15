@@ -2,6 +2,7 @@
   id: Diona
   name: species-name-diona
   roundStart: false # Fire edit
+  stationRecordsHidden: true # Fire added
   prototype: MobDiona
   bodyTypes:
   - DionaNormal
@@ -14,6 +15,10 @@
   maleLastNames: NamesDionaLast # Russian-LastnameGender
   femaleLastNames: NamesDionaLast # Russian-LastnameGender
   naming: TheFirstofLast
+  # Sunrise-Edit
+  buttScan:
+    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
+    state: diona
 
 - type: bodyType
   id: DionaNormal
@@ -47,7 +52,7 @@
       points: 1
       required: false
     Chest:
-      points: 1
+      points: 2
       required: false
     Legs:
       points: 2

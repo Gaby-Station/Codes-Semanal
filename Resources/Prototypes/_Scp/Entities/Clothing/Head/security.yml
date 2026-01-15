@@ -6,21 +6,31 @@
   suffix: SCP Guard
   components:
   - type: Sprite
-    sprite: _Scp/Clothing/Head/security.rsi
+    sprite: _Scp/Clothing/Head/Helmets/security.rsi
   - type: Clothing
-    sprite: _Scp/Clothing/Head/security.rsi
+    sprite: _Scp/Clothing/Head/Helmets/security.rsi
 
 - type: entity
-  parent: ClothingHeadHelmetBasic
+  parent: ClothingHeadHelmetSecurity
   id: ClothingHeadClosedHelmetSecurity
   name: closed black security helmet
+  components:
+  - type: Sprite
+    sprite: _Scp/Clothing/Head/Helmets/security_2.rsi
+  - type: Clothing
+    sprite: _Scp/Clothing/Head/Helmets/security_2.rsi
+
+- type: entity
+  parent: ClothingHeadHelmetRiot
+  id: ClothingHeadHelmetSecurityRiot
+  name: riot helmet
   description: Standard black security gear. Protects the head from impacts.
   suffix: SCP Guard
   components:
   - type: Sprite
-    sprite: _Scp/Clothing/Head/security_2.rsi
+    sprite: _Scp/Clothing/Head/Helmets/security_riot.rsi
   - type: Clothing
-    sprite: _Scp/Clothing/Head/security_2.rsi
+    sprite: _Scp/Clothing/Head/Helmets/security_riot.rsi
 
 - type: entity
   parent: ClothingHeadHeadHatBaseFlippable
@@ -45,3 +55,24 @@
     sprite: _Scp/Clothing/Head/security_beret.rsi
   - type: Clothing
     sprite: _Scp/Clothing/Head/security_beret.rsi
+
+- type: entity
+  parent: ClothingHeadHatCapLeatherHoS
+  id: ClothingHeadHatCapLeatherSquadLeader
+  name: squad leader cap
+  description: A regulation cap issued to squad leaders. Durable, practical, and a clear mark of authority.
+  suffix: SCP Guard
+
+- type: entity
+  parent: ClothingHeadCapCentcomBlack
+  id: ClothingHeadCapBlackSquadLeader
+  name: squad leader cap
+  description: A regulation cap issued to squad leaders. Durable, practical, and a clear mark of authority.
+  suffix: SCP Guard
+
+- type: entity
+  parent: ClothingHeadHatCapUSSPBlack
+  id: ClothingHeadHatCapBlackSquadLeader
+  name: squad leader cap
+  description: A regulation cap issued to squad leaders. Durable, practical, and a clear mark of authority.
+  suffix: SCP Guard

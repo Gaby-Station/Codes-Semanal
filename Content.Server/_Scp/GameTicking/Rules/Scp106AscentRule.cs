@@ -21,6 +21,7 @@ using Content.Shared.Audio;
 using Content.Shared.GameTicking;
 using Content.Shared.GameTicking.Components;
 using Content.Shared.Humanoid;
+using Content.Shared.Light.Components;
 using Content.Shared.StatusEffect;
 using Robust.Server.Audio;
 using Robust.Shared.Audio;
@@ -31,6 +32,7 @@ using Timer = Robust.Shared.Timing.Timer;
 
 namespace Content.Server._Scp.GameTicking.Rules;
 
+// TODO: Разбить этот гигакод на партиалы
 public sealed class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
 {
     [Dependency] private readonly JitteringSystem _jittering = default!;
@@ -72,8 +74,10 @@ public sealed class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
 
     private static readonly ProtoId<AudioPresetPrototype> FancyEffect = "Dizzy";
 
-    private const string GammaCode = "gamma";
-    private const string EpsilonCode = "epsilon";
+    private const string RuleAddedCode = "scpPurple";
+    private const string RuleStartedCode = "scpGamma";
+
+    private static readonly TimeSpan ReturnCachedAlertLevelAfter = TimeSpan.FromSeconds(5f);
 
     private static bool _noReturnPointReached;
 
@@ -142,10 +146,13 @@ public sealed class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
         if (!TryGetRandomStation(out var station))
             return;
 
+        component.TargetStation = station.Value;
+
         Timer.Spawn(AscentAnnounceAfter,
             () =>
             {
-                _alertLevel.SetLevel(station.Value, GammaCode, true, true, true);
+                component.CachedAlertLevel = _alertLevel.GetLevel(station.Value);
+                _alertLevel.SetLevel(station.Value, RuleAddedCode, true, true, true);
             },
             _timerDespawnToken.Token);
     }
@@ -164,12 +171,7 @@ public sealed class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
         // Если событие было остановлено до начала(людей спасли)
         if (humans < Scp106System.HumansInBackroomsRequiredToAscent)
         {
-            var avertedMessage = Loc.GetString("scp106-dimension-shift-averted-announcement");
-            _chat.DispatchGlobalAnnouncement(avertedMessage, colorOverride: Color.Firebrick);
-
-            RaiseNetworkEvent(new NetworkAmbientMusicEventStop());
-
-            _gameTicker.EndGameRule(uid);
+            EarlyAvert((uid, component));
             return;
         }
 
@@ -181,7 +183,7 @@ public sealed class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
         var statusEffectQuery = EntityQueryEnumerator<HumanoidAppearanceComponent, StatusEffectsComponent>();
         while (statusEffectQuery.MoveNext(out var human, out _, out _))
         {
-            _stun.TryParalyze(human, AscentStunTime, true);
+            _stun.TryAddParalyzeDuration(human, AscentStunTime);
             _jittering.DoJitter(human, AscentJitterTime, true, 30f, 300f);
             _stuttering.DoStutter(human, AscentStutterTime, true);
 
@@ -214,7 +216,7 @@ public sealed class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
         Timer.Spawn(AscentAnnounceAfter,
             () =>
             {
-                _alertLevel.SetLevel(station.Value, EpsilonCode, false, true, true);
+                _alertLevel.SetLevel(station.Value, RuleStartedCode, false, true, true);
             },
             _timerDespawnToken.Token);
 
@@ -307,6 +309,23 @@ public sealed class Scp106AscentRule : GameRuleSystem<Scp106AscentRuleComponent>
 
         if (Exists(_spawnPortalsRuleUid))
             _gameTicker.EndGameRule(_spawnPortalsRuleUid.Value);
+    }
+
+    private void EarlyAvert(Entity<Scp106AscentRuleComponent> rule)
+    {
+        var avertedMessage = Loc.GetString("scp106-dimension-shift-averted-announcement");
+        _chat.DispatchGlobalAnnouncement(avertedMessage, colorOverride: Color.Firebrick);
+
+        _alertLevel.SetLevel(rule.Comp.TargetStation, RuleAddedCode, true, true, true);
+
+        Timer.Spawn(ReturnCachedAlertLevelAfter,
+            () =>
+            {
+                _alertLevel.SetLevel(rule.Comp.TargetStation, rule.Comp.CachedAlertLevel, true, true, true);
+            },
+            _timerDespawnToken.Token);
+
+        _gameTicker.EndGameRule(rule);
     }
 
     /// <summary>

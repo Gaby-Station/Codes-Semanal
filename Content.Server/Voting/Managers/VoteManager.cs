@@ -8,6 +8,7 @@ using Content.Server.Administration.Managers;
 using Content.Server.Chat.Managers;
 using Content.Server.GameTicking;
 using Content.Server.Maps;
+using Content.Shared._Sunrise.SunriseCCVars;
 using Content.Shared._Sunrise.Vote;
 using Content.Shared.Administration;
 using Content.Shared.CCVar;
@@ -245,16 +246,20 @@ namespace Content.Server.Voting.Managers
                 true,
                 AudioParams.Default.WithLoop(true).WithVolume(-10f))!.Value.Entity;
 
+            // Sunrise-Start
             if (_entityManager.System<GameTicker>().RunLevel == GameRunLevel.PreRoundLobby)
             {
-                _entityManager.System<GameTicker>().PauseStart(true);
-                _cfg.SetCVar(CCVars.OocEnabled, false);
+                if (_cfg.GetCVar(SunriseCCVars.VotePause))
+                    _entityManager.System<GameTicker>().PauseStart(true);
+                if (_cfg.GetCVar(SunriseCCVars.VoteDisableOOC))
+                    _cfg.SetCVar(CCVars.OocEnabled, false);
             }
+            // Sunrise-End
 
             var start = _timing.RealTime;
             var end = start + options.Duration;
             var reg = new VoteReg(id, entries, options.Title, options.InitiatorText,
-                options.InitiatorPlayer, start, end, options.VoterEligibility, options.DisplayVotes,
+                options.InitiatorPlayer, start, end, options.VoterEligibility, options.DisplayVotes, options.DisplayVotesAdmins, // Sunrise-Edit
                 options.TargetEntity);
 
             var handle = new VoteHandle(this, reg);
@@ -325,7 +330,7 @@ namespace Content.Server.Voting.Managers
             }
 
             // Admin always see the vote count, even if the vote is set to hide it.
-            if (v.DisplayVotes || _adminMgr.HasAdminFlag(player, AdminFlags.Moderator))
+            if (v.DisplayVotes || _adminMgr.HasAdminFlag(player, AdminFlags.Moderator) && v.DisplayVotesAdmins) // Sunrise-Edit
             {
                 msg.DisplayVotes = true;
             }
@@ -487,8 +492,10 @@ namespace Content.Server.Voting.Managers
                 _entityManager.System<SharedAudioSystem>().Stop(_voteAudioStream);
                 if (_entityManager.System<GameTicker>().RunLevel == GameRunLevel.PreRoundLobby)
                 {
-                    _entityManager.System<GameTicker>().PauseStart(false);
-                    _cfg.SetCVar(CCVars.OocEnabled, true);
+                    if (_cfg.GetCVar(SunriseCCVars.VotePause))
+                        _entityManager.System<GameTicker>().PauseStart(false);
+                    if (_cfg.GetCVar(SunriseCCVars.VoteDisableOOC))
+                        _cfg.SetCVar(CCVars.OocEnabled, true);
                 }
             }
 
@@ -589,6 +596,7 @@ namespace Content.Server.Voting.Managers
             public readonly HashSet<ICommonSession> VotesDirty = new();
             public readonly VoterEligibility VoterEligibility;
             public readonly bool DisplayVotes;
+            public readonly bool DisplayVotesAdmins; // Sunrise-Edit
             public readonly NetEntity? TargetEntity;
 
             public bool Cancelled;
@@ -600,7 +608,7 @@ namespace Content.Server.Voting.Managers
             public ICommonSession? Initiator { get; }
 
             public VoteReg(int id, VoteEntry[] entries, string title, string initiatorText,
-                ICommonSession? initiator, TimeSpan start, TimeSpan end, VoterEligibility voterEligibility, bool displayVotes, NetEntity? targetEntity)
+                ICommonSession? initiator, TimeSpan start, TimeSpan end, VoterEligibility voterEligibility, bool displayVotes, bool displayVotesAdmins, NetEntity? targetEntity) // Sunrise-Edit
             {
                 Id = id;
                 Entries = entries;
@@ -611,6 +619,7 @@ namespace Content.Server.Voting.Managers
                 EndTime = end;
                 VoterEligibility = voterEligibility;
                 DisplayVotes = displayVotes;
+                DisplayVotesAdmins = displayVotesAdmins; // Sunrise-Edit
                 TargetEntity = targetEntity;
             }
         }

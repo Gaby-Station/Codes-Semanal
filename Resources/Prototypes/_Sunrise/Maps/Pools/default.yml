@@ -1,31 +1,6 @@
+# НЕ ДОБАВЛЯТЬ НОВЫЕ КАРТЫ БЕЗ МОЕГО РЕВЬЮ! ~ SplikZerys
+
 - type: gameMapPool
   id: SunriseMapPool
-  maps:
-  - SunriseDelta
-  - SunriseBox
-  - SunriseFland
-  - SunriseMarathon
-  - SunriseBagel
-  - SunriseMeta
-  - SunrisePlasma
-  - SunrisePacked
-  - SunriseOasis
-  - SunriseConvex
-  - SunriseLoop
-  # Неиграбельно
-  #- SunriseReach
-  #- SunriseCorvaxGelta
-  #- SunriseRelic 
-  # SUNRISE-TODO: Старые-новые карты
-  #- Glacier
-  #- Shoukou
-  #- Hammurabi
-  #- Lighthouse
-  #- Angle
-  #- Pebble
-  #- Ovni
-  #- Kettle
-  #- Tortuga
-  #- Arena
-
-# НЕ ДОБАВЛЯТЬ НОВЫЕ КАРТЫ БЕЗ МОЕГО РЕВЬЮ! ~ SplikZerys
+  maps: # Fire edit - все санрайзовские карты удалены в качестве оптимизации использования RAM
+  - Empty

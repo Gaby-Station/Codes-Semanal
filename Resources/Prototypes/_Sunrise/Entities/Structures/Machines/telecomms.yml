@@ -1,7 +1,8 @@
 - type: entity
   parent: TelecomServer
   id: TelecomServerFilledLaw
-  suffix: Command
+  suffix: Law
+  categories: [ HideSpawnMenu ] # Fire edit
   components:
   - type: ContainerFill
     containers:
@@ -10,8 +11,20 @@
 
 - type: entity
   parent: TelecomServer
+  id: TelecomServerFilledBlueShield
+  suffix: BlueShield
+  categories: [ HideSpawnMenu ] # Fire edit
+  components:
+  - type: ContainerFill
+    containers:
+      key_slots:
+      - EncryptionKeyBlueShield
+
+- type: entity
+  parent: TelecomServer
   id: TelecomServerFilledUSSP
   suffix: USSP
+  categories: [ HideSpawnMenu ] # Fire edit
   components:
   - type: ContainerFill
     containers:

@@ -1,5 +1,5 @@
 - type: entity
-  parent: [ClothingShoesBootsMag, ClothingShoesBootsCombat, BaseSecurityContraband]
+  parent: [ClothingShoesBootsMagBase, ClothingShoesBootsCombat, BaseSecurityContraband]
   id: ClothingShoesBootsMagCombat
   name: combat magboots
   description: Combat magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle.
@@ -30,7 +30,7 @@
   - type: Magboots
 
 - type: entity
-  parent: [ClothingShoesBootsMag, BaseSecurityContraband]
+  parent: [ClothingShoesBootsMagBase, BaseSecurityContraband]
   id: ClothingShoesBootsMagSec
   name: Security magboots
   description: Security magnetic boots, often used during extravehicular activity to ensure the user remains safely attached to the vehicle.
@@ -46,3 +46,29 @@
     sprintModifier: 0.7
   - type: ClothingSlowOnDamageModifier
     modifier: 0.75
+
+- type: entity
+  parent: ClothingShoesBootsMagBase
+  id: ClothingShoesBootsMagAtmos
+  name: Atmos magboots
+  components:
+  - type: Sprite
+    sprite: _Sunrise/Clothing/Shoes/magboots-atmos.rsi
+  - type: Clothing
+    sprite: _Sunrise/Clothing/Shoes/magboots-atmos.rsi
+  - type: ApcPowerReceiver
+    needsPower: false
+    powerLoad: 0
+  - type: Item
+    size: Huge
+  - type: Charger
+    slotId: charger_slot
+    portable: true
+    chargeRate: 10
+  - type: ItemSlots
+    slots:
+      charger_slot:
+        ejectOnInteract: false
+        whitelist:
+          components:
+          - PowerCell

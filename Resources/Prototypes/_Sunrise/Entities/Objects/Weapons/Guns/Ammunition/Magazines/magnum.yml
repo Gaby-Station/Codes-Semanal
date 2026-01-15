@@ -8,10 +8,10 @@
         - MagazineDeagle
     - type: BallisticAmmoProvider
       mayTransfer: true
-      proto: Cartridge050
+      proto: CartridgeMagnumSP  # 050
       whitelist:
         tags:
-          - Cartridge050
+          - CartridgeMagnum  # 050
       capacity: 7
     - type: Item
       size: Small

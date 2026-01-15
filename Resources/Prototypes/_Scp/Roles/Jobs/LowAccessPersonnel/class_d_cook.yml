@@ -1,22 +1,23 @@
 ﻿- type: job
   id: ClassDCook
   name: job-name-class-d-cook
-  description: job-description-class-d
+  description: job-description-class-d-cook
   playTimeTracker: JobClassDCook
-  requirements: # TODO: Поменять после того, как игроки наберут время на новых ролях
+  requirements:
   - !type:OverallPlaytimeRequirement
     time: 3600 # 1 час
   startingGear: ClassDCookGear
   icon: JobClassDCook
   supervisors: job-supervisors-security-and-research
   access:
-  - Service
-  - Kitchen
+  - ClassDCanteen
   alwaysUseSpawner: true
   special:
   - !type:AddComponentSpecial
     components:
     - type: ClassDAppearance
+    - type: EmployeeClass
+      class: D
 
 - type: startingGear
   id: ClassDCookGear
@@ -27,4 +28,4 @@
     belt: ClothingBeltChefFilled
     gloves: ClothingHandsGlovesColorWhite
     shoes: ClothingShoesClassD
-    id: ClassDCookIDCard
+    id: KeyCardClassDCock

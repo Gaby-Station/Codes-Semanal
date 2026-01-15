@@ -46,7 +46,7 @@
   id: Plasma
   stackEntity: SheetPlasma1
   name: materials-plasma
-  icon: { sprite: Objects/Materials/Sheets/other.rsi, state: plasma }
+  icon: { sprite: _Scp/Objects/Materials/Sheets/other.rsi, state: plasma } # Fire Edit
   color: "#7e009e"
   price: 0.35 # $35 for 1 unit
 
@@ -54,7 +54,7 @@
   id: Plastic
   stackEntity: SheetPlastic1
   name: materials-plastic
-  icon: { sprite: Objects/Materials/Sheets/other.rsi, state: plastic }
+  icon: { sprite: _Scp/Objects/Materials/Sheets/other.rsi, state: plastic } # Fire Edit
   color: "#d9d9d9"
   price: 0.20 # $20 for 1 unit
 
@@ -71,7 +71,7 @@
   id: Uranium
   stackEntity: SheetUranium1
   name: materials-uranium
-  icon: { sprite: Objects/Materials/Sheets/other.rsi, state: uranium }
+  icon: { sprite: _Scp/Objects/Materials/Sheets/other.rsi, state: uranium } # Fire Edit
   color: "#32a852"
   price: 0.85 # $85 for 1 unit
 
@@ -101,6 +101,14 @@
   price: 0 # Maybe better for it to be priceless, knowing how greedy cargo is.
 
 - type: material
+  id: Cotton
+  name: materials-cotton
+  unit: materials-unit-boll
+  icon: { sprite: Objects/Materials/materials.rsi, state: cotton }
+  color: "#cccccc"
+  price: 0.01 #Who knew cotton was infinitely more valuable than silk
+
+- type: material
   id: Bones
   name: materials-bones
   unit: materials-unit-piece
@@ -127,6 +135,7 @@
 
 - type: material
   id: Diamond
+  stackEntity: MaterialDiamond1
   name: materials-diamond
   unit: materials-unit-piece
   icon: { sprite: Objects/Materials/materials.rsi, state: diamond }

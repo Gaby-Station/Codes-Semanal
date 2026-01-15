@@ -7,6 +7,7 @@
   icon: "JobIconZookeeper"
   supervisors: job-supervisors-hop
   setPreference: false # Fire added
+  overrideConsoleVisibility: false # Fire added
   access:
   - Service
   - Maintenance
@@ -23,6 +24,17 @@
     shoes: ClothingShoesColorWhite
     id: ZookeeperPDA
     ears: ClothingHeadsetService
-  #storage:
-    #back:
-    #- Stuff
+  storage:
+    back:
+    - MedkitFilled # Аптечка первой помощи для первых пациентов
+
+- type: chameleonOutfit
+  id: ZookeeperChameleonOutfit
+  job: Zookeeper
+  equipment:
+    eyes: ClothingEyesGlassesCheapSunglasses
+    mask: ClothingMaskBreath
+    outerClothing: ClothingOuterWinterColorLightBrown
+    neck: ClothingNeckScarfStripedBrown
+    belt: ClothingBeltStorageWaistbag
+    gloves: ClothingHandsGlovesColorBrown

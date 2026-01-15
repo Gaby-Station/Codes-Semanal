@@ -1,39 +1,28 @@
 ﻿using System.Linq;
-using Content.Server._Scp.Helpers;
 using Content.Server._Scp.Scp096;
-using Content.Server.Examine;
-using Content.Server.Xenoarchaeology.XenoArtifacts.Events;
-using Content.Shared._Scp.Blinking;
+using Content.Server._Sunrise.Helpers;
+using Content.Shared._Scp.Scp096.Main.Components;
 using Content.Shared._Scp.ScpMask;
+using Content.Shared._Scp.Watching;
+using Content.Shared.Xenoarchaeology.Artifact;
+using Content.Shared.Xenoarchaeology.Artifact.XAE;
 
 namespace Content.Server._Scp.Research.Artifacts.Effects._ScpSpecific.Scp096.Madness;
 
-public sealed class ArtifactScp096MadnessSystem : EntitySystem
+public sealed class ArtifactScp096MadnessSystem : BaseXAESystem<ArtifactScp096MadnessComponent>
 {
     [Dependency] private readonly ScpMaskSystem _scpMask = default!;
     [Dependency] private readonly Scp096System _scp096 = default!;
-    [Dependency] private readonly EntityLookupSystem _lookup = default!;
-    [Dependency] private readonly ExamineSystem _examine = default!;
-    [Dependency] private readonly ScpHelpersSystem _scpHelpers = default!;
+    [Dependency] private readonly EyeWatchingSystem _watching = default!;
+    [Dependency] private readonly SunriseHelpersSystem _helpers = default!;
 
-    public override void Initialize()
+    protected override void OnActivated(Entity<ArtifactScp096MadnessComponent> ent, ref XenoArtifactNodeActivatedEvent args)
     {
-        base.Initialize();
-
-        SubscribeLocalEvent<ArtifactScp096MadnessComponent, ArtifactActivatedEvent>(OnActivate);
-    }
-
-    private void OnActivate(Entity<ArtifactScp096MadnessComponent> ent, ref ArtifactActivatedEvent args)
-    {
-        if (!_scp096.TryGetScp096(out var scp096))
+        if (!_helpers.TryGetFirst<Scp096Component>(out var scp096))
             return;
 
-        var coords = Transform(ent).Coordinates;
-        var targets = _lookup.GetEntitiesInRange<BlinkableComponent>(coords, ent.Comp.Radius)
-            .Where(h => _examine.InRangeUnOccluded(ent, h, ent.Comp.Radius))
-            .ToHashSet();
-
-        var reducedTargets = _scpHelpers.GetPercentageOfHashSet(targets, ent.Comp.Percent);
+        var targets = _watching.GetWatchers(ent.Owner).ToHashSet();
+        var reducedTargets = _helpers.GetPercentageOfHashSet(targets, ent.Comp.Percent);
 
         foreach (var target in reducedTargets)
         {

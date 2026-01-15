@@ -1,3 +1,5 @@
+ent-FloorTileItemDarkSquigglyVertical = тёмная стальная вертикальная плитка с волнистым узором
+    .desc = { ent-FloorTileItemDark.desc }
 ent-FloorTileItemWoodParquet = паркет
     .desc = { ent-FloorTileItemBase.desc }
 ent-FloorTileItemWoodBlack = чёрный деревянный пол

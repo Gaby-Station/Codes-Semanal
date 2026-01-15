@@ -1,4 +1,5 @@
 using System.Linq;
+using Content.Shared._Scp.Helpers;
 using Content.Shared.Lathe;
 using Content.Shared.Research.Components;
 using Content.Shared.Research.Prototypes;
@@ -166,9 +167,11 @@ public abstract class SharedResearchSystem : EntitySystem
         {
             var costString = string.Empty;
 
-            foreach (var (pointType, value) in technology.Cost)
+            // Fire edit - поддержка несколько видов очков исследований
+            var cost = ResearchPointsHelper.GetPoints(technology);
+            foreach (var (pointType, value) in cost)
             {
-                var pointPrototype = PrototypeManager.Index<ResearchPointPrototype>(pointType);
+                var pointPrototype = PrototypeManager.Index(pointType);
                 costString += $"{Loc.GetString(pointPrototype.Name)}: {value}  ";
             }
 
@@ -312,7 +315,7 @@ public abstract class SharedResearchSystem : EntitySystem
         component.UnlockedRecipes.Add(recipe);
         Dirty(uid, component);
 
-        var ev = new TechnologyDatabaseModifiedEvent();
+        var ev = new TechnologyDatabaseModifiedEvent(new List<string> { recipe });
         RaiseLocalEvent(uid, ref ev);
     }
 }

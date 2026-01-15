@@ -6,16 +6,19 @@
   requirements:
     - !type:DepartmentTimeRequirement
       department: Engineering
-      time: 36000 # 10 hours
+      time: 9000 # 2.5 hours
     - !type:DepartmentTimeRequirement
       department: Medical
-      time: 36000 # 10 hours
+      time: 9000 # 2.5 hours
+    - !type:DepartmentTimeRequirement
+      department: Science
+      time: 9000 # 2.5 hrs
     - !type:DepartmentTimeRequirement
       department: Security
-      time: 36000 # 10 hrs
+      time: 9000 # 2.5 hrs
     - !type:DepartmentTimeRequirement
       department: Command
-      time: 36000 # 10 hours
+      time: 9000 # 2.5 hours
   weight: 20
   startingGear: HoPGear
   icon: "JobIconHeadOfPersonnel"
@@ -23,6 +26,8 @@
   canBeAntag: false
   radioBold: true # Sunrise-Edit
   displayWeight: 90 # Sunrise-Edit
+  overrideConsoleVisibility: false
+  setPreference: false # Fire added
   access:
   - Command
   - HeadOfPersonnel
@@ -48,12 +53,14 @@
   - Brig
   - Lawyer
   - Cargo
+  - CargoPurchaseAccess # Sunrise-edit
+  - ResearchConsoleAccess # Sunrise-Edit
   - Atmospherics
   - Medical
   - Barber  # Sunrise-edit
   special:
   - !type:AddImplantSpecial
-    implants: [ MindShieldImplant ]
+    implants: [ MindShieldImplant, TrackingImplant, DeathRattleImplantBlueShield ]
   - !type:AddComponentSpecial
     components:
       - type: CommandStaff
@@ -68,8 +75,21 @@
     gloves: ClothingHandsGlovesCombat
     ears: ClothingHeadsetAltCommand
     belt: BoxFolderClipboard
+    eyes: ClothingEyesHudCommand
     pocket1: WeaponPistolG22NonLethal # Gaby edit
   storage:
     back:
     - Flash
     - Telebaton # Sunrise-Edit
+
+- type: chameleonOutfit
+  id: HeadOfPersonnelChameleonOutfit
+  job: HeadOfPersonnel
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatHopcap
+    eyes: ClothingEyesHudCommand
+    mask: ClothingMaskNeckGaiterRed
+    neck: ClothingNeckCloakHop
+    outerClothing: ClothingOuterWinterHoP
+

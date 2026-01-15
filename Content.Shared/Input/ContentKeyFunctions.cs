@@ -5,6 +5,10 @@ namespace Content.Shared.Input
     [KeyFunctions]
     public static class ContentKeyFunctions
     {
+        // Fire added start
+        public static readonly BoundKeyFunction HoldToFace = "HoldToFace";
+        // Fire added end
+        public static readonly BoundKeyFunction ToggleKnockdown = "ToggleKnockdown";
         public static readonly BoundKeyFunction UseItemInHand = "ActivateItemInHand";
         public static readonly BoundKeyFunction AltUseItemInHand = "AltActivateItemInHand";
         public static readonly BoundKeyFunction ActivateItemInWorld = "ActivateItemInWorld";
@@ -35,6 +39,7 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction OpenBelt = "OpenBelt";
         public static readonly BoundKeyFunction OpenAHelp = "OpenAHelp";
         public static readonly BoundKeyFunction SwapHands = "SwapHands";
+        public static readonly BoundKeyFunction SwapHandsReverse = "SwapHandsReverse";
         public static readonly BoundKeyFunction MoveStoredItem = "MoveStoredItem";
         public static readonly BoundKeyFunction RotateStoredItem = "RotateStoredItem";
         public static readonly BoundKeyFunction SaveItemLocation = "SaveItemLocation";
@@ -63,9 +68,14 @@ namespace Content.Shared.Input
         // Sunrise-Start
         public static readonly BoundKeyFunction FocusCollectiveMindChat = "FocusCollectiveMindChatWindow";
         public static readonly BoundKeyFunction CockGun = "CockGun";
+        public static readonly BoundKeyFunction MeleeGunAttack = "MeleeGunAttack";
         public static readonly BoundKeyFunction ToggleStanding = "ToggleStanding";
         public static readonly BoundKeyFunction Jump = "Jump";
         public static readonly BoundKeyFunction Reloading = "Reloading";
+        public static readonly BoundKeyFunction Interact = "Interact";
+        public static readonly BoundKeyFunction LookUp = "LookUp";
+        public static readonly BoundKeyFunction OpenMentorHelp = "OpenMentorHelp";
+        public static readonly BoundKeyFunction OpenHelpChoice = "OpenHelpChoice";
         // Sunrise-End
 
         public static readonly BoundKeyFunction ArcadeUp = "ArcadeUp";
@@ -95,11 +105,22 @@ namespace Content.Shared.Input
         public static readonly BoundKeyFunction Hotbar7 = "Hotbar7";
         public static readonly BoundKeyFunction Hotbar8 = "Hotbar8";
         public static readonly BoundKeyFunction Hotbar9 = "Hotbar9";
+        public static readonly BoundKeyFunction HotbarShift0 = "HotbarShift0";
+        public static readonly BoundKeyFunction HotbarShift1 = "HotbarShift1";
+        public static readonly BoundKeyFunction HotbarShift2 = "HotbarShift2";
+        public static readonly BoundKeyFunction HotbarShift3 = "HotbarShift3";
+        public static readonly BoundKeyFunction HotbarShift4 = "HotbarShift4";
+        public static readonly BoundKeyFunction HotbarShift5 = "HotbarShift5";
+        public static readonly BoundKeyFunction HotbarShift6 = "HotbarShift6";
+        public static readonly BoundKeyFunction HotbarShift7 = "HotbarShift7";
+        public static readonly BoundKeyFunction HotbarShift8 = "HotbarShift8";
+        public static readonly BoundKeyFunction HotbarShift9 = "HotbarShift9";
 
         public static BoundKeyFunction[] GetHotbarBoundKeys() =>
             new[]
             {
-                Hotbar1, Hotbar2, Hotbar3, Hotbar4, Hotbar5, Hotbar6, Hotbar7, Hotbar8, Hotbar9, Hotbar0
+                Hotbar1, Hotbar2, Hotbar3, Hotbar4, Hotbar5, Hotbar6, Hotbar7, Hotbar8, Hotbar9, Hotbar0,
+                HotbarShift1, HotbarShift2, HotbarShift3, HotbarShift4, HotbarShift5, HotbarShift6, HotbarShift7, HotbarShift8, HotbarShift9, HotbarShift0
             };
 
         public static readonly BoundKeyFunction Vote0 = "Vote0";

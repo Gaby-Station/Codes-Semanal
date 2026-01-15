@@ -4,13 +4,14 @@
   # If item is not in list it will go at the bottom (ties broken by alert type enum value)
   id: BaseAlertOrder
   order:
+    - category: Scp096Face
     - category: CultBuffed # Sunrise-Edit
     - alertType: ChangelingBiomass
     - category: Mood #Sunrise Edit
     - category: Health #Sunrise Edit
     - category: Stamina
     - alertType: ChangelingChemicals
-    - alertType: Blinking # Sunrise-SCP edit.
+    - alertType: Blinking # Fire added
     - alertType: SuitPower
     - category: Internals
     - alertType: Fire
@@ -29,7 +30,9 @@
     - category: Hunger
     - category: Thirst
     - alertType: Magboots
+    - alertType: Rooted
     - alertType: Pacified
+    - alertType: Stealthy
 
 - type: entity
   id: AlertSpriteView
@@ -139,6 +142,7 @@
     state: walking
   name: alerts-walking-name
   description: alerts-walking-desc
+  clientHandled: true
 
 - type: alert
   id: Stun
@@ -147,6 +151,15 @@
     state: stunbaton_off
   name: alerts-stunned-name
   description: alerts-stunned-desc
+
+- type: alert
+  id: Knockdown
+  clickEvent: !type:KnockedDownAlertEvent
+  icons:
+  - sprite: /Textures/Interface/Alerts/stunnable.rsi
+    state: knocked-down
+  name: alerts-knockdown-name
+  description: alerts-knockdown-desc
 
 - type: alert
   id: Handcuffed
@@ -308,7 +321,9 @@
   id: PilotingShuttle
   category: Piloting
   clickEvent: !type:StopPilotingAlertEvent
-  icons: [ /Textures/Interface/Alerts/piloting.png ]
+  icons:
+  - sprite: /Textures/Interface/Alerts/shuttle.rsi
+    state: piloting
   name: alerts-piloting-name
   description: alerts-piloting-desc
 
@@ -444,6 +459,19 @@
   description: alerts-pacified-desc
 
 - type: alert
+  id: Stealthy
+  clickEvent: !type:ToggleThievingEvent
+  icons:
+  - sprite: /Textures/Interface/Alerts/stealthy.rsi
+    state: stealthy-off
+  - sprite: /Textures/Interface/Alerts/stealthy.rsi
+    state: stealthy-on
+  name: alerts-stealthy-name
+  description: alerts-stealthy-desc
+  minSeverity: 0
+  maxSeverity: 1
+
+- type: alert
   id: Adrenaline
   icons:
   - sprite: Mobs/Species/Human/organs.rsi
@@ -498,23 +526,3 @@
     state: critical
   name: Debug6
   description: Debug
-
-#Sunrise-SCP edit.
-- type: alert
-  id: Blinking
-  icons:
-  - sprite: /Textures/_Scp/blink.rsi
-    state: blink0
-  - sprite: /Textures/_Scp/blink.rsi
-    state: blink1
-  - sprite: /Textures/_Scp/blink.rsi
-    state: blink2
-  - sprite: /Textures/_Scp/blink.rsi
-    state: blink3
-  - sprite: /Textures/_Scp/blink.rsi
-    state: blink4
-  name: "Indicador de piscadas"
-  description: "Mostra o status das piscadas"
-  minSeverity: 0
-  maxSeverity: 4
-#Sunrise-SCP edit.

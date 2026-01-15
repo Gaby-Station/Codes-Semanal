@@ -1,4 +1,6 @@
-﻿# Региональная администрация
+﻿# TODO: Свои спрайты для id: TelecomServer и свои теги ключей соответственно
+
+# Региональная администрация
 
 - type: entity
   parent: [ EncryptionKey, BaseCentcommContraband ]
@@ -24,9 +26,7 @@
     channels:
     - Common
     - Administration
-    - InternalSecurity
     - EthicsCommittee
-    - InternalTribunalService
     - HeavyContainmentSecurityService
     - ExternalAdministrativeZoneSecurityService
     - ScientificService
@@ -39,6 +39,9 @@
     layers:
     - state: crypt_gold
     - state: cap_label
+  - type: Tag
+    tags:
+    - EncryptionCommand
 
 - type: entity
   parent: [ EncryptionKey, BaseCommandContraband ]
@@ -53,6 +56,34 @@
     layers:
     - state: crypt_silver
     - state: com_label
+  - type: Tag
+    tags:
+    - EncryptionCommand
+
+# Мобильная Оперативная Группа
+
+- type: entity
+  parent: [ EncryptionKey, BaseCentcommContraband ]
+  id: EncryptionKeyMTFMaster
+  components:
+  - type: EncryptionKey
+    channels:
+    - Common
+    - RegionalAdministration
+    - Administration
+    - HeavyContainmentSecurityService
+    - ExternalAdministrativeZoneSecurityService
+    - ScientificService
+    - MedicalService
+    - EngineeringTechnicalService
+    - LogisticsService
+    - FoodAndSanitationService
+    defaultChannel: RegionalAdministration
+  - type: Sprite
+    sprite: _Scp/Objects/Devices/encryption_keys.rsi
+    layers:
+    - state: crypt_blue
+    - state: hq_label
 
 # Служба внутренней безопасности
 
@@ -69,6 +100,9 @@
     layers:
     - state: crypt_silver
     - state: is_label
+  - type: Tag
+    tags:
+    - EncryptionCommand
 
 # Комитет по этике
 
@@ -85,6 +119,9 @@
     layers:
     - state: crypt_silver
     - state: ec_label
+  - type: Tag
+    tags:
+    - EncryptionCommand
 
 # Служба внутреннего трибунала
 
@@ -101,6 +138,9 @@
     layers:
     - state: crypt_silver
     - state: tribunal_label
+  - type: Tag
+    tags:
+    - EncryptionCommand
 
 # Служба безопасности тяжелой зоны
 
@@ -117,6 +157,9 @@
     layers:
     - state: crypt_gray
     - state: hcss_label
+  - type: Tag
+    tags:
+    - EncryptionSecurity
 
 # Служба безопасности внешней административной зоны
 
@@ -133,6 +176,9 @@
     layers:
     - state: crypt_gray
     - state: eazss_label
+  - type: Tag
+    tags:
+    - EncryptionSecurity
 
 # Научный отдел
 
@@ -148,6 +194,9 @@
     layers:
     - state: crypt_gray
     - state: sci_label
+  - type: Tag
+    tags:
+    - EncryptionScience
 
 # Медицинский отдел
 
@@ -163,6 +212,9 @@
     layers:
     - state: crypt_gray
     - state: med_label
+  - type: Tag
+    tags:
+    - EncryptionMedical
 
 # Инженерно-технический отдел
 
@@ -178,6 +230,9 @@
     layers:
     - state: crypt_gray
     - state: eng_label
+  - type: Tag
+    tags:
+    - EncryptionEngineering
 
 # Отдел логистики
 
@@ -193,6 +248,9 @@
     layers:
     - state: crypt_gray
     - state: cargo_label
+  - type: Tag
+    tags:
+    - EncryptionCargo
 
 # Департамент продовольствия и санитарной службы
 
@@ -208,6 +266,9 @@
     layers:
     - state: crypt_gray
     - state: service_label
+  - type: Tag
+    tags:
+    - EncryptionService
 
 - type: entity
   parent: [ EncryptionKey, BaseChaosContraband ]

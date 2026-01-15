@@ -33,6 +33,8 @@ public sealed class NinjaSuitSystem : SharedNinjaSuitSystem
         SubscribeLocalEvent<NinjaSuitComponent, EmpAttemptEvent>(OnEmpAttempt);
         SubscribeLocalEvent<NinjaSuitComponent, RecallKatanaEvent>(OnRecallKatana);
         SubscribeLocalEvent<NinjaSuitComponent, NinjaEmpEvent>(OnEmp);
+        SubscribeLocalEvent<NinjaSuitComponent, CreateSmokeGrenadeEvent>(OnCreateSmokeGrenade);
+        SubscribeLocalEvent<NinjaSuitComponent, CreateFlashbangGrenadeEvent>(OnCreateFlashbangGrenade);
     }
 
     protected override void NinjaEquipped(Entity<NinjaSuitComponent> ent, Entity<SpaceNinjaComponent> user)
@@ -74,7 +76,7 @@ public sealed class NinjaSuitSystem : SharedNinjaSuitSystem
         var user = Transform(uid).ParentUid;
 
         // can only upgrade power cell, not swap to recharge instantly otherwise ninja could just swap batteries with flashlights in maints for easy power
-        if (GetCellScore(inserting.Owner, inserting) <= GetCellScore(battery.Owner, battery))
+        if (GetCellScore(args.EntityUid, inserting) <= GetCellScore(batteryUid.Value, battery))
         {
             args.Cancel();
             Popup.PopupEntity(Loc.GetString("ninja-cell-downgrade"), user, user);
@@ -161,5 +163,45 @@ public sealed class NinjaSuitSystem : SharedNinjaSuitSystem
 
         var coords = _transform.GetMapCoordinates(user);
         _emp.EmpPulse(coords, comp.EmpRange, comp.EmpConsumption, comp.EmpDuration);
+    }
+
+    private void OnCreateSmokeGrenade(Entity<NinjaSuitComponent> ent, ref CreateSmokeGrenadeEvent args)
+    {
+        var (uid, comp) = ent;
+        args.Handled = true;
+
+        var user = args.Performer;
+        if (!_ninja.TryUseCharge(user, comp.SmokeGrenadeCharge))
+        {
+            Popup.PopupEntity(Loc.GetString("ninja-no-power"), user, user);
+            return;
+        }
+
+        if (CheckDisabled(ent, user))
+            return;
+
+        // Create smoke grenade in hands or on ground
+        var grenade = Spawn("SmokeGrenade", _transform.GetMapCoordinates(user));
+        _hands.TryPickupAnyHand(user, grenade);
+    }
+
+    private void OnCreateFlashbangGrenade(Entity<NinjaSuitComponent> ent, ref CreateFlashbangGrenadeEvent args)
+    {
+        var (uid, comp) = ent;
+        args.Handled = true;
+
+        var user = args.Performer;
+        if (!_ninja.TryUseCharge(user, comp.FlashbangGrenadeCharge))
+        {
+            Popup.PopupEntity(Loc.GetString("ninja-no-power"), user, user);
+            return;
+        }
+
+        if (CheckDisabled(ent, user))
+            return;
+
+        // Create flashbang grenade in hands or on ground
+        var grenade = Spawn("GrenadeFlashBang", _transform.GetMapCoordinates(user));
+        _hands.TryPickupAnyHand(user, grenade);
     }
 }

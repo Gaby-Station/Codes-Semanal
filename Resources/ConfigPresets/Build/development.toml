@@ -2,7 +2,7 @@
 # Straight in-game baby
 lobbyenabled = false
 # Dev map for faster loading & convenience
-map = "SunriseDev" # Sunrise-Edit
+map = "Dev"
 role_timers = false
 
 [events]
@@ -37,3 +37,17 @@ preload_grids = false
 
 [admin]
 see_own_notes = true
+
+[ic]
+random_characters = false
+random_species_weights = ""
+ssd_sleep_time = 3600
+
+[transithub]
+arrivals_round_start_spawn = false
+
+# Fire edit start
+[scp]
+server_auto_open_character_menu = false # чтобы не мешало
+safe_time_enabled = false
+# Fire edit end

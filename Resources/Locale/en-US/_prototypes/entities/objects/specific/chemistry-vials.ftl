@@ -12,3 +12,5 @@ ent-ChlorineChemistryVial = { ent-BaseChemistryEmptyVial }
 ent-PlasmaChemistryVial = { ent-BaseChemistryEmptyVial }
     .suffix = plasma
     .desc = { ent-BaseChemistryEmptyVial.desc }
+ent-BorgVial = integrated vial
+    .desc = An internal compartment installed into a cyborg. Rated for 30 units of any liquid.

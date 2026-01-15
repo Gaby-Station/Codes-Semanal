@@ -5,7 +5,6 @@
   id: BaseMobDiona
   abstract: true
   components:
-  - type: Absorbable
   - type: HumanoidAppearance
     species: Diona
   - type: Hunger
@@ -25,6 +24,17 @@
   - type: Damageable
     damageContainer: Biological
     damageModifierSet: Diona
+  - type: PassiveDamage # Slight passive regen. Assuming one damage type, comes out to about 4 damage a minute.
+    allowedStates:
+    - Alive
+    damageCap: 80
+    damage:
+      groups:
+        Brute: -0.5
+      #Sunrise-Start
+      types: 
+        Mangleness: -0.02
+      #Sunrise-End
   - type: DamageVisuals
     damageOverlayGroups:
       Brute:
@@ -97,6 +107,8 @@
       Male: UnisexDiona
       Female: UnisexDiona
       Unsexed: UnisexDiona
+  - type: TypingIndicator
+    proto: diona
   - type: BodyEmotes
     soundsId: DionaBodyEmotes
   - type: IgnoreKudzu
@@ -115,6 +127,7 @@
           32:
             sprite: Mobs/Species/Human/displacement.rsi
             state: jumpsuit-female
+  - type: Rootable
   # Sunrise-Start
   - type: CollectiveMind
     minds:

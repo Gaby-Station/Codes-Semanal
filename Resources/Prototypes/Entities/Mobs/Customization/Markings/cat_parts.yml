@@ -2,7 +2,8 @@
   id: CatEars
   bodyPart: Special
   markingCategory: Special
-  sponsorOnly: true # Sunrise-Sponsors
+  speciesRestriction: [Felinid] # Fire edit
+  sponsorOnly: false
   coloring:
     default:
       type:
@@ -25,7 +26,8 @@
   id: CatTail
   bodyPart: Tail
   markingCategory: Tail
-  sponsorOnly: true # Sunrise-Sponsors
+  sponsorOnly: false
+  speciesRestriction: [Felinid] # Fire edit
   coloring:
     default:
       type:

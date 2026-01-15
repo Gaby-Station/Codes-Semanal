@@ -2,20 +2,42 @@
   id: Felinid
   name: species-name-felinid
   roundStart: false # Fire edit
+  stationRecordsHidden: true # Fire added
   prototype: MobFelinid
   bodyTypes:
   - HumanNormal
-  - HumanSlim
+  - HumanSlimFemale
+  - HumanSlimMale
+  - HumanGigaFemale
+  - HumanGigaMale
+  - HumanFatFemale
+  - HumanFatMale
+  - HumanDistrofikFemale
+  - HumanDistrofikMale
   markingLimits: MobFelinidMarkingLimits
   dollPrototype: MobFelinidDummy
   skinColoration: HumanToned
-  youngAge: 23
-  oldAge: 25
-  maxAge: 27
+  youngAge: 18
+  oldAge: 30
+  maxAge: 60
+  defaultHeight: 1
+  defaultWidth: 1
+  maxHeight: 1.2
+  maxWidth: 1.2
+  minHeight: 0.8
+  minWidth: 0.8
+  minHeightCm: 130
+  maxHeightCm: 190
+  buttScan:
+    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
+    state: human
 
 - type: markingPoints
   id: MobFelinidMarkingLimits
   points:
+    Special: # the cat ear joke
+      points: 1
+      required: false
     Hair:
       points: 1
       required: false

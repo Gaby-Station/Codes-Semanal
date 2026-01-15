@@ -48,13 +48,18 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
     private bool _bwoinkSoundEnabled;
     private string? _aHelpSound;
 
+    protected override string SawmillName => "c.s.go.es.bwoink";
+
     public override void Initialize()
     {
         base.Initialize();
 
         SubscribeNetworkEvent<BwoinkDiscordRelayUpdated>(DiscordRelayUpdated);
         SubscribeNetworkEvent<BwoinkPlayerTypingUpdated>(PeopleTypingUpdated);
-        SubscribeNetworkEvent<SharedBwoinkSystem.BwoinkDbLoadedMessage>(OnBwoinkDbLoadedMessage);
+
+        // Sunrise-Start
+        SubscribeNetworkEvent<SharedBwoinkSystem.BwoinkTextHistoryMessage>(OnBwoinkTextHistoryMessage);
+        // Sunrise-End
 
         _adminManager.AdminStatusUpdated += OnAdminStatusUpdated;
         _config.OnValueChanged(CCVars.AHelpSound, v => _aHelpSound = v, true);
@@ -96,6 +101,7 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
     {
         _bwoinkSystem = system;
         _bwoinkSystem.OnBwoinkTextMessageRecieved += ReceivedBwoink;
+        _bwoinkSystem.OnBwoinkCooldownReceived += ReceivedCooldown;
 
         CommandBinds.Builder
             .Bind(ContentKeyFunctions.OpenAHelp,
@@ -109,6 +115,7 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
 
         DebugTools.Assert(_bwoinkSystem != null);
         _bwoinkSystem!.OnBwoinkTextMessageRecieved -= ReceivedBwoink;
+        _bwoinkSystem!.OnBwoinkCooldownReceived -= ReceivedCooldown;
         _bwoinkSystem = null;
     }
 
@@ -130,7 +137,7 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
 
     private void ReceivedBwoink(object? sender, SharedBwoinkSystem.BwoinkTextMessage message)
     {
-        Logger.InfoS("c.s.go.es.bwoink", $"@{message.UserId}: {message.Text}");
+        Log.Info($"@{message.UserId}: {message.Text}");
         var localPlayer = _playerManager.LocalSession;
         if (localPlayer == null)
         {
@@ -153,6 +160,12 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
         UIHelper!.Receive(message);
     }
 
+    private void ReceivedCooldown(object? sender, BwoinkCooldownMessage message)
+    {
+        EnsureUIHelper();
+        UIHelper?.OnCooldownReceived(message);
+    }
+
     private void DiscordRelayUpdated(BwoinkDiscordRelayUpdated args, EntitySessionEventArgs session)
     {
         _discordRelayActive = args.DiscordRelayEnabled;
@@ -164,10 +177,18 @@ public sealed class AHelpUIController: UIController, IOnSystemChanged<BwoinkSyst
         UIHelper?.PeopleTypingUpdated(args);
     }
 
-    private void OnBwoinkDbLoadedMessage(SharedBwoinkSystem.BwoinkDbLoadedMessage args, EntitySessionEventArgs session)
+    // Sunrise-Start
+    private void OnBwoinkTextHistoryMessage(SharedBwoinkSystem.BwoinkTextHistoryMessage args, EntitySessionEventArgs session)
     {
+        EnsureUIHelper();
+        UIHelper?.Clean(args.UserId);
+        foreach (var msg in args.Messages)
+        {
+            UIHelper?.Receive(msg);
+        }
         UIHelper?.SetLoadDb(args.UserId);
     }
+    // Sunrise-End
 
     public void EnsureUIHelper()
     {
@@ -329,11 +350,15 @@ public interface IAHelpUIHandler : IDisposable
     public void ToggleWindow();
     public void DiscordRelayChanged(bool active);
     public void PeopleTypingUpdated(BwoinkPlayerTypingUpdated args);
+    public void OnCooldownReceived(BwoinkCooldownMessage message);
     public event Action OnClose;
     public event Action OnOpen;
     public Action<NetUserId, string, bool, bool>? SendMessageAction { get; set; }
     public event Action<NetUserId, string>? InputTextChanged;
+    // Sunrise-Start
     public void SetLoadDb(NetUserId userId);
+    public void Clean(NetUserId userId);
+    // Sunrise-End
 }
 public sealed class AdminAHelpUIHandler : IAHelpUIHandler
 {
@@ -416,12 +441,30 @@ public sealed class AdminAHelpUIHandler : IAHelpUIHandler
             panel.UpdatePlayerTyping(args.PlayerName, args.Typing);
     }
 
+    public void OnCooldownReceived(BwoinkCooldownMessage message)
+    {
+        // For admins, we might want to show a message in the currently active panel
+        // For now, we'll pass it to all panels to handle
+        foreach (var (_, panel) in _activePanelMap)
+        {
+            panel.OnCooldownReceived(message);
+        }
+    }
+
     // Sunrise-Start
     public void SetLoadDb(NetUserId userId)
     {
         if (_activePanelMap.TryGetValue(userId, out var panel))
         {
             panel.LoadDb = true;
+        }
+    }
+
+    public void Clean(NetUserId userId)
+    {
+        if (_activePanelMap.TryGetValue(userId, out var panel))
+        {
+            panel.TextOutput.Clear();
         }
     }
 
@@ -508,6 +551,12 @@ public sealed class AdminAHelpUIHandler : IAHelpUIHandler
         Window?.Dispose();
         Window = null;
         Control = null;
+        // Sunrise-Start
+        foreach (var (_, panel) in _activePanelMap)
+        {
+            panel.LoadDb = false;
+        }
+        // Sunrise-End
         _activePanelMap.Clear();
         EverOpened = false;
     }
@@ -541,6 +590,11 @@ public sealed class UserAHelpUIHandler : IAHelpUIHandler
     public void SetLoadDb(NetUserId userId)
     {
         LoadDb = true;
+    }
+
+    public void Clean(NetUserId userId)
+    {
+        _chatPanel!.TextOutput.Clear();
     }
 
     public bool IsLoadDb(NetUserId userId)
@@ -586,6 +640,11 @@ public sealed class UserAHelpUIHandler : IAHelpUIHandler
     {
     }
 
+    public void OnCooldownReceived(BwoinkCooldownMessage message)
+    {
+        _chatPanel?.OnCooldownReceived(message);
+    }
+
     public event Action? OnClose;
     public event Action? OnOpen;
     public Action<NetUserId, string, bool, bool>? SendMessageAction { get; set; }
@@ -602,6 +661,10 @@ public sealed class UserAHelpUIHandler : IAHelpUIHandler
         if (_window is { Disposed: false })
             return;
         _chatPanel = new BwoinkPanel(text => SendMessageAction?.Invoke(_ownerId, text, true, false));
+        // Sunrise-Start
+        _chatPanel.AHelpDescLabel.Visible = true;
+        _chatPanel.AdminWhoButton.Visible = true;
+        // Sunrise-End
         _chatPanel.InputTextChanged += text => InputTextChanged?.Invoke(_ownerId, text);
         _chatPanel.RelayedToDiscordLabel.Visible = relayActive;
         _window = new DefaultWindow()
@@ -609,7 +672,7 @@ public sealed class UserAHelpUIHandler : IAHelpUIHandler
             TitleClass="windowTitleAlert",
             HeaderClass="windowHeaderAlert",
             Title=Loc.GetString("bwoink-user-title"),
-            MinSize = new Vector2(500, 300),
+            MinSize = new Vector2(900, 500), // Sunrise-Edit
         };
         _window.OnClose += () => { OnClose?.Invoke(); };
         _window.OnOpen += () => { OnOpen?.Invoke(); };
@@ -618,11 +681,6 @@ public sealed class UserAHelpUIHandler : IAHelpUIHandler
         // Sunrise-Start
         if (!IsLoadDb(_ownerId))
         {
-            /*
-             * SUNRISE-TODO: Если открыть ахелп в котором уже есть сообщения то при загрузке с бд они продублируются.
-             * Ничего лучше чем очищать все сообщения перед загрузкой истории я не придумал.
-             */
-            _chatPanel.TextOutput.Clear();
             _bwoinkSystem?.LoadDbMessages(_ownerId);
         }
 
@@ -637,5 +695,6 @@ public sealed class UserAHelpUIHandler : IAHelpUIHandler
         _window?.Dispose();
         _window = null;
         _chatPanel = null;
+        LoadDb = false; // Sunrise-Edit
     }
 }

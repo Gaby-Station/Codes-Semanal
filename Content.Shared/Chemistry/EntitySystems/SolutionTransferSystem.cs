@@ -6,6 +6,7 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Interaction;
 using Content.Shared.Popups;
 using Content.Shared.Verbs;
+using Robust.Shared.Audio.Systems;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 
@@ -21,6 +22,7 @@ public sealed class SolutionTransferSystem : EntitySystem
     [Dependency] private readonly SharedPopupSystem _popup = default!;
     [Dependency] private readonly SharedSolutionContainerSystem _solution = default!;
     [Dependency] private readonly SharedUserInterfaceSystem _ui = default!;
+    [Dependency] private readonly SharedAudioSystem _audio = default!; // Sunrise added
 
     /// <summary>
     ///     Default transfer amounts for the set-transfer verb.
@@ -165,7 +167,7 @@ public sealed class SolutionTransferSystem : EntitySystem
         Entity<SolutionComponent> target,
         FixedPoint2 amount)
     {
-        var transferAttempt = new SolutionTransferAttemptEvent(sourceEntity, targetEntity);
+        var transferAttempt = new SolutionTransferAttemptEvent(sourceEntity, targetEntity, source);
 
         // Check if the source is cancelling the transfer
         RaiseLocalEvent(sourceEntity, ref transferAttempt);
@@ -202,6 +204,11 @@ public sealed class SolutionTransferSystem : EntitySystem
         var solution = _solution.SplitSolution(source, actualAmount);
         _solution.AddSolution(target, solution);
 
+        // Sunrise added start - звук перемещения жидкости
+        if (TryComp<SolutionTransferComponent>(sourceEntity, out var transferComponent))
+            _audio.PlayPvs(transferComponent.TransferSound, targetEntity);
+        // Sunrise added end
+
         var ev = new SolutionTransferredEvent(sourceEntity, targetEntity, user, actualAmount);
         RaiseLocalEvent(targetEntity, ref ev);
 
@@ -218,7 +225,7 @@ public sealed class SolutionTransferSystem : EntitySystem
 /// To not mispredict this should always be cancelled in shared code and not server or client.
 /// </summary>
 [ByRefEvent]
-public record struct SolutionTransferAttemptEvent(EntityUid From, EntityUid To, string? CancelReason = null)
+public record struct SolutionTransferAttemptEvent(EntityUid From, EntityUid To, Entity<SolutionComponent> SolutionEntity, string? CancelReason = null)
 {
     /// <summary>
     /// Cancels the transfer.

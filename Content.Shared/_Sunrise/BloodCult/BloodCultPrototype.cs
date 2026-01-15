@@ -12,7 +12,13 @@ public sealed class BloodCultPrototype : IPrototype
     public BloodCultType? CultType;
 
     [DataField(required: true)]
-    public EntProtoId RitualDaggerProto;
+    public EntProtoId DaggerProto;
+
+    [DataField(required: true)]
+    public EntProtoId BladeProto;
+
+    [DataField(required: true)]
+    public EntProtoId HalberdProto;
 
     [DataField(required: true)]
     public EntProtoId GodProto;

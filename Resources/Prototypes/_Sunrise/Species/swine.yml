@@ -2,12 +2,16 @@
   id: Swine
   name: species-name-swine
   roundStart: false # Fire edit
+  stationRecordsHidden: true # Fire added
   prototype: MobSwine
   bodyTypes:
   - SwineNormal
   markingLimits: MobSwineMarkingLimits
   dollPrototype: MobSwineDummy
   skinColoration: None
+  buttScan:
+    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
+    state: human # SUNRISE-TODO: Спрайт жопы свинов
 
 - type: bodyType
   id: SwineNormal

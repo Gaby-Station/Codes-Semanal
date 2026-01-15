@@ -1,4 +1,5 @@
-﻿using Robust.Shared.Prototypes;
+﻿using Content.Shared.Radio;
+using Robust.Shared.Prototypes;
 using Robust.Shared.Utility;
 
 namespace Content.Shared.Research.Prototypes;
@@ -49,12 +50,21 @@ public sealed partial class TechnologyPrototype : IPrototype
     /// <summary>
     /// How much research is needed to unlock.
     /// </summary>
+    [DataField]
+    public int Cost;
+
+    // Fire added start
+
+    /// <summary>
+    /// Модификатор, влияющий на требование очков SCP в зависимости от стандартных очков.
+    /// Автоматически выставляет стоимость технологии в очках SCP в зависимости от обычных очков.
+    /// </summary>
+    [DataField]
+    public float DefaultToScpScale = 0.25f;
 
     [DataField]
-    public Dictionary<ProtoId<ResearchPointPrototype>, int> Cost = new()
-    {
-        {"Default", 10000}
-    };
+    public Dictionary<ProtoId<ResearchPointPrototype>, int> CostList = new();
+    // Fire added end
 
     /// <summary>
     /// A list of <see cref="TechnologyPrototype"/>s that need to be unlocked in order to unlock this technology.
@@ -73,6 +83,12 @@ public sealed partial class TechnologyPrototype : IPrototype
     /// </summary>
     [DataField]
     public IReadOnlyList<GenericUnlock> GenericUnlocks = new List<GenericUnlock>();
+
+    /// <summary>
+    /// Radio Channel to broadast on in addition to science when a technology of this discipline is unlocked.
+    /// <\summary>
+    [DataField("radioChannels", required: false)]
+    public List<ProtoId<RadioChannelPrototype>> RadioChannels = [];
 }
 
 [DataDefinition]

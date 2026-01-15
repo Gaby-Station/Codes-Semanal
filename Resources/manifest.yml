@@ -1,5 +1,5 @@
-defaultWindowTitle: GABY STATION SCP # Fire-Station Edit
-windowIconSet: /Textures/Logo/icon
+defaultWindowTitle: Fire Station
+windowIconSet: /Textures/_Scp/Logo/icon
 splashLogo: /Textures/_Scp/loading_screen.png # Fire-Station Edit
 
 # PJB PLEASE

@@ -30,5 +30,15 @@ public sealed class Scp999WallifyEvent(NetEntity ent, string state) : EntityEven
     public readonly string TargetState = state;
 }
 
+public sealed class Scp999ChangeStateAttemptEvent(Scp999States state) : CancellableEntityEventArgs
+{
+    public readonly Scp999States TargetState = state;
+}
+
+public sealed class Scp999ChangedStateEvent(Scp999States state) : EntityEventArgs
+{
+    public readonly Scp999States TargetState = state;
+}
+
 
 #endregion

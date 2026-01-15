@@ -13,11 +13,9 @@
   supervisors: job-supervisors-hos
   canBeAntag: false
   displayWeight: 70  # Sunrise
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
   access:
-  - Research # Fire
-  - Kitchen # Fire
-  - Hydroponics # Fire
-  - Janitor # Fire
   - Security
   - Brig
   - Armory
@@ -42,3 +40,17 @@
     back:
     - Flash
 #    - MagazineGlock22 # Sunrise-Edit
+
+- type: chameleonOutfit
+  id: WardenChameleonOutfit
+  job: Warden
+  hasMindShield: true
+  equipment:
+    head: ClothingHeadHatWarden
+    mask: ClothingMaskGasSecurity
+    outerClothing: ClothingOuterCoatWarden
+    jumpsuit: ClothingUniformJumpsuitWarden
+    neck: Dinkystar
+    belt: ClothingBeltSecurity
+    gloves: ClothingHandsGlovesCombat
+    shoes: ClothingShoesBootsJack

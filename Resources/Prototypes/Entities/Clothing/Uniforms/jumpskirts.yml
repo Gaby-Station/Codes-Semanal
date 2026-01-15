@@ -222,6 +222,17 @@
     sprite: Clothing/Uniforms/Jumpskirt/hos_parade.rsi
 
 - type: entity
+  parent: [ClothingUniformSkirtBase, BaseCommandContraband]
+  id: ClothingUniformJumpskirtCommandGeneric
+  name: command jumpskirt
+  description: A generic Command-colored jumpsuit not associated with any particular department.
+  components:
+  - type: Sprite
+    sprite: Clothing/Uniforms/Jumpskirt/commandgeneric.rsi
+  - type: Clothing
+    sprite: Clothing/Uniforms/Jumpskirt/commandgeneric.rsi
+
+- type: entity
   parent: ClothingUniformSkirtBase
   id: ClothingUniformJumpskirtHydroponics
   name: hydroponics jumpskirt
@@ -323,7 +334,9 @@
   - type: Tag
     tags:
     - ClothMade
+    - Recyclable
     - PrisonUniform
+    - NudeBottom # INTERACTIONS
     - WhitelistChameleon
 
 - type: entity
@@ -388,9 +401,9 @@
   description: A jumpskirt made of strong material, providing robust protection.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirt/security.rsi
+    sprite: _Sunrise/Clothing/Uniforms/Jumpskirt/security.rsi #Sunrise-Edit
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirt/security.rsi
+    sprite: _Sunrise/Clothing/Uniforms/Jumpskirt/security.rsi #Sunrise-Edit
   - type: Item
     inhandVisuals:
       left:
@@ -398,13 +411,13 @@
         color: "#C12D30"
         sprite: Clothing/Uniforms/Jumpskirt/color.rsi
       - state: overlay-inhand-left
-        sprite: Clothing/Uniforms/Jumpsuit/security.rsi
+        sprite: _Sunrise/Clothing/Uniforms/Jumpsuit/security.rsi #Sunrise-Edit
       right:
       - state: inhand-right
         color: "#C12D30"
         sprite: Clothing/Uniforms/Jumpskirt/color.rsi
       - state: overlay-inhand-right
-        sprite: Clothing/Uniforms/Jumpsuit/security.rsi
+        sprite: _Sunrise/Clothing/Uniforms/Jumpsuit/security.rsi #Sunrise-Edit
 
 
 - type: entity
@@ -509,6 +522,8 @@
     sprite: Clothing/Uniforms/Jumpskirt/operative_s.rsi
   - type: Clothing
     sprite: Clothing/Uniforms/Jumpskirt/operative_s.rsi
+  - type: StaticPrice
+    price: 500
 
 - type: entity
   parent: ClothingUniformSkirtBase
@@ -614,7 +629,7 @@
       sprite: Clothing/Uniforms/Jumpskirt/lawyergood.rsi
 
 - type: entity
-  parent: ClothingUniformSkirtBase
+  parent: [ ClothingUniformSkirtBase, BaseSyndicateContraband ]
   id: ClothingUniformJumpskirtSyndieFormalDress
   name: syndicate formal dress
   description: "The syndicate's uniform is made in an elegant style, it's even a pity to do dirty tricks in this."
@@ -686,9 +701,9 @@
   description: A sign of skill and prestige within the security department.
   components:
   - type: Sprite
-    sprite: Clothing/Uniforms/Jumpskirt/senior_officer.rsi
+    sprite: _Sunrise/Clothing/Uniforms/Jumpskirt/senior_officer.rsi #Sunrise-Edit
   - type: Clothing
-    sprite: Clothing/Uniforms/Jumpskirt/senior_officer.rsi
+    sprite: _Sunrise/Clothing/Uniforms/Jumpskirt/senior_officer.rsi #Sunrise-Edit
 
 - type: entity
   parent: [ClothingUniformSkirtBase, BaseSecurityContraband]
@@ -898,4 +913,5 @@
   - type: Tag
     tags:
     - ClownSuit
+    - NudeBottom # INTERACTIONS
     - WhitelistChameleon

@@ -18,6 +18,9 @@
 
   defaultModules:
   - BorgModuleTool
+  - BorgModuleInflatable
+  - BorgModuleArtifact
+  - BorgModuleAnomaly
 
   radioChannels:
   - Science
@@ -76,9 +79,17 @@
     params:
       volume: -15
   addComponents:
+  # Fire added start
+  - type: ShowScp096FaceDamageHud
+  # Fire added end
+  - type: ShowHealthBars
+    damageContainers:
+    - Inorganic
+    - Silicon
+    - Mech
   - type: InnateItem
     instantActions:
-    - AtmosAlertsMonitor
+    - HandheldStationMapUnpowered
     - EngiAlertsMonitor
   # Sunrise-End
 
@@ -106,7 +117,7 @@
   dummyPrototype: BorgChassisMining
 
   # Functional
-  extraModuleCount: 4
+  extraModuleCount: 6
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
@@ -115,8 +126,9 @@
   defaultModules:
   - BorgModuleStandart
   - BorgModuleMining
-  - BorgModuleGPS
-  - BorgModuleJetpack # Sunrise-Edit
+  - BorgModuleTraversal
+  - BorgModuleAppraisal
+  - BorgModuleMiningCombat
 
   radioChannels:
   - Supply
@@ -127,6 +139,39 @@
     collection: FootstepCyborgSpider
     params:
       volume: -15
+
+  addComponents:
+  - type: BorgJetpack
+    acceleration: 1
+    friction: 0.3
+    weightlessModifier: 1.3
+    moleUsage: 0.00085
+  - type: GasTank
+    outputPressure: 42.6
+    air:
+      # 13 minutes of thrust
+      volume: 5
+      temperature: 293.15
+      moles:
+      - 1.025689525 # oxygen
+      - 1.025689525 # nitrogen
+  - type: GasRegeneration
+    airRegenerate:
+      volume: 5
+      temperature: 293.15
+      moles:
+      - 0.0008 # oxygen
+      - 0.0008 # nitrogen
+  - type: Appearance
+  - type: GenericVisualizer
+    visuals:
+      enum.JetpackVisuals.Enabled:
+        enum.JetpackVisuals.Layer:
+          True: {state: icon-on}
+          False: {state: icon}
+  - type: InnateItem
+    instantActions:
+    - HandheldStationMapUnpowered
   # Sunrise-End
 
   # Visual
@@ -141,7 +186,6 @@
   petSuccessString: petting-success-salvage-cyborg
   petFailureString: petting-failure-salvage-cyborg
 
-
 # Janitor borg
 - type: borgType
   id: janitor
@@ -154,7 +198,7 @@
   dummyPrototype: BorgChassisJanitor
 
   # Functional
-  extraModuleCount: 3
+  extraModuleCount: 4
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
@@ -162,8 +206,8 @@
 
   defaultModules:
   - BorgModuleStandart
-  - BorgModuleLightReplacer
-  - BorgModuleAdvancedCleaning # Sunrise-Edit
+  - BorgModuleCleaning
+  - BorgModuleCustodial
 
   radioChannels:
   - Science
@@ -189,7 +233,16 @@
   petFailureString: petting-failure-janitor-cyborg
   addComponents:
   - type: FootprintAreaCleaner
-
+  - type: Absorbent
+    pickupAmount: 500
+  - type: SolutionContainerManager
+    solutions:
+      absorbed:
+        maxVol: 500
+  - type: Spillable
+    solution: absorbed
+  - type: RefillableSolution
+    solution: absorbed
 
 # Medical borg
 - type: borgType
@@ -203,7 +256,7 @@
   dummyPrototype: BorgChassisMedical
 
   # Functional
-  extraModuleCount: 4
+  extraModuleCount: 5
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
@@ -211,15 +264,18 @@
 
   defaultModules:
   - BorgModuleStandart
-  - BorgModuleAdvancedTreatment # Sunrise-Edit
-  - BorgModuleTreatment
-  - BorgModuleDefibrillator # Sunrise-Edit
+  - BorgModuleChemical
+  - BorgModuleTopicals
+  - BorgModuleRescue
 
   radioChannels:
   - Science
   - Medical
 
   addComponents:
+  # Fire added start
+  - type: ShowScp096FaceDamageHud
+  # Fire added end
   - type: SolutionScanner
   - type: ShowHealthBars
     damageContainers:
@@ -236,8 +292,9 @@
   - type: FabricateCandy
   - type: InnateItem
     instantActions:
+    - HandheldStationMapUnpowered
     - HandheldCrewMonitorBorg
-    worldTargetActions:
+    entityTargetActions:
     - HandheldHealthAnalyzerUnpowered
   # Sunrise-End
 
@@ -270,7 +327,7 @@
   dummyPrototype: BorgChassisService
 
   # Functional
-  extraModuleCount: 3
+  extraModuleCount: 6
   moduleWhitelist:
     tags:
     - BorgModuleGeneric
@@ -280,6 +337,9 @@
   - BorgModuleStandart
   - BorgModuleMusique
   - BorgModuleService
+  - BorgModuleClowning
+  - BorgModuleGardening
+  - BorgModuleHarvesting
 
   radioChannels:
   - Science

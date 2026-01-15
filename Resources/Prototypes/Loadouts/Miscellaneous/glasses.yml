@@ -5,7 +5,7 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:RoleTimeRequirement
-      role: JobLibrarian
+      role: JobServicePersonnel # Fire Edit
       time: 3600 # 1 hour of being the biggest nerd on the station
 
 - type: loadoutEffectGroup
@@ -14,8 +14,19 @@
   - !type:JobRequirementLoadoutEffect
     requirement:
       !type:DepartmentTimeRequirement
-      department: Cargo
+      department: LogisticsService # Fire Edit
       time: 36000 #10 hours of being a space trucker
+
+# sunrise-start
+- type: loadoutEffectGroup
+  id: CheapSunglassesTimer
+  effects:
+  - !type:JobRequirementLoadoutEffect
+    requirement:
+      !type:DepartmentTimeRequirement
+      department: Civilian
+      time: 108000 #30 hours of bread cooking and Manly Dorf making
+# sunrise-end
 
 # Basic options
 # Glasses
@@ -42,3 +53,18 @@
     proto: JensenTimer
   equipment:
     eyes: ClothingEyesGlassesJensen
+
+# sunrise-start
+- type: loadout
+  id: GlassesCheapSunglasses
+  effects:
+  - !type:GroupLoadoutEffect
+    proto: CheapSunglassesTimer
+  equipment:
+    eyes: ClothingEyesGlassesCheapSunglasses
+
+- type: loadout
+  id: GlassesStuttering
+  equipment:
+    eyes: ClothingEyesStuttering
+# sunrise-end

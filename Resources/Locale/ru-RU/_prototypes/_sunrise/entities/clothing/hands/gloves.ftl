@@ -1,7 +1,7 @@
 ent-ClothingHandsGlovesAerostatic = аэростатические перчатки
     .desc = Дышащие красные перчатки для профессиональной работы с ручкой и блокнотом.
-ent-ClothingHandsGlovesCentcomNaval = перчатки флота Nanotrasen
-    .desc = Пара высококачественных плотных перчаток, украшенных золотым шитьём, которые выдаются командующим флотом Nanotrasen.
+ent-ClothingHandsGlovesCentcomNaval = перчатки флота NanoTrasen
+    .desc = Пара высококачественных плотных перчаток, украшенных золотым шитьём, которые выдаются командующим флотом NanoTrasen.
 ent-ClothingHandsGlovesLeatherHoS = кожаные перчатки
     .desc = Стильные чёрные кожаные перчатки.
 ent-ClothingHandsGlovesNitrileBlack = чёрные нитриловые перчатки
@@ -18,3 +18,7 @@ ent-ClothingHandsGlovesChristmas = Рождественские перчатки
     .desc = Стильные Рождественские вязаные перчатки.
 ent-ClothingHandsGlovesChristmasLong = Рождественские длинные перчатки
     .desc = Стильные Рождественские вязаные перчатки.
+ent-InsulatedGlovesAtmos = Утеплённые перчатки атмосов
+    .desc = Утеплённые перчатки, сделанные специально для атмосферных техников.
+ent-ClothingHandsGlovesCombatCQC = боевые перчатки
+    .desc = Эти высококачественные тактические перчатки огнеупорны и ударопрочны.

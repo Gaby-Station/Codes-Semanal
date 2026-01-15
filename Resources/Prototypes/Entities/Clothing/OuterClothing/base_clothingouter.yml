@@ -39,12 +39,15 @@
     walkModifier: 0.9
     sprintModifier: 0.9
   - type: HeldSpeedModifier
+  - type: StaminaResistance   # Sunrise-Add
+    damageCoefficient: 0.85 # Sunrise-Add
 
 - type: entity
   abstract: true
   parent: [ClothingOuterBase, BaseClothingOuterSounds] # Sunrise
   id: ClothingOuterStorageBase
   components:
+  - type: ContainerInteractionAnimation # Sunrise added
   - type: Storage
     grid:
     - 0,0,2,1
@@ -63,6 +66,7 @@
     tags:
     - Vest
     - WhitelistChameleon
+    - NudeBottom # INTERACTIONS
   # Sunrise-End
 
 - type: entity
@@ -106,6 +110,13 @@
     - state: icon-open
       map: ["foldedLayer"]
       visible: true
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+    - Vest
+    - WhitelistChameleon
+    - NudeFull # INTERACTIONS
+  # SUNRISE EDIT
 
 - type: entity
   abstract: true
@@ -127,6 +138,9 @@
   id: ClothingOuterHardsuitBase
   name: base hardsuit
   components:
+# SlotBlocker blocked until UI change
+#  - type: SlotBlock
+#    slots: [innerclothing, feet]
   - type: PressureProtection
     highPressureMultiplier: 0.3
     lowPressureMultiplier: 1000
@@ -134,11 +148,13 @@
     heatingCoefficient: 0.01
     coolingCoefficient: 0.01
   - type: ClothingSpeedModifier
-    walkModifier: 0.4
+    walkModifier: 0.6
     sprintModifier: 0.6
   - type: HeldSpeedModifier
   - type: Item
     size: Ginormous
+  - type: Pierceable
+    level: Metal
   - type: Armor
     modifiers:
       coefficients:
@@ -147,9 +163,6 @@
         Piercing: 0.95
         Heat: 0.90
         Radiation: 0.25
-    # Sunrise start
-    staminaModifier: 0.8 
-    # Sunrise end
   - type: ToggleableClothing
     slot: head
   - type: ContainerContainer
@@ -162,6 +175,8 @@
     - WhitelistChameleon
     - FullBodyOuter # Sunrise-Edit
     - WhitelistChameleonSuit #Sunrise-edit
+  - type: StaminaResistance #Sunrise-added
+    damageCoefficient: 0.8 #Sunrise-added
   - type: ProtectedFromStepTriggers
     slots: WITHOUT_POCKET
   - type: DamageOnInteractProtection
@@ -169,6 +184,7 @@
       flatReductions:
         Heat: 10 # the average lightbulb only does around four damage!
     slots: OUTERCLOTHING
+  - type: ArmorSparkEffect #starlight
 
 - type: entity
   abstract: true
@@ -176,6 +192,9 @@
   id: ClothingOuterEVASuitBase
   name: base EVA Suit
   components:
+# SlotBlocker blocked until UI change
+#  - type: SlotBlock
+#    slots: [innerclothing, feet]
   - type: PressureProtection
     highPressureMultiplier: 0.6
     lowPressureMultiplier: 1000
@@ -200,6 +219,8 @@
     tags:
     - FullBodyOuter
     - WhitelistChameleon
+  - type: StaminaResistance
+    damageCoefficient: 0.9
   # Sunrise-End
 
 - type: entity

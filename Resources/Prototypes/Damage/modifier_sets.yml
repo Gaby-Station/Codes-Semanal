@@ -146,6 +146,13 @@
     Blunt: 5
 
 - type: damageModifierSet
+  id: Card
+  coefficients:
+    Slash: 2.0
+    Piercing: 0.1 # Holes easily poked through, but do little to structural integrity
+    Heat: 3.0
+
+- type: damageModifierSet
   id: Web # Very flammable, can be easily hacked and slashed, but shooting or hitting it is another story.
   coefficients:
     Blunt: 0.7
@@ -201,7 +208,7 @@
   id: Moth # Slightly worse at everything but cold
   coefficients:
     Cold: 0.7
-    Heat: 1.3
+    Heat: 1.2
 
 - type: damageModifierSet
   id: Vox
@@ -247,21 +254,25 @@
 
 # Represents which damage types should be modified
 # in relation to how they cause bleed rate.
+# Make sure to add any new damage type here.
 - type: damageModifierSet
   id: BloodlossHuman
   coefficients:
-    Blunt: 0.08
-    Slash: 0.25
-    Piercing: 0.2
-    Shock: 0.0
-    Cold: 0.0
-    Heat: -0.5 # heat damage cauterizes wounds, but will still hurt obviously.
-    Poison: 0.0
-    Radiation: 0.0
     Asphyxiation: 0.0
     Bloodloss: 0.0 # no double dipping
-    Cellular: 0.0
+    Blunt: 0.08
     Caustic: 0.0
+    Cellular: 0.0
+    Cold: 0.0
+    Heat: -0.5 # heat damage cauterizes wounds, but will still hurt obviously.
+    Holy: 0
+    Piercing: 0.2
+    Poison: 0.0
+    Radiation: 0.0
+    Shock: 0.0
+    Slash: 0.25
+    Structural: 0.0
+    Mangleness: 0.0 # Sunrise-Edit
 
 - type: damageModifierSet
   id: SlimePet # Very survivable slimes
@@ -367,11 +378,11 @@
     Blunt: 0.8
     Slash: 0.8
     Piercing: 0.9
-    Shock: 1.2
+    Shock: 2
     Heat: 0.8
   flatReductions:
-    Blunt: 3
-    Heat: 2
+    Blunt: 2
+    Heat: 1
 
 - type: damageModifierSet
   id: LightArmor
@@ -379,8 +390,9 @@
     Blunt: 0.75
     Slash: 0.75
     Piercing: 0.7
-    Shock: 1.2
+    Shock: 3
     Heat: 0.7
+    Structural: 0.5
   flatReductions:
     Blunt: 5
     Heat: 5
@@ -390,45 +402,57 @@
   coefficients:
     Blunt: 0.6
     Slash: 0.6
-    Piercing: 0.55
-    Shock: 1.8
+    Piercing: 0.5
+    Shock: 4
     Heat: 0.8
+    Structural: 0.5
   flatReductions:
-    Blunt: 10
-    Heat: 10
+    Blunt: 5
+    Heat: 6
+    Slash: 5
+    Piercing: 3
 
 - type: damageModifierSet
   id: HeavyArmorNT
   coefficients:
     Blunt: 0.5
     Slash: 0.5
-    Piercing: 0.35
-    Shock: 2.8
+    Piercing: 0.3
+    Shock: 5
     Heat: 0.75
+    Structural: 0.45
   flatReductions:
-    Blunt: 15
-    Heat: 15
-
-- type: damageModifierSet
-  id: MediumArmorSyndi #40 40 50 -180 20
-  coefficients:
-    Blunt: 0.6
-    Slash: 0.6
-    Piercing: 0.5
-    Shock: 1.8
-    Heat: 0.8
-  flatReductions:
-    Blunt: 8
+    Blunt: 7
     Heat: 8
+    Slash: 7
+    Piercing: 5
 
 - type: damageModifierSet
-  id: HeavyArmorSyndi #50 50 60 -280 25
+  id: MediumArmorSyndi #35 35 50 -400 20
   coefficients:
-    Blunt: 0.5
-    Slash: 0.5
-    Piercing: 0.4
-    Shock: 2.8
-    Heat: 0.75
+    Blunt: 0.65
+    Slash: 0.65
+    Piercing: 0.5
+    Shock: 4
+    Heat: 0.8
+    Structural: 0.5
   flatReductions:
-    Blunt: 14
-    Heat: 14
+    Blunt: 5
+    Heat: 5
+    Slash: 5
+    Piercing: 4
+
+- type: damageModifierSet
+  id: HeavyArmorSyndi #45 45 6 -500 25
+  coefficients:
+    Blunt: 0.55
+    Slash: 0.55
+    Piercing: 0.4
+    Shock: 5
+    Heat: 0.75
+    Structural: 0.45
+  flatReductions:
+    Blunt: 7
+    Heat: 7
+    Slash: 7
+    Piercing: 6

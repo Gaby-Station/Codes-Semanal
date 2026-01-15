@@ -14,6 +14,8 @@ namespace Content.Client.Shuttles;
 /// </summary>
 public sealed class FtlArrivalOverlay : Overlay
 {
+    private static readonly ProtoId<ShaderPrototype> UnshadedShader = "unshaded";
+
     public override OverlaySpace Space => OverlaySpace.WorldSpaceBelowEntities;
 
     private EntityLookupSystem _lookups;
@@ -36,7 +38,7 @@ public sealed class FtlArrivalOverlay : Overlay
         _maps = _entManager.System<SharedMapSystem>();
         _sprites = _entManager.System<SpriteSystem>();
 
-        _shader = _protos.Index<ShaderPrototype>("unshaded").Instance();
+        _shader = _protos.Index(UnshadedShader).Instance();
     }
 
     protected override bool BeforeDraw(in OverlayDrawArgs args)
@@ -58,13 +60,26 @@ public sealed class FtlArrivalOverlay : Overlay
             if (!_entManager.TryGetComponent(grid, out MapGridComponent? mapGrid))
                 continue;
 
+            if (!_entManager.TryGetComponent(grid, out FTLComponent? ftlComponent))
+                continue;
+
             var texture = _sprites.GetFrame(comp.Sprite, TimeSpan.FromSeconds(comp.Elapsed), loop: false);
             comp.Elapsed += (float) _timing.FrameTime.TotalSeconds;
 
             // Need to manually transform the viewport in terms of the visualizer entity as the grid isn't in position.
             var (_, _, worldMatrix, invMatrix) = _transforms.GetWorldPositionRotationMatrixWithInv(uid);
-            args.WorldHandle.SetTransform(worldMatrix);
-            var localAABB = invMatrix.TransformBox(args.WorldBounds);
+            var currentRotation = _transforms.GetWorldRotation(grid);
+            var rotationDiff = ftlComponent.TargetAngle - currentRotation;
+
+            var center = worldMatrix.Translation;
+            var rotationMatrix = Matrix3x2.CreateRotation(float.DegreesToRadians((float)rotationDiff.Degrees), center);
+
+            args.WorldHandle.SetTransform(worldMatrix * rotationMatrix);
+
+            if (!Matrix3x2.Invert(worldMatrix * rotationMatrix, out var rotatedInvMatrix))
+                continue;
+
+            var localAABB = rotatedInvMatrix.TransformBox(args.WorldBounds);
 
             var tilesEnumerator = _maps.GetLocalTilesEnumerator(grid, mapGrid, localAABB);
 

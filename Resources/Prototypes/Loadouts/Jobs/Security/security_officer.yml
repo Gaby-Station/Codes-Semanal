@@ -18,11 +18,18 @@
 - type: loadoutEffectGroup
   id: SecurityStarWorthy
   effects:
+    # Fire edit start
     - !type:JobRequirementLoadoutEffect
       requirement:
         !type:DepartmentTimeRequirement
-        department: Security
-        time: 360000 #100 hrs
+        department: HeavyContainmentSecurityService
+        time: 90000 #25 hrs
+    - !type:JobRequirementLoadoutEffect
+      requirement:
+        !type:DepartmentTimeRequirement
+        department: ExternalAdministrativeZoneSecurityService
+        time: 90000 #25 hrs
+    # Fire edit end
 
 # Head
 - type: loadout
@@ -120,6 +127,11 @@
   id: ArmorVest
   equipment:
     outerClothing: ClothingOuterArmorBasic
+
+- type: loadout
+  id: ArmorVestSec
+  equipment:
+    outerClothing: ClothingOuterVestArmorSec # Sunrise-Edit
 
 - type: loadout
   id: ArmorVestSlim

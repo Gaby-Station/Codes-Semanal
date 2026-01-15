@@ -8,10 +8,16 @@ using Content.Shared.Inventory;
 using Content.Shared.PDA;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
+using Content.Shared.Silicons.Borgs.Components;
+using Content.Shared.Silicons.StationAi;
 using Content.Shared.StationRecords;
 using Robust.Shared.Enums;
 using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
+using System.Linq;
+using Content.Shared._Scp.CharacterInfo.AccessLevel;
+using Content.Shared._Scp.CharacterInfo.EmployeeClass;
+
 
 namespace Content.Server.StationRecords.Systems;
 
@@ -88,23 +94,26 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
     {
         // TODO make PlayerSpawnCompleteEvent.JobId a ProtoId
         if (string.IsNullOrEmpty(jobId)
-            || !_prototypeManager.HasIndex<JobPrototype>(jobId))
+            || !_prototypeManager.TryIndex<JobPrototype>(jobId, out var job))
             return;
 
         // Sunrise-Start
         // Чтобы борги отображались в манифесте экипажа.
-        var name = profile.Name;
-        if (!_inventory.TryGetSlotEntity(player, "id", out var idUid))
-        {
-            idUid = player;
-            name = MetaData(player).EntityName;
-        }
+
+        // Fire edit - чтобы дешники отображались с именем дешников
+        var name = MetaData(player).EntityName;
+
+        if (_idCard.TryGetIdCard(player, out var idUid))
+            name = idUid.Comp.FullName ?? name;
+        // Fire edit end
+
+        var nonHumanoid = HasComp<BorgChassisComponent>(player) || HasComp<StationAiHeldComponent>(player) || job.JobEntity != null;
         // Sunrise-End
 
         TryComp<FingerprintComponent>(player, out var fingerprintComponent);
         TryComp<DnaComponent>(player, out var dnaComponent);
 
-        CreateGeneralRecord(station, idUid, name, profile.Age, profile.Species, profile.Gender, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records);
+        CreateGeneralRecord(station, player, idUid, name, profile.Age, profile.Species, profile.Gender, jobId, fingerprintComponent?.Fingerprint, dnaComponent?.DNA, profile, records, nonHumanoid); // Sunrise-Edit
     }
 
 
@@ -137,6 +146,7 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
     /// <param name="records">Station records component.</param>
     public void CreateGeneralRecord(
         EntityUid station,
+        EntityUid player,
         EntityUid? idUid,
         string name,
         int age,
@@ -146,7 +156,8 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
         string? mobFingerprint,
         string? dna,
         HumanoidCharacterProfile profile,
-        StationRecordsComponent records)
+        StationRecordsComponent records,
+        bool nonHumanoid = false) // Sunrise-Edit
     {
         if (!_prototypeManager.TryIndex<JobPrototype>(jobId, out var jobPrototype))
             throw new ArgumentException($"Invalid job prototype ID: {jobId}");
@@ -162,6 +173,9 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
         }
         */
 
+        TryComp<AccessLevelComponent>(player, out var accessLevel);
+        TryComp<EmployeeClassComponent>(player, out var employeeClass);
+
         var record = new GeneralStationRecord()
         {
             Name = name,
@@ -173,7 +187,11 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
             Gender = gender,
             DisplayPriority = jobPrototype.RealDisplayWeight,
             Fingerprint = mobFingerprint,
-            DNA = dna
+            DNA = dna,
+            NonHumanoid = nonHumanoid, // Sunrise-Edit
+            HumanoidProfile = profile, // Sunrise edit
+            EmployeeClass = employeeClass?.Class, // Fire added
+            AccessLevel = accessLevel?.Level, // Fire added
         };
 
         var key = AddRecordEntry(station, record);
@@ -193,14 +211,16 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
     /// </summary>
     public void SetIdKey(EntityUid? uid, StationRecordKey key)
     {
-        if (uid is not {} idUid)
+        // Fire edit start - фикс странной ошибки???
+        if (!Exists(uid))
             return;
 
-        var keyStorageEntity = idUid;
-        if (TryComp<PdaComponent>(idUid, out var pda) && pda.ContainedId is {} id)
+        var keyStorageEntity = uid.Value;
+        if (TryComp<PdaComponent>(uid, out var pda) && pda.ContainedId is {} id)
         {
             keyStorageEntity = id;
         }
+        // Fire edit end
 
         _keyStorage.AssignKey(keyStorageEntity, key);
     }
@@ -252,18 +272,24 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
     /// <param name="entry">The resulting entry.</param>
     /// <typeparam name="T">Type to get from the record set.</typeparam>
     /// <returns>True if a record was obtained. False otherwise.</returns>
-    public bool TryGetRandomRecord<T>(Entity<StationRecordsComponent?> ent, [NotNullWhen(true)] out T? entry)
+    public bool TryGetRandomRecord<T>(Entity<StationRecordsComponent?> ent, [NotNullWhen(true)] out T? entry, HashSet<uint> ignoredIds) // Sunrise-Edit
     {
         entry = default;
 
         if (!Resolve(ent.Owner, ref ent.Comp))
             return false;
 
-        if (ent.Comp.Records.Keys.Count == 0)
+        // Sunrise-Start
+        var keys = ent.Comp.Records.Keys;
+        if (keys.Count == 0)
             return false;
 
-        var key = _random.Pick(ent.Comp.Records.Keys);
+        var filtered = keys.Where(id => !ignoredIds.Contains(id)).ToList();
+        if (!filtered.Any())
+            return false;
+        // Sunrise-End
 
+        var key = _random.Pick(filtered); // Sunrise-Edit
         return ent.Comp.Records.TryGetRecordEntry(key, out entry);
     }
 
@@ -403,6 +429,10 @@ public sealed class StationRecordsSystem : SharedStationRecordsSystem
         {
             StationRecordFilterType.Name =>
                 !someRecord.Name.ToLower().Contains(filterLowerCaseValue),
+            StationRecordFilterType.Job =>
+                !someRecord.JobTitle.ToLower().Contains(filterLowerCaseValue),
+            StationRecordFilterType.Species =>
+                !someRecord.Species.ToLower().Contains(filterLowerCaseValue),
             StationRecordFilterType.Prints => someRecord.Fingerprint != null
                 && IsFilterWithSomeCodeValue(someRecord.Fingerprint, filterLowerCaseValue),
             StationRecordFilterType.DNA => someRecord.DNA != null

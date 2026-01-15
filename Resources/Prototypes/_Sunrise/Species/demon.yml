@@ -2,6 +2,7 @@
   id: Demon
   name: species-name-demon
   roundStart: false # Fire edit
+  stationRecordsHidden: true # Fire added
   prototype: MobDemon
   bodyTypes:
   - DemonNormal
@@ -11,6 +12,9 @@
   dollPrototype: MobDemonDummy
   skinColoration: Hues
   naming: firstlast
+  buttScan:
+    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
+    state: human # SUNRISE-TODO: Спрайт жопы аркан
 
 - type: bodyType
   id: DemonNormal

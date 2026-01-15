@@ -2,6 +2,7 @@
   id: Skeleton
   name: species-name-skeleton
   roundStart: false
+  stationRecordsHidden: true # Fire added
   prototype: MobSkeletonPerson
   bodyTypes:
   - SkeletonNormal
@@ -11,6 +12,10 @@
   femaleFirstNames: NamesSkeletonFirst
   dollPrototype: MobSkeletonPersonDummy
   skinColoration: TintedHues
+  # Sunrise-Edit
+  buttScan:
+    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
+    state: human # Sunrise-Edit SUNRISE-TODO: Спрайт жопы скелетов
 
 - type: bodyType
   id: SkeletonNormal

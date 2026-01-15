@@ -46,3 +46,7 @@ recipe-makeshiftstunprod-name = шок-палка
 recipe-makeshiftstunprod-description = Электрошокер для незаконного обезвреживания.
 recipe-bat-name = бейсбольная бита
 recipe-bat-description = Прочная бейсбольная бита.
+recipe-GrenadeLauncherSecurity-name = гранатомёт безопасности
+recipe-GrenadeLauncherSecurity-description = Модификация сигнального пистолета СБ.
+recipe-Glock22AutoCraft-name = автоматический Glock 22
+recipe-Glock22AutoCraft-description = Модификация с заменённым ресивером для автоматического огня пистолета СБ.

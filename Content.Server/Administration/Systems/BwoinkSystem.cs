@@ -26,6 +26,8 @@ using Robust.Shared.Player;
 using Robust.Shared.Timing;
 using Robust.Shared.Utility;
 using Content.Sunrise.Interfaces.Shared; // Sunrise-Sponsors
+using Content.Shared.Database; // Sunrise-Ahelp-Antispam, based on Starlight Build: https://github.com/ss14Starlight/space-station-14/pull/85
+
 
 namespace Content.Server.Administration.Systems
 {
@@ -45,6 +47,7 @@ namespace Content.Server.Administration.Systems
         [Dependency] private readonly IServerDbManager _dbManager = default!;
         [Dependency] private readonly PlayerRateLimitManager _rateLimit = default!;
         private ISharedSponsorsManager? _sponsorsManager; // Sunrise-Sponsors
+        [Dependency] private readonly IBanManager _banManager = default!; // Sunrise-Ahelp-Antispam, based on Starlight Build: https://github.com/ss14Starlight/space-station-14/pull/85
 
         [GeneratedRegex(@"^https://discord\.com/api/webhooks/(\d+)/((?!.*/).*)$")]
         private static partial Regex DiscordRegex();
@@ -77,6 +80,15 @@ namespace Content.Server.Administration.Systems
         // Maximum length a message can be before it is cut off
         // Should be shorter than DescriptionMax
         private const ushort MessageLengthCap = 3000;
+
+        // Sunrise-Ahelp-Antispam-Start
+        // Based on Starlight Build: https://github.com/ss14Starlight/space-station-14/pull/85
+        private readonly TimeSpan _messageCooldown = TimeSpan.FromSeconds(2);
+
+        private readonly Queue<(NetUserId Channel, string Text, TimeSpan Timestamp)> _recentMessages = new();
+        private const int MaxRecentMessages = 10;
+        private const int SpamCheckMessageCount = 3;
+        // Sunrise-Ahelp-Antispam-End
 
         // Text to be used to cut off messages that are too long. Should be shorter than MessageLengthCap
         private const string TooLongText = "... **(too long)**";
@@ -340,37 +352,35 @@ namespace Content.Server.Administration.Systems
         {
             var isAdmin = _adminManager.IsAdmin(args.SenderSession);
 
-            var messages = await _dbManager.GetAHelpMessagesByReceiverAsync(msg.UserId);
+            var messages = (await _dbManager.GetAHelpMessagesByReceiverAsync(msg.UserId))
+                .OrderBy(message => message.SentAt);
 
-            /*
-             * SUNRISE-TODO: Мы отправляем всю историю по одному сообщению используя ванильный класс.
-             * Вероятно более разумно было бы отправлять все сообщения одним эвентом... Возможно.
-             */
+            var history = new List<BwoinkTextMessage>();
             foreach (var aHelpMessage in messages)
             {
-                var formatMessage = await FormatDbAhelpMessage(
-                    aHelpMessage.Message,
-                    (NetUserId) aHelpMessage.SenderUserId,
-                    aHelpMessage.PlaySound,
-                    aHelpMessage.AdminOnly);
-
                 if (aHelpMessage.AdminOnly && !isAdmin)
                     continue;
 
+                var formatMessage = await FormatDbAhelpMessage(
+                    aHelpMessage.Message,
+                    (NetUserId)aHelpMessage.SenderUserId,
+                    aHelpMessage.PlaySound,
+                    aHelpMessage.AdminOnly);
+
                 var bwoinkTextMessage = new BwoinkTextMessage(
-                    (NetUserId) aHelpMessage.ReceiverUserId,
-                    (NetUserId) aHelpMessage.SenderUserId,
+                    (NetUserId)aHelpMessage.ReceiverUserId,
+                    (NetUserId)aHelpMessage.SenderUserId,
                     formatMessage,
                     aHelpMessage.SentAt.DateTime.ToLocalTime(),
                     playSound: aHelpMessage.PlaySound,
                     adminOnly: aHelpMessage.AdminOnly,
                     dbLoad: true);
 
-                RaiseNetworkEvent(bwoinkTextMessage, args.SenderSession.Channel);
+                history.Add(bwoinkTextMessage);
             }
 
-            var loaded = new BwoinkDbLoadedMessage(msg.UserId);
-            RaiseNetworkEvent(loaded, args.SenderSession.Channel);
+            var historyEvent = new BwoinkTextHistoryMessage(msg.UserId, history);
+            RaiseNetworkEvent(historyEvent, args.SenderSession.Channel);
         }
 
         private async Task<string> FormatDbAhelpMessage(string message, NetUserId senderUserId,
@@ -398,7 +408,7 @@ namespace Content.Server.Administration.Systems
 
             if (senderAdmin is not null &&
                 senderAdmin.Value.dat.Flags ==
-                AdminFlags.Adminhelp) // Mentor. Not full admin. That's why it's colored differently.
+                AdminFlags.Mentor) // Mentor. Not full admin. That's why it's colored differently.
             {
                 bwoinkText = $"[color=purple]{adminPrefix}{username}[/color]";
             }
@@ -748,6 +758,23 @@ namespace Content.Server.Administration.Systems
                 return;
             }
 
+            // Sunrise-Ahelp-Antispam-Start
+            // Based on Starlight Build: https://github.com/ss14Starlight/space-station-14/pull/85
+            var currentTime = _timing.RealTime;
+
+            if (IsOnCooldown(message.UserId, currentTime, out var remainingCooldown))
+            {
+                // Send cooldown feedback to the client
+                RaiseNetworkEvent(new BwoinkCooldownMessage(remainingCooldown), senderSession.Channel);
+                return;
+            }
+
+            if (IsSpam(message.UserId, message.Text))
+                _banManager.CreateServerBan(senderSession.UserId, senderSession.Name, null, null, null, 180, NoteSeverity.High, Loc.GetString("ahelp-antispam-ban-reason"));
+
+            AddToRecentMessages(message.UserId, message.Text, currentTime);
+            // Sunrise-Ahelp-Antispam-End
+
             if (_rateLimit.CountAction(eventArgs.SenderSession, RateLimitKey) != RateLimitStatus.Allowed)
                 return;
 
@@ -983,6 +1010,61 @@ namespace Content.Server.Administration.Systems
             /// </summary>
             public bool OnCall;
         }
+
+        // Sunrise-Ahelp-Antispam-Start
+        // Based on Starlight Build: https://github.com/ss14Starlight/space-station-14/pull/85
+        private void AddToRecentMessages(NetUserId channelId, string text, TimeSpan timestamp)
+        {
+            _recentMessages.Enqueue((channelId, text, timestamp));
+
+            if (_recentMessages.Count > MaxRecentMessages)
+            {
+                _recentMessages.Dequeue();
+            }
+        }
+
+        private bool IsOnCooldown(NetUserId channelId, TimeSpan currentTime, out TimeSpan remainingCooldown)
+        {
+            remainingCooldown = TimeSpan.Zero;
+
+            var lastMessage = _recentMessages
+                .Where(msg => msg.Channel == channelId)
+                .OrderByDescending(msg => msg.Timestamp)
+                .FirstOrDefault();
+
+            if (lastMessage == default)
+                return false;
+
+            var timeSinceLastMessage = currentTime - lastMessage.Timestamp;
+            if (timeSinceLastMessage < _messageCooldown)
+            {
+                remainingCooldown = _messageCooldown - timeSinceLastMessage;
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool IsOnCooldown(NetUserId channelId, TimeSpan currentTime)
+        {
+            return IsOnCooldown(channelId, currentTime, out _);
+        }
+
+        private bool IsSpam(NetUserId channelId, string text)
+        {
+            var recentMessages = _recentMessages
+                .Where(msg => msg.Channel == channelId)
+                .OrderByDescending(msg => msg.Timestamp)
+                .Take(10);
+
+            return recentMessages.All(msg => msg.Text == text) && recentMessages.Count() >= 5;
+        }
+
+        public IEnumerable<(NetUserId Channel, string Text, TimeSpan Timestamp)> GetRecentMessages()
+        {
+            return _recentMessages;
+        }
+        // Sunrise-Ahelp-Antispam-End
     }
 
     public sealed class AHelpMessageParams

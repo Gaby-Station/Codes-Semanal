@@ -2,6 +2,7 @@
   id: DebugGenerator
   parent: BaseGenerator
   suffix: DEBUG
+  categories: [ Debug ] # Sunrise added
   components:
   - type: PowerSupplier
     supplyRate: 300000
@@ -15,6 +16,7 @@
   id: DebugConsumer
   name: consumer
   suffix: DEBUG
+  categories: [ Debug ] # Sunrise added
   placement:
     mode: SnapgridCenter
   components:
@@ -60,6 +62,7 @@
   id: DebugBatteryStorage
   name: battery storage
   suffix: DEBUG
+  categories: [ Debug ] # Sunrise added
   placement:
     mode: SnapgridCenter
   components:
@@ -93,6 +96,7 @@
   id: DebugBatteryDischarger
   name: battery discharger
   suffix: DEBUG
+  categories: [ Debug ] # Sunrise added
   placement:
     mode: SnapgridCenter
   components:
@@ -125,36 +129,96 @@
   - type: Anchorable
 
 - type: entity
-  id: DebugSMES
   parent: BaseSMES
-  suffix: DEBUG
+  id: DebugSMES
+  suffix: DEBUG, Empty
   components:
   - type: Tag
     tags:
-      - Debug
+    - Debug
 
 - type: entity
-  id: DebugSubstation
+  parent: BaseSMES
+  id: DebugSMESRecharging
+  suffix: DEBUG, AutoRecharge
+  categories: [ Debug ] # Sunrise added
+  components:
+  - type: BatterySelfRecharger
+    autoRechargeRate: 50000
+    autoRecharge: True
+  - type: Tag
+    tags:
+    - Debug
+
+- type: entity
   parent: BaseSubstation
-  suffix: DEBUG
+  id: DebugSubstation
+  suffix: DEBUG, Empty
   components:
   - type: Tag
     tags:
-      - Debug
+    - Debug
 
 - type: entity
-  id: DebugAPC
-  parent: BaseAPC
-  suffix: DEBUG
+  parent: BaseSubstation
+  id: DebugSubstationRecharging
+  suffix: DEBUG, AutoRecharge
+  components:
+  - type: BatterySelfRecharger
+    autoRechargeRate: 50000
+    autoRecharge: True
+  - type: Tag
+    tags:
+    - Debug
+
+- type: entity
+  parent: BaseSubstationWall
+  id: DebugSubstationWall
+  suffix: DEBUG, Empty
   components:
   - type: Tag
     tags:
-      - Debug
+    - Debug
+
+- type: entity
+  parent: BaseSubstationWall
+  id: DebugSubstationWallRecharging
+  suffix: DEBUG, AutoRecharge
+  components:
+  - type: BatterySelfRecharger
+    autoRechargeRate: 50000
+    autoRecharge: True
+  - type: Tag
+    tags:
+    - Debug
+
+- type: entity
+  parent: BaseAPC
+  id: DebugAPC
+  suffix: DEBUG, Empty
+  components:
+  - type: Tag
+    tags:
+    - Debug
+
+- type: entity
+  parent: BaseAPC
+  id: DebugAPCRecharging
+  suffix: DEBUG, AutoRecharge
+  categories: [ Debug ] # Sunrise added
+  components:
+  - type: BatterySelfRecharger
+    autoRechargeRate: 50000
+    autoRecharge: True
+  - type: Tag
+    tags:
+    - Debug
 
 - type: entity
   id: DebugPowerReceiver
   name: power receiver
   suffix: DEBUG
+  categories: [ Debug ] # Sunrise added
   placement:
     mode: SnapgridCenter
   components:

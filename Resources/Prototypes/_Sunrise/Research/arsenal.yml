@@ -6,13 +6,42 @@
     state: icon
   discipline: Arsenal
   tier: 2
-  cost:
-    Default: 6000
-    Scp: 3000
+  cost: 6000
   recipeUnlocks:
   - EnergyDomeDirectionalTurtle
+  radioChannels:
+  - Security
 
-- type: technology #Sunrise
+- type: technology
+  id: ArmorPenetrationMunitions
+  name: research-technology-armor-penetration
+  icon:
+    sprite: Objects/Weapons/Guns/Ammunition/Magazine/Rifle/rifle_mag.rsi
+    state: ap
+  discipline: Arsenal
+  tier: 2
+  cost: 12000
+  recipeUnlocks:
+  - SpeedLoaderMagnumAP
+  - MagazinePistolAP
+  #- MagazinePistol40AP
+  - MagazineRifleAP
+  - MagazineLightRifleAP
+  - MagazineBoxMagnumAP
+  - MagazineBoxPistolAP
+  #- MagazineBoxPistol40AP
+  - MagazineBoxRifleAP
+  - MagazineBoxLightRifleAP
+  - LightRifleHeavyMagazineAP
+  - MagazinePistolSubMachineGunAP
+  - MagazinePistolSubMachineGunTopMountedAP
+  - MagazinePistolHighCapacityAP
+  - MagazineBoxHeavyRifleAP
+  - MagazineRifleHeavyAP
+  radioChannels:
+  - Security
+
+- type: technology
   id: Gygax
   name: research-technology-gygax
   icon:
@@ -20,9 +49,7 @@
     state: gygax
   discipline: Arsenal
   tier: 2
-  cost:
-    Default: 12000
-    Scp: 6000
+  cost: 12000
   recipeUnlocks:
   - GygaxHarness
   - GygaxArmor
@@ -39,6 +66,8 @@
   - PaintGygaxOld
   technologyPrerequisites:
   - Ripley2
+  radioChannels:
+  - Security
 
 - type: technology
   id: ExplosiveMechAmmunition
@@ -48,26 +77,23 @@
     state: mecha_missilerack
   discipline: Arsenal
   tier: 3
-  cost:
-    Default: 15000
-    Scp: 7500
+  cost: 15000
   recipeUnlocks:
   - WeaponMechCombatMissileRack8
   technologyPrerequisites:
   - ExplosiveTechnology
-
+  radioChannels:
+  - Security
 
 - type: technology
   id: Durand
   name: research-technology-durand
   icon:
     sprite: Objects/Specific/Mech/durand.rsi
-    state: durand
+    state: base
   discipline: Arsenal
   tier: 3
-  cost:
-    Default: 16000
-    Scp: 8000
+  cost: 16000
   recipeUnlocks:
   - DurandHarness
   - DurandArmor
@@ -84,37 +110,35 @@
   - WeaponMechCombatMG
   - PaintDurandExecutor
   - PaintDurandShire
+  - PaintDurandOld
+  - PowerCageHigh
   technologyPrerequisites:
   - Gygax
+  radioChannels:
+  - Security
 
 # Tier 2
 
-- type: technology
-  id: ExtendedAmunitions
-  name: research-technology-extended-amunitions
-  icon:
-    sprite: _Sunrise/Objects/Weapons/Guns/Ammunition/Magazines/famas.rsi
-    state: base
-  discipline: Arsenal
-  tier: 2
-  cost:
-    Default: 12500
-    Scp: 6250
-  recipeUnlocks:
-  - BaseMagazinePistolCaselessRifleExtended
-  - MagazinePPSH41Extended
-  - MagazineMP5Extended
-  - MagazineMP7Extended
-  - MagazineP90Extended
-  - MagazineM16A4Extended
-  - MagazineAR18Extended
-  - MagazineM28Extended
-  - MagazineG36Extended
-  - MagazineFamasExtended
-  - MagazineV31Extended
-  - MagazineBauer127Extended
-  - MagazineBR64Extended
-  - MagazineDragunovExtended
+# Sunrise-TODO: Требует ребаланса с учетом новых типов боеприпасов
+#- type: technology
+#  id: ExtendedAmunitions
+#  name: research-technology-extended-amunitions
+#  icon:
+#    sprite: _Sunrise/Objects/Weapons/Guns/Ammunition/Magazines/famas.rsi
+#    state: base
+#  discipline: Arsenal
+#  tier: 2
+#  cost: 12500
+#  recipeUnlocks:
+#  - BaseMagazinePistolCaselessRifleExtended
+#  - MagazinePPSH41Extended
+#  - MagazineMP5Extended
+#  - MagazineMP7Extended
+#  - MagazineRifleExtended
+#  - MagazineV31Extended
+#  - MagazineDragunovExtended
+#  radioChannels:
+#  - Security
 
 
 - type: technology
@@ -125,41 +149,30 @@
     state: icon
   discipline: Arsenal
   tier: 2
-  cost:
-    Default: 12500
-    Scp: 6250
+  cost: 12500
   recipeUnlocks:
   - ClothingShoesBootsMagCombat
+  - VestSecUpgrade
+  - ModularReceiverAuto
+  - LecterUpgrade
+  - DrozdUpgrade
   technologyPrerequisites:
   - AdvancedRiotControl
+  radioChannels:
+  - Security
 
 - type: technology
-  id: Advanced Laser Manipulation
-  name: research-technology-advance-laser #
+  id: AdvancedLaserManipulation
+  name: research-technology-advance-laser
   icon:
     sprite: _Sunrise/Objects/Weapons/Guns/Battery/energygun_carbine.rsi
     state: icon
   discipline: Arsenal
   tier: 2
-  cost:
-    Default: 12500
-    Scp: 6250
+  cost: 12500
   recipeUnlocks:
   - WeaponGunLaserCarbineAutomatic
+  - MagazineBatteryLr30
   - WeaponEnergyGunPistol
-  technologyPrerequisites:
-  - ExperimentalBatteryAmmo
-
-- type: technology
-  id: ThermalWeaponry
-  name: research-technology-thermal-weaponry
-  icon:
-    sprite: _Sunrise/Objects/Weapons/Guns/Battery/temperaturegun.rsi
-    state: icon
-  discipline: Arsenal
-  tier: 3
-  cost:
-    Default: 17500
-    Scp: 7500
-  recipeUnlocks:
-  - WeaponTemperatureGun
+  radioChannels:
+  - Security

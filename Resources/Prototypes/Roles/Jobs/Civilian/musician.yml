@@ -6,6 +6,8 @@
   startingGear: MusicianGear
   icon: "JobIconMusician"
   supervisors: job-supervisors-hop
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
   access:
   - Maintenance
   - Theatre
@@ -24,3 +26,13 @@
   #storage:
     #back:
     #- Stuff
+
+- type: chameleonOutfit
+  id: MusicianChameleonOutfit
+  job: Musician
+  equipment:
+    head: ClothingHeadHatTophat
+    mask: ClothingMaskBreath
+    neck: ClothingMultipleHeadphones
+    outerClothing: ClothingOuterWinterMusician
+    gloves: ClothingHandsGlovesColorBlack

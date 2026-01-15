@@ -4,7 +4,6 @@ using System.Numerics;
 using Content.Server.Announcements;
 using Content.Server.Discord;
 using Content.Server.GameTicking.Events;
-using Content.Server.Ghost;
 using Content.Server.Maps;
 using Content.Server.Roles;
 using Content.Server.Shuttles.Components;
@@ -14,6 +13,7 @@ using Content.Shared.GameTicking;
 using Content.Shared.Mind;
 using Content.Shared.Players;
 using Content.Shared.Preferences;
+using Content.Shared.Roles.Components;
 using JetBrains.Annotations;
 using Prometheus;
 using Robust.Shared.Asynchronous;
@@ -21,12 +21,12 @@ using Robust.Shared.Audio;
 using Robust.Shared.EntitySerialization;
 using Robust.Shared.EntitySerialization.Systems;
 using Robust.Shared.Map;
-using Robust.Shared.Map.Components;
 using Robust.Shared.Network;
 using Robust.Shared.Player;
 using Robust.Shared.Random;
 using Robust.Shared.Utility;
 using Content.Server.StatsBoard;
+using Content.Shared._Sunrise.SunriseCCVars;
 
 namespace Content.Server.GameTicking
 {
@@ -44,6 +44,16 @@ namespace Content.Server.GameTicking
         private static readonly Gauge RoundLengthMetric = Metrics.CreateGauge(
             "ss14_round_length",
             "Round length in seconds.");
+
+        // Sunrise-Start
+        private static readonly Counter MapPlayedMetric = Metrics.CreateCounter(
+            "ss14_map_played_total",
+            "Number of times each map has been played.",
+            new CounterConfiguration
+            {
+                LabelNames = ["map_id"]
+            });
+        // Sunrise-End
 
 #if EXCEPTION_TOLERANCE
         [ViewVariables]
@@ -94,7 +104,7 @@ namespace Content.Server.GameTicking
         /// </remarks>
         private void LoadMaps()
         {
-            if (_mapManager.MapExists(DefaultMap))
+            if (_map.MapExists(DefaultMap))
                 return;
 
             AddGamePresetRules();
@@ -135,6 +145,10 @@ namespace Content.Server.GameTicking
 
             // Let game rules dictate what maps we should load.
             RaiseLocalEvent(new LoadingMapsEvent(maps));
+            // Sunrise-Start
+            MapPlayedMetric.WithLabels(mainStationMap.ID).Inc();
+            _gameMapManager.AddExcludedMap(mainStationMap.ID);
+            // Sunrise-End
 
             if (maps.Count == 0)
             {
@@ -212,7 +226,7 @@ namespace Content.Server.GameTicking
                 }
 
                 _metaData.SetEntityName(mapUid, proto.MapName);
-                var g = new List<EntityUid> {grid.Value.Owner};
+                var g = new List<EntityUid> { grid.Value.Owner };
                 RaiseLocalEvent(new PostGameMapLoad(proto, mapId, g, stationName));
                 return g;
             }
@@ -262,7 +276,7 @@ namespace Content.Server.GameTicking
                 }
 
                 _metaData.SetEntityName(mapUid, proto.MapName);
-                var g = new List<EntityUid> {grid.Value.Owner};
+                var g = new List<EntityUid> { grid.Value.Owner };
                 RaiseLocalEvent(new PostGameMapLoad(proto, mapId, g, stationName));
                 return g;
             }
@@ -312,7 +326,7 @@ namespace Content.Server.GameTicking
                     throw new Exception($"Failed to load game-map grid {ev.GameMap.ID}");
                 }
 
-                var g = new List<EntityUid> {grid.Value.Owner};
+                var g = new List<EntityUid> { grid.Value.Owner };
                 // TODO MAP LOADING use a new event?
                 RaiseLocalEvent(new PostGameMapLoad(proto, targetMap, g, stationName));
                 return g;
@@ -394,7 +408,7 @@ namespace Content.Server.GameTicking
                 HumanoidCharacterProfile profile;
                 if (_prefsManager.TryGetCachedPreferences(userId, out var preferences))
                 {
-                    profile = (HumanoidCharacterProfile) preferences.SelectedCharacter;
+                    profile = (HumanoidCharacterProfile)preferences.SelectedCharacter;
                 }
                 else
                 {
@@ -426,6 +440,18 @@ namespace Content.Server.GameTicking
                 _startingRound = false;
                 return;
             }
+
+            // Sunrise-Start
+            if (_cfg.GetCVar(SunriseCCVars.ExcludePresets) && CurrentPreset != null)
+                AddExcludedPreset(CurrentPreset.ID);
+            // Sunrise-End
+
+            // Fire edit start - для SafeTimeSystem.
+            // Иначе MapInitEvent срабатывает на сущностях раньше, чем время начала раунда установлено
+            // И система SafeTime будет брать время начала ПРЕРЫДУЩЕГО раунда.
+            // Поэтому делаем "фальшстарт" до загрузки карты, чтобы данные были плюс-минус актуальны.
+            RoundStartTimeSpan = _gameTiming.CurTime;
+            // Fire edit end
 
             // MapInitialize *before* spawning players, our codebase is too shit to do it afterwards...
             _map.InitializeMap(DefaultMap);
@@ -666,6 +692,9 @@ namespace Content.Server.GameTicking
             if (_serverUpdates.RoundEnded())
                 return;
 
+            // Check if the GamePreset needs to be reset
+            TryResetPreset();
+
             _sawmill.Info("Restarting round!");
 
             SendServerMessage(Loc.GetString("game-ticker-restart-round"));
@@ -751,6 +780,8 @@ namespace Content.Server.GameTicking
             _mapManager.Restart();
 
             _banManager.Restart();
+
+            _bugManager.Restart();
 
             _gameMapManager.ClearSelectedMap();
 

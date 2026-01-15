@@ -1,53 +1,20 @@
 - type: entity
-  id: LockerBlueshieldFilled
+  id: LockerBlueShieldOfficerFilled
   suffix: Filled
-  parent: LockerBlueshield
+  parent: LockerBlueShield
   components:
   - type: StorageFill
     contents:
-      - id: WeaponDisabler
-      - id: ClothingHeadsetAltCommand
       - id: CigarGoldCase
         prob: 0.25
       - id: ClothingMaskGasBlueShield
-      - id: TrackingImplanter
-        amount: 8
-
-- type: entity
-  id: LockerBlueshieldFilledUplink
-  suffix: Filled, Uplink
-  parent: LockerBlueshield
-  components:
-  - type: StorageFill
-    contents:
-      - id: BaseUplinkNTERTBlueShield
       - id: ClothingHeadsetAltCommand
-      - id: CigarGoldCase
-        prob: 0.25
-      - id: ClothingMaskGasBlueShield
-      - id: TrackingImplanter
-        amount: 8
-
-- type: entity
-  id: LockerBlueshieldFilledUplinkMultiphase
-  suffix: Filled, Uplink, Multiphase
-  parent: LockerBlueshield
-  components:
-  - type: StorageFill
-    contents:
-      - id: BaseUplinkNTERTBlueShield
-      - id: ClothingHeadsetAltCommand
-      - id: CigarGoldCase
-        prob: 0.25
-      - id: WeaponEnergyGunMultiphase
-      - id: ClothingMaskGasBlueShield
-      - id: TrackingImplanter
-        amount: 8
+      - id: HandheldBSOCrewMonitor
 
 - type: entity
   id: LockerBlueshieldFilledHardsuit
   suffix: Filled, Hardsuit
-  parent: LockerBlueshield
+  parent: LockerBlueShield
   components:
   - type: StorageFill
     contents:
@@ -56,9 +23,7 @@
     - id: CigarGoldCase
       prob: 0.25
     - id: ClothingMaskGasBlueShield
-    - id: TrackingImplanter
-      amount: 8
-    - id: ClothingOuterHardsuitBlueshield
+    - id: ClothingOuterHardsuitBlueShield
     - id: OxygenTankFilled
     - id: ClothingMaskBreathMedicalSecurity
 
@@ -71,4 +36,8 @@
     access: [["BlueShield"]]
   - type: StorageFill
     contents:
-    - id: WeaponEnergyGunMultiphase
+    - id: WeaponMultiphaseGun
+    - id: WeaponSubMachineGunWt550
+    - id: MagazinePistolSubMachineGunTopMountedSP
+      amount: 2
+    - id: MagazinePistolSubMachineGunTopMountedHP

@@ -4,6 +4,7 @@ using Content.Server.Body.Systems;
 using Content.Shared._Sunrise.BloodCult.Components;
 using Content.Shared._Sunrise.BloodCult.Items;
 using Content.Shared.Body.Components;
+using Content.Shared.Body.Systems;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Chemistry.EntitySystems;
 using Content.Shared.Damage;
@@ -149,7 +150,7 @@ public sealed class BloodCultWeaponSystem : EntitySystem
         if (HasComp<BloodCultistComponent>(args.User))
             return;
 
-        _stunSystem.TryParalyze(args.User, TimeSpan.FromSeconds(component.StuhTime), true);
+        _stunSystem.TryAddParalyzeDuration(args.User, TimeSpan.FromSeconds(component.StuhTime));
         _damageableSystem.TryChangeDamage(args.User, component.Damage, origin: uid);
     }
 }

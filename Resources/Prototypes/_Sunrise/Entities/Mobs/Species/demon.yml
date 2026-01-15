@@ -5,7 +5,7 @@
   id: BaseMobDemon
   abstract: true
   components:
-  - type: Absorbable
+  - type: Interactions
   - type: HumanoidAppearance
     species: Demon
   - type: Hunger
@@ -33,7 +33,6 @@
       Unsexed: FemaleHuman
   - type: Damageable
     damageContainer: Biological
-    damageModifierSet: Demon
   - type: MeleeWeapon
     hidden: true
     soundHit:

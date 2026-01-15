@@ -7,7 +7,7 @@
   - type: StorageFill
     contents:
       - id: CrowbarRed
-      - id: RadioHandheld
+      - id: ScpRadioHandheldCommon # Fire edit
       - id: WelderMini
       - id: FireExtinguisherMini
       # Random lighting item orGroup
@@ -134,7 +134,9 @@
     - id: Welder
     - id: Multitool
     - id: ClothingHandsGlovesCombat
-    - id: ClothingEyesGlassesWelding #Sunrise-edit: rebalance toolbox
+    - id: ClothingMaskGasSyndicate
+  - type: StaticPrice
+    price: 1000
 
 - type: entity
   id: ToolboxGoldFilled

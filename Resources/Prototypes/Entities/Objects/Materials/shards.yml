@@ -4,6 +4,11 @@
   id: ShardBase
   description: It's a shard of some unknown material.
   components:
+  # Fire added start
+  - type: BloodSplatterer
+    probability: 0.1
+    bloodLineProbability: 0.03
+  # Fire added end
   - type: Sharp
   - type: Execution
     doAfterDuration: 4.0
@@ -69,15 +74,26 @@
   - type: Slippery
     slipSound:
       path: /Audio/Effects/glass_step.ogg
-    launchForwardsMultiplier: 0
+    slipData:
+      launchForwardsMultiplier: 0
   - type: TriggerOnStepTrigger
-  - type: DamageUserOnTrigger
+  - type: DamageOnTrigger
+    targetUser: true
     damage:
       types:
         Piercing: 5
   - type: DeleteOnTrigger
   - type: StaticPrice
     price: 0
+  # Sunrise-start
+  - type: Scalpel
+  - type: SurgeryTool
+    successRate: 0.6
+    startSound:
+      path: /Audio/_Sunrise/Medical/Surgery/scalpel1.ogg
+    endSound:
+      path: /Audio/_Sunrise/Medical/Surgery/scalpel2.ogg
+  # Sunrise-end
 
 - type: entity
   parent: ShardBase
@@ -90,7 +106,7 @@
   - type: ToolRefinable
     refineResult:
     - id: SheetGlass1
-  - type: DamageUserOnTrigger
+  - type: DamageOnTrigger
     damage:
       types:
         Piercing: 4.5
@@ -126,7 +142,7 @@
     refineResult:
     - id: SheetGlass1
     - id: PartRodMetal1
-  - type: DamageUserOnTrigger
+  - type: DamageOnTrigger
     damage:
       types:
         Piercing: 5.5
@@ -162,7 +178,7 @@
     refineResult:
     - id: SheetGlass1
     - id: SheetPlasma1
-  - type: DamageUserOnTrigger
+  - type: DamageOnTrigger
     damage:
       types:
         Piercing: 6.5
@@ -201,7 +217,7 @@
     refineResult:
     - id: SheetGlass1
     - id: SheetUranium1
-  - type: DamageUserOnTrigger
+  - type: DamageOnTrigger
     damage:
       types:
         Piercing: 5
@@ -236,7 +252,7 @@
     refineResult:
     - id: SheetGlass1
     - id: SheetBrass1
-  - type: DamageUserOnTrigger
+  - type: DamageOnTrigger
     damage:
       types:
         Piercing: 5

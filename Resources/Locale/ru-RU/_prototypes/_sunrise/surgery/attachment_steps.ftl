@@ -1,12 +1,8 @@
-ent-SurgeryStepExposeNerves = Раскрыть нервы
+ent-SurgeryLimbAttachmentStep = прикрепить конечность
     .desc = { ent-SurgeryStepBase.desc }
-ent-SurgeryStepExposeBloodVessels = Открыть кровеносные сосуды
+ent-SurgeryStepRejoinNerves = Соединить нервы
     .desc = { ent-SurgeryStepBase.desc }
-ent-SurgeryLimbAttachmentStep = Прикрепить конечность
+ent-SurgeryStepRejoinBloodVessels = Соединить кровеносные сосуды
     .desc = { ent-SurgeryStepBase.desc }
-ent-SurgeryStepRejoinNerves = Восстановить нервы
-    .desc = { ent-SurgeryStepBase.desc }
-ent-SurgeryStepRejoinBloodVessels = Восстановить кровеносные сосуды
-    .desc = { ent-SurgeryStepBase.desc }
-ent-SurgeryStepRestoreCartilage = Восстановить хрящи
+ent-SurgeryStepRestoreCartilage = Восстановить хрящ
     .desc = { ent-SurgeryStepBase.desc }

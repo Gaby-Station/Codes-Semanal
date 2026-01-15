@@ -2,6 +2,7 @@
   id: Reptilian
   name: species-name-reptilian
   roundStart: false # Fire edit
+  stationRecordsHidden: true # Fire added
   prototype: MobReptilian
   bodyTypes:
   - ReptilianNormal
@@ -13,6 +14,10 @@
   maleFirstNames: NamesReptilianMale
   femaleFirstNames: NamesReptilianFemale
   naming: FirstDashFirst
+  # Sunrise-Edit
+  buttScan:
+    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
+    state: human
 
 - type: bodyType
   id: ReptilianNormal
@@ -33,6 +38,7 @@
     RLeg: MobReptilianRLeg
     LFoot: MobReptilianLFoot
     RFoot: MobReptilianRFoot
+    Back: MobHumanoidAnyMarking # SUNRISE
 
 - type: bodyType
   id: ReptilianSlim
@@ -89,6 +95,11 @@
     Arms:
       points: 2
       required: false
+# SUNRISE
+    Back:
+      points: 2
+      required: false
+# SUNRISE
 
 - type: humanoidBaseSprite
   id: MobReptilianHead

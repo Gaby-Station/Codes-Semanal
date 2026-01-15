@@ -1,6 +1,11 @@
-ent-SheetPrinter = { ent-Paper }
+ent-SheetOfficePaperBase = { ent-BaseItem }
+    .desc = A sheet of printing paper, used for documents and printers.
+ent-SheetOfficePaper = printing paper
     .suffix = Full
-    .desc = { ent-Paper.desc }
-ent-SheetPrinter1 = { ent-SheetPrinter }
+    .desc = { ent-SheetOfficePaperBase.desc }
+ent-SheetOfficePaper1 = printing paper
     .suffix = Single
-    .desc = { ent-SheetPrinter.desc }
+    .desc = { ent-SheetOfficePaper.desc }
+ent-OfficePaper = stack of printing paper
+    .desc = A stack of printing paper sheets for printers and documents.
+stack-office-paper = stack of printing paper

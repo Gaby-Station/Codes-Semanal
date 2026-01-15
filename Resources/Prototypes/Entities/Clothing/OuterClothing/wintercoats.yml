@@ -13,12 +13,16 @@
     coolingCoefficient: 0.1
   - type: Item
     size: Normal
+  - type: Pierceable
+    level: Metal
   - type: Armor
     modifiers:
       coefficients:
         Slash: 0.95
         Heat: 0.90
     priceMultiplier: 0
+  - type: ZombificationResistance
+    zombificationResistanceCoefficient: 0.55
   - type: Food
     requiresSpecialDigestion: true
   - type: SolutionContainerManager
@@ -31,6 +35,8 @@
   - type: Tag
     tags:
     - ClothMade
+    - NudeBottom # INTERACTIONS
+    - Recyclable
     - WhitelistChameleon
   - type: StaticPrice
     price: 50
@@ -230,6 +236,8 @@
     clothingVisuals:
       outerClothing:
       - state: CHEM-equipped-OUTERCLOTHING
+  - type: Pierceable
+    level: Metal
   - type: Armor
     modifiers:
       coefficients:
@@ -260,6 +268,8 @@
     clothingVisuals:
       outerClothing:
       - state: CMO-equipped-OUTERCLOTHING
+  - type: Pierceable
+    level: Metal
   - type: Armor
     modifiers:
       coefficients:
@@ -323,6 +333,8 @@
     clothingVisuals:
       outerClothing:
       - state: GENE-equipped-OUTERCLOTHING
+  - type: Pierceable
+    level: Metal
   - type: Armor
     modifiers:
       coefficients:
@@ -439,6 +451,8 @@
     clothingVisuals:
       outerClothing:
       - state: JANI-equipped-OUTERCLOTHING
+  - type: Pierceable
+    level: Metal
   - type: Armor
     modifiers:
       coefficients:
@@ -469,6 +483,8 @@
     clothingVisuals:
       outerClothing:
       - state: MED-equipped-OUTERCLOTHING
+  - type: Pierceable
+    level: Metal
   - type: Armor
     modifiers:
       coefficients:
@@ -545,6 +561,8 @@
     clothingVisuals:
       outerClothing:
       - state: PARA-equipped-OUTERCLOTHING
+  - type: Pierceable
+    level: Metal
   - type: Armor
     modifiers:
       coefficients:
@@ -599,6 +617,8 @@
     clothingVisuals:
       outerClothing:
       - state: RD-equipped-OUTERCLOTHING
+  - type: Pierceable
+    level: Metal
   - type: Armor
     modifiers:
       coefficients:
@@ -653,6 +673,8 @@
     clothingVisuals:
       outerClothing:
       - state: SCI-equipped-OUTERCLOTHING
+  - type: Pierceable
+    level: Metal
   - type: Armor
     modifiers:
       coefficients:
@@ -706,6 +728,8 @@
     clothingVisuals:
       outerClothing:
       - state: VIRO-equipped-OUTERCLOTHING
+  - type: Pierceable
+    level: Metal
   - type: Armor
     modifiers:
       coefficients:
@@ -781,7 +805,7 @@
 
 ##############################################################
 - type: entity
-  parent: [ClothingOuterWinterWarden, BaseSyndicateContraband]
+  parent: [ BaseSyndicateContraband, ClothingOuterWinterWarden ]
   id: ClothingOuterWinterSyndieCapArmored
   name: syndicate's armored winter coat
   description: "The syndicate's armored winter coat is made of durable fabric, with gilded patterns, and coarse wool."

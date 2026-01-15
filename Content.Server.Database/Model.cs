@@ -47,6 +47,8 @@ namespace Content.Server.Database
         public DbSet<BanTemplate> BanTemplate { get; set; } = null!;
         public DbSet<IPIntelCache> IPIntelCache { get; set; } = null!;
         public DbSet<AHelpMessage> AHelpMessages { get; set; } = default!;
+        public DbSet<MentorHelpTicket> MentorHelpTickets { get; set; } = default!;
+        public DbSet<MentorHelpMessage> MentorHelpMessages { get; set; } = default!;
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -393,6 +395,7 @@ namespace Content.Server.Database
         public Guid UserId { get; set; }
         public int SelectedCharacterSlot { get; set; }
         public string AdminOOCColor { get; set; } = null!;
+        public List<string> ConstructionFavorites { get; set; } = new();
         public List<Profile> Profiles { get; } = new();
     }
 
@@ -403,6 +406,10 @@ namespace Content.Server.Database
         [Column("char_name")] public string CharacterName { get; set; } = null!;
         public string FlavorText { get; set; } = null!;
         public int Age { get; set; }
+
+        public float Width { get; set; } = 1f; //Sunrise
+        public float Height { get; set; } = 1f; // Sunrise
+
         public string Sex { get; set; } = null!;
 
         public string BodyType { get; set; } = null!;
@@ -415,6 +422,12 @@ namespace Content.Server.Database
         public string HairColor { get; set; } = null!;
         public string FacialHairName { get; set; } = null!;
         public string FacialHairColor { get; set; } = null!;
+        // sunrise gradient start
+        public int HairColorType { get; set; } = 0;
+        public string HairExtendedColor { get; set; } = null!;
+        public int FacialHairColorType { get; set; } = 0;
+        public string FacialHairExtendedColor { get; set; } = null!;
+        // sunrise gradient end
         public string EyeColor { get; set; } = null!;
         public string SkinColor { get; set; } = null!;
         public int SpawnPriority { get; set; } = 0;
@@ -708,6 +721,11 @@ namespace Content.Server.Database
         [Required] public LogImpact Impact { get; set; }
 
         [Required] public DateTime Date { get; set; }
+
+        /// <summary>
+        /// The current time in the round in ticks since the start of the round.
+        /// </summary>
+        public long CurTime { get; set; }
 
         [Required] public string Message { get; set; } = default!;
 
@@ -1348,5 +1366,108 @@ namespace Content.Server.Database
         [Required, MaxLength(4096)] public string Message { get; set; } = string.Empty;
         public bool PlaySound { get; set; }
         public bool AdminOnly { get; set; }
+    }
+
+    /// <summary>
+    /// Represents a mentor help ticket
+    /// </summary>
+    [Table("mentor_help_tickets"), Index(nameof(PlayerId)), Index(nameof(AssignedToUserId)), Index(nameof(Status))]
+    public class MentorHelpTicket
+    {
+        [Key]
+        public int Id { get; set; }
+
+        /// <summary>
+        /// The player who created the ticket
+        /// </summary>
+        [ForeignKey("Player")]
+        public Guid PlayerId { get; set; }
+
+        /// <summary>
+        /// The mentor/admin who claimed this ticket (null if unclaimed)
+        /// </summary>
+        [ForeignKey("Player")]
+        public Guid? AssignedToUserId { get; set; }
+
+        /// <summary>
+        /// Subject/title of the ticket
+        /// </summary>
+        [Required, MaxLength(256)]
+        public string Subject { get; set; } = string.Empty;
+
+        /// <summary>
+        /// Current status of the ticket
+        /// </summary>
+        public MentorHelpTicketStatus Status { get; set; } = MentorHelpTicketStatus.Open;
+
+        /// <summary>
+        /// When the ticket was created
+        /// </summary>
+        public DateTimeOffset CreatedAt { get; set; }
+
+        /// <summary>
+        /// When the ticket was last updated
+        /// </summary>
+        public DateTimeOffset UpdatedAt { get; set; }
+
+        /// <summary>
+        /// When the ticket was closed (null if still open)
+        /// </summary>
+        public DateTimeOffset? ClosedAt { get; set; }
+
+        /// <summary>
+        /// Who closed the ticket
+        /// </summary>
+        [ForeignKey("Player")]
+        public Guid? ClosedByUserId { get; set; }
+
+        /// <summary>
+        /// Round ID when the ticket was created
+        /// </summary>
+        public int? RoundId { get; set; }
+
+        /// <summary>
+        /// Server ID where the ticket was created
+        /// </summary>
+        public int? ServerId { get; set; }
+    }
+
+    /// <summary>
+    /// Represents a message in a mentor help ticket
+    /// </summary>
+    [Table("mentor_help_messages"), Index(nameof(TicketId)), Index(nameof(SentAt))]
+    public class MentorHelpMessage
+    {
+        [Key]
+        public int Id { get; set; }
+
+        /// <summary>
+        /// The ticket this message belongs to
+        /// </summary>
+        [ForeignKey("MentorHelpTicket")]
+        public int TicketId { get; set; }
+        public MentorHelpTicket Ticket { get; set; } = null!;
+
+        /// <summary>
+        /// Who sent this message
+        /// </summary>
+        [ForeignKey("Player")]
+        public Guid SenderUserId { get; set; }
+
+        /// <summary>
+        /// The message content
+        /// </summary>
+        [Required, MaxLength(4096)]
+        public string Message { get; set; } = string.Empty;
+
+        /// <summary>
+        /// When the message was sent
+        /// </summary>
+        public DateTimeOffset SentAt { get; set; }
+
+        /// <summary>
+        /// Whether this message is only visible to mentors/admins
+        /// </summary>
+        public bool IsStaffOnly { get; set; } = false;
     }
 }

@@ -1,5 +1,7 @@
+using Content.Server._Sunrise.Contributors;
 using Content.Server._Sunrise.Entry;
 using Content.Server._Sunrise.GuideGenerator;
+using Content.Server._Sunrise.PlayerCache;
 using Content.Server._Sunrise.ServersHub;
 using Content.Server._Sunrise.TTS;
 using Content.Server.Acz;
@@ -7,19 +9,21 @@ using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
 using Content.Server.Afk;
+using Content.Server.Ani;
+using Content.Server.BugReports;
 using Content.Server.Chat.Managers;
 using Content.Server.Connection;
 using Content.Server.Database;
+using Content.Server.Discord.DiscordLink;
 using Content.Server.EUI;
 using Content.Server.GameTicking;
 using Content.Server.GhostKick;
+using Content.Server.Github;
 using Content.Server.GuideGenerator;
 using Content.Server.Info;
 using Content.Server.IoC;
 using Content.Server.Maps;
 using Content.Server.NodeContainer.NodeGroups;
-using Content.Server.Objectives;
-using Content.Server.Players;
 using Content.Server.Players.JobWhitelist;
 using Content.Server.Players.PlayTimeTracking;
 using Content.Server.Players.RateLimiting;
@@ -51,6 +55,7 @@ namespace Content.Server.Entry
         private IVoteManager _voteManager = default!;
         private ServerUpdateManager _updateManager = default!;
         private ServersHubManager _serversHubManager = default!; // Sunrise-Edit
+        private ContributorsManager _contributorsManager = default!; // Sunrise-Edit
         private PlayTimeTrackingManager? _playTimeTracking;
         private IEntitySystemManager? _sysMan;
         private IServerDbManager? _dbManager;
@@ -71,6 +76,10 @@ namespace Content.Server.Entry
 
             var aczProvider = new ContentMagicAczProvider(IoCManager.Resolve<IDependencyCollection>());
             IoCManager.Resolve<IStatusHost>().SetMagicAczProvider(aczProvider);
+
+            PatchManager.Patch(logManager);
+
+            LoadConfigPresets(cfg, res, logManager.GetSawmill("configpreset"));
 
             var factory = IoCManager.Resolve<IComponentFactory>();
             var prototypes = IoCManager.Resolve<IPrototypeManager>();
@@ -101,6 +110,7 @@ namespace Content.Server.Entry
                 _voteManager = IoCManager.Resolve<IVoteManager>();
                 _updateManager = IoCManager.Resolve<ServerUpdateManager>();
                 _serversHubManager = IoCManager.Resolve<ServersHubManager>(); // Sunrise-Edit
+                _contributorsManager = IoCManager.Resolve<ContributorsManager>(); // Sunrise-Edit
                 _playTimeTracking = IoCManager.Resolve<PlayTimeTrackingManager>();
                 _connectionManager = IoCManager.Resolve<IConnectionManager>();
                 _sysMan = IoCManager.Resolve<IEntitySystemManager>();
@@ -117,11 +127,17 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<INodeGroupFactory>().Initialize();
                 IoCManager.Resolve<ContentNetworkResourceManager>().Initialize();
                 IoCManager.Resolve<GhostKickManager>().Initialize();
-                IoCManager.Resolve<TTSManager>().Initialize(); // Sunrise-TTS
                 IoCManager.Resolve<ServerInfoManager>().Initialize();
                 IoCManager.Resolve<ServerApi>().Initialize();
+                IoCManager.Resolve<GithubClient>().Initialize();
+                IoCManager.Resolve<GithubApiManager>().Initialize();
+                IoCManager.Resolve<GithubBackgroundWorker>().Initialize();
+                IoCManager.Resolve<IBugReportManager>().Initialize();
 
-                IoCManager.Resolve<ServersHubManager>().Initialize(); // Sunrise-Hub
+                IoCManager.Resolve<TTSManager>().Initialize(); // Sunrise-Edit
+                IoCManager.Resolve<ServersHubManager>().Initialize(); // Sunrise-Edit
+                IoCManager.Resolve<ContributorsManager>().Initialize(); // Sunrise-Edit
+                IoCManager.Resolve<PlayerCacheManager>().Initialize(); // Sunrise-Edit
 
                 // Sunrise-Sponsors-Start
                 SunriseServerEntry.Init();
@@ -174,6 +190,10 @@ namespace Content.Server.Entry
                 IoCManager.Resolve<IAdminManager>().Initialize();
                 IoCManager.Resolve<IAfkManager>().Initialize();
                 IoCManager.Resolve<RulesManager>().Initialize();
+
+                IoCManager.Resolve<DiscordLink>().Initialize();
+                IoCManager.Resolve<DiscordChatLink>().Initialize();
+
                 _euiManager.Initialize();
 
                 IoCManager.Resolve<IGameMapManager>().Initialize();
@@ -207,6 +227,7 @@ namespace Content.Server.Entry
                     _watchlistWebhookManager.Update();
                     _connectionManager?.Update();
                     _serversHubManager.Update(); // Sunrise-Edit
+                    _contributorsManager.Update(); // Sunrise-Edit
                     _sponsorsManager?.Update(); // Sunrise-Edit
                     break;
             }
@@ -217,6 +238,11 @@ namespace Content.Server.Entry
             _playTimeTracking?.Shutdown();
             _dbManager?.Shutdown();
             IoCManager.Resolve<ServerApi>().Shutdown();
+
+            IoCManager.Resolve<DiscordLink>().Shutdown();
+            IoCManager.Resolve<DiscordChatLink>().Shutdown();
+
+            IoCManager.Resolve<IBugReportManager>().Shutdown();
         }
 
         private static void LoadConfigPresets(IConfigurationManager cfg, IResourceManager res, ISawmill sawmill)
@@ -250,6 +276,7 @@ namespace Content.Server.Entry
             Load(CCVars.ConfigPresetDebug, "debug");
 #endif
 
+#pragma warning disable CS8321
             void Load(CVarDef<bool> cVar, string name)
             {
                 var path = $"{ConfigPresetsDirBuild}{name}.toml";
@@ -259,6 +286,7 @@ namespace Content.Server.Entry
                     sawmill.Info("Loaded config preset: {Preset}", path);
                 }
             }
+#pragma warning restore CS8321
         }
     }
 }

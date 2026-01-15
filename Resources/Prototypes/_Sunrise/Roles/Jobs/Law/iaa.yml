@@ -16,6 +16,7 @@
   canBeAntag: false
   displayWeight: 40
   setPreference: false # Fire added
+  overrideConsoleVisibility: false # Fire added
   access:
   - Command
   - Service
@@ -37,3 +38,10 @@
     pocket2: HyperLinkBookCorporateLaw
   inhand:
     - BriefcaseIAAFilled
+
+- type: chameleonOutfit
+  id: IAAChameleonOutfit
+  job: IAA
+  equipment:
+    neck: ClothingNeckCloakIAACloak
+    outerClothing: ClothingOuterCoatIAA

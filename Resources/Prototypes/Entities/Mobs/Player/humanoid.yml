@@ -6,21 +6,40 @@
     - type: RandomHumanoidAppearance
       randomizeName: false
     - type: GhostTakeoverAvailable
+    - type: IdBind
 
 - type: randomHumanoidSettings
   id: EventHumanoidMindShielded
   parent: EventHumanoid
   components:
-    - type: MindShield
+    - type: AutoImplant
+      implants:
+      - MindShieldImplant
     - type: AntagImmune
 
 - type: randomHumanoidSettings
   id: EventHumanoidCentcomm
   parent: EventHumanoidMindShielded
+  randomizeName: false
   components:
   - type: AutoImplant
     implants:
+    - MindShieldImplant
     - DeathRattleImplantCentcomm
+
+# Sunrise-start
+- type: randomHumanoidSettings
+  id: EventHumanoidCentcommSunrise
+  parent: EventHumanoidMindShielded
+  randomizeName: false
+  components:
+  - type: AutoImplant
+    implants:
+    - MindShieldImplant
+    - DeathRattleImplantCentcomm
+    - RadioImplantCentcomm
+    - FreedomImplant
+# Sunrise-end
 
 ## Death Squad
 
@@ -56,6 +75,8 @@
   - Demon
   - SlimePerson
   - Dwarf
+  - HumanoidXeno
+  - Predator
   randomizeName: false
   components:
     - type: GhostRole
@@ -110,6 +131,8 @@
   - Demon
   - SlimePerson
   - Dwarf
+  - HumanoidXeno
+  - Predator
   randomizeName: false
   components:
     - type: GhostRole
@@ -155,6 +178,8 @@
   - Demon
   - SlimePerson
   - Dwarf
+  - HumanoidXeno
+  - Predator
   parent: ERTLeader
   components:
     - type: GhostRole
@@ -178,6 +203,7 @@
 
 - type: randomHumanoidSettings
   id: ERTLeaderEVALecter
+  parent: ERTLeaderEVA
   speciesBlacklist: # Sunrise-edit
   - Diona
   - Vox
@@ -191,7 +217,8 @@
   - Demon
   - SlimePerson
   - Dwarf
-  parent: ERTLeaderEVA
+  - HumanoidXeno
+  - Predator
   components:
     - type: GhostRole
       name: ghost-role-information-ert-leader-name
@@ -199,7 +226,7 @@
       rules: ghost-role-information-nonantagonist-rules
       raffle:
         settings: short
-      job: ERTLeader
+      job: ERTLeaderVeteran
     - type: Loadout
       prototypes: [ ERTLeaderGearEVALecter ]
       roleLoadout: [ RoleSurvivalEVA ]
@@ -238,6 +265,8 @@
   - Demon
   - SlimePerson
   - Dwarf
+  - HumanoidXeno
+  - Predator
   parent: ERTLeader
   components:
     - type: BibleUser
@@ -284,6 +313,8 @@
   - Demon
   - SlimePerson
   - Dwarf
+  - HumanoidXeno
+  - Predator
   parent: ERTChaplain
   components:
     - type: GhostRole
@@ -332,6 +363,8 @@
   - Demon
   - SlimePerson
   - Dwarf
+  - HumanoidXeno
+  - Predator
   parent: ERTLeader
   components:
     - type: GhostRole
@@ -377,6 +410,8 @@
   - Demon
   - SlimePerson
   - Dwarf
+  - HumanoidXeno
+  - Predator
   parent: ERTJanitor
   components:
     - type: GhostRole
@@ -424,6 +459,8 @@
   - Demon
   - SlimePerson
   - Dwarf
+  - HumanoidXeno
+  - Predator
   parent: ERTLeader
   components:
     - type: GhostRole
@@ -469,6 +506,8 @@
   - Demon
   - SlimePerson
   - Dwarf
+  - HumanoidXeno
+  - Predator
   parent: ERTEngineer
   components:
     - type: GhostRole
@@ -516,6 +555,8 @@
   - Demon
   - SlimePerson
   - Dwarf
+  - HumanoidXeno
+  - Predator
   parent: ERTLeader
   components:
     - type: GhostRole
@@ -561,6 +602,8 @@
   - Demon
   - SlimePerson
   - Dwarf
+  - HumanoidXeno
+  - Predator
   parent: ERTSecurity
   components:
     - type: GhostRole
@@ -597,6 +640,8 @@
   - Demon
   - SlimePerson
   - Dwarf
+  - HumanoidXeno
+  - Predator
   parent: ERTSecurityEVA
   components:
     - type: GhostRole
@@ -644,6 +689,8 @@
   - Demon
   - SlimePerson
   - Dwarf
+  - HumanoidXeno
+  - Predator
   parent: ERTLeader
   components:
     - type: GhostRole
@@ -689,6 +736,8 @@
   - Demon
   - SlimePerson
   - Dwarf
+  - HumanoidXeno
+  - Predator
   parent: ERTMedical
   components:
     - type: GhostRole
@@ -731,6 +780,8 @@
   - Demon
   - SlimePerson
   - Dwarf
+  - HumanoidXeno
+  - Predator
   components:
     - type: Loadout
       prototypes: [CBURNGear]
@@ -769,6 +820,8 @@
   - Moth
   - Arachnid
   - Reptilian
+  - HumanoidXeno
+  - Predator
   components:
     - type: GhostRole
       name: ghost-role-information-centcom-official-name
@@ -800,6 +853,8 @@
   - Diona
   - Vox
   - Felinid
+  - HumanoidXeno
+  - Predator
   components:
     - type: RandomHumanoidAppearance
       randomizeName: false
@@ -823,6 +878,8 @@
   - Diona
   - Vox
   - Felinid
+  - HumanoidXeno
+  - Predator
   components:
     - type: RandomHumanoidAppearance
       randomizeName: false

@@ -5,9 +5,11 @@ using System.Text.Json;
 using System.Threading;
 using System.Threading.Tasks;
 using Content.Server.Administration.Logs;
+using Content.Shared._Sunrise.MentorHelp;
 using Content.Shared.Administration;
 using Content.Shared.Administration.Logs;
 using Content.Shared.CCVar;
+using Content.Shared.Construction.Prototypes;
 using Content.Shared.Database;
 using Content.Shared.Preferences;
 using Content.Shared.Roles;
@@ -42,6 +44,8 @@ namespace Content.Server.Database
         Task SaveCharacterSlotAsync(NetUserId userId, ICharacterProfile? profile, int slot);
 
         Task SaveAdminOOCColorAsync(NetUserId userId, Color color);
+
+        Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites);
 
         // Single method for two operations for transaction.
         Task DeleteSlotAndSetSelectedIndex(NetUserId userId, int deleteSlot, int newSlot);
@@ -123,6 +127,10 @@ namespace Content.Server.Database
         /// <returns><see cref="ServerBanExemptFlags.None"/> if the user is not exempt from any bans.</returns>
         Task<ServerBanExemptFlags> GetBanExemption(NetUserId userId, CancellationToken cancel = default);
 
+        // Sunrise-Start
+        Task<List<ServerBanDef>> GetServerBansByAdminAsync(NetUserId adminId, DateTimeOffset since);
+        Task DeleteServerBanAsync(int banId);
+        // Sunrise-End
         #endregion
 
         #region Role Bans
@@ -370,6 +378,21 @@ namespace Content.Server.Database
         public Task<List<AHelpMessage>> GetAHelpMessagesByReceiverAsync(Guid receiverUserId);
 
         #endregion
+
+        #region MentorHelp
+
+        Task<List<MentorHelpStatistics>> GetMentorHelpStatisticsAsync();
+        Task AddMentorHelpTicketAsync(MentorHelpTicket ticket);
+        Task<MentorHelpTicket?> GetMentorHelpTicketAsync(int ticketId);
+        Task UpdateMentorHelpTicketAsync(MentorHelpTicket ticket);
+        Task<List<MentorHelpTicket>> GetMentorHelpTicketsByPlayerAsync(Guid playerId);
+        Task<List<MentorHelpTicket>> GetOpenMentorHelpTicketsAsync();
+        Task<List<MentorHelpTicket>> GetAssignedMentorHelpTicketsAsync(Guid mentorId);
+        Task AddMentorHelpMessageAsync(MentorHelpMessage message);
+        Task<List<MentorHelpMessage>> GetMentorHelpMessagesByTicketAsync(int ticketId);
+        Task<List<MentorHelpTicket>> GetClosedMentorHelpTicketsAsync();
+
+        #endregion
         // Sunrise-End
     }
 
@@ -419,6 +442,7 @@ namespace Content.Server.Database
         private ServerDbBase _db = default!;
         private LoggingProvider _msLogProvider = default!;
         private ILoggerFactory _msLoggerFactory = default!;
+        private ISawmill _sawmill = default!;
 
         private bool _synchronous;
         // When running in integration tests, we'll use a single in-memory SQLite database connection.
@@ -434,6 +458,7 @@ namespace Content.Server.Database
             {
                 builder.AddProvider(_msLogProvider);
             });
+            _sawmill = _logMgr.GetSawmill("db.manager");
 
             _synchronous = _cfg.GetCVar(CCVars.DatabaseSynchronous);
 
@@ -496,6 +521,12 @@ namespace Content.Server.Database
         {
             DbWriteOpsMetric.Inc();
             return RunDbCommand(() => _db.SaveAdminOOCColorAsync(userId, color));
+        }
+
+        public Task SaveConstructionFavoritesAsync(NetUserId userId, List<ProtoId<ConstructionPrototype>> constructionFavorites)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.SaveConstructionFavoritesAsync(userId, constructionFavorites));
         }
 
         public Task<PlayerPreferences?> GetPlayerPreferencesAsync(NetUserId userId, CancellationToken cancel)
@@ -572,6 +603,20 @@ namespace Content.Server.Database
             DbReadOpsMetric.Inc();
             return RunDbCommand(() => _db.GetBanExemption(userId, cancel));
         }
+
+        // Sunrise-Start
+        public Task<List<ServerBanDef>> GetServerBansByAdminAsync(NetUserId adminId, DateTimeOffset since)
+        {
+            DbReadOpsMetric.Inc();
+            return RunDbCommand(() => _db.GetServerBansByAdminAsync(adminId, since));
+        }
+
+        public Task DeleteServerBanAsync(int banId)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.DeleteServerBanAsync(banId));
+        }
+        // Sunrise-End
 
         #region Role Ban
         public Task<ServerRoleBanDef?> GetServerRoleBanAsync(int id)
@@ -1064,6 +1109,60 @@ namespace Content.Server.Database
             return RunDbCommand(() => _db.GetAHelpMessagesByReceiverAsync(receiverUserId));
         }
 
+        // MentorHelp implementations
+        public Task AddMentorHelpTicketAsync(MentorHelpTicket ticket)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddMentorHelpTicketAsync(ticket));
+        }
+
+        public Task<List<MentorHelpStatistics>> GetMentorHelpStatisticsAsync()
+        {
+            return RunDbCommand(() => _db.GetMentorHelpStatisticsAsync());
+        }
+
+        public Task<MentorHelpTicket?> GetMentorHelpTicketAsync(int ticketId)
+        {
+            return RunDbCommand(() => _db.GetMentorHelpTicketAsync(ticketId));
+        }
+
+        public Task UpdateMentorHelpTicketAsync(MentorHelpTicket ticket)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.UpdateMentorHelpTicketAsync(ticket));
+        }
+
+        public Task<List<MentorHelpTicket>> GetMentorHelpTicketsByPlayerAsync(Guid playerId)
+        {
+            return RunDbCommand(() => _db.GetMentorHelpTicketsByPlayerAsync(playerId));
+        }
+
+        public Task<List<MentorHelpTicket>> GetOpenMentorHelpTicketsAsync()
+        {
+            return RunDbCommand(() => _db.GetOpenMentorHelpTicketsAsync());
+        }
+
+        public Task<List<MentorHelpTicket>> GetAssignedMentorHelpTicketsAsync(Guid mentorId)
+        {
+            return RunDbCommand(() => _db.GetAssignedMentorHelpTicketsAsync(mentorId));
+        }
+
+        public Task AddMentorHelpMessageAsync(MentorHelpMessage message)
+        {
+            DbWriteOpsMetric.Inc();
+            return RunDbCommand(() => _db.AddMentorHelpMessageAsync(message));
+        }
+
+        public Task<List<MentorHelpMessage>> GetMentorHelpMessagesByTicketAsync(int ticketId)
+        {
+            return RunDbCommand(() => _db.GetMentorHelpMessagesByTicketAsync(ticketId));
+        }
+
+        public Task<List<MentorHelpTicket>> GetClosedMentorHelpTicketsAsync()
+        {
+            return RunDbCommand(() => _db.GetClosedMentorHelpTicketsAsync());
+        }
+
         public void SubscribeToNotifications(Action<DatabaseNotification> handler)
         {
             lock (_notificationHandlers)
@@ -1167,7 +1266,7 @@ namespace Content.Server.Database
                 Password = pass
             }.ConnectionString;
 
-            Logger.DebugS("db.manager", $"Using Postgres \"{host}:{port}/{db}\"");
+            _sawmill.Debug($"Using Postgres \"{host}:{port}/{db}\"");
 
             builder.UseNpgsql(connectionString);
             SetupLogging(builder);
@@ -1190,12 +1289,12 @@ namespace Content.Server.Database
             if (!inMemory)
             {
                 var finalPreferencesDbPath = Path.Combine(_res.UserData.RootDir!, configPreferencesDbPath);
-                Logger.DebugS("db.manager", $"Using SQLite DB \"{finalPreferencesDbPath}\"");
+                _sawmill.Debug($"Using SQLite DB \"{finalPreferencesDbPath}\"");
                 getConnection = () => new SqliteConnection($"Data Source={finalPreferencesDbPath}");
             }
             else
             {
-                Logger.DebugS("db.manager", "Using in-memory SQLite DB");
+                _sawmill.Debug("Using in-memory SQLite DB");
                 _sqliteInMemoryConnection = new SqliteConnection("Data Source=:memory:");
                 // When using an in-memory DB we have to open it manually
                 // so EFCore doesn't open, close and wipe it every operation.

@@ -1,27 +1,27 @@
 - type: stack
   id: Paper
-  name: paper
+  name: stack-paper
   icon: { sprite: /Textures/Objects/Materials/Sheets/other.rsi, state: paper }
   spawn: SheetPaper1
   maxCount: 30
 
 - type: stack
   id: Plasma
-  name: plasma
-  icon: { sprite: /Textures/Objects/Materials/Sheets/other.rsi, state: plasma }
+  name: stack-plasma
+  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/other.rsi, state: plasma } # Fire Edit
   spawn: SheetPlasma1
   maxCount: 30
 
 - type: stack
   id: Plastic
-  name: plastic
-  icon: { sprite: /Textures/Objects/Materials/Sheets/other.rsi, state: plastic }
+  name: stack-plastic
+  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/other.rsi, state: plastic } # Fire Edit
   spawn: SheetPlastic1
   maxCount: 30
 
 - type: stack
   id: Uranium
-  name: uranium
-  icon: { sprite: /Textures/Objects/Materials/Sheets/other.rsi, state: uranium }
+  name: stack-uranium
+  icon: { sprite: /Textures/_Scp/Objects/Materials/Sheets/other.rsi, state: uranium } # Fire Edit
   spawn: SheetUranium1
   maxCount: 30

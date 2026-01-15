@@ -6,7 +6,6 @@
   - type: StorageFill
     contents:
       - id: FlashlightSeclite
-      - id: WeaponDisabler
       - id: ClothingHeadHatCapWardenAlt
       - id: ClothingBeltSecurityFilled
       - id: Flash
@@ -19,7 +18,6 @@
       - id: ClothingOuterCoatWardenAlt
       - id: RubberStampWarden
       - id: DoorRemoteArmory
-      - id: HoloprojectorSecurity
       - id: BookSpaceLaw
       - id: ClothingBackpackElectropack
         amount: 2
@@ -27,7 +25,13 @@
         amount: 2
       - id: Binoculars
       - id: HyperLinkBookCorporateLaw
-      - id: HandheldCriminalRecordsMonitor  # Sunrise-CriminalRecords
+      - id: HandheldCriminalRecordsMonitor
+      - id: PortableSurveillanceCameraMonitor
+      # Добавлены "Детективные" вещи до добавления отдельного шкафчика/должности под эти дела.
+      - id: ForensicScanner
+      - id: BoxForensicPad
+      - id: BoxEvidenceMarkers
+      - id: HandLabeler
 
 - type: entity
   id: LockerHeavyContainmentZoneOfficerFilled
@@ -38,7 +42,6 @@
     contents:
       - id: FlashlightSeclite
         prob: 0.8
-      - id: WeaponDisabler
       - id: ClothingUniformSecurity
         prob: 0.3
       - id: ClothingUniformSecurity2
@@ -57,20 +60,17 @@
       - id: ClothingShoesBootsSecurityGuard
       - id: WeaponMeleeNeedle
         prob: 0.1
-      - id: HoloprojectorSecurity
-        prob: 0.6
-      - id: HyperLinkBookCorporateLaw # Sunrise-edit
+      - id: HyperLinkBookCorporateLaw
         prob: 0.5
 
 - type: entity
-  id: LockerHeavyContainmentZoneFieldDoctorFilled
+  id: LockerHeavyContainmentZoneFieldMedicFilled
   suffix: Brigmedic, Filled
-  parent: LockerHeavyContainmentZoneFieldDoctor
+  parent: LockerHeavyContainmentZoneFieldMedic
   components:
   - type: StorageFill
     contents:
       - id: ClothingEyesGlassesSecurityGuard
-      - id: WeaponDisabler
       - id: TrackingImplanter
         amount: 2
       - id: BoxSterileMask
@@ -93,16 +93,18 @@
         prob: 0.3
       - id: MedkitBurnFilled
         prob: 0.7
-      - id: BoxMiniSyringe
-        prob: 0.75
-      - id: BoxMiniSyringe
-        prob: 0.25
-      - id: LauncherSyringeMed
-        prob: 0.45
-      - id: LauncherSyringePistol
+      - id: LauncherSyringe
         prob: 0.15
       - id: ClothingHeadHelmetSecurityMedic
       - id: ClothingOuterVestSecurityMedic
         prob: 0.5
       - id: ClothingOuterCoatLabSecurityMedic
+        prob: 0.5
+      - id: BoxVialAmnesiacA
+      - id: BoxVialAmnesiacB
+      - id: ChemistryVialAmnesiacC
+        amount: 2
+      - id: ChemistryVialAmnesiacD
+      - id: AmnesiacAGasGrenade
+      - id: AmnesiacAGasGrenade
         prob: 0.5

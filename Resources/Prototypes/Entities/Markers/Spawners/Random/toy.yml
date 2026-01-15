@@ -2,12 +2,13 @@
   name: Toy Spawner
   id: ToySpawner
   parent: MarkerBase
+  categories: [ HideSpawnMenu ] # Fire edit
   components:
     - type: Sprite
       layers:
         - state: red
-        - sprite: Objects/Fun/toys.rsi
-          state: plushie_h
+        - sprite: Objects/Fun/Plushies/bee.rsi
+          state: icon
     - type: RandomSpawner
       rarePrototypes:
         - FoamBlade
@@ -41,6 +42,7 @@
 - type: entity
   name: Prize Figurine Spawner
   id: FigureSpawner
+  categories: [ HideSpawnMenu ] # Fire edit
   parent: MarkerBase
   components:
     - type: Sprite
@@ -77,6 +79,7 @@
   name: Spacemen Minifigure Spawner
   suffix: Librarian only, map with care!
   id: SpacemenFigureSpawner
+  categories: [ HideSpawnMenu ] # Fire edit
   parent: MarkerBase
   components:
     - type: Sprite

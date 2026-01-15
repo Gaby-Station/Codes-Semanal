@@ -1,6 +1,6 @@
-cargo-gifts-event-announcement = Поздравляем! { $sender } приняла решение отправить { $description } { $dest } станции. Всё прибудет со следующей партией груза.
+cargo-gifts-event-announcement = Поздравляем! { $sender } приняла решение отправить { $description } { $dest } комплексу. Всё прибудет со следующей партией груза.
 cargo-gift-default-description = набор подарков
-cargo-gift-default-sender = Региональная Администрация
+cargo-gift-default-sender = Региональное управление
 cargo-gift-default-dest = отделу снабжения
 cargo-gift-dest-bar = бару
 cargo-gift-dest-eng = инженерному отделу
@@ -18,3 +18,4 @@ cargo-gift-space-protection = средства защиты от космоса
 cargo-gift-fire-protection = средства защиты от огня
 cargo-gift-security-guns = летальное оружие
 cargo-gift-security-riot = нелетальное снаряжение
+cargo-gift-security-oldguns = излишки оружия

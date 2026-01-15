@@ -4,6 +4,7 @@
   suffix: Docking
   name: external airlock
   description: Necessary for connecting two space craft together.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Docking
   - type: DockingSignalControl
@@ -34,6 +35,7 @@
   - type: Wires
     layoutId: Docking
   - type: Door
+    clickOpen: false # Sunrise-Edit
     closeTimeTwo: 0.4
     openTimeTwo: 0.4
     crushDamage:
@@ -52,14 +54,13 @@
   - type: Tag
     tags:
       - ForceNoFixRotations
-  - type: PaintableAirlock
-    group: Shuttle
-    department: null
   - type: Construction
     graph: AirlockShuttle
     node: airlock
   - type: StaticPrice
     price: 350
+  - type: Paintable
+    group: null
 
 - type: entity
   id: AirlockGlassShuttle
@@ -67,13 +68,12 @@
   name: external airlock
   suffix: Glass, Docking
   description: Necessary for connecting two space craft together.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/shuttle.rsi
   - type: Occluder
     enabled: false
-  - type: PaintableAirlock
-    group: ShuttleGlass
   - type: Door
     occludes: false
   - type: Fixtures
@@ -88,6 +88,7 @@
   name: external airlock assembly
   suffix: Docking
   description: An incomplete structure necessary for connecting two space craft together.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Transform
     anchored: true
@@ -107,6 +108,7 @@
   name: external airlock
   suffix: Glass, Docking
   description: Necessary for connecting two space craft together.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Glass/shuttle_syndicate.rsi
@@ -117,6 +119,17 @@
   suffix: Docking
   name: external airlock
   description: Necessary for connecting two space craft together.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: Structures/Doors/Airlocks/Standard/shuttle_syndicate.rsi
+
+- type: entity
+  parent: AirlockShuttle
+  id: AirlockShuttleXenoborg
+  suffix: Docking
+  name: external airlock
+  description: Necessary for connecting two space craft together.
+  components:
+  - type: Sprite
+    sprite: Structures/Doors/Airlocks/Standard/shuttle_xenoborg.rsi

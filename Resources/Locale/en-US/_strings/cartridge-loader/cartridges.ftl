@@ -2,7 +2,7 @@ device-pda-slot-component-slot-name-cartridge = Cartridge
 
 default-program-name = Program
 notekeeper-program-name = Notekeeper
-nano-task-program-name = NanoTask
+nano-task-program-name = Tasks
 news-read-program-name = Station news
 
 crew-manifest-program-name = Crew manifest
@@ -26,6 +26,9 @@ log-probe-printout-header = Latest logs:
 log-probe-printout-entry = #{$number} / {$time} / {$accessor}
 
 astro-nav-program-name = AstroNav
+
+navigator-program-name = Navigator
+navigator-cartridge-loading = Loading map...
 
 med-tek-program-name = MedTek
 
@@ -64,11 +67,11 @@ nano-task-ui-description-placeholder = Get something important
 nano-task-ui-requester-label = Requester:
 nano-task-ui-requester-placeholder = John Nanotrasen
 nano-task-ui-item-title = Edit Task
-nano-task-printed-description = Description: {$description}
-nano-task-printed-requester = Requester: {$requester}
-nano-task-printed-high-priority = Priority: High
-nano-task-printed-medium-priority = Priority: Medium
-nano-task-printed-low-priority = Priority: Low
+nano-task-printed-description = [bold]Description[/bold]: {$description}
+nano-task-printed-requester = [bold]Requester[/bold]: {$requester}
+nano-task-printed-high-priority = [bold]Priority[/bold]: [color=red]High[/color]
+nano-task-printed-medium-priority = [bold]Priority[/bold]: Medium
+nano-task-printed-low-priority = [bold]Priority[/bold]: Low
 
 # Wanted list cartridge
 wanted-list-program-name = Wanted list

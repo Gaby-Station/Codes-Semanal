@@ -18,6 +18,7 @@
   parent: [DoorRemoteDefault, BaseCommandContraband]
   id: DoorRemoteCommand
   name: command door remote
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -29,6 +30,24 @@
   - type: Access
     groups:
     - Command
+  - type: DoorRemote
+
+- type: entity
+  parent: [DoorRemoteDefault, BaseCommandContraband]
+  id: DoorRemoteCustom
+  name: custom door remote
+  description: A gadget which can open and bolt doors remotely. This advanced variant does not have built-in access, instead inheriting the ID access of the user.
+  components:
+  - type: Sprite
+    layers:
+    - state: door_remotebase
+    - state: door_remotelightscolour
+      color: "#0077FF"
+    - state: door_remotescreencolour
+      color: "#0033EE"
+  - type: Access
+  - type: DoorRemote
+    includeUserAccess: true
 
 - type: entity
   parent: [DoorRemoteDefault, BaseCommandContraband]
@@ -82,6 +101,7 @@
   parent: [DoorRemoteDefault, BaseCommandContraband]
   id: DoorRemoteResearch
   name: research door remote
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -98,6 +118,7 @@
   parent: [DoorRemoteDefault, BaseCommandContraband]
   id: DoorRemoteCargo
   name: cargo door remote
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -155,6 +176,8 @@
       color: "#2eba22"
     - state: door_remotescreencolour
       color: "#22871a"
+  - type: DoorRemote
+    includeUserAccess: true
   - type: Access
     groups:
     - AllAccess
@@ -162,3 +185,22 @@
     - CentralCommand
     - NuclearOperative
     - SyndicateAgent
+    - Wizard
+    - Xenoborg
+
+- type: entity
+  parent: [ DoorRemoteDefault, BaseXenoborgContraband ]
+  id: DoorRemoteXenoborg
+  name: xenoborg door remote
+  categories: [ HideSpawnMenu ] # Fire added
+  components:
+  - type: Sprite
+    layers:
+    - state: door_remotebase
+    - state: door_remotelightscolour
+      color: "#2eba22"
+    - state: door_remotescreencolour
+      color: "#22871a"
+  - type: Access
+    tags:
+    - Xenoborg

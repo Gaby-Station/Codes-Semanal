@@ -22,34 +22,38 @@
   - MagazineBoxRiflePractice
   - WeaponDisablerPractice
   - WeaponLaserCarbinePractice
+  - MagazineLightRiflePractice
+  - MagazineRiflePractice
+  - MagazinePistolPractice
+  - SpeedLoaderMagnumPractice
+  - MagazinePistolSubMachineGunPractice
   - WeaponFlareGunSecurity
 
 # Shared between secfab and emagged autolathe
-- type: latheRecipePack
-  id: SecurityAmmoStatic
-  recipes:
-  - BoxLethalshot
-  - BoxShotgunSlug
-  - MagazineBoxLightRifle
-  - MagazineBoxMagnum
-  - MagazineBoxPistol
-  - MagazineBoxRifle
-  - MagazineLightRifle
-  - MagazineLightRifleEmpty
-  # Sunrise-Remove
+#- type: latheRecipePack
+#  id: SecurityAmmoStatic
+#  recipes:
+  #- BoxLethalshot
+  #- BoxShotgunSlug
+  #- MagazineBoxLightRifle
+  #- MagazineBoxMagnum
+  #- MagazineBoxPistol
+  #- MagazineBoxRifle
+  #- MagazineLightRifle
+  #- MagazineLightRifleEmpty
   #- MagazinePistol
   #- MagazinePistolEmpty
-  - MagazinePistolSubMachineGun
-  - MagazinePistolSubMachineGunEmpty
-  - MagazinePistolSubMachineGunTopMounted
-  - MagazinePistolSubMachineGunTopMountedEmpty
-  - MagazineRifle
-  - MagazineRifleEmpty
-  - MagazineShotgun
-  - MagazineShotgunEmpty
-  - MagazineShotgunSlug
-  - SpeedLoaderMagnum
-  - SpeedLoaderMagnumEmpty
+  #- MagazinePistolSubMachineGun
+  #- MagazinePistolSubMachineGunEmpty
+  #- MagazinePistolSubMachineGunTopMounted
+  #- MagazinePistolSubMachineGunTopMountedEmpty
+  #- MagazineRifle
+  #- MagazineRifleEmpty
+  #- MagazineShotgun
+  #- MagazineShotgunEmpty
+  #- MagazineShotgunSlug
+  #- SpeedLoaderMagnum
+  #- SpeedLoaderMagnumEmpty
 
 - type: latheRecipePack
   id: SecurityWeaponsStatic
@@ -65,12 +69,13 @@
   id: SecurityEquipment
   recipes:
   - ClothingBackpackElectropack
-  - HoloprojectorSecurity
+  # - HoloprojectorSecurity #Fire-Station
   - PortableRecharger
   - PowerCageHigh
   - PowerCageMedium
   - PowerCageSmall
   - TelescopicShield
+  - ClothingBackpackHarmpack
 
 - type: latheRecipePack
   id: SecurityBoards
@@ -128,6 +133,7 @@
   - WeaponLaserCannon
   - WeaponLaserCarbine
   - WeaponXrayCannon
+  - WeaponTemperatureGun
 
 - type: latheRecipePack
   id: SecurityDisablers

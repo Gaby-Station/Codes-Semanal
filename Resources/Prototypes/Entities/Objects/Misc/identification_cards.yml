@@ -5,6 +5,17 @@
   description: A card necessary to access various areas aboard the station.
   abstract: true
   components:
+  # Sunrise added start
+  - type: EmitSoundOnPickup
+    sound:
+      path: /Audio/_Sunrise/Items/Handling/ID/pickup.ogg
+  - type: EmitSoundOnDrop
+    sound:
+      path: /Audio/_Sunrise/Items/Handling/ID/drop.ogg
+  - type: EmitSoundOnLand
+    sound:
+      path: /Audio/_Sunrise/Items/Handling/ID/drop.ogg
+  # Sunrise added end
   - type: Sprite
     sprite: Objects/Misc/id_cards.rsi
   - type: Clothing
@@ -32,8 +43,10 @@
   parent: IDCardStandard
   id: PassengerIDCard
   name: passenger ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
+    sprite: _Sunrise/Objects/Misc/id_cards.rsi # Sunrise-Edit
     layers:
     - state: default
     - state: idpassenger
@@ -44,6 +57,7 @@
   parent: PassengerIDCard
   id: TechnicalAssistantIDCard
   name: technical assistant ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: PresetIdCard
     job: TechnicalAssistant
@@ -56,6 +70,7 @@
   parent: PassengerIDCard
   id: MedicalInternIDCard
   name: medical intern ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: PresetIdCard
     job: MedicalIntern
@@ -68,6 +83,7 @@
   parent: PassengerIDCard
   id: ResearchAssistantIDCard
   name: research assistant ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: PresetIdCard
     job: ResearchAssistant
@@ -80,6 +96,7 @@
   parent: PassengerIDCard
   id: SecurityCadetIDCard
   name: security cadet ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: PresetIdCard
     job: SecurityCadet
@@ -92,6 +109,7 @@
   parent: PassengerIDCard
   id: ServiceWorkerIDCard
   name: service worker ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: PresetIdCard
     job: ServiceWorker
@@ -104,6 +122,7 @@
   parent: [IDCardStandard, BaseGrandTheftContraband]
   id: CaptainIDCard
   name: captain ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -126,6 +145,7 @@
   parent: IDCardStandard
   id: SecurityIDCard
   name: security ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -138,6 +158,7 @@
   parent: IDCardStandard
   id: WardenIDCard
   name: warden ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
     - type: Sprite
       layers:
@@ -150,6 +171,7 @@
   parent: IDCardStandard
   id: EngineeringIDCard
   name: engineer ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -162,6 +184,7 @@
   parent: IDCardStandard
   id: MedicalIDCard
   name: medical ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -174,6 +197,7 @@
   parent: IDCardStandard
   id: ParamedicIDCard
   name: paramedic ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -186,6 +210,7 @@
   parent: IDCardStandard
   id: ChemistIDCard
   name: chemist ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -198,6 +223,7 @@
   parent: IDCardStandard
   id: CargoIDCard
   name: cargo ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -210,6 +236,7 @@
   parent: IDCardStandard
   id: SalvageIDCard
   name: salvage ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -222,6 +249,7 @@
   parent: IDCardStandard
   id: QuartermasterIDCard
   name: quartermaster ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
     - type: Sprite
       layers:
@@ -236,6 +264,7 @@
   parent: IDCardStandard
   id: ResearchIDCard
   name: research ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -248,6 +277,7 @@
   parent: IDCardStandard
   id: ClownIDCard
   name: clown ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -260,8 +290,10 @@
   parent: IDCardStandard
   id: MimeIDCard
   name: mime ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
+    sprite: _Sunrise/Objects/Misc/id_cards.rsi # Sunrise-Edit
     layers:
     - state: default
     - state: idmime
@@ -272,6 +304,7 @@
   parent: IDCardStandard
   id: ChaplainIDCard
   name: chaplain ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
     - type: Sprite
       layers:
@@ -284,6 +317,7 @@
   parent: IDCardStandard
   id: JanitorIDCard
   name: janitor ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -296,6 +330,7 @@
   parent: IDCardStandard
   id: BartenderIDCard
   name: bartender ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -308,6 +343,7 @@
   parent: IDCardStandard
   id: PunPunIDCard
   name: pun pun ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
     - type: Sprite
       layers:
@@ -324,6 +360,7 @@
   parent: IDCardStandard
   id: ChefIDCard
   name: chef ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -336,6 +373,7 @@
   parent: IDCardStandard
   id: BotanistIDCard
   name: botanist ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
     - type: Sprite
       layers:
@@ -348,6 +386,7 @@
   parent: IDCardStandard
   id: LibrarianIDCard
   name: librarian ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
     - type: Sprite
       layers:
@@ -360,6 +399,7 @@
   parent: IDCardStandard
   id: LawyerIDCard
   name: lawyer ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
     - type: Sprite
       layers:
@@ -372,6 +412,7 @@
   parent: IDCardStandard
   id: HoPIDCard
   name: head of personnel ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -386,6 +427,7 @@
   parent: IDCardStandard
   id: CEIDCard
   name: chief engineer ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -400,6 +442,7 @@
   parent: IDCardStandard
   id: CMOIDCard
   name: chief medical officer ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -414,6 +457,7 @@
   parent: IDCardStandard
   id: RDIDCard
   name: research director ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -428,6 +472,7 @@
   parent: IDCardStandard
   id: HoSIDCard
   name: head of security ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -442,6 +487,7 @@
   parent: IDCardStandard
   id: VisitorIDCard
   name: visitor ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -468,6 +514,7 @@
   parent: IDCardStandard
   id: CentcomIDCard
   name: command officer ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -482,6 +529,7 @@
   parent: IDCardStandard
   id: CentcomOperatorIDCard
   name: command operator ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -496,6 +544,7 @@
   parent: IDCardStandard
   id: ERTLeaderIDCard
   name: ERT leader ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -510,6 +559,7 @@
   parent: IDCardStandard
   id: ERTChaplainIDCard
   name: ERT chaplain ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -524,8 +574,10 @@
   parent: IDCardStandard
   id: ERTEngineerIDCard
   name: ERT engineer ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
+    sprite: _Sunrise/Objects/Misc/id_cards.rsi # Sunrise-Edit
     layers:
     - state: gold
     - state: ert_engineer
@@ -536,8 +588,10 @@
   parent: IDCardStandard
   id: ERTJanitorIDCard
   name: ERT janitor ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
+    sprite: _Sunrise/Objects/Misc/id_cards.rsi # Sunrise-Edit
     layers:
     - state: gold
     - state: ert_janitor
@@ -548,8 +602,10 @@
   parent: IDCardStandard
   id: ERTMedicIDCard
   name: ERT medic ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
+    sprite: _Sunrise/Objects/Misc/id_cards.rsi # Sunrise-Edit
     layers:
     - state: gold
     - state: ert_medic
@@ -560,8 +616,10 @@
   parent: IDCardStandard
   id: ERTSecurityIDCard
   name: ERT security ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
+    sprite: _Sunrise/Objects/Misc/id_cards.rsi # Sunrise-Edit
     layers:
     - state: gold
     - state: ert_security
@@ -572,8 +630,10 @@
   parent: IDCardStandard
   id: MusicianIDCard
   name: musician ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
     - type: Sprite
+      sprite: _Sunrise/Objects/Misc/id_cards.rsi # Sunrise-Edit
       layers:
         - state: default
         - state: idmusician
@@ -584,6 +644,7 @@
   parent: IDCardStandard
   id: CentcomIDCardDeathsquad
   name: death squad ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -595,7 +656,7 @@
 
 - type: entity
   name: passenger ID card
-  parent: IDCardStandard
+  parent: [IDCardStandard, BaseChameleon]
   id: AgentIDCard
   suffix: Agent
   components:
@@ -607,13 +668,16 @@
     - Maintenance
     - SyndicateAgent
   - type: Sprite
+    sprite: _Sunrise/Objects/Misc/id_cards.rsi # Sunrise-Edit
     layers:
     - state: default
     - state: idpassenger
   - type: AgentIDCard
+  - type: UIRequiresLock
   - type: ActivatableUI
     key: enum.AgentIDCardUiKey.Key
     inHandsOnly: true
+    verbText: agent-id-open-ui-verb
   - type: Tag
     tags:
     - DoorBumpOpener
@@ -639,6 +703,7 @@
   parent: AgentIDCard
   id: NukieAgentIDCard
   suffix: Nukie
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Access
     tags:
@@ -650,6 +715,7 @@
   parent: IDCardStandard
   id: AtmosIDCard
   name: atmospheric technician ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -659,22 +725,56 @@
     job: AtmosphericTechnician
 
 - type: entity
-  parent: IDCardStandard
+  parent: [ IDCardStandard, BaseSyndicateContraband ]
   id: SyndicateIDCard
   name: syndicate ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
-    - state: syndie
+    - state: black
+    - state: syndi
   - type: Access
     tags:
     - NuclearOperative
     - SyndicateAgent
 
 - type: entity
-  parent: IDCardStandard
+  parent: [ SyndicateIDCard, BaseSyndicateContraband ]
+  id: SyndiOperativeIDCard
+  name: syndicate operative ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: black
+    - state: syndi_operative
+  - type: AgentIDCard
+
+- type: entity
+  parent: SyndiOperativeIDCard
+  id: SyndiCorpsmanIDCard
+  name: syndicate corpsman ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: black
+    - state: syndi_corpsman
+
+- type: entity
+  parent: SyndiOperativeIDCard
+  id: SyndiCommanderIDCard
+  name: syndicate commander ID card
+  components:
+  - type: Sprite
+    layers:
+    - state: black
+    - state: syndi_commander
+
+- type: entity
+  parent: [ IDCardStandard, BaseMajorContraband ]
   id: PirateIDCard
   name: pirate ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -688,6 +788,7 @@
   parent: IDCardStandard
   id: PsychologistIDCard
   name: psychologist ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -700,6 +801,7 @@
   parent: IDCardStandard
   id: ReporterIDCard
   name: reporter ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -712,6 +814,7 @@
   parent: IDCardStandard
   id: BoxerIDCard
   name: boxer ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -724,6 +827,7 @@
   parent: IDCardStandard
   id: ZookeeperIDCard
   name: zookeeper ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -736,6 +840,7 @@
   parent: IDCardStandard
   id: DetectiveIDCard
   name: detective ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -745,9 +850,45 @@
     job: Detective
 
 - type: entity
+  parent: IDCardStandard
+  id: PrisonerIDCard
+  name: prisoner ID card
+  description: A generically printed ID card for scummy prisoners.
+  categories: [ HideSpawnMenu ] # Fire added
+  components:
+  - type: Sprite
+    layers:
+    - state: orange
+  - type: Item
+    heldPrefix: orange
+  - type: Access
+    tags:
+    - GenpopEnter
+  - type: GenpopIdCard
+  - type: IdCard
+    jobTitle: job-name-prisoner
+    jobIcon: JobIconPrisoner
+    canMicrowave: false
+  - type: ExpireIdCard
+    expireMessage: genpop-prisoner-id-expire
+    expiredAccess:
+    - GenpopLeave
+  - type: Speech
+    speechVerb: Robotic
+  - type: Tag
+    tags:
+    - DoorBumpOpener
+    - WhitelistChameleon
+    - WhitelistChameleonIdCard
+    - Recyclable
+  - type: StaticPrice # these are infinitely producible.
+    price: 0
+
+- type: entity
   parent: CentcomIDCard
   id: CBURNIDcard
   name: CBURN ID card
+  categories: [ HideSpawnMenu ] # Fire added
   suffix: CBURN
   components:
   - type: Sprite
@@ -763,6 +904,7 @@
   id: CluwneIDCard
   name: cluwne ID card
   suffix: Unremoveable
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -770,12 +912,14 @@
     - state: idcluwne
   - type: IdCard
     jobTitle: job-title-cluwne
+    jobIcon: JobIconCluwne
   - type: Unremoveable
 
 - type: entity
   parent: EngineeringIDCard
   id: SeniorEngineerIDCard
   name: senior engineer ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -788,6 +932,7 @@
   parent: ResearchIDCard
   id: SeniorResearcherIDCard
   name: senior researcher ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -800,6 +945,7 @@
   parent: MedicalIDCard
   id: SeniorPhysicianIDCard
   name: senior physician ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -812,6 +958,7 @@
   parent: SecurityIDCard
   id: SeniorOfficerIDCard
   name: senior officer ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -824,6 +971,7 @@
   parent: IDCardStandard
   id: WizardIDCard
   name: wizard ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -863,6 +1011,7 @@
     - NuclearOperative
     - SyndicateAgent
     - Wizard
+    - Xenoborg
   - type: Tag #  Ignore Chameleon tags
     tags:
     - DoorBumpOpener

@@ -3,22 +3,36 @@
   name: job-name-junior-researcher
   description: job-description-junior-researcher
   playTimeTracker: JobJuniorResearcher
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 3600
   startingGear: JuniorResearcherGear
   icon: JobJuniorResearcher
   supervisors: job-supervisors-scientific-service-director
   canBeAntag: true
   displayWeight: 0
-  access:
-  - Research
-  - Maintenance
+  accessGroups:
+  - JuniorResearcher
+  special:
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Two
+    - type: Fear
+      phobias:
+      - Exoremophobia
+      - Necrophobia
+      proximityBlockerLevel: None
+      seenBlockerLevel: None
+    - type: ShowScp096FaceDamageHud
 
 - type: startingGear
   id: JuniorResearcherGear
   equipment:
     shoes: ClothingShoesColorWhite
-    id: ResearchAssistantPDA
+    id: KeyCardJuniorResearcher
     ears: ClothingHeadsetScientificService
-    pocket2: BookScientistsGuidebook
-    #storage:
-    #back:
-    #- Stuff
+    pocket1: BookScientistsGuidebook
+    pocket2: ScpResearchPDA

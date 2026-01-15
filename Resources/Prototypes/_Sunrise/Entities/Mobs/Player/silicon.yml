@@ -156,6 +156,7 @@
       borg_brain:
       - Boris
       borg_module:
+      - BorgERTModuleStandard
       - BorgCombatModuleERT
       - BorgModuleERTNlethal
       - BorgToolModuleERT
@@ -163,7 +164,7 @@
     slots:
       cell_slot:
         name: power-cell-slot-component-slot-name-default
-        startingItem: PowerCellHyper
+        startingItem: PowerCellNanoTrasen
   - type: StartingMindRole
     mindRole: "MindRoleSiliconBrain"
     silent: true
@@ -317,3 +318,19 @@
           Empty: { state: empty }
           Occupied: { state: full }
   - type: Intellicard
+  - type: StaticPrice
+    price: 500
+
+- type: entity
+  id: SyndicateCircuitBoard
+  parent: BaseElectronics
+  name: law board (Syndicate)
+  description: An electronics board containing the Sindicate lawset.
+  components:
+  - type: Sprite
+    sprite: Objects/Misc/module.rsi
+    state: std_mod
+  - type: SiliconLawProvider
+    laws: SyndicateStatic
+  - type: StaticPrice
+    price: 2000

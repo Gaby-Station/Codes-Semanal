@@ -1,13 +1,5 @@
 ﻿#NanoTrasen implanters
 
-- type: entity
-  id: TrackingImplanterERT
-  suffix: tracking
-  parent: BaseImplantOnlyImplanter
-  components:
-    - type: Implanter
-      implant: TrackingImplantErt
-
 #Syndie implanters   #PR Wiz #31782
 - type: entity
   id: SmokeScreenImplanter
@@ -16,3 +8,12 @@
   components:
   - type: Implanter
     implant: SmokeScreenImplant
+
+- type: entity
+  id: CreepyLaughImplanter
+  name: creepy laugh implanter
+  suffix: Sunrise, Laugh
+  parent: BaseImplantOnlyImplanterSyndi
+  components:
+    - type: Implanter
+      implant: CreepyLaughImplant

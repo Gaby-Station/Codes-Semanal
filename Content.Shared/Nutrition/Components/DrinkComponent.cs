@@ -5,6 +5,7 @@ using Robust.Shared.GameStates;
 
 namespace Content.Shared.Nutrition.Components;
 
+[Obsolete("Migration to Content.Shared.Nutrition.Components.EdibleComponent is required")]
 [NetworkedComponent, AutoGenerateComponentState]
 [RegisterComponent, Access(typeof(SharedDrinkSystem))]
 public sealed partial class DrinkComponent : Component
@@ -13,7 +14,7 @@ public sealed partial class DrinkComponent : Component
     public string Solution = "drink";
 
     [DataField, AutoNetworkedField]
-    public SoundSpecifier UseSound = new SoundPathSpecifier("/Audio/Items/drink.ogg");
+    public SoundSpecifier UseSound = new SoundCollectionSpecifier("DrinkSounds"); // Sunrise edit
 
     [DataField, AutoNetworkedField]
     public FixedPoint2 TransferAmount = FixedPoint2.New(5);
@@ -23,9 +24,6 @@ public sealed partial class DrinkComponent : Component
     /// </summary>
     [DataField, AutoNetworkedField]
     public float Delay = 1;
-
-    [DataField, AutoNetworkedField]
-    public bool Examinable = true;
 
     /// <summary>
     /// If true, trying to drink when empty will not handle the event.

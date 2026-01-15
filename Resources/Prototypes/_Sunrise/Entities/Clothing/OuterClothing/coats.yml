@@ -32,7 +32,7 @@
       sprite: _Sunrise/Clothing/OuterClothing/Coats/warden_alt.rsi
 
 - type: entity
-  parent: [ClothingOuterArmorBasic, ClothingOuterStorageBase, BaseSecurityContraband]
+  parent: ClothingOuterCoatWarden
   id: ClothingOuterCoatSecurityOvercoat
   name: security overcoat
   description: Lightly armored leather overcoat meant as casual wear for high-ranking officers. Bears the crest of Nanotrasen Security.
@@ -41,13 +41,6 @@
       sprite: _Sunrise/Clothing/OuterClothing/Coats/sec_leather.rsi
     - type: Clothing
       sprite: _Sunrise/Clothing/OuterClothing/Coats/sec_leather.rsi
-    - type: Armor
-      modifiers:
-        coefficients:
-          Blunt: 0.8
-          Slash: 0.8
-          Piercing: 0.65
-          Heat: 0.9
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -77,11 +70,17 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.6
-        Heat: 0.5
-        Caustic: 0.9 # Sunrise-Edit
+        Blunt: 0.6
+        Slash: 0.6
+        Piercing: 0.65
+        Heat: 0.8
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+    - Vest
+    - NudeBottom  # INTERACTIONS
+    - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -99,6 +98,13 @@
         Blunt: 0.9
         Slash: 0.9
         Piercing: 0.8
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+    - ClothMade
+    - NudeBottom # INTERACTIONS
+    - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -115,8 +121,15 @@
       coefficients:
         Blunt: 0.8
         Slash: 0.8
-        Piercing: 0.65
+        Piercing: 0.75
         Heat: 0.9
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeBottom  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
   parent: ClothingOuterStorageFoldableBase
@@ -139,6 +152,14 @@
   parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatNtrep]
   id: ClothingOuterCoatNtrepOpen
   name: nt representive jacket
+  components:
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeBottom  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -153,9 +174,16 @@
     modifiers:
       coefficients:
         Caustic: 0.75
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeBottom  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [ClothingOuterWinterCoat, BaseCommandContraband]
   id: ClothingOuterCoatAdjutant
   name: adjutant's winter jacket
   description: heavy jacket made of 'synthetic' animal fur.
@@ -164,9 +192,16 @@
     sprite: _Sunrise/Clothing/OuterClothing/Coats/adjutantcoat.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/OuterClothing/Coats/adjutantcoat.rsi
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeBottom  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [ClothingOuterCoatAdjutant, BaseCommandContraband]
   id: ClothingOuterCoatCEOvercoatWhite
   name: chef engineer's coat
   description: Chef Engineer's Coat. A luxurious coat with gilded inserts pretending to protect you from any threats.
@@ -175,9 +210,16 @@
     sprite: _Sunrise/Clothing/OuterClothing/Coats/cecoat.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/OuterClothing/Coats/cecoat.rsi
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeBottom  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
-  parent: ClothingOuterStorageFoldableBase
+  parent: ClothingOuterCoatLabCmo
   id: ClothingOuterCoatCMOOvercoat
   name: chief medical officer's lab coat
   description: 99% Nitrile.
@@ -191,9 +233,17 @@
   parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatCMOOvercoat]
   id: ClothingOuterCoatLabCMOOvercoatOpened
   name: cmo lab coat
+  components:
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeFull  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
-  parent: ClothingOuterStorageBase
+  parent: [ClothingOuterCoatHOP, BaseCommandContraband]
   id: ClothingOuterEliteCoatHOP
   name: head of personality's overcoat
   description: Comfortable fitted navy blue overcoat with leather straps. Decorative epaulettes are visible on the shoulders.
@@ -202,9 +252,16 @@
     sprite: _Sunrise/Clothing/OuterClothing/Coats/hopcoat.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/OuterClothing/Coats/hopcoat.rsi
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeBottom  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
-  parent: [ClothingOuterCoatHoSGreatcoat, BaseSecurityContraband]
+  parent: ClothingOuterCoatHoSGreatcoat
   id: ClothingOuterCoatHOSOvercoatBlack
   name: armored overcoat
   description: Black overcoat with red lines, silver rivets and a gold plaque.
@@ -213,6 +270,13 @@
     sprite: _Sunrise/Clothing/OuterClothing/Coats/hos_coat.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/OuterClothing/Coats/hos_coat.rsi
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeBottom  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -224,6 +288,13 @@
     sprite: _Sunrise/Clothing/OuterClothing/Coats/iaacoat.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/OuterClothing/Coats/iaacoat.rsi
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeBottom  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
   parent: ClothingOuterStorageBase
@@ -255,10 +326,17 @@
   parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterCoatLabResearchDirector]
   id: ClothingOuterCoatLabResearchDirectorOpened
   name: research director lab coat
-
+  components:
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeFull  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
-  parent: [ClothingOuterCoatHoSGreatcoat, BaseSecurityContraband]
+  parent: ClothingOuterCoatHoSGreatcoat
   id: ClothingOuterCoatHoSOvercoat
   name: armored overcoat
   description: Pretty old stuff for these times, bringing back old memories...
@@ -278,6 +356,13 @@
     sprite: _Sunrise/Clothing/OuterClothing/Coats/kim.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/OuterClothing/Coats/kim.rsi
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeBottom  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
   parent: ClothingOuterBase
@@ -289,6 +374,13 @@
     sprite: _Sunrise/Clothing/OuterClothing/Coats/disco.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/OuterClothing/Coats/disco.rsi
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeBottom  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
   parent: [ClothingOuterArmorBasic, ClothingOuterStorageBase, BaseSecurityCommandContraband]
@@ -303,17 +395,16 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.5
-        Slash: 0.5
-        Piercing: 0.6
-        Heat: 0.5
-        Caustic: 0.9
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.65
+        Heat: 0.7
   - type: ExplosionResistance
     damageCoefficient: 0.65
   - type: GroupExamine
 
 - type: entity
-  parent: [ClothingOuterArmorBasic, ClothingOuterStorageBase, BaseSecurityContraband]
+  parent: ClothingOuterCoatHoSTrench
   id: ClothingOuterCoatUSSPOvercoatBlack
   name: USSP armored overcoat
   description: Old stuff, straight out of USSP.
@@ -333,6 +424,13 @@
     sprite: _Sunrise/Clothing/OuterClothing/Coats/atmosian.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/OuterClothing/Coats/atmosian.rsi
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeBottom  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
   parent: ClothingOuterBase
@@ -344,6 +442,13 @@
     sprite: _Sunrise/Clothing/OuterClothing/Coats/coatchristmas.rsi
   - type: Clothing
     sprite: _Sunrise/Clothing/OuterClothing/Coats/coatchristmas.rsi
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeFull  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
   parent: ClothingOuterStorageFoldableBase
@@ -360,18 +465,32 @@
       coefficients:
         Blunt: 0.7
         Slash: 0.7
-        Piercing: 0.65
-        Heat: 0.8
-        Caustic: 0.8
+        Piercing: 0.75
+        Heat: 0.9
   - type: ExplosionResistance
     damageCoefficient: 0.85
   - type: Item
     size: Huge
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeBottom  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
   parent: [ClothingOuterStorageFoldableBaseOpened, ClothingOuterArmorNTRGLead]
   id: ClothingOuterArmorNTRGLeadOpened
   name: trenchcoat NTRG Sqaud
+  components:
+  # SUNRISE EDIT
+  - type: Tag
+    tags:
+      - Vest
+      - NudeFull  # INTERACTIONS
+      - WhitelistChameleon
+  # SUNRISE EDIT
 
 - type: entity
   parent: [ClothingOuterArmorBasic, ClothingOuterStorageBase]
@@ -389,11 +508,10 @@
   - type: Armor
     modifiers:
       coefficients:
-        Blunt: 0.65
-        Slash: 0.65
-        Piercing: 0.55
-        Heat: 0.7
-        Caustic: 0.7
+        Blunt: 0.7
+        Slash: 0.7
+        Piercing: 0.65
+        Heat: 0.8
   - type: ExplosionResistance
     damageCoefficient: 0.75
   - type: Item
@@ -402,3 +520,38 @@
     maxItemSize: Small
     grid:
     - 0,0,3,1
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterBezBabTshirt
+  name: tshirt bezbab
+  description: Oversize tshirt for men. Without women.
+  components:
+  - type: Sprite
+    sprite: _Sunrise/Clothing/OuterClothing/Coats/bez_bab.rsi
+  - type: Clothing
+    sprite: _Sunrise/Clothing/OuterClothing/Coats/bez_bab.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterCoatJilldress
+  name: Jill dress
+  description: this is the Snow Maiden dress.
+  components:
+  - type: Sprite
+    sprite: _Sunrise/Clothing/OuterClothing/Coats/jill_dress.rsi
+  - type: Clothing
+    sprite: _Sunrise/Clothing/OuterClothing/Coats/jill_dress.rsi
+
+- type: entity
+  parent: ClothingOuterBase
+  id: ClothingOuterCoatMansport
+  name: Sports sweatshirt
+  description: Hoodies or sweatshirts? I choose T-shirts.
+  components:
+  - type: Sprite
+    sprite: _Sunrise/Clothing/OuterClothing/Coats/sportsmans.rsi
+  - type: Clothing
+    sprite: _Sunrise/Clothing/OuterClothing/Coats/sportsmans.rsi
+
+

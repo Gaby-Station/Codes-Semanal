@@ -12,12 +12,14 @@
   supervisors: job-supervisors-hos
   canBeAntag: false
   displayWeight: 50
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
   access:
   - Security
   - Brig
-  - Maintenance
   - Service
   - External
+  - Cryogenics
   special:
   - !type:AddImplantSpecial
     implants: [ MindShieldImplant ]
@@ -36,3 +38,7 @@
     back:
     - Flash
     - ClothingEyesGlassesSecurity
+
+- type: chameleonOutfit
+  id: SecurityPilotChameleonOutfit
+  job: SecurityPilot

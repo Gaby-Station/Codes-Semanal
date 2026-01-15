@@ -2,7 +2,6 @@
 using System.Numerics;
 using Content.Server.Chat.Systems;
 using Content.Server.Ghost;
-using Content.Server.Light.Components;
 using Content.Server.NPC;
 using Content.Server.NPC.HTN;
 using Content.Server.NPC.Systems;
@@ -15,9 +14,12 @@ using Content.Shared.FixedPoint;
 using Content.Shared.Fluids;
 using Content.Shared.Fluids.Components;
 using Content.Shared.Item;
+using Content.Shared.Item.ItemToggle.Components;
+using Content.Shared.Light.Components;
 using Content.Shared.Maps;
 using Content.Shared.Pointing;
 using Content.Shared.Popups;
+using Content.Shared.Storage.Components;
 using Content.Shared.Tag;
 using Content.Shared.Throwing;
 using Robust.Shared.Map;
@@ -31,6 +33,7 @@ using Robust.Shared.Utility;
 
 namespace Content.Server._Scp.Scp035;
 
+// TODO: АНХАРДКОД
 public sealed class Scp035System : SharedScp035System
 {
     [Dependency] private readonly HTNSystem _htn = default!;
@@ -61,8 +64,15 @@ public sealed class Scp035System : SharedScp035System
     {
         base.Initialize();
 
+        SubscribeLocalEvent<Scp035MaskComponent, MapInitEvent>(OnMapInit);
         SubscribeLocalEvent<Scp035MaskUserComponent, MaskRaiseArmyActionEvent>(OnRaiseArmy);
         SubscribeLocalEvent<Scp035MaskUserComponent, AfterPointedAtEvent>(OnPointedAt);
+    }
+
+    private void OnMapInit(Entity<Scp035MaskComponent> ent, ref MapInitEvent args)
+    {
+        var toggleUsed = new ItemToggledEvent(false, true, null);
+        RaiseLocalEvent(ent, ref toggleUsed);
     }
 
     private void OnRaiseArmy(Entity<Scp035MaskUserComponent> ent, ref MaskRaiseArmyActionEvent args)

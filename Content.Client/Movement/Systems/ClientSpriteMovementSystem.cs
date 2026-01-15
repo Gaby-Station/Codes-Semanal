@@ -1,4 +1,3 @@
-using Content.Shared.Interaction.Components;
 using Content.Shared.Movement.Components;
 using Content.Shared.Movement.Systems;
 using Robust.Client.GameObjects;
@@ -10,6 +9,8 @@ namespace Content.Client.Movement.Systems;
 /// </summary>
 public sealed class ClientSpriteMovementSystem : SharedSpriteMovementSystem
 {
+    [Dependency] private readonly SpriteSystem _sprite = default!;
+
     private EntityQuery<SpriteComponent> _spriteQuery;
 
     public override void Initialize()
@@ -26,27 +27,18 @@ public sealed class ClientSpriteMovementSystem : SharedSpriteMovementSystem
         if (!_spriteQuery.TryGetComponent(ent, out var sprite))
             return;
 
-        // Fire added start
-        if (HasComp<NoRotateOnMoveComponent>(ent))
-            return;
-
-        if (HasComp<BlockMovementComponent>(ent))
-            return;
-        // Fire added end
-
-
         if (ent.Comp.IsMoving)
         {
             foreach (var (layer, state) in ent.Comp.MovementLayers)
             {
-                sprite.LayerSetData(layer, state);
+                _sprite.LayerSetData((ent.Owner, sprite), layer, state);
             }
         }
         else
         {
             foreach (var (layer, state) in ent.Comp.NoMovementLayers)
             {
-                sprite.LayerSetData(layer, state);
+                _sprite.LayerSetData((ent.Owner, sprite), layer, state);
             }
         }
     }

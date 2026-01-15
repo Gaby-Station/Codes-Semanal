@@ -1,7 +1,8 @@
 - type: entity
   parent: IDCardStandard
-  id: BlueShieldIDCard
-  name: blueshield ID card
+  id: BlueShieldOfficerIDCard
+  name: blue shield officer ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Misc/id_cards.rsi
@@ -11,12 +12,44 @@
   - type: Item
     heldPrefix: silver
   - type: PresetIdCard
-    job: BlueShield
+    job: BlueShieldOfficer
+
+- type: entity
+  parent: IDCardStandard
+  id: BlueShieldEnsignIDCard
+  name: blue shield ensign ID card
+  categories: [ HideSpawnMenu ] # Fire added
+  components:
+  - type: Sprite
+    sprite: _Sunrise/Objects/Misc/id_cards.rsi
+    layers:
+    - state: gold
+    - state: idblueshield
+  - type: Item
+    heldPrefix: gold
+  - type: PresetIdCard
+    job: BlueShieldEnsign
+
+- type: entity
+  parent: IDCardStandard
+  id: BlueShieldOperativeIDCard
+  name: blue shield operative ID card
+  categories: [ HideSpawnMenu ] # Fire added
+  components:
+  - type: Sprite
+    layers:
+    - state: centcom
+    - state: idcentcom
+  - type: Item
+    heldPrefix: blue
+  - type: PresetIdCard
+    job: BlueShieldOperative
 
 - type: entity
   parent: IDCardStandard
   id: RoboticistIDCard
   name: roboticist ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -29,11 +62,13 @@
   parent: IDCardStandard
   id: SecurityPilotIDCard
   name: security pilot ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
+    sprite: _Sunrise/Objects/Misc/id_cards.rsi
     layers:
     - state: default
-    - state: idsecurityofficer
+    - state: idsecuritypilot
   - type: PresetIdCard
     job: SecurityPilot
 
@@ -41,6 +76,7 @@
   parent: IDCardStandard
   id: PrisonEngineeringIDCard
   name: prison engineer ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -53,6 +89,7 @@
   parent: IDCardStandard
   id: IAAIDCard
   name: internal affairs agent ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -65,6 +102,7 @@
   parent: IDCardStandard
   id: MagistratIDCard
   name: magistrate ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -77,8 +115,10 @@
   parent: IDCardStandard
   id: BrigmedicIDCard
   name: brigmedic ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
+    sprite: _Sunrise/Objects/Misc/id_cards.rsi
     layers:
     - state: default
     - state: idbrigmedic
@@ -87,8 +127,9 @@
 
 - type: entity
   parent: IDCardStandard
-  id: PrisonerIDCard
+  id: PlanetPrisonerIDCard
   name: prisoner ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Misc/id_cards.rsi
@@ -102,6 +143,7 @@
   parent: IDCardStandard
   id: GuardIDCard
   name: guard ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Misc/id_cards.rsi
@@ -115,6 +157,7 @@
   parent: IDCardStandard
   id: PrisonPilotIDCard
   name: prison pilot ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Misc/id_cards.rsi
@@ -128,6 +171,7 @@
   parent: IDCardStandard
   id: HeadOfPrisonIDCard
   name: head of prison ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Misc/id_cards.rsi
@@ -143,6 +187,7 @@
   parent: IDCardStandard
   id: NanoTrasenRepresentativeIDCard
   name: NanoTrasen representative ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     layers:
@@ -154,6 +199,7 @@
   parent: IDCardStandard
   id: BarberIDCard
   name: barber ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Misc/id_cards.rsi
@@ -168,6 +214,7 @@
   id: AdjutantIDCard
   name: adjutant ID card
   description: Adjutant ID card.
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Misc/id_cards.rsi
@@ -181,6 +228,7 @@
   parent: IDCardStandard
   id: PathologistIDCard
   name: Pathologist ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Misc/id_cards.rsi
@@ -194,6 +242,7 @@
   parent: IDCardStandard
   id: USSPIDCard
   name: USSP ID card
+  categories: [ HideSpawnMenu ] # Fire added
   suffix: Crew
   components:
   - type: Sprite
@@ -211,6 +260,7 @@
   parent: IDCardStandard
   id: USSPOfficerIDCard
   name: USSP ID card
+  categories: [ HideSpawnMenu ] # Fire added
   suffix: Guard
   components:
   - type: Sprite
@@ -230,6 +280,7 @@
   parent: IDCardStandard
   id: USSPSoldierIDCard
   name: USSP ID card
+  categories: [ HideSpawnMenu ] # Fire added
   suffix: Combat
   components:
   - type: Sprite
@@ -248,6 +299,7 @@
   parent: IDCardStandard
   id: USSPSoldierOfficerIDCard
   name: USSP ID card
+  categories: [ HideSpawnMenu ] # Fire added
   suffix: Combat Officer
   components:
   - type: Sprite
@@ -267,6 +319,7 @@
   id: USSPCaptainIDCard
   name: USSP ID card
   suffix: Captain
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Misc/id_cards.rsi
@@ -290,6 +343,7 @@
   name: NTR Guard ID card
   description: OwO Squad
   suffix: Officer
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Misc/id_cards.rsi
@@ -299,7 +353,7 @@
   - type: Item
     heldPrefix: silver
   - type: PresetIdCard
-    job: Lawyer #NtrGuard
+    job: NtrGuard
 
 - type: entity
   parent: IDCardStandard
@@ -307,6 +361,7 @@
   name: NTR Lead ID card
   description: Leader OwO Squad
   suffix: Leader
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Misc/id_cards.rsi
@@ -322,6 +377,7 @@
   parent: IDCardStandard
   id: MailCarrierIDCard
   name: mail carrier ID card
+  categories: [ HideSpawnMenu ] # Fire added
   components:
   - type: Sprite
     sprite: _Sunrise/Objects/Misc/id_cards.rsi
@@ -330,3 +386,54 @@
     - state: idmail
   - type: PresetIdCard
     job: MailCarrier
+
+- type: entity
+  parent: IDCardStandard
+  id: MiningIDCard
+  name: mining ID card
+  categories: [ HideSpawnMenu ] # Fire added
+  components:
+  - type: Sprite
+    sprite: _Sunrise/Objects/Misc/id_cards.rsi
+    layers:
+    - state: default
+    - state: idstationminer
+  - type: PresetIdCard
+    job: MiningSpecialist
+
+- type: entity
+  parent: [ IDCardStandard ]
+  id: AbductorIDCard
+  name: abductor ID card
+  categories: [ HideSpawnMenu ] # Fire added
+  components:
+    - type: Sprite
+      sprite: _Sunrise/Objects/Misc/id_cards.rsi
+      layers:
+        - state: abductor
+    - type: Access # get your access from your victims.
+    - type: AgentIDCard
+    - type: IdCard
+      bypassLogging: true
+      canMicrowave: false
+      jobTitle: job-name-unknown
+    - type: ActivatableUI
+      key: enum.AgentIDCardUiKey.Key
+      inHandsOnly: true
+    - type: UserInterface
+      interfaces:
+        enum.AgentIDCardUiKey.Key:
+          type: AgentIDCardBoundUserInterface
+
+- type: entity
+  parent: IDCardStandard
+  id: CommaidIDCard
+  name: Commaid ID card
+  components:
+  - type: Sprite
+    sprite: _Sunrise/Objects/Misc/id_cards.rsi
+    layers:
+    - state: silver
+    - state: idcommaid
+  - type: PresetIdCard
+    job: ComMaid

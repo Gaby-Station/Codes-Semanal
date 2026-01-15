@@ -14,6 +14,7 @@ namespace Content.Shared.Chemistry
         public const string InputSlotName = "beakerSlot";
         public const string OutputSlotName = "outputSlot";
         public const string PillSolutionName = "food";
+        public const string PatchSolutionName = "patch"; //Starlight-edit
         public const string BottleSolutionName = "drink";
         public const uint LabelMaxLength = 50;
     }
@@ -70,6 +71,23 @@ namespace Content.Shared.Chemistry
         }
     }
 
+    //Starlight-start
+    [Serializable, NetSerializable]
+    public sealed class ChemMasterCreatePatchesMessage : BoundUserInterfaceMessage
+    {
+        public readonly uint Dosage;
+        public readonly uint Number;
+        public readonly string Label;
+
+        public ChemMasterCreatePatchesMessage(uint dosage, uint number, string label)
+        {
+            Dosage = dosage;
+            Number = number;
+            Label = label;
+        }
+    }
+    //Starlight-end
+
     [Serializable, NetSerializable]
     public sealed class ChemMasterOutputToBottleMessage : BoundUserInterfaceMessage
     {
@@ -106,7 +124,10 @@ namespace Content.Shared.Chemistry
         U1 = 1,
         U5 = 5,
         U10 = 10,
+        U15 = 15,
+        U20 = 20,
         U25 = 25,
+        U30 = 30,
         U50 = 50,
         U100 = 100,
         All,
@@ -179,12 +200,14 @@ namespace Content.Shared.Chemistry
 
         public readonly uint PillDosageLimit;
 
+        public readonly uint PatchDosageLimit; //Starlight-edit
+
         public readonly bool UpdateLabel;
 
         public ChemMasterBoundUserInterfaceState(
             ChemMasterMode mode, ChemMasterSortingType sortingType, ContainerInfo? inputContainerInfo, ContainerInfo? outputContainerInfo,
             IReadOnlyList<ReagentQuantity> bufferReagents, FixedPoint2 bufferCurrentVolume,
-            uint selectedPillType, uint pillDosageLimit, bool updateLabel)
+            uint selectedPillType, uint pillDosageLimit, uint patchDosageLimit, bool updateLabel) // Starlight-edit
         {
             InputContainerInfo = inputContainerInfo;
             OutputContainerInfo = outputContainerInfo;
@@ -194,6 +217,7 @@ namespace Content.Shared.Chemistry
             BufferCurrentVolume = bufferCurrentVolume;
             SelectedPillType = selectedPillType;
             PillDosageLimit = pillDosageLimit;
+            PatchDosageLimit = patchDosageLimit; //Starlight-edit
             UpdateLabel = updateLabel;
         }
     }

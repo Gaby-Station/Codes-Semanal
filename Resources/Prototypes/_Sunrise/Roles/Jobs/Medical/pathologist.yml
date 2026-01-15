@@ -10,6 +10,8 @@
   startingGear: PathologistGear
   icon: "JobIconPathologist"
   supervisors: job-supervisors-cmo
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
   access:
   - Medical
   - Maintenance
@@ -20,10 +22,20 @@
     id: PathologistPDA
     ears: ClothingHeadsetMedical
     belt: ClothingBeltMedicalFilled
-    
+
 - type: jobIcon
   parent: JobIcon
   id: JobIconPathologist
   icon:
     sprite: /Textures/_Sunrise/Interface/Misc/job_icons.rsi
     state: Pathologist
+
+- type: chameleonOutfit
+  id: MedicalPathologistChameleonOutfit
+  job: MedicalPathologist
+  equipment:
+    gloves: ClothingHandsGlovesLatex
+    head: ClothingHeadHatBeretPatologoanatom
+    mask: ClothingMaskBreath
+    neck: ClothingNeckStethoscope
+    outerClothing: ClothingOuterCoatPatologoanatom

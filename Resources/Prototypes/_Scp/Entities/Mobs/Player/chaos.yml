@@ -1,6 +1,5 @@
 ﻿#-----------------КОМАНДИР
 - type: entity
-  name: Командир Повстанцев Хаоса
   parent: MobHuman
   suffix: CHAOS | ANTAG
   id: MobHumanChaosLeader
@@ -27,11 +26,11 @@
     nameSegments:
     - NamesChaosLeader
     - LastNamesChaos
+    nameFormat: name-format-ert
 
 
 #-----------------МЕДИК
 - type: entity
-  name: Медик Повстанцев Хаоса
   parent: MobHuman
   suffix: CHAOS | ANTAG
   id: MobHumanChaosMedic
@@ -58,11 +57,11 @@
     nameSegments:
     - NamesChaosMedic
     - LastNamesChaos
+    nameFormat: name-format-ert
 
 
 #-----------------ВОИН
 - type: entity
-  name: Повстанец Хаоса
   parent: MobHuman
   suffix: CHAOS | ANTAG
   id: MobHumanChaos
@@ -89,3 +88,4 @@
     nameSegments:
     - NamesChaos
     - LastNamesChaos
+    nameFormat: name-format-ert

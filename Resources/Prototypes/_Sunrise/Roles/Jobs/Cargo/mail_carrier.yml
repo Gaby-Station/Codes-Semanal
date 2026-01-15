@@ -3,6 +3,7 @@
   name: job-name-mail-carrier
   description: job-description-mail-carrier
   playTimeTracker: JobMailCarrier
+  overrideConsoleVisibility: false # Fire added
   requirements:
     - !type:DepartmentTimeRequirement
       department: Cargo
@@ -11,6 +12,7 @@
   icon: "JobIconMailCarrier"
   supervisors: job-supervisors-qm #job-supervisors-hop
   displayWeight: 30
+  setPreference: false # Fire added
   # salary: 1000
   access:
   - Maintenance
@@ -25,3 +27,9 @@
     id: MailCarrierPDA
     ears: ClothingHeadsetCargo
     belt: MailBag
+
+- type: chameleonOutfit
+  id: MailCarrierChameleonOutfit
+  job: MailCarrier
+  equipment:
+    mask: ClothingMaskBreath

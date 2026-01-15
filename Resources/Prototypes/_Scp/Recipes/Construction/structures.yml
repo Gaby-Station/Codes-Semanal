@@ -1,17 +1,77 @@
-﻿- type: construction
-  name: acceleration catwalk
-  id: AcceleratingCatwalk
-  graph: Catwalk
+- type: construction
+  id: ScpWallConcrete
+  graph: concreteWall
   startNode: start
-  targetNode: AcceleratingCatwalk
+  targetNode: concreteWallEnd
   category: construction-category-structures
-  description: High-tech catwalk that speeds up everyone who moves on it
-  conditions:
-  - !type:TileNotBlocked
-    failIfSpace: false
-  icon:
-    sprite: _Scp/Structures/accelerating_catwalk.rsi
-    state: catwalk_preview
   objectType: Structure
   placementMode: SnapgridCenter
+  canRotate: false
   canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: ScpWallConcreteDiagonal
+  graph: concreteWallDiagonal
+  startNode: start
+  targetNode: concreteWallDiagonalEnd
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: true
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: ScpWallConcreteLightContainment
+  graph: concreteWallLightContainment
+  startNode: start
+  targetNode: concreteWallLightContainmentEnd
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: ScpWallConcreteScience
+  graph: concreteWallScience
+  startNode: start
+  targetNode: concreteWallScienceEnd
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: ScpWallConcreteEngineer
+  graph: concreteWallEngineer
+  startNode: start
+  targetNode: concreteWallEngineerEnd
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked
+
+- type: construction
+  id: ScpWallConcreteMedical
+  graph: concreteWallMedical
+  startNode: start
+  targetNode: concreteWallMedicalEnd
+  category: construction-category-structures
+  objectType: Structure
+  placementMode: SnapgridCenter
+  canRotate: false
+  canBuildInImpassable: false
+  conditions:
+    - !type:TileNotBlocked

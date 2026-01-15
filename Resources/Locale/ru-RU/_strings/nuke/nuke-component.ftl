@@ -1,9 +1,9 @@
 nuke-component-cant-anchor-floor = Крепёжным болтам не удаётся закрепиться в полу!
 nuke-component-cant-anchor-toggle = The nuclear authentication disk is required to toggle the floor bolts!
 nuke-component-announcement-sender = Ядерная боеголовка
-nuke-component-announcement-armed = Внимание! Механизм самоуничтожения станции был активирован { $location }. До детонации { $time } секунд.
-nuke-component-announcement-unarmed = Механизм самоуничтожение станции деактивирован! Хорошего дня!
-nuke-component-announcement-send-codes = Внимание! Запрошенные коды самоуничтожения были отправлены на факс капитана.
+nuke-component-announcement-armed = Активирован механизм уничтожения комплекса! До уничтожения комплекса: { $time } секунд. Место запуска: { $location }.
+nuke-component-announcement-unarmed = Механизм уничтожения комплекса деактивирован! Хорошего дня!
+nuke-component-announcement-send-codes = Внимание! Запрошенные коды ядерной аутентификации отправлены на факсимильный аппарат директора комплекса.
 nuke-component-doafter-warning = Вы начинаете перебирать провода и кнопки, в попытке обезвредить ядерную бомбу. Это может занять некоторое время.
 nuke-user-interface-title = Ядерная боеголовка
 nuke-user-interface-arm-button = ВЗВЕСТИ
@@ -27,9 +27,9 @@ nuke-user-interface-second-status-await-disk = ОЖИДАНИЕ ДИСКА
 nuke-user-interface-second-status-time = ВРЕМЯ: { $time }
 nuke-user-interface-second-status-current-code = КОД: { $code }
 nuke-user-interface-second-status-cooldown-time = ОЖИДАНИЕ: { $time }
-nuke-label-nanotrasen = НТ-{ $serial }
-# do you even need this one? It's more funnier to say that
-# the Syndicate stole a NT nuke
+nuke-label-nanotrasen = SCP-{ $serial }
+# Нужен ли вообще этот ярлык? Гораздо интереснее указать, что
+# Синдикат украл ядерную боеголовку Фонда
 nuke-label-syndicate = СИН-{ $serial }
 
 # Codes

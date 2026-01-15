@@ -2,6 +2,7 @@
   id: Arachnid
   name: species-name-arachnid
   roundStart: false # Fire edit
+  stationRecordsHidden: true # Fire added
   prototype: MobArachnid
   bodyTypes:
   - ArachnidNormal
@@ -14,6 +15,10 @@
   femaleFirstNames: NamesArachnidFirst
   maleLastNames: NamesArachnidLast
   femaleLastNames: NamesArachnidLast
+  # Sunrise-Edit
+  buttScan:
+    sprite: /Textures/_Sunrise/CopyMachine/butts_scans.rsi
+    state: human # Sunrise-Edit SUNRISE-TODO: Спрайт жопы для арахнидов
 
 - type: bodyType
   id: ArachnidNormal
@@ -91,7 +96,7 @@
       required: true
       defaultMarkings: [ ArachnidCheliceraeDownwards ]
     Chest:
-      points: 1
+      points: 2
       required: false
     Legs:
       points: 2

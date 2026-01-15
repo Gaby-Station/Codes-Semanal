@@ -34,15 +34,6 @@
   - type: ShowJobIcons
   - type: ShowCriminalRecordIcons
   - type: ShowMindShieldIcons
-  - type: ShowHealthBars
-    damageContainers:
-    - Biological
-  - type: ShowHealthIcons
-    damageContainers:
-    - Biological
-  - type: Tag
-    tags:
-    - HudMedical
   - type: EyeProtection
     protectionTime: 5
 
@@ -83,15 +74,41 @@
     - WhitelistChameleon
 
 - type: entity
-  parent: ClothingEyesGlassesCheapSunglasses
+  parent: [BaseNightVisionDevice, ClothingEyesGlassesCheapSunglasses, PowerCellSlotSmallItem]
   id: ClothingEyesGlassesNVG
   name: sun glasses
   description: A pair of black sunglasses.
   components:
   - type: ShowSyndicateIcons
-  - type: NightVisionDevice
-    displayColor: "#ff6e6e"
-    displayShader: NVDDisplay
+  - type: ItemToggle
+    predictable: false
+    onUse: false
+    canActivateInhand: false
+    soundActivate:
+      path: /Audio/_Sunrise/Items/Goggles/activate.ogg
+    soundDeactivate:
+      path: /Audio/_Sunrise/Items/Goggles/deactivate.ogg
+    soundFailToActivate:
+      path: /Audio/Machines/button.ogg
+  - type: PowerCellSlot
+    cellSlotId: cell_slot
+  - type: ContainerContainer
+    containers:
+      cell_slot: !type:ContainerSlot
+  - type: ItemSlots
+    slots:
+      cell_slot:
+        name: power-cell-slot-component-slot-name-default
+        startingItem: PowerCellSmall
+  - type: ToggleCellDraw
+  - type: PowerCellDraw
+    drawRate: 3.5
+    useRate: 20
+  - type: ComponentToggler
+    parent: true
+    components:
+      - type: NightVision
+        effect: EffectNightVisionSyndie
 
 - type: entity
   parent: [ClothingEyesGlassesThermal, ShowSecurityIcons, BaseSyndicateContraband]
@@ -118,3 +135,16 @@
   - type: Clothing
     sprite: Clothing/Eyes/Glasses/thermal.rsi
   - type: ShowMindShieldIcons
+
+- type: entity
+  parent: ClothingEyesBase
+  id: ClothingEyesStuttering
+  name: stuttering glasses
+  description: Glasses that give the owner knowledge...or stuttering
+  components:
+  - type: Sprite
+    sprite: _Sunrise/Clothing/Eyes/Glasses/stuttering_glasses.rsi
+  - type: Clothing
+    sprite: _Sunrise/Clothing/Eyes/Glasses/stuttering_glasses.rsi
+  - type: AddAccentClothing
+    accent: StutteringAccent

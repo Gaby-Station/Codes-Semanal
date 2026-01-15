@@ -161,9 +161,6 @@
   - type: IconSmooth
     key: walls
     mode: NoSprite
-  - type: PaintableAirlock
-    group: Standard
-    department: Civilian
   - type: StaticPrice
     price: 150
   - type: LightningTarget
@@ -179,6 +176,8 @@
     - Airlocks
     - WirePanels
     - Networking
+  - type: Paintable
+    group: ScpAirlockStandard
   placement:
     mode: SnapgridCenter
 
@@ -223,11 +222,11 @@
   - type: Construction
     graph: Airlock
     node: glassAirlock
-  - type: PaintableAirlock
-    group: Glass
   - type: RadiationBlocker
     resistance: 2
   - type: Tag
     tags:
       - GlassAirlock
       # This tag is used to nagivate the Airlock construction graph. It's needed because the construction graph is shared between Airlock, AirlockGlass, and HighSecDoor
+  - type: Paintable
+    group: ScpAirlockGlass

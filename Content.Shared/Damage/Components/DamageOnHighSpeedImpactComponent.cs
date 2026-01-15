@@ -12,7 +12,7 @@ namespace Content.Shared.Damage.Components;
 public sealed partial class DamageOnHighSpeedImpactComponent : Component
 {
     [DataField("minimumSpeed"), ViewVariables(VVAccess.ReadWrite)]
-    public float MinimumSpeed = 20f;
+    public float MinimumSpeed = 10f; // Sunrise-Edit
 
     [DataField("speedDamageFactor"), ViewVariables(VVAccess.ReadWrite)]
     public float SpeedDamageFactor = 0.5f;
@@ -37,4 +37,9 @@ public sealed partial class DamageOnHighSpeedImpactComponent : Component
 
     [DataField("damage", required: true), ViewVariables(VVAccess.ReadWrite)]
     public DamageSpecifier Damage = default!;
+
+    // Fire added start
+    [DataField]
+    public bool UseColor = true;
+    // Fire added end
 }

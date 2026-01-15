@@ -1,6 +1,8 @@
+using System.Numerics;
 using Robust.Shared.Audio;
 using Robust.Shared.GameStates;
 using Robust.Shared.Serialization;
+using Robust.Shared.Utility;
 
 namespace Content.Shared.Paper;
 
@@ -12,7 +14,12 @@ public sealed partial class PaperComponent : Component
     public string Content { get; set; } = "";
 
     [DataField("contentSize")]
-    public int ContentSize { get; set; } = 6000;
+    public int ContentSize { get; set; } = 10000;
+
+    // Sunrise start
+    [DataField, AutoNetworkedField]
+    public Color DefaultColor = new(25, 25, 25);
+    // Sunrise-end
 
     [DataField("stampedBy"), AutoNetworkedField]
     public List<StampDisplayInfo> StampedBy { get; set; } = new();
@@ -32,18 +39,35 @@ public sealed partial class PaperComponent : Component
     [DataField("sound")]
     public SoundSpecifier? Sound { get; private set; } = new SoundCollectionSpecifier("PaperScribbles", AudioParams.Default.WithVariation(0.1f));
 
+    // Sunrise-Start
+    [DataField, AutoNetworkedField]
+    public SpriteSpecifier? ImageContent { get; set; }
+    [DataField, AutoNetworkedField]
+    public Vector2? ImageScale { get; set; }
+    // Sunrise-End
+
     [Serializable, NetSerializable]
     public sealed class PaperBoundUserInterfaceState : BoundUserInterfaceState
     {
         public readonly string Text;
         public readonly List<StampDisplayInfo> StampedBy;
         public readonly PaperAction Mode;
+        // Sunrise-Start
+        public readonly Color DefaultColor;
+        public readonly SpriteSpecifier? ImageContent; // Sunrise-edit
+        public readonly Vector2? ImageScale; // Sunrise-edit
+        // Sunrise-End
 
-        public PaperBoundUserInterfaceState(string text, List<StampDisplayInfo> stampedBy, PaperAction mode = PaperAction.Read)
+        public PaperBoundUserInterfaceState(string text, Color defaultColor, List<StampDisplayInfo> stampedBy, PaperAction mode = PaperAction.Read, SpriteSpecifier? imageContent = null, Vector2? imageScale = null) // Sunrise-edit
         {
             Text = text;
             StampedBy = stampedBy;
             Mode = mode;
+            // Sunrise-Start
+            DefaultColor = defaultColor;
+            ImageContent = imageContent;
+            ImageScale = imageScale;
+            // Sunrise-End
         }
     }
 

@@ -1,0 +1,57 @@
+﻿- type: job
+  id: JuniorHeavyContainmentZoneOfficer
+  name: job-name-junior-heavy-containment-zone-officer
+  description: job-description-junior-heavy-containment-zone-officer
+  playTimeTracker: JobJuniorHeavyContainmentZoneOfficer
+  requirements:
+    - !type:OverallPlaytimeRequirement
+      time: 7200
+  icon: JobJuniorHeavyContainmentZoneOfficer
+  supervisors: job-supervisors-heavy-containment-zone-commandant
+  canBeAntag: false
+  displayWeight: 0
+  accessGroups:
+  - SecurityJobCommon
+  special:
+  - !type:AddImplantSpecial
+    implants: [ MindShieldImplant ]
+  - !type:AddComponentSpecial
+    components:
+    - type: EmployeeClass
+      class: C
+    - type: AccessLevel
+      level: Three
+    - type: SpeakOnEyeStateChange # переопределение моргания с другими параметрами для охраны и МОГа
+      # Часть фраз уходит, так как более разговорная. А эти парни натренированы.
+      phraseOnClose:
+      - close-eye-phrase-1
+      - close-eye-phrase-3
+      - close-eye-phrase-4
+      phraseOnOpen:
+      - open-eye-phrase-1
+      - open-eye-phrase-3
+      speakOnlyInScp173Chamber: false
+    - type: Fear  # переопределение компонента страха для СБ
+      phobias:
+      - Exoremophobia
+      - Necrophobia
+      proximityBlockerLevel: None
+      seenBlockerLevel: None
+      fearBasedSpreadAngleModifier:
+        Anxiety: 1.5
+        Fear: 2.2
+        Terror: 5
+      baseJitterTime: 3
+      fallOffChance: 2
+
+- type: startingGear
+  id: JuniorHeavyContainmentZoneOfficerGear
+  equipment:
+    mask: ClothingMaskSecurityBandBlack
+    id: KeyCardJuniorHeavyContainmentZoneOfficer
+    ears: ClothingHeadsetHeavyContainmentSecurityService
+    pocket1: HyperLinkBookCorporateLaw
+    pocket2: ScpSecurityPDA
+  storage:
+    back:
+    - Flash

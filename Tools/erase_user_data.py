@@ -7,12 +7,13 @@
 # This is acceptable under the GDPR as a "legitimate interest" to prevent GDPR erasure being used to avoid moderation/bans.
 # You would need to do this *before* running this script, to avoid losing the IP/HWID of the user entirely.
 
+
 import argparse
 import os
 import psycopg2
 from uuid import UUID
 
-LATEST_DB_MIGRATION = "20230725193102_AdminNotesImprovementsForeignKeys"
+LATEST_DB_MIGRATION = "20250211131539_LoadoutNames"
 
 def main():
     parser = argparse.ArgumentParser()
@@ -43,6 +44,7 @@ def main():
     clear_server_role_ban(cur, user_id)
     clear_uploaded_resource_log(cur, user_id)
     clear_whitelist(cur, user_id)
+    clear_blacklist(cur, user_id)
 
     print("Committing...")
     conn.commit()
@@ -193,6 +195,16 @@ def clear_whitelist(cur: "psycopg2.cursor", user_id: str):
     cur.execute("""
 DELETE FROM
     whitelist
+WHERE
+    user_id = %s
+""", (user_id,))
+
+def clear_blacklist(cur: "psycopg2.cursor", user_id: str):
+    print("Clearing blacklist...")
+
+    cur.execute("""
+DELETE FROM
+    blacklist
 WHERE
     user_id = %s
 """, (user_id,))

@@ -7,6 +7,7 @@
     ClothingBackpackSatchel: 3
     ClothingBackpackSatchelLeather: 2
     ClothingRandomSpawner: 8
+    ClothingUniformRandomShorts: 4
     ClothingHeadHatBeret: 4
 #sunrise-start
     ClothingHeadBandWhite: 2
@@ -99,6 +100,7 @@
     ClothingHeadHatCorpsoft: 2
     ClothingHeadFishCap: 2
     ClothingHeadRastaHat: 2
+    ClothingHeadPropellerHat: 2
     ClothingBeltStorageWaistbag: 3
     ClothingEyesGlasses: 6
     ClothingHandsGlovesColorBlack: 4
@@ -141,6 +143,11 @@
     ClothingBackpackSatchelRed: 2
     ClothingBackpackSatchelWhite: 2
     ClothingBackpackSatchelYellow: 2
+    ClothingNeckAmethystHeart: 2
+    ClothingUniformTurleneckBlack: 2
+    ClothingUniformTurleneckBlackWomen: 2
+    ClothingUniformTurleneckBlackSleeveless: 2
+    ClothingUniformTurleneckBlackWomenSleeveless: 2
 #Sunrise-end
   contrabandInventory:
     ClothingMaskNeckGaiter: 2
@@ -149,4 +156,5 @@
     ToyFigurinePassenger: 1
     ToyFigurineGreytider: 1
     ClothingBackpackSatchelSmugglerUnanchored: 1
+    ClothingHeadHatSolidHeadband: 2
   # DO NOT ADD MORE, USE UNIFORM DYING

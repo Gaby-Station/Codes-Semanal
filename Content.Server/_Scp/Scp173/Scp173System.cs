@@ -1,63 +1,62 @@
 ﻿using System.Linq;
 using System.Numerics;
+using Content.Server.Doors.Systems;
 using Content.Server.Examine;
 using Content.Server.Explosion.EntitySystems;
+using Content.Server.Fluids.EntitySystems;
 using Content.Server.Ghost;
 using Content.Server.Interaction;
-using Content.Server.Light.Components;
 using Content.Server.Popups;
-using Content.Server.Storage.Components;
 using Content.Server.Storage.EntitySystems;
+using Content.Shared._Scp.Helpers;
+using Content.Shared._Scp.Proximity;
 using Content.Shared._Scp.Scp173;
 using Content.Shared.Chemistry.Components;
 using Content.Shared.Coordinates.Helpers;
 using Content.Shared.Damage;
 using Content.Shared.Doors.Components;
-using Content.Shared.Doors.Systems;
 using Content.Shared.Examine;
-using Content.Shared.FixedPoint;
-using Content.Shared.Fluids;
-using Content.Shared.Fluids.Components;
-using Content.Shared.Humanoid;
+using Content.Shared.Light.Components;
 using Content.Shared.Lock;
 using Content.Shared.Mobs.Components;
-using Content.Shared.Mobs.Systems;
 using Content.Shared.Physics;
 using Content.Shared.Popups;
+using Content.Shared.Storage.Components;
 using Robust.Server.Audio;
 using Robust.Server.GameObjects;
 using Robust.Shared.Audio;
 using Robust.Shared.Map;
 using Robust.Shared.Physics;
 using Robust.Shared.Physics.Components;
-using Robust.Shared.Prototypes;
 using Robust.Shared.Random;
 
 namespace Content.Server._Scp.Scp173;
 
-public sealed class Scp173System : SharedScp173System
+public sealed partial class Scp173System : SharedScp173System
 {
+    [Dependency] private readonly IRobustRandom _random = default!;
     [Dependency] private readonly EntityStorageSystem _entityStorage = default!;
     [Dependency] private readonly GhostSystem _ghost = default!;
     [Dependency] private readonly TransformSystem _transform = default!;
     [Dependency] private readonly EntityLookupSystem _lookup = default!;
     [Dependency] private readonly DamageableSystem _damageable = default!;
-    [Dependency] private readonly SharedPuddleSystem _puddle = default!;
+    [Dependency] private readonly PuddleSystem _puddle = default!;
     [Dependency] private readonly LockSystem _lock = default!;
-    [Dependency] private readonly SharedDoorSystem _door = default!;
+    [Dependency] private readonly DoorSystem _door = default!;
     [Dependency] private readonly ExamineSystem _examine = default!;
     [Dependency] private readonly InteractionSystem _interaction = default!;
     [Dependency] private readonly PhysicsSystem _physics = default!;
     [Dependency] private readonly PopupSystem _popup = default!;
     [Dependency] private readonly AudioSystem _audio= default!;
-    [Dependency] private readonly MobStateSystem _mobState = default!;
     [Dependency] private readonly ExplosionSystem _explosion = default!;
-    [Dependency] private readonly IRobustRandom _random = default!;
-    [Dependency] private readonly IPrototypeManager _prototype = default!;
+    [Dependency] private readonly ScpHelpers _helpers = default!;
 
     private readonly SoundSpecifier _storageOpenSound = new SoundCollectionSpecifier("MetalBreak");
     private readonly SoundSpecifier _clogSound = new SoundPathSpecifier("/Audio/_Scp/Scp173/clog.ogg");
-    private const float ToggleDoorStuffChance = 0.2f;
+
+    private const float ToggleDoorStuffChance = 0.35f;
+
+    private TimeSpan _nextReagentCheck;
 
     public override void Initialize()
     {
@@ -68,25 +67,24 @@ public sealed class Scp173System : SharedScp173System
         SubscribeLocalEvent<Scp173Component, Scp173FastMovementAction>(OnFastMovement);
     }
 
-    protected override void BreakNeck(EntityUid target, Scp173Component scp)
+    public override void Update(float frameTime)
     {
-        if (!HasComp<MobStateComponent>(target))
+        base.Update(frameTime);
+
+        if (Timing.CurTime < _nextReagentCheck)
             return;
 
-        if (!HasComp<HumanoidAppearanceComponent>(target))
-            return;
+        _nextReagentCheck = Timing.CurTime + ReagentCheckInterval;
 
-        if (_mobState.IsDead(target))
-            return;
+        var query = EntityQueryEnumerator<Scp173Component>();
+        while (query.MoveNext(out var uid, out var scp173))
+        {
+            if (!IsContained(uid))
+                continue;
 
-        if (scp.NeckSnapDamage == null)
-            return;
-
-        _damageable.TryChangeDamage(target, scp.NeckSnapDamage, true, useVariance:false);
-
-        // TODO: Fix missing deathgasp emote on high damage per once
-
-        _audio.PlayPvs(scp.NeckSnapSound, target);
+            scp173.ReagentVolumeAround = _helpers.GetAroundSolutionVolume(uid, Scp173Component.Reagent, LineOfSightBlockerLevel.None);
+            Dirty(uid, scp173);
+        }
     }
 
     private void OnStructureDamage(Entity<Scp173Component> uid, ref Scp173DamageStructureAction args)
@@ -102,10 +100,11 @@ public sealed class Scp173System : SharedScp173System
             return;
         }
 
-        if (Is173Watched(uid, out _))
+        if (Watching.IsWatched(uid.Owner))
         {
             var message = Loc.GetString("scp173-fast-movement-too-many-watchers");
             _popup.PopupEntity(message, uid, uid, PopupType.LargeCaution);
+
             return;
         }
 
@@ -117,9 +116,7 @@ public sealed class Scp173System : SharedScp173System
             return;
         }
 
-        var defileRadius = 4f;
-
-        var lookup = _lookup.GetEntitiesInRange(uid, defileRadius)
+        var lookup = _lookup.GetEntitiesInRange(uid, 4f)
             .Where(ent => _interaction.InRangeUnobstructed(uid.Owner, ent, ExamineSystemShared.ExamineRange));
 
         var entityStorage = GetEntityQuery<EntityStorageComponent>();
@@ -185,7 +182,7 @@ public sealed class Scp173System : SharedScp173System
             return;
         }
 
-        if (Is173Watched(ent, out _))
+        if (Watching.IsWatched(ent.Owner))
         {
             var message = Loc.GetString("scp173-fast-movement-too-many-watchers");
             _popup.PopupEntity(message, ent, ent, PopupType.LargeCaution);
@@ -195,32 +192,17 @@ public sealed class Scp173System : SharedScp173System
         var coords = Transform(ent).Coordinates;
 
         var tempSol = new Solution();
-        tempSol.AddReagent(ent.Comp.Reagent, 25);
+        tempSol.AddReagent(Scp173Component.Reagent, 25);
         _puddle.TrySpillAt(coords, tempSol, out _, false);
 
         _audio.PlayPvs(_clogSound, ent);
 
-        FixedPoint2 total = 0;
-        var puddles = _lookup.GetEntitiesInRange<PuddleComponent>(coords, ContainmentRoomSearchRadius)
-            .Where(puddle =>
-                _interaction.InRangeUnobstructed(ent.Owner, puddle.Owner, ExamineSystemShared.ExamineRange));
+        var total = _helpers.GetAroundSolutionVolume(ent, Scp173Component.Reagent, LineOfSightBlockerLevel.None);
 
-        foreach (var puddle in puddles)
+        if (total >= Scp173Component.MinTotalSolutionVolume)
         {
-            if (!puddle.Comp.Solution.HasValue)
-                continue;
-
-            var allReagents = puddle.Comp.Solution.Value.Comp.Solution.GetReagentPrototypes(_prototype);
-            total = allReagents
-                .Where(reagent => reagent.Key.ID == "Scp173Reagent")
-                .Aggregate(total, (current, reagent) => current + reagent.Value);
-        }
-
-        if (total >= ent.Comp.MinTotalSolutionVolume)
-        {
-            var transform = Transform(args.Performer);
-            var lookup = _lookup.GetEntitiesInRange(transform.Coordinates, 5, flags: LookupFlags.Dynamic | LookupFlags.Static)
-                .Where(target => _interaction.InRangeUnobstructed(ent.Owner, target, ExamineSystemShared.ExamineRange));
+            var lookup = _lookup.GetEntitiesInRange(coords, ContainmentRoomSearchRadius, flags: LookupFlags.Dynamic | LookupFlags.Static)
+                .Where(target => _examine.InRangeUnOccluded(ent, target, ContainmentRoomSearchRadius));
 
             foreach (var target in lookup)
             {
@@ -234,7 +216,7 @@ public sealed class Scp173System : SharedScp173System
                     _door.StartOpening(target);
             }
         }
-        else if (total >= ent.Comp.ExtraMinTotalSolutionVolume)
+        if (total >= Scp173Component.ExtraMinTotalSolutionVolume)
         {
             _explosion.QueueExplosion(_transform.GetMapCoordinates(ent), ExplosionSystem.DefaultExplosionPrototypeId, 300f, 0.6f, 50f, ent);
         }
@@ -263,10 +245,11 @@ public sealed class Scp173System : SharedScp173System
             return;
         }
 
-        if (Is173Watched(ent, out var watchersCount) && watchersCount > ent.Comp.MaxWatchers)
+        if (Watching.IsWatched(ent.Owner, out var watchersCount) && watchersCount > ent.Comp.MaxWatchers)
         {
             var message = Loc.GetString("scp173-fast-movement-too-many-watchers");
             _popup.PopupEntity(message, ent, ent, PopupType.LargeCaution);
+
             return;
         }
 
@@ -341,8 +324,8 @@ public sealed class Scp173System : SharedScp173System
                 BreakNeck(result.HitEntity, scpEntitiy);
                 previousHitPos = result.HitPos;
 
-                var mobXform = Transform(result.HitEntity);
-                _transform.SetWorldPosition(scpEntitiy, mobXform.WorldPosition);
+                var worldPos = _transform.GetWorldPosition(scpEntitiy);
+                _transform.SetWorldPosition(scpEntitiy, worldPos);
 
                 continue;
             }

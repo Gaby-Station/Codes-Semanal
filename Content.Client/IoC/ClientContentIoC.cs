@@ -1,4 +1,7 @@
-﻿using Content.Client._Sunrise.IoC;
+﻿using Content.Client._Sunrise.Contributors;
+using Content.Client._Sunrise.InteractionsPanel.Models;
+using Content.Client._Sunrise.IoC;
+using Content.Client._Sunrise.PlayerCache;
 using Content.Client._Sunrise.ServersHub;
 using Content.Client.Administration.Managers;
 using Content.Client.Changelog;
@@ -14,6 +17,7 @@ using Content.Client.Launcher;
 using Content.Client.Mapping;
 using Content.Client.Parallax.Managers;
 using Content.Client.Players.PlayTimeTracking;
+using Content.Client.Playtime;
 using Content.Client.Replay;
 using Content.Client.Screenshot;
 using Content.Client.Stylesheets;
@@ -36,6 +40,7 @@ namespace Content.Client.IoC
             var collection = IoCManager.Instance!;
 
             collection.Register<IParallaxManager, ParallaxManager>();
+            collection.Register<GeneratedParallaxCache>();
             collection.Register<IChatManager, ChatManager>();
             collection.Register<ISharedChatManager, ChatManager>();
             collection.Register<IClientPreferencesManager, ClientPreferencesManager>();
@@ -61,10 +66,14 @@ namespace Content.Client.IoC
             collection.Register<PlayerRateLimitManager>();
             collection.Register<SharedPlayerRateLimitManager, PlayerRateLimitManager>();
             collection.Register<TitleWindowManager>();
+            collection.Register<ClientsidePlaytimeTrackingManager>();
 
             // Sunrise-Start
             collection.Register<ServersHubManager>();
+            collection.Register<ContributorsManager>();
+            collection.Register<PlayerCacheManager>();
             SunriseClientContentIoC.Register();
+            collection.Register<CustomInteractionService, CustomInteractionService>(true);
             // Sunrise-End
         }
     }

@@ -18,7 +18,7 @@
   supervisors: job-supervisors-centcom
   canBeAntag: false
   alwaysUseSpawner: true
-  setPreference: false # Fire
+  setPreference: false # Fire edit
   radioBold: true
   displayWeight: 100
   accessGroups:
@@ -37,3 +37,9 @@
     belt: ClothingBeltPrisonGuardianFilled
     pocket1: WeaponPistolDeagle
     pocket2: MagazineDeagle
+
+- type: chameleonOutfit
+  id: HeadOfPrisonChameleonOutfit
+  job: HeadOfPrison
+  equipment:
+    jumpsuit: ClothingUniformJumpsuitHoSGrey

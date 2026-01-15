@@ -1,8 +1,8 @@
 ﻿using Content.Server._Scp.GameTicking.Rules.Components;
-using Content.Server.Station.Components;
 using Content.Server.Station.Systems;
 using Content.Server.StationEvents.Events;
 using Content.Shared.GameTicking.Components;
+using Content.Shared.Station.Components;
 using Content.Shared.Storage;
 using Robust.Shared.Random;
 
@@ -22,8 +22,7 @@ public sealed class SpawnRandomEntitiesRule : StationEventSystem<SpawnRandomEnti
         if (!TryComp<StationDataComponent>(station, out var stationDataComponent))
             return;
 
-        var totalTiles = _station.GetTileCount(stationDataComponent);
-
+        var totalTiles = _station.GetTileCount((station.Value, stationDataComponent));
         var dirtyMod = RobustRandom.NextGaussian(component.TilesPerEntityAverage, component.TilesPerEntityStdDev);
         var trashTiles = Math.Max((int) (totalTiles * (1 / dirtyMod)), 0);
 

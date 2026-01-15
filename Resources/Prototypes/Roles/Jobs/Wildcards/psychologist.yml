@@ -7,6 +7,8 @@
   icon: "JobIconPsychologist"
   supervisors: job-supervisors-cmo
   displayWeight: 10  # Sunrise
+  overrideConsoleVisibility: false # Fire added
+  setPreference: false # Fire added
   access:
   - Medical
   - Maintenance
@@ -22,3 +24,15 @@
   storage:
     back:
     - RubberStampPsychologist
+
+- type: chameleonOutfit
+  id: PsychologistChameleonOutfit
+  job: Psychologist
+  equipment:
+    head: ClothingHeadHatBeretMedic
+    eyes: ClothingEyesHudMedical
+    mask: ClothingMaskSterile
+    outerClothing: ClothingOuterCoatLab
+    neck: ClothingNeckStethoscope
+    belt: ClothingBeltMedical
+    gloves: ClothingHandsGlovesLatex

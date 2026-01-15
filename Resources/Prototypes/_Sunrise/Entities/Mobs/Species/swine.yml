@@ -4,11 +4,11 @@
   id: BaseMobSwine
   abstract: true
   components:
-  - type: Absorbable
+  - type: Interactions
   - type: HumanoidAppearance
     species: Swine
   - type: Hunger
-    baseDecayRate: 0.04
+    baseDecayRate: 0.08
   - type: Thirst
     baseDecayRate: 0.15
     dehydrationDamage:
@@ -22,17 +22,25 @@
     speechSounds: Swine
     speechVerb: Swine
     allowedEmotes: ['Oink']
+  - type: MovementSpeedModifier
+    baseSprintSpeed: 0.9
+  - type: SlowOnDamage
+    speedModifierThresholds:
+      80: 0.8
+      90: 0.9
   - type: MobThresholds
     thresholds:
       0: Alive
       100: Critical
       200: Dead
+  - type: Stamina
+    critThreshold: 100
   - type: Fixtures
     fixtures:
       fix1:
         shape:
           !type:PhysShapeCircle
-          radius: 0.40
+          radius: 0.35
         density: 250
         restitution: 0.0
         mask:
