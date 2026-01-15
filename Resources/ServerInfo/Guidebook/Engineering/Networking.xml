@@ -1,38 +1,39 @@
 <Document>
   # Networking
-  On the station, devices need to communicate to each other to preform their functions.
-  [textlink="Air alarms" link="AirAlarms"] need to talk to their respective devices, [textlink="doors" link="Airlocks"] need to be linked to form proper airlocks, and much more.
+  Some devices on the station need to communicate with each other, and they do this by utilizing device networking.
+  With networking, machines and devices can send arbitrary data between each other.
+  There are multiple networks that get used, such as the wireless and wired network.
+  Each network device has a frequency it receives on. PDAs, for example, use the frequency: [color=green]220.2[/color]
 
-  This is done through two systems, the Link system and the List system.
+  Note: The following operations will require use of the Network Configurator to be performed:
 
-  You can use either the Multitool or Network Configurator to interact with these systems.
-  You can switch between the different systems using [color=yellow][bold][keybind="AltActivateItemInHand"][/bold][/color] or by hovering your cursor over the device and using [color=yellow][bold][keybind="AltActivateItemInWorld"][/bold][/color].
+  ## Device Lists
+  Some devices need to know which other devices to communicate with specifically.
 
   <Box HorizontalAlignment="Stretch">
-    <Box>
-      <GuideEntityEmbed Entity="Multitool"/>
+  <Box>
+    <GuideEntityEmbed Entity="AirAlarm"/>
     </Box>
     <Box>
       <GuideEntityEmbed Entity="NetworkConfigurator"/>
     </Box>
   </Box>
+  Air alarms, for example, require you to tell it which vents, scrubbers, sensors, and firelocks to interact with.
 
-  Some devices will require access to link devices to them.
-  For example, you need Atmospherics access to link devices to an [textlink="air alarm" link="AirAlarms"].
+  ## Linking
+  If a device, basic or advanced, needs finer controls of how and which devices it connects to, it will generally use device linking.
   For doors, you'll need the access level of the door you're linking to.
 
   ## Link System
   The link system is used for explicitly linking two devices, such as linking a door to another door.
 
-  <Box>
-    <GuideEntityEmbed Entity="AirlockExternal"/>
-    <GuideEntityEmbed Entity="AirlockEngineering"/>
+    <Box>
+      <GuideEntityEmbed Entity="SignalSwitch"/>
+      <GuideEntityEmbed Entity="Airlock"/>
     <GuideEntityEmbed Entity="BlastDoor"/>
     <GuideEntityEmbed Entity="SignalButton"/>
-  </Box>
-
-  Under the link system, devices have [bold]ports[/bold] that are capable of either sending or receiving signals.
-
+    </Box>
+  With linking, you can connect the outputs of a device, like [color=gray]On[/color] or [color=gray]Off[/color], with the inputs of a device, like the airlocks [color=gray]Open[/color] or [color=gray]Close[/color] inputs.
   Hovering over a port using your cursor will show a tooltip that tells you what the port does.
   For example, output ports will state the conditions under which they will invoke a signal, and input ports will state what the device will do if it receives a signal.
 

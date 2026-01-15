@@ -12,22 +12,22 @@
 - type: loadout
   id: CaptainJumpsuit
   equipment:
-    jumpsuit: ClothingUniformJumpsuitCaptain
+    jumpsuit: ClothingUniformJumpsuitLawyerBlack
 
 - type: loadout
   id: CaptainJumpskirt
   equipment:
-    jumpsuit: ClothingUniformJumpskirtCaptain
+    jumpsuit: ClothingUniformJumpskirtLawyerBlack
 
 - type: loadout
   id: CaptainFormalSuit
   equipment:
-    jumpsuit: ClothingUniformJumpsuitCapFormal
+    jumpsuit: ClothingUniformJumpsuitLawyerGood
 
 - type: loadout
   id: CaptainFormalSkirt
   equipment:
-    jumpsuit: ClothingUniformJumpskirtCapFormalDress
+    jumpsuit: ClothingUniformJumpskirtLawyerGood
 
 # Head
 - type: loadout

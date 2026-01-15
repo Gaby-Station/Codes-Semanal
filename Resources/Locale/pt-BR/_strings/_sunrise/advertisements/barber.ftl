@@ -1,0 +1,10 @@
+advertisement-barber-1 = Novo estilo? Sem problemas, a máquina está pronta!
+advertisement-barber-2 = Quer ser uma estrela? Nossas tesouras conhecem o segredo!
+advertisement-barber-3 = Um simples movimento, e você está na capa da revista.
+advertisement-barber-4 = Nada de movimentos desnecessários — só estilo!
+advertisement-barber-5 = Qual corte de cabelo hoje? Escolha, estou pronto!
+advertisement-barber-6 = Corte de cabelo raspado — sem cabelo, sem preocupações, e você sempre pronto para surpresas!
+advertisement-barber-7 = Seu estilo está em boas mãos.
+advertisement-barber-8 = Corte raspado: rápido, estiloso e sem problemas com o penteado!
+advertisement-barber-9 = Raspado — a escolha dos homens de verdade e daqueles que perderam o pente!
+advertisement-barber-10 = Seu estilo é a nossa prioridade.

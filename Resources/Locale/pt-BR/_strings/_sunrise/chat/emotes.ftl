@@ -1,0 +1,12 @@
+chat-emote-name-bark = Latir
+chat-emote-name-hisses = Sibilar
+chat-emote-name-purrs = Ronronar
+chat-emote-name-growls = Rosnar
+chat-emote-name-mews = Miar
+chat-emote-name-howl = Uivar
+chat-emote-name-oink = Grunhir
+chat-emote-name-meows = Miado
+chat-emote-name-vomit = Vômito
+chat-emote-name-headache = Dor de cabeça
+chat-emote-name-insult = Insulto
+chat-emote-name-whines = Lamentar

@@ -1,7 +1,11 @@
 <Document>
 ## Anomaly Scanner
 
+<<<<<<< HEAD
 The Anomaly Scanner is used to gather various information on anomalies. They can be found inside the lockers in the science department.
+=======
+The Anomaly Scanner is used to gather various information on anomalies. They can be found inside of the lockers in the science department.
+>>>>>>> fire
 
 <Box>
 <GuideEntityEmbed Entity="AnomalyScanner"/>

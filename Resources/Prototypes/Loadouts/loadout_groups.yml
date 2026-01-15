@@ -128,14 +128,13 @@
   - LoadoutSpeciesPocketDoubleOxygen
 
 # Command
-- type: loadoutGroup
-  id: CaptainHead
-  name: loadout-group-head # Fire edit
-  minLimit: 0
-  loadouts:
-  - CaptainHead
-  - CaptainCap
-  - EliteCaptainCap #Sunrise-Edit
+#- type: loadoutGroup
+#  id: CaptainHead
+#  name: loadout-group-captain-head
+#  minLimit: 0
+#  loadouts:
+#  - CaptainHead
+#  - CaptainCap
 
 - type: loadoutGroup
   id: CaptainJumpsuit
@@ -146,16 +145,14 @@
   - CaptainFormalSuit
   - CaptainFormalSkirt
 
-- type: loadoutGroup
-  id: CaptainNeck
-  name: loadout-group-neck # Fire edit
-  minLimit: 0
-  loadouts:
-  - CaptainCloak
-  - CaptainCloakFormal
-  - CaptainMantle
-  - CaptainEliteCloak # Sunrise-Edit
-  - CapitainScarf # Sunrise-Edit
+#- type: loadoutGroup
+#  id: CaptainNeck
+#  name: loadout-group-captain-neck
+#  minLimit: 0
+#  loadouts:
+#  - CaptainCloak
+#  - CaptainCloakFormal
+#  - CaptainMantle
 
 - type: loadoutGroup
   id: CaptainBackpack
@@ -174,12 +171,12 @@
   - CaptainOuterOverCoat  # Sunrise-Edit
   - CaptainWintercoat
 
-- type: loadoutGroup
-  id: HoPHead
-  name: loadout-group-head # Fire edit
-  minLimit: 0
-  loadouts:
-  - HoPHead
+#- type: loadoutGroup
+#  id: HoPHead
+#  name: loadout-group-hop-head
+#  minLimit: 0
+#  loadouts:
+#  - HoPHead
 
 - type: loadoutGroup
   id: HoPJumpsuit
@@ -188,14 +185,13 @@
   - HoPJumpsuit
   - HoPJumpskirt
 
-- type: loadoutGroup
-  id: HoPNeck
-  name: loadout-group-neck # Fire edit
-  minLimit: 0
-  loadouts:
-  - HoPCloak
-  - HoPMantle
-  - HoPScarf # Sunrise-Edit
+#- type: loadoutGroup
+#  id: HoPNeck
+#  name: loadout-group-hop-neck
+#  minLimit: 0
+#  loadouts:
+#  - HoPCloak
+#  - HoPMantle
 
 - type: loadoutGroup
   id: HoPBackpack
@@ -204,7 +200,7 @@
   - CommonBackpack
   - CommonSatchel
   - CommonDuffel
-  - HoPBackpackIan
+  #- HoPBackpackIan
 
 - type: loadoutGroup
   id: HoPOuterClothing
@@ -640,30 +636,13 @@
   - SuperSynthesizer
 
 # Cargo
-- type: loadoutGroup
-  id: QuartermasterHead
-  name: loadout-group-head # Fire edit
-  minLimit: 0
-  loadouts:
-  - QuartermasterHead
-  - QuartermasterBeret
-#Sunrise-start
-  - Sunrise-BandOrange
-  - Sunrise-BandYellow
-  - Sunrise-BandBrown
-  - Sunrise-BandPurple
-  - StationEngineerHardhatOrange
-  - StationEngineerHardhatYellow
-  - Sunrise-HardhatYellowDark
-  - Sunrise-HatOrangesoft
-  - Sunrise-HatYellowsoft
-  - Sunrise-HatBrownsoft
-  - Sunrise-BrownFlatcap
-  - Sunrise-FedoraBrown
-  - Sunrise-CatBrown
-  - Sunrise-HelmetCosmonaut
-  - Sunrise-HideBear
-#Sunrise-end
+#- type: loadoutGroup
+#  id: QuartermasterHead
+#  name: loadout-group-quartermaster-head
+#  minLimit: 0
+#  loadouts:
+#  - QuartermasterHead
+#  - QuartermasterBeret
 
 - type: loadoutGroup
   id: QuartermasterJumpsuit
@@ -675,21 +654,13 @@
   - QuartermasterTurtleneckSkirt
   - QuartermasterFormalSuit
 
-- type: loadoutGroup
-  id: QuartermasterNeck
-  name: loadout-group-neck # Fire edit
-  minLimit: 0
-  loadouts:
-  - QuartermasterCloak
-  - QuartermasterMantle
-  - QuartermasterScarf # Sunrise-Edit
-#Sunrise-start
-  - Sunrise-ScarfOrange
-  - Sunrise-ScarfYellow
-  - Sunrise-ScarfBrown
-  - Sunrise-ScarfPurple
-  - Sunrise-BedsheetCosmos
-#Sunrise-end
+#- type: loadoutGroup
+#  id: QuartermasterNeck
+#  name: loadout-group-quartermaster-neck
+#  minLimit: 0
+#  loadouts:
+#  - QuartermasterCloak
+#  - QuartermasterMantle
 
 - type: loadoutGroup
   id: QuartermasterOuterClothing
@@ -831,22 +802,13 @@
   - ChiefEngineerTurtleneck
   - ChiefEngineerTurtleneckSkirt
 
-- type: loadoutGroup
-  id: ChiefEngineerNeck
-  name: loadout-group-neck # Fire edit
-  minLimit: 0
-  loadouts:
-  - ChiefEngineerCloak
-  - ChiefEngineerMantle
-  - ChiefEngineerScarf
-  #sunrise-start
-  - Sunrise-ScarfRed
-  - Sunrise-ScarfOrange
-  - Sunrise-ScarfYellow
-  - Sunrise-ScarfCyan
-  - Sunrise-ScarfLightBlue
-  - Sunrise-TieRed
-  #Sunrise-end
+#- type: loadoutGroup
+#  id: ChiefEngineerNeck
+#  name: loadout-group-chief-engineer-neck
+#  minLimit: 0
+#  loadouts:
+#  - ChiefEngineerCloak
+#  - ChiefEngineerMantle
 
 - type: loadoutGroup
   id: ChiefEngineerOuterClothing
@@ -1000,14 +962,13 @@
   - EmergencyDwarfExtended # Sunrise-Edit
 
 # Science
-- type: loadoutGroup
-  id: ResearchDirectorNeck
-  name: loadout-group-neck # Fire edit
-  minLimit: 0
-  loadouts:
-  - ResearchDirectorMantle
-  - ResearchDirectorCloak
-  - ResearchDirectorScarf # Sunrise-Edit
+#- type: loadoutGroup
+#  id: ResearchDirectorNeck
+#  name: loadout-group-research-director-neck
+#  minLimit: 0
+#  loadouts:
+#  - ResearchDirectorMantle
+#  - ResearchDirectorCloak
 
 - type: loadoutGroup
   id: ResearchDirectorJumpsuit
@@ -1112,16 +1073,13 @@
   - HeadofSecurityJumpsuitHoSOld  #Sunrise-Edit
   - HeadofSecurityJumpsuitUSSPBlack #Sunrise-Edit
 
-- type: loadoutGroup
-  id: HeadofSecurityNeck
-  name: loadout-group-neck # Fire edit
-  minLimit: 0
-  loadouts:
-  - HeadofSecurityCloak
-  - HeadofSecurityMantle
-  - HeadofSecurityDarthHOSCloak #Sunrise-Edit
-  - HeadofSecurityCloakHOSCloak #Sunrise-Edit
-  - HeadofSecurityScarf #Sunrise-Edit
+#- type: loadoutGroup
+#  id: HeadofSecurityNeck
+#  name: loadout-group-head-of-security-neck
+#  minLimit: 0
+#  loadouts:
+#  - HeadofSecurityCloak
+#  - HeadofSecurityMantle
 
 - type: loadoutGroup
   id: HeadofSecurityOuterClothing
@@ -1274,32 +1232,13 @@
   - SecStar
 
 # Medical
-- type: loadoutGroup
-  id: ChiefMedicalOfficerHead
-  name: loadout-group-head # Fire edit
-  minLimit: 0
-  loadouts:
-  - ChiefMedicalOfficerBeret
-  - ParamedicBeret # Sunrise-Edit
-  # - CMOMedicalHeadMirror # Fire Edit
-# Sunrise-start
-  - BeretSeniorPhysician
-  - MedicalBeret
-  - ChemistBeret #Sunrise-edit
-  - PatologonatBeret #Sunrise-edit
-  - NurseHat
-  - BlueSurgeryCap
-  - GreenSurgeryCap
-  - PurpleSurgeryCap
-  - HatPatologonatHat
-  - ParamedicHead
-  - Sunrise-HatBlacksoft
-  - Sunrise-HatRedsoft
-  - Sunrise-HatOrangesoft
-  - Sunrise-HatCyansoft
-  - Sunrise-HatBluesoft
-  - MedicalHeadMirror
-# Sunrise-end
+#- type: loadoutGroup
+#  id: ChiefMedicalOfficerHead
+#  name: loadout-group-chief-medical-officer-head
+#  minLimit: 0
+#  loadouts:
+#  - ChiefMedicalOfficerBeret
+#  - CMOMedicalHeadMirror
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerJumpsuit
@@ -1339,23 +1278,13 @@
   - ParamedicWindbreaker
 # Sunrise-end
 
-- type: loadoutGroup
-  id: ChiefMedicalOfficerNeck
-  name: loadout-group-neck # Fire edit
-  minLimit: 0
-  loadouts:
-  - ChiefMedicalOfficerCloak
-  - ChiefMedicalOfficerMantle
-  - ChiefMedicalOfficerScarf # Sunrise-Edit
-# Sunrise-start
-  - Sunrise-ScarfRed
-  - Sunrise-ScarfOrange
-  - Sunrise-ScarfGreen
-  - Sunrise-ScarfLightBlue
-  - Sunrise-ScarfCyan
-  - Sunrise-ScarfBlue
-  - Sunrise-Stethoscope
-# Sunrise-end
+#- type: loadoutGroup
+#  id: ChiefMedicalOfficerNeck
+#  name: loadout-group-chief-medical-officer-neck
+#  minLimit: 0
+#  loadouts:
+#  - ChiefMedicalOfficerCloak
+#  - ChiefMedicalOfficerMantle
 
 - type: loadoutGroup
   id: ChiefMedicalOfficerShoes

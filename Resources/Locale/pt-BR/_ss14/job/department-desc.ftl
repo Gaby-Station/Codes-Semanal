@@ -1,0 +1,10 @@
+﻿department-Cargo-description = Complete pedidos, ganhe dinheiro e encomende suprimentos para o sítio.
+department-Civilian-description = Cuide da sanidade do sítio mantendo ele bem limpo e organizado.
+department-Command-description = Gerencie o sítio para que o trabalho seja mais produtivo.
+department-CentralCommand-description = Mantenha a produtividade do sítio alta e os conselho contente.
+department-Engineering-description = Mantenha a estrutura e energia do sítio.
+department-Medical-description = Cuide da saúde e bem estar do sítio.
+department-Security-description = Mantenha a paz e tranquilidade no sítio.
+department-Science-description = Pesquise sobre os SCPs para o sítio.
+department-Silicon-description = Obedeça suas leis e sirva ao sítio.
+department-Specific-description = Trabalhos que não tem em todos os sítios.
